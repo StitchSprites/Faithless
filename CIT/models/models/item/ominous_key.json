@@ -1,0 +1,6 @@
+{
+  "parent": "item/trial_key",
+  "textures": {
+    "layer0": "item/ominous_key"
+  }
+}

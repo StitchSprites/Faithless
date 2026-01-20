@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/coal_ore" },
+      { "model": "block/coal_ore_mirrored" },
+      { "model": "block/coal_ore", "y": 180 },
+      { "model": "block/coal_ore_mirrored", "y": 180 }
+    ]
+  }
+}

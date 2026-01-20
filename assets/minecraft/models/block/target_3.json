@@ -1,0 +1,6 @@
+{
+  "parent": "block/target_1",
+	"textures": {
+		"2": "block/target_3"
+	}
+}

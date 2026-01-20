@@ -1,0 +1,258 @@
+{
+	"textureSize": [128, 64],
+	"models": [
+		{
+			"part": "front",
+			"id": "front",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "back",
+			"id": "back",
+			"invertAxis": "xy",
+			"translate": [4, -2, -15],
+			"submodels": [
+				{
+					"id": "boat",
+					"invertAxis": "xy",
+					"translate": [0, 3, 0.5],
+					"boxes": [
+						{"coordinates": [-8, 0, 12, 16, 6, 2], "textureOffset": [92, 0]}
+					],
+					"submodels": [
+						{
+							"id": "bottom2",
+							"invertAxis": "xy",
+							"translate": [-2, -1, 1.5],
+							"rotate": [-90, -90, 0],
+							"boxes": [
+								{
+									"coordinates": [-15.5, -6, -3, 28, 16, 4],
+									"uvNorth": [68, 48, 96, 64],
+									"uvEast": [64, 48, 68, 64],
+									"uvSouth": [100, 48, 128, 64],
+									"uvWest": [96, 48, 100, 64],
+									"uvUp": [96, 48, 68, 44],
+									"uvDown": [124, 44, 96, 48]
+								}
+							]
+						},
+						{
+							"id": "right2",
+							"invertAxis": "xy",
+							"translate": [0, -3, 1.5],
+							"rotate": [0, 90, 0],
+							"boxes": [
+								{"coordinates": [-12.5, 3, 8, 28, 6, 2], "textureOffset": [0, 56]}
+							]
+						},
+						{
+							"id": "left2",
+							"invertAxis": "xy",
+							"translate": [-9, 3, 0.5],
+							"rotate": [0, -90, 0],
+							"boxes": [
+								{"coordinates": [-14.5, -3, -1, 28, 6, 2], "textureOffset": [0, 56]}
+							]
+						},
+						{
+							"id": "front2",
+							"invertAxis": "xy",
+							"translate": [0, 3, -14.5],
+							"rotate": [0, -180, 0],
+							"boxes": [
+								{"coordinates": [-8, -3, -2.5, 16, 6, 2], "textureOffset": [92, 0]}
+							]
+						},
+						{
+							"id": "left_paddle",
+							"invertAxis": "xy",
+							"translate": [-11, 8, -3],
+							"rotate": [-124, -50, 165],
+							"boxes": [
+								{"coordinates": [-1, -2, -5, 2, 2, 18], "textureOffset": [62, 0]},
+								{"coordinates": [0.001, -3, 8, 1, 6, 7], "textureOffset": [62, 0]}
+							]
+						},
+						{
+							"id": "right_paddle",
+							"invertAxis": "xy",
+							"translate": [11, 8, -3],
+							"rotate": [-124, 60, -165],
+							"boxes": [
+								{"coordinates": [-1, -2, -5, 2, 2, 18], "textureOffset": [62, 0]}
+							],
+							"submodels": [
+								{
+									"id": "back_sub_8",
+									"invertAxis": "xy",
+									"mirrorTexture": "u",
+									"translate": [0, 0, 0],
+									"boxes": [
+										{"coordinates": [-1.001, -3, 8, 1, 6, 7], "textureOffset": [62, 0]}
+									]
+								}
+							]
+						},
+						{
+							"id": "in_paddles",
+							"invertAxis": "xy",
+							"translate": [0, 0, 0],
+							"submodels": [
+								{
+									"id": "right_paddle2",
+									"invertAxis": "xy",
+									"translate": [8.25, 7.5, -11],
+									"rotate": [27.30132, 1.15421, -42.12613],
+									"boxes": [
+										{"coordinates": [-1, -2, -5, 2, 2, 18], "textureOffset": [62, 0]}
+									],
+									"submodels": [
+										{
+											"id": "back_sub_2",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-1.001, -3, 8, 1, 6, 7], "textureOffset": [62, 0]}
+											]
+										}
+									]
+								},
+								{
+									"id": "left_paddle2",
+									"invertAxis": "xy",
+									"translate": [-7, 7.5, -9.75],
+									"rotate": [17.2512, -12.69876, 46.24166],
+									"boxes": [
+										{"coordinates": [-1, -2, -5, 2, 2, 18], "textureOffset": [62, 0]},
+										{"coordinates": [0.001, -3, 8, 1, 6, 7], "textureOffset": [62, 0]}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"animations": [
+				{
+					"var.water_x": "clamp(if(is_in_water,var.water_x+0.05,var.water_x-0.05),0,1)",
+					"var.water_k": "pow(var.water_x,1/3)",
+					"var.forwards": "clamp(if(paddle_left.rx < -0.654 && paddle_left.rx > -0.655,1,paddle_right.rx < -0.654 && paddle_right.rx > -0.655 && limb_swing == var.limb_counter,1, var.forwards -0.03),0,1)",
+					"varb.forward": "var.forwards == 0 ",
+					"var.f_speed_x": "clamp(if(varb.forward,lerp(0.01,var.f_speed_x,1),lerp(0.01,var.f_speed_x,0)),0,1)",
+					"var.f_speed_k": "sqrt(var.f_speed_x)*var.f_speed_x+pow(var.f_speed_x,2)*(1-var.f_speed_x)",
+					"var.side_tilt": "clamp(if(between(var.old_rot_y-rot_y,-0.005,0.005),lerp(0.03,var.side_tilt,0) ,var.old_rot_y>rot_y,lerp(0.01,var.side_tilt,-1),var.old_rot_y<rot_y,lerp(0.01,var.side_tilt,1),0),-1,1)"
+				},
+				{
+					"var.idle": "var.water_k * sin(pos_x/3 + pos_z/3 + time/10)",
+					"var.idle2": "var.water_k * cos(pos_x/3 + pos_z/3 + time/10)"
+				},
+				{
+					"boat.rx": "var.water_k * (-var.f_speed_k/10) + var.idle2*cos(rot_y+pi/4)/20",
+					"boat.rz": "var.water_k * (-var.side_tilt/8) + var.idle2*sin(rot_y+pi/4)/20",
+					"boat.ty": "-3 + var.idle/3"
+				},
+				{
+					"left_paddle.rx": "print(10,10,paddle_left.rx)",
+					"left_paddle.ry": "pi/2+paddle_left.ry",
+					"left_paddle.rz": "paddle_left.rz"
+				},
+				{
+					"right_paddle.rx": "paddle_right.rx-0.34",
+					"right_paddle.ry": "pi/2+paddle_right.ry-0.1",
+					"right_paddle.rz": "paddle_right.rz"
+				},
+				{
+					"var.old_rot_y": "rot_y",
+					"var.limb_counter": "limb_swing"
+				},
+				{
+					"left_paddle.visible": "is_ridden",
+					"right_paddle.visible": "is_ridden",
+					"in_paddles.visible": "!is_ridden"
+				}
+			]
+		},
+		{
+			"part": "left",
+			"id": "left",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "right",
+			"id": "right",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "bottom",
+			"id": "bottom",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "bottom_no_water",
+			"id": "bottom_no_water",
+			"invertAxis": "xy",
+			"translate": [1, -9, 0],
+			"rotate": [0, -90, -90],
+			"submodels": [
+				{
+					"id": "no_water",
+					"invertAxis": "xy",
+					"translate": [0, 3, -6],
+					"boxes": [
+						{
+							"coordinates": [-12, -1, 0, 24, 16, 6],
+							"uvNorth": [0, 0, 1, 1],
+							"uvEast": [0, 0, 1, 1],
+							"uvSouth": [0, 0, 1, 1],
+							"uvWest": [0, 0, 1, 1],
+							"uvUp": [0, 0, 1, 1],
+							"uvDown": [0, 0, 1, 1]
+						}
+					]
+				}
+			],
+			"animations": [
+				{
+					"this.ry": 0,
+					"this.rz": 0
+				},
+				{
+					"var.water_x": "clamp(if(is_in_water,var.water_x+0.05,var.water_x-0.05),0,1)",
+					"var.water_k": "pow(var.water_x,1/3)",
+					"var.forwards": "clamp(if(paddle_left.rx < -0.654 && paddle_left.rx > -0.655,1,paddle_right.rx < -0.654 && paddle_right.rx > -0.655 && limb_swing == var.limb_counter,1, var.forwards -0.03),0,1)",
+					"varb.forward": "var.forwards == 0 ",
+					"var.f_speed_x": "clamp(if(varb.forward,lerp(0.01,var.f_speed_x,1),lerp(0.01,var.f_speed_x,0)),0,1)",
+					"var.f_speed_k": "sqrt(var.f_speed_x)*var.f_speed_x+pow(var.f_speed_x,2)*(1-var.f_speed_x)",
+					"var.side_tilt": "clamp(if(between(var.old_rot_y-rot_y,-0.005,0.005),lerp(0.03,var.side_tilt,0) ,var.old_rot_y>rot_y,lerp(0.01,var.side_tilt,-1),var.old_rot_y<rot_y,lerp(0.01,var.side_tilt,1),0),-1,1)"
+				},
+				{
+					"var.idle": "var.water_k * sin(pos_x/3 + pos_z/3 + time/10)",
+					"var.idle2": "var.water_k * cos(pos_x/3 + pos_z/3 + time/10)"
+				},
+				{
+					"no_water.ry": "var.water_k * (-var.f_speed_k/10) + var.idle2*cos(rot_y+pi/4)/20",
+					"no_water.rx": "-(var.water_k * (-var.side_tilt/8) + var.idle2*sin(rot_y+pi/4)/20)",
+					"no_water.ty": "-3 + var.idle/3"
+				}
+			]
+		},
+		{
+			"part": "paddle_left",
+			"id": "paddle_left",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "paddle_right",
+			"id": "paddle_right",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		}
+	]
+}

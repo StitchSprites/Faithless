@@ -1,0 +1,36 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "select",
+					"property": "trim_material",
+					"cases": [
+						{ "when": "amethyst", 	"model": { "type": "model", "model": "trim/diamond/leggings_amethyst" } },
+						{ "when": "copper", 	"model": { "type": "model", "model": "trim/diamond/leggings_copper" } },
+						{ "when": "diamond", 	"model": { "type": "model", "model": "trim/diamond/leggings_diamond" } },
+						{ "when": "emerald", 	"model": { "type": "model", "model": "trim/diamond/leggings_emerald" } },
+						{ "when": "gold", 		"model": { "type": "model", "model": "trim/diamond/leggings_gold" } },
+						{ "when": "iron", 		"model": { "type": "model", "model": "trim/diamond/leggings_iron" } },
+						{ "when": "lapis", 		"model": { "type": "model", "model": "trim/diamond/leggings_lapis" } },
+						{ "when": "netherite", 	"model": { "type": "model", "model": "trim/diamond/leggings_netherite" } },
+						{ "when": "quartz", 	"model": { "type": "model", "model": "trim/diamond/leggings_quartz" } },
+						{ "when": "redstone", 	"model": { "type": "model", "model": "trim/diamond/leggings_redstone" } },
+						{ "when": "resin", 		"model": { "type": "model", "model": "trim/diamond/leggings_resin" } }
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/diamond_leggings"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/diamond_leggings_alt"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld_sword",
+  "textures": {
+    "layer0": "item/iron_sword"
+  },
+    "overrides": [
+        { "predicate": { "lefthanded": 1 }, "model": "item/lefthanded/iron_sword" },
+        { "predicate": { "damage": 0.5 }, "model": "item/iron_sword_1" },
+        { "predicate": { "damage": 0.6 }, "model": "item/iron_sword_2" },
+        { "predicate": { "damage": 0.7 }, "model": "item/iron_sword_3" },
+        { "predicate": { "damage": 0.8 }, "model": "item/iron_sword_4" },
+        { "predicate": { "damage": 0.9 }, "model": "item/iron_sword_5" }
+    ]
+}

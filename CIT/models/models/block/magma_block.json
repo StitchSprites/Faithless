@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_glow_outline",
+	"textures": {
+		"all": "block/magma",
+		"outline": "block/particle/magma"
+	}
+}

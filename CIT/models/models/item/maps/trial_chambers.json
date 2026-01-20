@@ -1,0 +1,6 @@
+{
+  "parent": "item/filled_map",
+  "textures": {
+	"1": "item/filled_map_trial_chambers"
+  }
+}

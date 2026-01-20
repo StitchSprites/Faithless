@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/rail",
+		"2": "block/rail_beams",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [-4.65, 1.1, 9.2],
+			"to": [4.65, 1.1, 24.7],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 0.1, 0]},
+			"faces": {
+				"up": {"uv": [0, 1, 16, 11], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [0, 1, 16, 11], "rotation": 270, "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0.4, 0.15, -3.9],
+			"to": [2.4, 2.15, 16.1],
+			"rotation": {"angle": -45, "axis": "y", "origin": [2, 0.1, 16]},
+			"faces": {
+				"east": {"uv": [0, 0, 2, 16], "rotation": 90, "texture": "#2"},
+				"west": {"uv": [4, 0, 2, 16], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [2, 0, 4, 16], "texture": "#0"},
+				"down": {"uv": [2, 0, 4, 16], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [13, 0.1, 9.2],
+			"to": [15, 2.1, 17.1],
+			"rotation": {"angle": -45, "axis": "y", "origin": [12, 0.1, 16]},
+			"faces": {
+				"east": {"uv": [12, 5, 14, 12], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [4, 5, 2, 12], "rotation": 90, "texture": "#2"},
+				"up": {"uv": [12, 12, 14, 5], "texture": "#0"},
+				"down": {"uv": [12, 12, 14, 5], "texture": "#0", "cullface": "down"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "rail",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

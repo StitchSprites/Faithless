@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_glow",
+  "textures": {
+    "all": "block/blue_ice",
+    "particle": "block/blue_ice"
+  }
+}

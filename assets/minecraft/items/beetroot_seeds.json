@@ -1,0 +1,34 @@
+{
+	"model": {
+		"type": "range_dispatch",
+		"property": "count",
+		"scale": 64,
+		"entries": [
+			{
+				"threshold": 0,
+				"model": {
+					"type": "model",
+					"model": "item/beetroot_seeds1"
+				}
+			},
+			{
+				"threshold": 3,
+				"model": {
+					"type": "model",
+					"model": "item/beetroot_seeds"
+				}
+			},
+			{
+				"threshold": 6,
+				"model": {
+					"type": "model",
+					"model": "item/beetroot_seeds3"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/beetroot_seeds1"
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/air",
+  "textures": {
+    "cross": "block/air",
+    "particle": "block/small_dripleaf_stem_bottom"
+  }
+}

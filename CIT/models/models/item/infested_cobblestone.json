@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_infested",
+	"textures": {
+		"all": "block/cobblestone"
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "item/warped_fungus_on_a_stick_alt",
+	"textures": {
+		"0": "item/alt/warped_fungus_on_a_stick_model_3"
+	}
+}

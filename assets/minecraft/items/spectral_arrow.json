@@ -1,0 +1,34 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "count",
+    "scale": 64,
+    "entries": [
+      {
+        "threshold": 0,
+        "model": {
+          "type": "model",
+          "model": "item/spectral_arrow"
+        }
+      },
+      {
+        "threshold": 3,
+        "model": {
+          "type": "model",
+          "model": "item/spectral_arrow2"
+        }
+      },
+      {
+        "threshold": 6,
+        "model": {
+          "type": "model",
+          "model": "item/spectral_arrow3"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/spectral_arrow"
+    }
+  }
+}

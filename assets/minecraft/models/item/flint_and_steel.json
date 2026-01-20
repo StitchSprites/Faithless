@@ -1,0 +1,12 @@
+
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/flint_and_steel"
+  },
+    "overrides": [
+        { "predicate": { "damage": 0.25 }, "model": "item/flint_and_steel_1" },
+        { "predicate": { "damage": 0.50 }, "model": "item/flint_and_steel_2" },
+        { "predicate": { "damage": 0.75 }, "model": "item/flint_and_steel_3" }
+    ]
+}

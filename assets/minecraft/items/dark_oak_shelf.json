@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/dark_oak_shelf"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/dark_oak_shelf_unpowered"
+		}
+	}
+}

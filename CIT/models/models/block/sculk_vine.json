@@ -1,0 +1,7 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "block/sculk_vine",
+		"particle": "block/sculk_vine"
+	}
+}

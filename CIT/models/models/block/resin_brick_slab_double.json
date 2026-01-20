@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_bricks_slab",
+	"textures": {
+		"0": "block/resin_brick_slab_double_model",
+		"particle": "block/resin_bricks"
+	}
+}

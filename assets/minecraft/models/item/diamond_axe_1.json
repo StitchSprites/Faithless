@@ -1,0 +1,6 @@
+{
+  "parent": "item/diamond_axe",
+  "textures": {
+    "layer0": "item/diamond_axe_1"
+  }
+}

@@ -1,0 +1,155 @@
+{
+	"multipart":[
+		{"apply":{"model":"block/mushroom_stem"},"when":{"north":"true"}},
+		{"apply":{"model":"block/mushroom_stem","uvlock":true,"y":90},"when":{"east":"true"}},
+		{"apply":{"model":"block/mushroom_stem","uvlock":true,"y":180},"when":{"south":"true"}},
+		{"apply":{"model":"block/mushroom_stem","uvlock":true,"y":270},"when":{"west":"true"}},
+		{"apply":{"model":"block/mushroom_stem","uvlock":true,"x":270},"when":{"up":"true"}},
+		{"apply":{"model":"block/mushroom_stem","uvlock":true,"x":90},"when":{"down":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_top","uvlock":true},"when":{"north":"true","down":"false","up":"true"}},
+		{"apply":{"model":"block/mushroom_stem_top","uvlock":true,"y":90},"when":{"east":"true","down":"false","up":"true"}},
+		{"apply":{"model":"block/mushroom_stem_top","uvlock":true,"y":180},"when":{"south":"true","down":"false","up":"true"}},
+		{"apply":{"model":"block/mushroom_stem_top","uvlock":true,"y":270},"when":{"west":"true","down":"false","up":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_bottom","uvlock":true},"when":{"north":"true","down":"true","up":"false"}},
+		{"apply":{"model":"block/mushroom_stem_bottom","uvlock":true,"y":90},"when":{"east":"true","down":"true","up":"false"}},
+		{"apply":{"model":"block/mushroom_stem_bottom","uvlock":true,"y":180},"when":{"south":"true","down":"true","up":"false"}},
+		{"apply":{"model":"block/mushroom_stem_bottom","uvlock":true,"y":270},"when":{"west":"true","down":"true","up":"false"}},
+		
+		
+		
+			
+		{"apply":{"model":"block/mushroom_block_inside"},"when":{"north":"false","up":"false","west":"false","down":"false","east":"false"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_n"},"when":{"north":"false","up":"true","west":"false","down":"false","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e"},"when":{"north":"false","up":"false","west":"true","down":"false","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":180,"y":180},"when":{"north":"false","up":"false","west":"false","down":"true","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":180,"y":180},"when":{"north":"false","up":"false","west":"false","down":"false","east":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ne"},"when":{"north":"false","up":"true","west":"true","down":"false","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es"},"when":{"north":"false","up":"false","west":"true","down":"true","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":180,"y":180},"when":{"north":"false","up":"false","west":"false","down":"true","east":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":180,"y":180},"when":{"north":"false","up":"true","west":"false","down":"false","east":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ns"},"when":{"north":"false","up":"true","west":"false","down":"true","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ew"},"when":{"north":"false","up":"false","west":"true","down":"false","east":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nes"},"when":{"north":"false","up":"true","west":"true","down":"true","east":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw"},"when":{"north":"false","up":"false","west":"true","down":"true","east":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":180,"y":180},"when":{"north":"false","up":"true","west":"false","down":"true","east":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":180,"y":180},"when":{"north":"false","up":"true","west":"true","down":"false","east":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nesw"},"when":{"north":"false","up":"true","west":"true","down":"true","east":"true"}},
+			
+		{"apply":{"model":"block/mushroom_block_inside","y":90},"when":{"east":"false","up":"false","north":"false","down":"false","south":"false"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_n","y":90},"when":{"east":"false","up":"true","north":"false","down":"false","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","y":90},"when":{"east":"false","up":"false","north":"true","down":"false","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":180,"y":270},"when":{"east":"false","up":"false","north":"false","down":"true","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":180,"y":270},"when":{"east":"false","up":"false","north":"false","down":"false","south":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ne","y":90},"when":{"east":"false","up":"true","north":"true","down":"false","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","y":90},"when":{"east":"false","up":"false","north":"true","down":"true","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":180,"y":270},"when":{"east":"false","up":"false","north":"false","down":"true","south":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":180,"y":270},"when":{"east":"false","up":"true","north":"false","down":"false","south":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ns","y":90},"when":{"east":"false","up":"true","north":"false","down":"true","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ew","y":90},"when":{"east":"false","up":"false","north":"true","down":"false","south":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nes","y":90},"when":{"east":"false","up":"true","north":"true","down":"true","south":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","y":90},"when":{"east":"false","up":"false","north":"true","down":"true","south":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":180,"y":270},"when":{"east":"false","up":"true","north":"false","down":"true","south":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":180,"y":270},"when":{"east":"false","up":"true","north":"true","down":"false","south":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nesw","y":90},"when":{"east":"false","up":"true","north":"true","down":"true","south":"true"}},
+			
+		{"apply":{"model":"block/mushroom_block_inside","y":180},"when":{"south":"false","up":"false","east":"false","down":"false","west":"false"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_n","y":180},"when":{"south":"false","up":"true","east":"false","down":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","y":180},"when":{"south":"false","up":"false","east":"true","down":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":180},"when":{"south":"false","up":"false","east":"false","down":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":180},"when":{"south":"false","up":"false","east":"false","down":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ne","y":180},"when":{"south":"false","up":"true","east":"true","down":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","y":180},"when":{"south":"false","up":"false","east":"true","down":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":180},"when":{"south":"false","up":"false","east":"false","down":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":180},"when":{"south":"false","up":"true","east":"false","down":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ns","y":180},"when":{"south":"false","up":"true","east":"false","down":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ew","y":180},"when":{"south":"false","up":"false","east":"true","down":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nes","y":180},"when":{"south":"false","up":"true","east":"true","down":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","y":180},"when":{"south":"false","up":"false","east":"true","down":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":180},"when":{"south":"false","up":"true","east":"false","down":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":180},"when":{"south":"false","up":"true","east":"true","down":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nesw","y":180},"when":{"south":"false","up":"true","east":"true","down":"true","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_block_inside","y":270},"when":{"west":"false","up":"false","south":"false","down":"false","north":"false"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_n","y":270},"when":{"west":"false","up":"true","south":"false","down":"false","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","y":270},"when":{"west":"false","up":"false","south":"true","down":"false","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":180,"y":90},"when":{"west":"false","up":"false","south":"false","down":"true","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":180,"y":90},"when":{"west":"false","up":"false","south":"false","down":"false","north":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ne","y":270},"when":{"west":"false","up":"true","south":"true","down":"false","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","y":270},"when":{"west":"false","up":"false","south":"true","down":"true","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":180,"y":90},"when":{"west":"false","up":"false","south":"false","down":"true","north":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":180,"y":90},"when":{"west":"false","up":"true","south":"false","down":"false","north":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ns","y":270},"when":{"west":"false","up":"true","south":"false","down":"true","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ew","y":270},"when":{"west":"false","up":"false","south":"true","down":"false","north":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nes","y":270},"when":{"west":"false","up":"true","south":"true","down":"true","north":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","y":270},"when":{"west":"false","up":"false","south":"true","down":"true","north":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":180,"y":90},"when":{"west":"false","up":"true","south":"false","down":"true","north":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":180,"y":90},"when":{"west":"false","up":"true","south":"true","down":"false","north":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nesw","y":270},"when":{"west":"false","up":"true","south":"true","down":"true","north":"true"}},
+			
+		{"apply":{"model":"block/mushroom_block_inside","x":270},"when":{"up":"false","north":"false","east":"false","south":"false","west":"false"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":270,"y":180},"when":{"up":"false","north":"true","east":"false","south":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":270,"y":180},"when":{"up":"false","north":"false","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":270},"when":{"up":"false","north":"false","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":270},"when":{"up":"false","north":"false","east":"false","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":270,"y":180},"when":{"up":"false","north":"true","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":270,"y":180},"when":{"up":"false","north":"false","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":270},"when":{"up":"false","north":"false","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":270},"when":{"up":"false","north":"true","east":"false","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ns","x":270},"when":{"up":"false","north":"true","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ew","x":270},"when":{"up":"false","north":"false","east":"true","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":270,"y":180},"when":{"up":"false","north":"true","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":270,"y":180},"when":{"up":"false","north":"false","east":"true","south":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":270},"when":{"up":"false","north":"true","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":270},"when":{"up":"false","north":"true","east":"true","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nesw","x":270},"when":{"up":"false","north":"true","east":"true","south":"true","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_block_inside","x":90},"when":{"down":"false","north":"false","east":"false","south":"false","west":"false"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":90},"when":{"down":"false","north":"true","east":"false","south":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":90,"y":180},"when":{"down":"false","north":"false","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_n","x":90,"y":180},"when":{"down":"false","north":"false","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_e","x":90},"when":{"down":"false","north":"false","east":"false","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":90,"y":180},"when":{"down":"false","north":"true","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":90,"y":180},"when":{"down":"false","north":"false","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_es","x":90},"when":{"down":"false","north":"false","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ne","x":90},"when":{"down":"false","north":"true","east":"false","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_ns","x":90},"when":{"down":"false","north":"true","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_ew","x":90},"when":{"down":"false","north":"false","east":"true","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":90,"y":180},"when":{"down":"false","north":"true","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":90},"when":{"down":"false","north":"false","east":"true","south":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_nes","x":90},"when":{"down":"false","north":"true","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"block/mushroom_stem_inside_esw","x":90,"y":180},"when":{"down":"false","north":"true","east":"true","south":"false","west":"true"}},
+			
+		{"apply":{"model":"block/mushroom_stem_inside_nesw","x":90},"when":{"down":"false","north":"true","east":"true","south":"true","west":"true"}}
+	]
+}

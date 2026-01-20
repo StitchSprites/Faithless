@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_glow",
+	"textures": {
+		"all": "block/respawn_anchor_side1"
+	}
+}

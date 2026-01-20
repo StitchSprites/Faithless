@@ -1,0 +1,20 @@
+{
+	"textures": {
+		"texture": "block/crimson_fence",
+		"particle": "block/acacia_planks"
+	},
+	"elements": [
+		{
+			"from": [7, 8, 0],
+			"to": [9, 15, 16],
+			"faces": {
+				"north": {"uv": [7, 1, 9, 8], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [0, 1, 16, 8], "texture": "#texture"},
+				"south": {"uv": [7, 1, 9, 8], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [0, 1, 16, 8], "texture": "#texture"},
+				"up": {"uv": [0, 1, 16, 3], "rotation": 90, "texture": "#texture"},
+				"down": {"uv": [0, 6, 16, 8], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	]
+}

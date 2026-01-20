@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"top": "block/oak_door_top",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [9.5, 8, 5.5, 16], "texture": "#top"},
+				"east": {"uv": [0, 8, 0.75, 16], "texture": "#top", "cullface": "east"},
+				"south": {"uv": [4.75, 8, 0.75, 16], "texture": "#top", "cullface": "south"},
+				"west": {"uv": [5.5, 8, 4.75, 16], "texture": "#top", "cullface": "west"},
+				"down": {"uv": [9.5, 8, 10.25, 16], "rotation": 90, "texture": "#top", "cullface": "down"}
+			}
+		}
+	]
+}

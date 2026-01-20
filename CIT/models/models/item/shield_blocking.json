@@ -1,0 +1,25 @@
+{
+    "parent": "item/shield",
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [ 45, 140, 0 ],
+            "translation": [ -2, 11, -5.5 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 45, 140, 0 ],
+            "translation": [ 12, 3, 3.5 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 180, -2 ],
+            "translation": [ -15, 1, -10 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, 180, -2 ],
+            "translation": [ 5, 1, -10 ],
+            "scale": [ 1, 1, 1 ]
+        }
+    }
+}

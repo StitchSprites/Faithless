@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/gold_ore" },
+      { "model": "block/gold_ore_mirrored" },
+      { "model": "block/gold_ore", "y": 180 },
+      { "model": "block/gold_ore_mirrored", "y": 180 }
+    ]
+  }
+}

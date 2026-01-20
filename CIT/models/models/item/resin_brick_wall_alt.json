@@ -1,0 +1,6 @@
+{
+  "parent": "item/template_wall",
+  "textures": {
+    "texture": "block/resin_brick_wall"
+  }
+}

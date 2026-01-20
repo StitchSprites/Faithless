@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "persistent=true": { "model": "block/cherry_leaves_flowering" },
+    "persistent=false,distance=1": { "model": "block/cherry_leaves" },
+    "persistent=false,distance=2": { "model": "block/cherry_leaves" },
+    "persistent=false,distance=3": { "model": "block/cherry_leaves" },
+    "persistent=false,distance=4": { "model": "block/cherry_leaves_flowering" },
+    "persistent=false,distance=5": { "model": "block/cherry_leaves_flowering" },
+    "persistent=false,distance=6": { "model": "block/cherry_leaves_flowering" },
+    "persistent=false,distance=7": { "model": "block/cherry_leaves_dead"}
+  }
+}

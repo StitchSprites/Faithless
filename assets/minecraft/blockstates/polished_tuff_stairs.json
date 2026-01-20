@@ -1,0 +1,145 @@
+{
+    "multipart": [
+        {   "when": { "half": "bottom" },
+		"apply": { "model": "block/polished_tuff_slab" }
+        },
+        {   "when": { "half": "bottom", "facing": "north", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bn" }
+        },
+        {   "when": { "half": "bottom", "facing": "east", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_be" }
+        },
+        {   "when": { "half": "bottom", "facing": "south", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bs" }
+        },
+        {   "when": { "half": "bottom", "facing": "west", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bw" }
+        },
+		
+        {   "when": { "half": "bottom", "facing": "north", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_bse" }
+        },
+        {   "when": { "half": "bottom", "facing": "east", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_bsw" }
+        },
+        {   "when": { "half": "bottom", "facing": "south", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_bnw" }
+        },
+        {   "when": { "half": "bottom", "facing": "west", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_bne" }
+        },
+		
+		
+        {   "when": { "half": "bottom", "facing": "north", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bsw" }
+        },
+        {   "when": { "half": "bottom", "facing": "east", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bnw" }
+        },
+        {   "when": { "half": "bottom", "facing": "south", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bne" }
+        },
+        {   "when": { "half": "bottom", "facing": "west", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_bse" }
+        },
+		
+		
+        {   "when": { "half": "bottom", "facing": "north", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_bne" }
+        },
+        {   "when": { "half": "bottom", "facing": "east", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_bse" }
+        },
+        {   "when": { "half": "bottom", "facing": "south", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_bsw" }
+        },
+        {   "when": { "half": "bottom", "facing": "west", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_bnw" }
+        },
+		
+		
+        {   "when": { "half": "bottom", "facing": "north", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_bnw" }
+        },
+        {   "when": { "half": "bottom", "facing": "east", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_bne" }
+        },
+        {   "when": { "half": "bottom", "facing": "south", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_bse" }
+        },
+        {   "when": { "half": "bottom", "facing": "west", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_bsw" }
+        },
+		
+        {   "when": { "half": "top" },
+		"apply": { "model": "block/polished_tuff_slab_top" }
+        },
+        {   "when": { "half": "top", "facing": "north", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_tn" }
+        },
+        {   "when": { "half": "top", "facing": "east", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_te" }
+        },
+        {   "when": { "half": "top", "facing": "south", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_ts" }
+        },
+        {   "when": { "half": "top", "facing": "west", "shape": "straight|inner_right|inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_tw" }
+        },
+		
+        {   "when": { "half": "top", "facing": "north", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_tse" }
+        },
+        {   "when": { "half": "top", "facing": "east", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_tsw" }
+        },
+        {   "when": { "half": "top", "facing": "south", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_tnw" }
+        },
+        {   "when": { "half": "top", "facing": "west", "shape": "inner_right" },
+		"apply": { "model": "block/polished_tuff_stair_tne" }
+        },
+		
+		
+        {   "when": { "half": "top", "facing": "north", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_tsw" }
+        },
+        {   "when": { "half": "top", "facing": "east", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_tnw" }
+        },
+        {   "when": { "half": "top", "facing": "south", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_tne" }
+        },
+        {   "when": { "half": "top", "facing": "west", "shape": "inner_left" },
+		"apply": { "model": "block/polished_tuff_stair_tse" }
+        },
+		
+		
+        {   "when": { "half": "top", "facing": "north", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_tne" }
+        },
+        {   "when": { "half": "top", "facing": "east", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_tse" }
+        },
+        {   "when": { "half": "top", "facing": "south", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_tsw" }
+        },
+        {   "when": { "half": "top", "facing": "west", "shape": "outer_right" },
+		"apply": { "model": "block/polished_tuff_stair_tnw" }
+        },
+		
+		
+        {   "when": { "half": "top", "facing": "north", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_tnw" }
+        },
+        {   "when": { "half": "top", "facing": "east", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_tne" }
+        },
+        {   "when": { "half": "top", "facing": "south", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_tse" }
+        },
+        {   "when": { "half": "top", "facing": "west", "shape": "outer_left" },
+		"apply": { "model": "block/polished_tuff_stair_tsw" }
+        }
+	]
+}

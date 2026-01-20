@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "persistent=true": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=1": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=2": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=3": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=4": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=5": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=6": { "model": "block/jungle_leaves" },
+    "persistent=false,distance=7": { "model": "block/jungle_leaves_dead"}
+  }
+}

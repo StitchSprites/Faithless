@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "block/bamboo_mosaic_slab_top_double",
+    "side": "block/bamboo_mosaic_slab_side_double"
+  }
+}

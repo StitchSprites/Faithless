@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": [
+      { "model": "block/pale_oak_log", "x": 90, "y": 90, "weight": 100 },
+      { "model": "block/pale_oak_log_creaker", "x": 90, "y": 90, "weight": 1 }
+	],
+    "axis=y": [
+      { "model": "block/pale_oak_log", "weight": 100 },
+      { "model": "block/pale_oak_log_creaker", "weight": 1 } 
+	],
+    "axis=z": [
+      { "model": "block/pale_oak_log", "x": 90, "weight": 100 },
+      { "model": "block/pale_oak_log_creaker", "x": 90, "weight": 1 }
+	]
+  }
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "shroom_b/s",
+	"textures": {
+		"0": "block/red_mushroom_large",
+		"2": "block/red_mushroom_large_top",
+		"particle": "block/red_mushroom_block"
+	}
+}

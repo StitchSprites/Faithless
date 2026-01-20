@@ -1,0 +1,12 @@
+{
+  "parent": "block/template_cauldron_full",
+  "textures": {
+		"content": "block/cauldron_water",
+		"particle": "block/cauldron_side",
+		"inside": "block/cauldron_inside_water3",
+		"inbottom": "block/cauldron_inbottom_water",
+		"top": "block/cauldron_top",
+		"side": "block/cauldron_side",
+		"bottom": "block/cauldron_bottom"
+  }
+}

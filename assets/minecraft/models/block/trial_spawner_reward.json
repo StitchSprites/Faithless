@@ -1,0 +1,10 @@
+{   "parent": "block/spawner",
+	"textures": {
+		"top": "block/trial_spawner_top_ejecting_reward",
+		"side": "block/trial_spawner_side_ejecting_reward",
+		"bottom": "block/trial_spawner_bottom_ejecting_reward",
+		"intop": "#bottom",
+		"inside": "block/trial_spawner_inside_ejecting_reward",
+		"inbottom": "#bottom"
+	}
+}

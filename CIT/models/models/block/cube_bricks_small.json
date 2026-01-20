@@ -1,0 +1,17 @@
+{
+	"parent": "block/block",
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 5.33333, 8], "texture": "#all", "cullface": "north"},
+				"east": {"uv": [1.33333, 0, 6.66667, 8], "texture": "#all", "cullface": "east"},
+				"south": {"uv": [0.33333, 0, 5.66667, 8], "texture": "#all", "cullface": "south"},
+				"west": {"uv": [1.66667, 0, 7, 8], "texture": "#all", "cullface": "west"},
+				"up": {"uv": [0.33333, 0, 5.66667, 8], "texture": "#all", "cullface": "up"},
+				"down": {"uv": [1.33333, 0, 6.66667, 8], "rotation": 180, "texture": "#all", "cullface": "down"}
+			}
+		}
+	]
+}

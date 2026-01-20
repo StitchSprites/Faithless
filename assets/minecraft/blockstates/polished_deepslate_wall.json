@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    { "when": { "up": "true" }, "apply": { "model": "block/polished_deepslate_wall_post" }},
+	
+    { "when": { "north": "low", "south": "low", "east": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side2" }},
+    { "when": { "north": "low", "south": "low", "west": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side2" }},
+    { "when": { "east": "low", "west": "low", "north": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side2", "y": 270 }},
+    { "when": { "east": "low", "west": "low", "south": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side2", "y": 270 }},
+	
+    { "when": { "north": "low", "south": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side" }},
+    { "when": { "east": "low", "west": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side_alt", "y": 270 }},
+    { "when": { "south": "low", "north": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side_alt" }},
+    { "when": { "west": "low", "east": "tall|none" }, "apply": { "model": "block/polished_deepslate_wall_side", "y": 270 }},
+	
+    { "when": { "north": "tall", "south": "tall", "east": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall2" }},
+    { "when": { "north": "tall", "south": "tall", "west": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall2" }},
+    { "when": { "east": "tall", "west": "tall", "north": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall2", "y": 270 }},
+    { "when": { "east": "tall", "west": "tall", "south": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall2", "y": 270 }},
+	
+    { "when": { "north": "tall", "south": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall" }},
+    { "when": { "east": "tall", "west": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall_alt", "y": 270 }},
+    { "when": { "south": "tall", "north": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall_alt" }},
+    { "when": { "west": "tall", "east": "low|none" }, "apply": { "model": "block/polished_deepslate_wall_side_tall", "y": 270 }},
+	
+    { "when": { "north": "low", "south": "low", "east": "low", "west": "low" }, "apply": { "model": "block/polished_deepslate_wall_cross" }},
+    { "when": { "north": "tall", "south": "tall", "east": "tall", "west": "tall" }, "apply": { "model": "block/polished_deepslate_wall_cross_tall" }}
+  ]
+}

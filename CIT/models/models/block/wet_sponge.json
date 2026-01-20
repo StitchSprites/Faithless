@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "block/wet_sponge",
+    "particle": "block/particle/wet_sponge"
+  }
+}

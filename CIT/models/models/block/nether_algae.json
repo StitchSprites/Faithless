@@ -1,0 +1,15 @@
+{
+	"textures": {
+		"0": "block/nether_algae"
+	},
+	"elements": [
+		{
+			"from": [-16, 16, 31.99],
+			"to": [32, 16, 32],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "up"}
+			}
+		}
+	]
+}

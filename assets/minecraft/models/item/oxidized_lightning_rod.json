@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "item/oxidized_lightning_rod"
+	}
+}

@@ -1,0 +1,10 @@
+{
+    "parent": "block/dispenser",
+    "textures": {
+		"top": "block/dropper_top_on",
+		"bottom": "block/dropper_bottom_on",
+		"front": "block/dropper_front_on",
+		"side": "block/dropper_side_on",
+		"back": "block/dropper_back"
+    }
+}

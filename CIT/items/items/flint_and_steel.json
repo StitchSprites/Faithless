@@ -1,0 +1,34 @@
+{
+	"model": {
+		"type": "range_dispatch",
+		"property": "damage",
+		"scale": 1,
+		"entries": [
+			{
+				"threshold": 0.25,
+				"model": {
+					"type": "model",
+					"model": "item/flint_and_steel_1"
+				}
+			},
+			{
+				"threshold": 0.50,
+				"model": {
+					"type": "model",
+					"model": "item/flint_and_steel_2"
+				}
+			},
+			{
+				"threshold": 0.75,
+				"model": {
+					"type": "model",
+					"model": "item/flint_and_steel_3"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/flint_and_steel"
+		}
+	}
+}

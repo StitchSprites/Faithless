@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side_tall",
+	"textures": {
+		"wall": "block/deepslate_brick_wall",
+		"particle": "block/deepslate_bricks"
+	}
+}

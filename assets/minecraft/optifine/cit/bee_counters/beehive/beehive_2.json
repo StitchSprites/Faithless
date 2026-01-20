@@ -1,0 +1,6 @@
+{
+    "parent": "item/beehive_1",
+	"textures": {
+		"4": "item/alt/beehive_2"
+	}
+}

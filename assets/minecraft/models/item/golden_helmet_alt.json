@@ -1,0 +1,7 @@
+{
+  "parent": "item/template_helmet",
+  "textures": {
+    "2": "block/entity/armor_gold",
+    "particle": "item/golden_helmet"
+  }
+}

@@ -1,0 +1,8 @@
+{
+	"parent": "block/sculk_creeper",
+	"ambientocclusion": false,
+	"textures": {
+		"2": "block/sculk_statue_creeper",
+		"particle": "block/particle/sculk"
+	}
+}

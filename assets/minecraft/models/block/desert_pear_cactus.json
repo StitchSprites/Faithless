@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross_tall_up",
+  "textures": {
+    "cross": "block/desert_pear_cactus",
+    "particle": "block/air"
+  }
+}

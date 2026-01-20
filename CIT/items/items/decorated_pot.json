@@ -1,0 +1,9 @@
+{
+	"model": {
+		"type": "special",
+		"base": "item/decorated_pot",
+		"model": {
+			"type": "decorated_pot"
+		}
+	}
+}

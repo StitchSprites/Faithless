@@ -1,0 +1,6 @@
+{
+  "parent": "item/lefthanded/stone_hoe",
+  "textures": {
+    "layer0": "item/stone_hoe_1"
+  }
+}

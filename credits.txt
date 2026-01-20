@@ -1,0 +1,58 @@
+
+Thank you for trying out Faithless!
+
+Pack link: https://modrinth.com/resourcepack/faithless
+My Socials: https://stitchsprites.carrd.co
+My Discord: https://discord.gg/nctrgW29ab
+
+---------------------------------------------------------------------------------------------------
+
+- INFO & FAQ -
+
+Q) "This feature looks broken, how do I fix? I have x mods."
+A) First check out the shader config file Faithless\assets\minecraft\shaders\include\config.glsl and set any mod values to true if you have the mod enabled
+
+Q) "Will the pack update automatically every time something new is added?"
+A) No. It is not automatically updated ingame unfortunately. You will need to re-download the pack
+
+Q) "Can I use this pack for my modpack/video/personal pack/ect..."
+A) My answer will always be yes, under the condition credit is properly given with a link to the pack's original download site https://modrinth.com/resourcepack/faithless
+
+Q) "Can you make an items/gui/block/ect... only version? I dont like "x""
+A) You may edit the pack yourself if you know how. I dont have plans on breaking up a project I worked hard to put together.
+
+Q) "Why does my version look different than yours?"
+A) Could be one of 2 reasons. Either 
+		1 - your version is outdated and requires to be redownloaded on the official site : https://modrinth.com/resourcepack/faithless
+		2 - You dont have optifine installed, or if you do then some settings may not be set up properly
+		
+Q) "Where are the custom music disc minecraft parodies?"
+A) Those are included in an addon which is exclusive to our discord server at https://discord.gg/nctrgW29ab
+
+---------------------------------------------------------------------------------------------------
+
+Some features of this pack are configurable, refer to this file within the pack.
+
+Faithless\assets\minecraft\shaders\include\config.glsl
+
+---------------------------------------------------------------------------------------------------
+
+- CREDITS -  
+
+Vanilla CIT 1.21.4-5 
+REMDRIFT
+
+Custom Java Entity Animations
+ShrimpSnail#5835
+
+Tropical Fish and Clock Script
+Dakedres#7255 
+
+Custom Core Shaders Help
+Dawnkiro (Formerly Oranomous)
+
+Classic Panorama World Port
+Snipr#6180
+
+Shaders used in Panorama
+Complementary Shaders

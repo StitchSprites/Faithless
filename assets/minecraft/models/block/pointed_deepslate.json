@@ -1,0 +1,10 @@
+{	
+    "parent": "block/pointed_stone",
+	"textures": {
+		"cross1": "block/pointed_deepslate_up",
+		"cross2": "block/pointed_deepslate_down",
+		"particle": "block/deepslate",
+		"side": "block/deepslate",
+		"top": "block/deepslate_top"
+	}
+}

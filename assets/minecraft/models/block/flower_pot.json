@@ -1,0 +1,68 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"flowerpot": "block/flower_pot",
+		"soil": "block/farmland_moist",
+		"chain": "block/flower_pot_chain",
+		"bottom": "block/flower_pot_bottom",
+		"vines": "block/flower_pot_empty",
+		"particle": "block/flower_pot"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 6, 11],
+			"faces": {
+				"north": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"east": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"south": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"west": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"up": {"uv": [5, 5, 11, 11], "texture": "#flowerpot"},
+				"down": {"uv": [5, 0, 11, 6], "texture": "#flowerpot", "cullface": "down"}
+			}
+		},
+		{
+			"from": [6, 6, 6],
+			"to": [10, 5, 10],
+			"faces": {
+				"north": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"east": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"south": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"west": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#soil"}
+			}
+		},
+		{
+			"from": [2, -1.9, 2],
+			"to": [14, 6.1, 14],
+			"faces": {
+				"north": {"uv": [0, 6, 6, 10], "texture": "#vines", "cullface": "down"},
+				"east": {"uv": [0, 6, 6, 10], "texture": "#vines", "cullface": "down"},
+				"south": {"uv": [0, 6, 6, 10], "texture": "#vines", "cullface": "down"},
+				"west": {"uv": [0, 6, 6, 10], "texture": "#vines", "cullface": "down"},
+				"up": {"uv": [0, 0, 6, 6], "texture": "#vines", "cullface": "down"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [7.99, 6, 0],
+			"to": [7.99, 16, 16],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 10], "texture": "#chain", "cullface": "down"},
+				"west": {"uv": [0, 0, 16, 10], "texture": "#chain", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 6, 8.01],
+			"to": [16, 16, 8.01],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 10], "texture": "#chain", "cullface": "down"},
+				"south": {"uv": [0, 0, 16, 10], "texture": "#chain", "cullface": "down"}
+			}
+		}
+	]
+}

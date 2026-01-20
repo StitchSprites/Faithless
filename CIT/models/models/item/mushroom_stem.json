@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "block/mushroom_stem_inside_nesw",
+    "side": "block/mushroom_stem",
+    "particle": "block/mushroom_stem"
+  }
+}

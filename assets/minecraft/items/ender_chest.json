@@ -1,0 +1,10 @@
+{
+	"model": {
+		"type": "special",
+		"base": "item/chest",
+		"model": {
+			"type": "chest",
+			"texture": "ender"
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/acacia_button"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/acacia_button"
+		}
+	}
+}

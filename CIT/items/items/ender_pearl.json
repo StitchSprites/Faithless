@@ -1,0 +1,76 @@
+{
+	"model": {
+		"type": "range_dispatch",
+		"property": "cooldown",
+		"scale": 1,
+		"entries": [
+			{
+				"threshold": 0.1,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl1"
+				}
+			},
+			{
+				"threshold": 0.2,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl2"
+				}
+			},
+			{
+				"threshold": 0.3,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl3"
+				}
+			},
+			{
+				"threshold": 0.4,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl4"
+				}
+			},
+			{
+				"threshold": 0.5,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl5"
+				}
+			},
+			{
+				"threshold": 0.6,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl6"
+				}
+			},
+			{
+				"threshold": 0.7,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl7"
+				}
+			},
+			{
+				"threshold": 0.8,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl8"
+				}
+			},
+			{
+				"threshold": 0.9,
+				"model": {
+					"type": "model",
+					"model": "item/ender_pearl9"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/ender_pearl"
+		}
+	}
+}

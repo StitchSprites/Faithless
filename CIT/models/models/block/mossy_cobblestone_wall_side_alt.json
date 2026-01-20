@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side_alt",
+	"textures": {
+		"wall": "block/mossy_cobblestone_wall",
+		"particle": "block/mossy_cobblestone"
+	}
+}

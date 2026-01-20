@@ -1,0 +1,7 @@
+{
+	"parent": "block/flower_pot_cross",
+	"textures": {
+		"vines": "block/flower_pot_azure_bluet",
+		"plant": "block/azure_bluet"
+	}
+}

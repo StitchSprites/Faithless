@@ -1,0 +1,184 @@
+{
+	"credit": "Made with Blockbench",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -20, 7],
+			"boxes": [
+				{
+					"coordinates": [-4, 16, -13, 8, 8, 6],
+					"uvNorth": [6, 6, 14, 14],
+					"uvEast": [20, 6, 14, 14],
+					"uvSouth": [20, 6, 28, 14],
+					"uvWest": [6, 6, 0, 14],
+					"uvUp": [14, 6, 6, 0],
+					"uvDown": [22, 0, 14, 6]
+				},
+				{
+					"coordinates": [-4.5, 22, -11, 1, 3, 1],
+					"uvNorth": [23, 1, 24, 4],
+					"uvEast": [22, 1, 23, 4],
+					"uvSouth": [25, 1, 26, 4],
+					"uvWest": [24, 1, 25, 4],
+					"uvUp": [24, 1, 23, 0],
+					"uvDown": [25, 0, 24, 1]
+				},
+				{
+					"coordinates": [3.5, 22, -11, 1, 3, 1],
+					"uvNorth": [23, 1, 24, 4],
+					"uvEast": [22, 1, 23, 4],
+					"uvSouth": [25, 1, 26, 4],
+					"uvWest": [24, 1, 25, 4],
+					"uvUp": [24, 1, 23, 0],
+					"uvDown": [25, 0, 24, 1]
+				},
+				{
+					"coordinates": [-3, 16, -14, 6, 3, 1],
+					"uvNorth": [7, 11, 13, 14],
+					"uvEast": [12, 11, 13, 14],
+					"uvSouth": [7, 11, 13, 14],
+					"uvWest": [7, 11, 8, 14],
+					"uvUp": [7, 11, 13, 12],
+					"uvDown": [7, 13, 13, 14]
+				}
+			],
+			"submodels": [
+				{
+					"id": "leftear",
+					"invertAxis": "xy",
+					"translate": [4, 22, -9.5],
+					"boxes": [
+						{
+							"coordinates": [0, -1, -0.5, 3, 2, 1],
+							"uvNorth": [53, 8, 56, 10],
+							"uvEast": [57, 8, 56, 10],
+							"uvSouth": [60, 8, 57, 10],
+							"uvWest": [53, 8, 52, 10],
+							"uvUp": [53, 8, 56, 7],
+							"uvDown": [56, 7, 59, 8]
+						}
+					]
+				},
+				{
+					"id": "rightear",
+					"invertAxis": "xy",
+					"translate": [-4, 22, -9.5],
+					"boxes": [
+						{
+							"coordinates": [-3, -1, -0.5, 3, 2, 1],
+							"uvNorth": [56, 8, 53, 10],
+							"uvEast": [52, 8, 53, 10],
+							"uvSouth": [57, 8, 60, 10],
+							"uvWest": [56, 8, 57, 10],
+							"uvUp": [56, 8, 53, 7],
+							"uvDown": [59, 7, 56, 8]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -19, -2],
+			"rotate": [-90, 0, 0],
+			"boxes": [
+				{
+					"coordinates": [-6, 11, -5, 12, 18, 10],
+					"uvNorth": [28, 14, 40, 32],
+					"uvEast": [18, 14, 28, 32],
+					"uvSouth": [50, 14, 62, 32],
+					"uvWest": [40, 14, 50, 32],
+					"uvUp": [40, 14, 28, 4],
+					"uvDown": [52, 4, 40, 14]
+				},
+				{
+					"coordinates": [-2, 12, -7, 4, 6, 2],
+					"uvNorth": [53, 1, 57, 7],
+					"uvEast": [52, 1, 53, 7],
+					"uvSouth": [58, 1, 62, 7],
+					"uvWest": [57, 1, 58, 7],
+					"uvUp": [57, 1, 53, 0],
+					"uvDown": [61, 0, 57, 1]
+				}
+			],
+			"animations": [
+				{
+					"this.rx": 0
+				}
+			]
+		},
+		{
+			"part": "leg1",
+			"id": "leg1",
+			"invertAxis": "xy",
+			"translate": [-4, -12, -7],
+			"boxes": [
+				{
+					"coordinates": [2, 0, 5, 4, 12, 4],
+					"uvNorth": [4, 20, 8, 32],
+					"uvEast": [0, 20, 4, 32],
+					"uvSouth": [12, 20, 16, 32],
+					"uvWest": [8, 20, 12, 32],
+					"uvUp": [8, 20, 4, 16],
+					"uvDown": [12, 16, 8, 20]
+				}
+			]
+		},
+		{
+			"part": "leg2",
+			"id": "leg2",
+			"invertAxis": "xy",
+			"translate": [4, -12, -7],
+			"boxes": [
+				{
+					"coordinates": [-6, 0, 5, 4, 12, 4],
+					"uvNorth": [4, 20, 8, 32],
+					"uvEast": [0, 20, 4, 32],
+					"uvSouth": [12, 20, 16, 32],
+					"uvWest": [8, 20, 12, 32],
+					"uvUp": [8, 20, 4, 16],
+					"uvDown": [12, 16, 8, 20]
+				}
+			]
+		},
+		{
+			"part": "leg3",
+			"id": "leg3",
+			"invertAxis": "xy",
+			"translate": [-4.5, -12, 6],
+			"boxes": [
+				{
+					"coordinates": [1.5, 0, -7, 4, 12, 4],
+					"uvNorth": [4, 20, 8, 32],
+					"uvEast": [0, 20, 4, 32],
+					"uvSouth": [12, 20, 16, 32],
+					"uvWest": [8, 20, 12, 32],
+					"uvUp": [8, 20, 4, 16],
+					"uvDown": [12, 16, 8, 20]
+				}
+			]
+		},
+		{
+			"part": "leg4",
+			"id": "leg4",
+			"invertAxis": "xy",
+			"translate": [4, -12, 6],
+			"boxes": [
+				{
+					"coordinates": [-5.5, 0, -7, 4, 12, 4],
+					"uvNorth": [4, 20, 8, 32],
+					"uvEast": [0, 20, 4, 32],
+					"uvSouth": [12, 20, 16, 32],
+					"uvWest": [8, 20, 12, 32],
+					"uvUp": [8, 20, 4, 16],
+					"uvDown": [12, 16, 8, 20]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/lefthanded/iron_pickaxe",
+  "textures": {
+    "layer0": "item/iron_pickaxe_1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "block/acacia_shelf_unpowered",
+	"textures": {
+		"particle": "block/warped_planks",
+		"all": "block/warped_shelf"
+	}
+}

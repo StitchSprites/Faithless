@@ -1,0 +1,43 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/crossbow_standby"
+    },
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [ -90, 0, -60 ],
+            "translation": [ 2, 0.1, -3 ],
+            "scale": [ 0.9, 0.9, 0.9 ]
+        },
+		"thirdperson_lefthand": {
+			"rotation": [67.5, 0, 90],
+			"translation": [-6, -6, 10],
+			"scale": [0.85, 0.85, 0.85]
+		},
+        "firstperson_righthand": {
+            "rotation": [ -90, 0, -55 ],
+            "translation": [ 1.13, 3.2, 1.13],
+            "scale": [ 0.68, 0.68, 0.68 ]
+        },
+        "firstperson_lefthand": {
+            "scale": [ 0, 0, 0 ]
+        }
+    },
+	"overrides": [
+        { "predicate": { "pulling": 1, "pull": 0 }, "model": "item/crossbow" },
+        { "predicate": { "pulling": 1, "pull": 0.05 }, "model": "item/crossbow1" },
+        { "predicate": { "pulling": 1, "pull": 0.1 }, "model": "item/crossbow2" },
+        { "predicate": { "pulling": 1, "pull": 0.15 }, "model": "item/crossbow3" },
+        { "predicate": { "pulling": 1, "pull": 0.2 }, "model": "item/crossbow4" },
+        { "predicate": { "pulling": 1, "pull": 0.26 }, "model": "item/crossbow5" },
+        { "predicate": { "pulling": 1, "pull": 0.32 }, "model": "item/crossbow6" },
+        { "predicate": { "pulling": 1, "pull": 0.4 }, "model": "item/crossbow7" },
+        { "predicate": { "pulling": 1, "pull": 0.55 }, "model": "item/crossbow8" },
+        { "predicate": { "pulling": 1, "pull": 0.7 }, "model": "item/crossbow9" },
+        { "predicate": { "pulling": 1, "pull": 0.85 }, "model": "item/crossbow10" },
+        { "predicate": { "pulling": 1, "pull": 1 }, "model": "item/crossbow11" },
+        { "predicate": { "charged": 1 }, "model": "item/crossbow_arrow" },
+        { "predicate": { "charged": 1, "firework": 1 }, "model": "item/crossbow_firework" }
+    ]
+}
+    

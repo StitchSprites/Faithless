@@ -1,0 +1,63 @@
+{	"textures": {
+		"cross1": "block/pointed_stone_up",
+		"cross2": "block/pointed_stone_down",
+		"particle": "block/stone",
+		"side": "block/stone",
+		"top": "block/stone"
+	},
+	"ambientocclusion": false,
+	"elements": [
+		{
+			"from": [0.8, 16, 10],
+			"to": [15.2, 32, 10],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross1", "cullface": "up"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross1", "cullface": "up"}
+			}
+		},
+		{
+			"from": [8, 16, 2.8],
+			"to": [8, 32, 17.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#cross1", "cullface": "up"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#cross1", "cullface": "up"}
+			}
+		},
+		{
+			"from": [0.8, -16, 10],
+			"to": [15.2, 0, 10],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross2", "cullface": "down"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross2", "cullface": "down"}
+			}
+		},
+		{
+			"from": [8, -16, 2.8],
+			"to": [8, 0, 17.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#cross2", "cullface": "down"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#cross2", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#side", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "down"}
+			}
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/enchanting_table"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/enchanting_table_alt"
+		}
+	}
+}

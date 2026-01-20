@@ -1,0 +1,7 @@
+{
+    "parent": "block/repeater_3tick",
+	"textures": {
+		"0": "block/repeater_on_locked_3",
+		"2": "block/repeater_base_on_locked"
+	}
+}

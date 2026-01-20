@@ -1,0 +1,44 @@
+{
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "block/brick_stairs",
+		"particle": "block/bricks"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [7.25, 2, 11.25, 4], "texture": "#0", "cullface": "north"},
+				"east": {"uv": [4, 6, 8, 8], "texture": "#0", "cullface": "east"},
+				"south": {"uv": [0, 10, 4, 12], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [12, 12, 16, 14], "texture": "#0", "cullface": "west"}
+			}
+		},
+		{
+			"from": [0, 8, 0],
+			"to": [16, 8, 8],
+			"faces": {
+				"up": {"uv": [1, 2, 5, 0], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [0, 8, 8],
+			"to": [8, 8, 16],
+			"faces": {
+				"up": {"uv": [4.25, 0, 2.25, 2], "rotation": 270, "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 8, 8],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [7.25, 2, 9.25, 4], "texture": "#0"},
+				"east": {"uv": [4, 4, 6, 6], "texture": "#0", "cullface": "east"},
+				"south": {"uv": [11.75, 2, 13.75, 4], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [14, 8, 16, 10], "texture": "#0"},
+				"up": {"uv": [3, 2, 5, 0], "rotation": 180, "texture": "#0", "cullface": "up"}
+			}
+		}
+	]
+}

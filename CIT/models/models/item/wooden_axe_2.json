@@ -1,0 +1,6 @@
+{
+  "parent": "item/wooden_axe",
+  "textures": {
+    "layer0": "item/wooden_axe_2"
+  }
+}

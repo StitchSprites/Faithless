@@ -1,0 +1,4 @@
+{
+  "parent": "atlas",
+  "textures": { "particle": "block/bamboo_planks" }
+}

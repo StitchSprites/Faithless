@@ -1,0 +1,39 @@
+{
+	"parent": "block/cake",
+	"textures": {
+		"0": "item/alt/pumpkin_pie",
+		"particle": "item/pumpkin_pie"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 2],
+			"to": [14, 5, 14],
+			"faces": {
+				"north": {"uv": [6, 0, 8.5, 12], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [6, 0, 8.5, 12], "rotation": 90, "texture": "#0"},
+				"south": {"uv": [6, 0, 8.5, 12], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [6, 0, 8.5, 12], "rotation": 90, "texture": "#0"},
+				"up": {"uv": [0, 0, 6, 12], "texture": "#0"},
+				"down": {"uv": [8.5, 0, 14.5, 12], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 5, 6],
+			"to": [8, 8, 10],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 13, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 13, 2, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 5, 6],
+			"to": [8, 8, 10],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 13, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 13, 2, 16], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"textures": {
+		"0": "block/chorus_flower_dead",
+		"particle": "block/chorus_plant"
+	},
+	"elements": [
+		{
+			"from": [5, 8, 2],
+			"to": [7, 10, 3],
+			"faces": {
+				"north": {"uv": [10.5, 3.25, 11, 3.75], "texture": "#0"},
+				"east": {"uv": [10.25, 3.25, 10.5, 3.75], "texture": "#0"},
+				"west": {"uv": [10.25, 3.25, 10.5, 3.75], "texture": "#0"},
+				"up": {"uv": [10.25, 3.25, 10.5, 3.75], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [10.25, 3.25, 10.5, 3.75], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

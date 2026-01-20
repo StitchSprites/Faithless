@@ -1,0 +1,6 @@
+{
+  "parent": "item/flint_and_steel",
+  "textures": {
+    "layer0": "item/flint_and_steel_3"
+  }
+}

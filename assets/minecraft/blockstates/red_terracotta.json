@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/red_terracotta" },
+      { "model": "block/red_terracotta", "y": 180 }
+    ]
+  }
+}

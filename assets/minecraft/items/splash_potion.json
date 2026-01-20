@@ -1,0 +1,63 @@
+{
+	"model":{
+		"type":"select",
+		"property":"component",
+		"component":"potion_contents",
+		"cases":[
+			{"when":[{"potion":"awkward"}],					"model":{"type":"model","model":"potion/awkward_s0"}},
+			{"when":[{"potion":"mundane"}],					"model":{"type":"model","model":"potion/dead_s0"}},
+			{"when":[{"potion":"thick"}],					"model":{"type":"model","model":"potion/dead_s0"}},
+			
+			{"when":[{"potion":"infested"}],				"model":{"type":"model","model":"potion/infested_s0"}},
+			{"when":[{"potion":"luck"}],					"model":{"type":"model","model":"potion/luck_s0"}},
+			{"when":[{"potion":"oozing"}],					"model":{"type":"model","model":"potion/oozing_s0"}},
+			{"when":[{"potion":"weaving"}],					"model":{"type":"model","model":"potion/weaving_s0"}},
+			{"when":[{"potion":"wind_charged"}],			"model":{"type":"model","model":"potion/windcharged_s0"}},
+			
+			{"when":[{"potion":"fire_resistance"}],			"model":{"type":"model","model":"potion/fireresistance_s0"}},
+			{"when":[{"potion":"long_fire_resistance"}],	"model":{"type":"model","model":"potion/fireresistance_s1"}},
+			{"when":[{"potion":"invisibility"}],			"model":{"type":"model","model":"potion/invisibility_s0"}},
+			{"when":[{"potion":"long_invisibility"}],		"model":{"type":"model","model":"potion/invisibility_s1"}},
+			{"when":[{"potion":"night_vision"}],			"model":{"type":"model","model":"potion/nightvision_s0"}},
+			{"when":[{"potion":"long_night_vision"}],		"model":{"type":"model","model":"potion/nightvision_s1"}},
+			{"when":[{"potion":"slow_falling"}],			"model":{"type":"model","model":"potion/slowfalling_s0"}},
+			{"when":[{"potion":"long_slow_falling"}],		"model":{"type":"model","model":"potion/slowfalling_s1"}},
+			{"when":[{"potion":"water_breathing"}],			"model":{"type":"model","model":"potion/waterbreathing_s0"}},
+			{"when":[{"potion":"long_water_breathing"}],	"model":{"type":"model","model":"potion/waterbreathing_s1"}},
+			{"when":[{"potion":"weakness"}],				"model":{"type":"model","model":"potion/weakness_s0"}},
+			{"when":[{"potion":"long_weakness"}],			"model":{"type":"model","model":"potion/weakness_s1"}},
+			
+			{"when":[{"potion":"harming"}],					"model":{"type":"model","model":"potion/harming_s0"}},
+			{"when":[{"potion":"strong_harming"}],			"model":{"type":"model","model":"potion/harming_s2"}},
+			{"when":[{"potion":"healing"}],					"model":{"type":"model","model":"potion/healing_s0"}},
+			{"when":[{"potion":"strong_healing"}],			"model":{"type":"model","model":"potion/healing_s2"}},
+			
+			{"when":[{"potion":"leaping"}],					"model":{"type":"model","model":"potion/jumpboost_s0"}},
+			{"when":[{"potion":"long_leaping"}],			"model":{"type":"model","model":"potion/jumpboost_s1"}},
+			{"when":[{"potion":"strong_leaping"}],			"model":{"type":"model","model":"potion/jumpboost_s2"}},
+			{"when":[{"potion":"poison"}],					"model":{"type":"model","model":"potion/poison_s0"}},
+			{"when":[{"potion":"long_poison"}],				"model":{"type":"model","model":"potion/poison_s1"}},
+			{"when":[{"potion":"strong_poison"}],			"model":{"type":"model","model":"potion/poison_s2"}},
+			{"when":[{"potion":"regeneration"}],			"model":{"type":"model","model":"potion/regeneration_s0"}},
+			{"when":[{"potion":"long_regeneration"}],		"model":{"type":"model","model":"potion/regeneration_s1"}},
+			{"when":[{"potion":"strong_regeneration"}],		"model":{"type":"model","model":"potion/regeneration_s2"}},
+			{"when":[{"potion":"slowness"}],				"model":{"type":"model","model":"potion/slowness_s0"}},
+			{"when":[{"potion":"long_slowness"}],			"model":{"type":"model","model":"potion/slowness_s1"}},
+			{"when":[{"potion":"strong_slowness"}],			"model":{"type":"model","model":"potion/slowness_s2"}},
+			{"when":[{"potion":"swiftness"}],				"model":{"type":"model","model":"potion/swiftness_s0"}},
+			{"when":[{"potion":"long_swiftness"}],			"model":{"type":"model","model":"potion/swiftness_s1"}},
+			{"when":[{"potion":"strong_swiftness"}],		"model":{"type":"model","model":"potion/swiftness_s2"}},
+			{"when":[{"potion":"strength"}],				"model":{"type":"model","model":"potion/strength_s0"}},
+			{"when":[{"potion":"long_strength"}],			"model":{"type":"model","model":"potion/strength_s1"}},
+			{"when":[{"potion":"strong_strength"}],			"model":{"type":"model","model":"potion/strength_s2"}},
+			{"when":[{"potion":"turtle_master"}],			"model":{"type":"model","model":"potion/turtlemaster_s0"}},
+			{"when":[{"potion":"long_turtle_master"}],		"model":{"type":"model","model":"potion/turtlemaster_s1"}},
+			{"when":[{"potion":"strong_turtle_master"}],	"model":{"type":"model","model":"potion/turtlemaster_s2"}}
+		],
+		"fallback":{
+			"type":"model",
+			"model":"item/splash_potion",
+			"tints":[{"type":"potion","default":-13083194}]
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "can_summon=true,shrieking=false": {
+      "model": "block/sculk_shrieker"
+    },
+    "can_summon=true,shrieking=true": {
+      "model": "block/sculk_shrieker_on"
+    },
+    "can_summon=false,shrieking=false": {
+      "model": "block/sculk_shrieker_safe"
+    },
+    "can_summon=false,shrieking=true": {
+      "model": "block/sculk_shrieker_safe_on"
+    }
+  }
+}

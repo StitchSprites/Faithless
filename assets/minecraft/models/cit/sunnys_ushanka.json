@@ -1,0 +1,7 @@
+{
+	"parent": "item/golden_helmet",
+	"textures": {
+		"1": "optifine/cit/special/sunny/sunnys_ushanka",
+		"lantern": "optifine/cit/special/sunny/sunnys_ushanka_layer_1"
+	}
+}

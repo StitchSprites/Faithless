@@ -1,0 +1,23 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/brown_shulker_box"
+				}
+			}
+		],
+		"fallback": {
+			"type": "special",
+			"model": {
+				"type": "shulker_box",
+				"texture": "shulker_brown"
+			},
+			"base": "item/brown_shulker_box_alt"
+		}
+	}
+}

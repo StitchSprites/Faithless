@@ -1,0 +1,6 @@
+{
+    "parent": "block/wildflowers_4",
+	"textures": {
+		"1": "block/wildflowers_3"
+	}
+}

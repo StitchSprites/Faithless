@@ -1,0 +1,45 @@
+{
+  "multipart": [
+    {
+      "apply": [
+      { "model": "block/bookshelf_ends" }
+	  ]
+    },
+    {
+      "apply": [
+      { "model": "block/bookshelf_sides", "weight": 15, "uvlock": false },
+      { "model": "block/bookshelf_sides", "weight": 15, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides", "weight": 15, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides", "weight": 15, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides2", "weight": 15, "uvlock": false },
+      { "model": "block/bookshelf_sides2", "weight": 15, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides2", "weight": 15, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides2", "weight": 15, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides3", "weight": 5, "uvlock": false },
+      { "model": "block/bookshelf_sides3", "weight": 5, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides3", "weight": 5, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides3", "weight": 5, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides4", "weight": 1, "uvlock": false },
+      { "model": "block/bookshelf_sides4", "weight": 1, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides4", "weight": 1, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides4", "weight": 1, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides5", "weight": 3, "uvlock": false },
+      { "model": "block/bookshelf_sides5", "weight": 3, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides5", "weight": 3, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides5", "weight": 3, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides6", "weight": 3, "uvlock": false },
+      { "model": "block/bookshelf_sides6", "weight": 3, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides6", "weight": 3, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides6", "weight": 3, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides7", "weight": 3, "uvlock": false },
+      { "model": "block/bookshelf_sides7", "weight": 3, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides7", "weight": 3, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides7", "weight": 3, "uvlock": false, "y": 270 },
+      { "model": "block/bookshelf_sides8", "weight": 1, "uvlock": false },
+      { "model": "block/bookshelf_sides8", "weight": 1, "uvlock": false, "y": 90 },
+      { "model": "block/bookshelf_sides8", "weight": 1, "uvlock": false, "y": 180 },
+      { "model": "block/bookshelf_sides8", "weight": 1, "uvlock": false, "y": 270 }
+      ]
+    }
+  ]
+}

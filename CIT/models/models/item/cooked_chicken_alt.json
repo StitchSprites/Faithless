@@ -1,0 +1,7 @@
+{
+	"parent": "item/chicken_alt",
+	"textures": {
+		"0": "item/alt/cooked_chicken",
+		"particle": "item/cooked_chicken"
+	}
+}

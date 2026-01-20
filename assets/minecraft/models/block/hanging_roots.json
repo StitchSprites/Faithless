@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "block/hanging_roots",
+    "particle": "block/dirt"
+  }
+}

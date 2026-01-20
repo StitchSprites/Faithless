@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "block/pale_oak_sapling" },
+        "stage=1": { "model": "block/pale_oak_sapling2" }
+    }
+}

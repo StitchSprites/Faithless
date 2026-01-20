@@ -1,0 +1,21 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"1": "block/red_mushroom_large_top",
+		"2": "block/red_mushroom_block_inside_nesw"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [12, 12.8, 16, 16], "texture": "#1"},
+				"east": {"uv": [12, 12.8, 16, 16], "texture": "#1"},
+				"south": {"uv": [12, 12.8, 16, 16], "texture": "#1"},
+				"west": {"uv": [12, 12.8, 16, 16], "texture": "#1"},
+				"up": {"uv": [12, 9.6, 16, 12.8], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}

@@ -1,0 +1,76 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "cooldown",
+    "scale": 1,
+    "entries": [
+      {
+        "threshold": 0.1,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge1"
+        }
+      },
+      {
+        "threshold": 0.2,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge2"
+        }
+      },
+      {
+        "threshold": 0.3,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge3"
+        }
+      },
+      {
+        "threshold": 0.4,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge4"
+        }
+      },
+      {
+        "threshold": 0.5,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge5"
+        }
+      },
+      {
+        "threshold": 0.6,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge6"
+        }
+      },
+      {
+        "threshold": 0.7,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge7"
+        }
+      },
+      {
+        "threshold": 0.8,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge8"
+        }
+      },
+      {
+        "threshold": 0.9,
+        "model": {
+          "type": "model",
+          "model": "item/wind_charge9"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/wind_charge"
+    }
+  }
+}

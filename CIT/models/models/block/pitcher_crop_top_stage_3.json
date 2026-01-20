@@ -1,0 +1,30 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"crop": "block/pitcher_crop_bottom_stage_3",
+		"crop2": "block/pitcher_crop_bottom_stage_3",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [0.8, -11, 8],
+			"to": [15.2, 21, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#crop2"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#crop"}
+			}
+		},
+		{
+			"from": [8, -11, 0.8],
+			"to": [8, 21, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#crop"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#crop2"}
+			}
+		}
+	]
+}

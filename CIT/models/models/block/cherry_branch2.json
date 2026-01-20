@@ -1,0 +1,6 @@
+{
+    "parent": "block/cherry_branch",
+	"textures": {
+		"0": "block/cherry_branch2"
+	}
+}

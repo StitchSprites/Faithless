@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "block/birch_slab"
+    },
+    "type=double": {
+      "model": "block/birch_slab_double"
+    },
+    "type=top": {
+      "model": "block/birch_slab_top"
+    }
+  }
+}

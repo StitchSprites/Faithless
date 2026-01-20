@@ -1,0 +1,16 @@
+{
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "block/brick_stairs_end",
+		"particle": "block/bricks"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 0, 16],
+			"faces": {
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "down"}
+			}
+		}
+	]
+}

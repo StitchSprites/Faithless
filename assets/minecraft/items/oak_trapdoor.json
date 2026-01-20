@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "model",
+          "model": "item/oak_trapdoor"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/oak_trapdoor_bottom"
+    }
+  }
+}

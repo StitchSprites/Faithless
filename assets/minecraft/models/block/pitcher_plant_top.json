@@ -1,0 +1,30 @@
+{
+	"parent": "block/cross_tall_down",
+	"textures": {
+		"cross": "block/pitcher_crop_bottom_stage_4",
+		"cross2": "block/pitcher_crop_top_stage_4",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [8, -16, 0.8],
+			"to": [8, 16, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#cross"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#cross2"}
+			}
+		},
+		{
+			"from": [0.8, -16, 8],
+			"to": [15.2, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross2"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#cross"}
+			}
+		}
+	]
+}

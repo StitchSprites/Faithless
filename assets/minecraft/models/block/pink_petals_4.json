@@ -1,0 +1,16 @@
+{
+	"textures": {
+		"1": "block/pink_petals",
+		"particle": "block/pink_petals"
+	},
+	"elements": [
+		{
+			"from": [0, 2, 0],
+			"to": [16, 2, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1", "rotation": 180},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#1", "rotation": 180, "cullface": "down"}
+			}
+		}
+	]
+}

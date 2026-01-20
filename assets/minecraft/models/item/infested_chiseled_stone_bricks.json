@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_infested",
+	"textures": {
+		"side": "block/chiseled_stone_bricks",
+		"end": "block/chiseled_stone_bricks_top"
+	}
+}

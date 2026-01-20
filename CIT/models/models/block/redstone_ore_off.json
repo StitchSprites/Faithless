@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_ore",
+	"textures": {
+		"side": "block/redstone_ore_off"
+	}
+}

@@ -1,0 +1,245 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:component",
+					"component": "minecraft:item_name",
+					"cases": [
+					{
+						"when": {
+						"translate": "filled_map.mansion"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_mansion",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.monument"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_monument",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.explorer_jungle"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_jungle_pyramid",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.trial_chambers"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_trial_chambers",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.village_taiga"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_village_taiga",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.village_snowy"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_village_snowy",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.explorer_swamp"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_swamp_hut",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.village_desert"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_village_desert",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.village_plains"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_village_plains",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.village_savanna"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_village_savanna",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					},
+					{
+						"when": {
+						"translate": "filled_map.buried_treasure"
+						},
+						"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/filled_map_nautilus",
+						"tints": [
+							{
+							"type": "minecraft:constant",
+							"value": -1
+							},
+							{
+							"type": "minecraft:map_color",
+							"default": 4603950
+							}
+						]
+						}
+					}
+					],
+					"fallback": {
+					"type": "minecraft:model",
+					"model": "minecraft:item/filled_map",
+					"tints": [
+						{
+						"type": "minecraft:constant",
+						"value": -1
+						},
+						{
+						"type": "minecraft:map_color",
+						"default": 4603950
+						}
+					]
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/filled_map_alt"
+		}
+	}
+}

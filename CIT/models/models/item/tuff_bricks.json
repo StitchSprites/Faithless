@@ -1,0 +1,6 @@
+{
+	"parent": "item/stone_bricks",
+	"textures": {
+		"0": "block/tuff_bricks_model"
+	}
+}

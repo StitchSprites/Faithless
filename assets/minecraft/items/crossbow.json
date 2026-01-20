@@ -1,0 +1,117 @@
+{
+	"model": {
+		"type": "condition",
+		"property": "using_item",
+		"on_true": {
+			"type": "range_dispatch",
+			"property": "crossbow/pull",
+			"entries": [
+				{
+					"threshold": 0.05,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow1"
+					}
+				},
+				{
+					"threshold": 0.1,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow2"
+					}
+				},
+				{
+					"threshold": 0.15,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow3"
+					}
+				},
+				{
+					"threshold": 0.2,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow4"
+					}
+				},
+				{
+					"threshold": 0.26,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow5"
+					}
+				},
+				{
+					"threshold": 0.32,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow6"
+					}
+				},
+				{
+					"threshold": 0.4,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow7"
+					}
+				},
+				{
+					"threshold": 0.55,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow8"
+					}
+				},
+				{
+					"threshold": 0.7,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow9"
+					}
+				},
+				{
+					"threshold": 0.85,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow10"
+					}
+				},
+				{
+					"threshold": 1,
+					"model": {
+						"type": "model",
+						"model": "item/crossbow11"
+					}
+				}
+			],
+			"fallback": {
+				"type": "model",
+				"model": "item/crossbow"
+			}
+		},
+		"on_false": {
+			"type": "select",
+			"property": "charge_type",
+			"cases": [
+				{
+					"when": "arrow",
+					"model": {
+						"type": "model",
+						"model": "item/crossbow_arrow"
+					}
+				},
+				{
+					"when": "rocket",
+					"model": {
+						"type": "model",
+						"model": "item/crossbow_firework"
+					}
+				}
+			],
+			"fallback": {
+				"type": "model",
+				"model": "item/crossbow"
+			}
+		}
+	}
+}

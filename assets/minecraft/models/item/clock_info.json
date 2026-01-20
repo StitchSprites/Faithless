@@ -1,0 +1,40 @@
+{
+	"parent": "block/template_clock",
+	"elements": [
+		{
+			"from": [1, 16.5, 7],
+			"to": [15, 30.5, 7],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#info"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#info"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 3, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 170, 0],
+			"translation": [3.4, 2.5, -1],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [0, 180, 0]
+		},
+		"head": {
+			"rotation": [0, 180, 0],
+			"translation": [0, 13, 7]
+		},
+		"fixed": {
+			"scale": [2, 2, 2]
+		}
+	}
+}

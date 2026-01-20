@@ -1,0 +1,7 @@
+{
+    "parent": "block/template_single_face_rot",
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "block/mushroom_stem_inside_ns"
+    }
+}

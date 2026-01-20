@@ -1,0 +1,10 @@
+{   "parent": "block/spawner",
+	"textures": {
+		"top": "block/trial_spawner_top_cooldown",
+		"side": "block/trial_spawner_side_cooldown",
+		"bottom": "block/trial_spawner_bottom_cooldown",
+		"intop": "#bottom",
+		"inside": "block/trial_spawner_inside_cooldown",
+		"inbottom": "#bottom"
+	}
+}

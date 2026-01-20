@@ -1,0 +1,19 @@
+{
+    "textures": {
+        "particle": "block/air",
+        "lit": "block/pressure_plate_lit"
+    },
+    "elements": [
+        {   "from": [ 1, -1.5, 1 ],
+            "to": [ 15, 0.5, 15 ],
+            "faces": {
+                "down":  { "uv": [ 1, 1, 15, 15 ], "texture": "#texture", "cullface": "down" },
+                "up":    { "uv": [ 1, 1, 15, 15 ], "texture": "#texture" },
+                "north": { "uv": [ 1, 14, 15, 15 ], "texture": "#lit" },
+                "south": { "uv": [ 1, 14, 15, 15 ], "texture": "#lit" },
+                "west":  { "uv": [ 1, 14, 15, 15 ], "texture": "#lit" },
+                "east":  { "uv": [ 1, 14, 15, 15 ], "texture": "#lit" }
+            }
+        }
+    ]
+}

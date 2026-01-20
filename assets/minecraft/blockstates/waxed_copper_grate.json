@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"waterlogged=false": {"model":"block/copper_grate"},
+		"waterlogged=true": {"model":"block/copper_grate_waterlogged"}
+	}
+}

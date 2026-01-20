@@ -1,0 +1,27 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "count",
+    "scale": 64,
+    "entries": [
+      {
+        "threshold": 0,
+        "model": {
+          "type": "model",
+          "model": "item/pitcher_pod"
+        }
+      },
+      {
+        "threshold": 6,
+        "model": {
+          "type": "model",
+          "model": "item/pitcher_pod3"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/pitcher_pod"
+    }
+  }
+}

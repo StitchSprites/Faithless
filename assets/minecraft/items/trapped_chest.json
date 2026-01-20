@@ -1,0 +1,32 @@
+{
+  "model": {
+    "type": "select",
+    "cases": [
+      {
+        "model": {
+          "type": "special",
+          "base": "item/chest",
+          "model": {
+            "type": "chest",
+            "texture": "christmas"
+          }
+        },
+        "when": [
+          "12-24",
+          "12-25",
+          "12-26"
+        ]
+      }
+    ],
+    "fallback": {
+      "type": "special",
+      "base": "item/chest",
+      "model": {
+        "type": "chest",
+        "texture": "trapped"
+      }
+    },
+    "pattern": "MM-dd",
+    "property": "local_time"
+  }
+}

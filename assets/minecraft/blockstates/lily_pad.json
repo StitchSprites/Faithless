@@ -1,0 +1,67 @@
+{
+    "multipart": [
+		{
+		"apply": [ 
+			{ "model": "block/lily_pad" },
+			{ "model": "block/lily_pad_22" },
+			{ "model": "block/lily_pad_-22" },
+			{ "model": "block/lily_pad_45" },
+			{ "model": "block/lily_pad", "y": 90 },
+			{ "model": "block/lily_pad_22", "y": 90 },
+			{ "model": "block/lily_pad_-22", "y": 90 },
+			{ "model": "block/lily_pad_45", "y": 90 },
+			{ "model": "block/lily_pad", "y": 180 },
+			{ "model": "block/lily_pad_22", "y": 180 },
+			{ "model": "block/lily_pad_-22", "y": 180 },
+			{ "model": "block/lily_pad_45", "y": 180 },
+			{ "model": "block/lily_pad", "y": 270 },
+			{ "model": "block/lily_pad_22", "y": 270 },
+			{ "model": "block/lily_pad_-22", "y": 270 },
+			{ "model": "block/lily_pad_45", "y": 270 },
+			{ "model": "block/lily_pad_2" },
+			{ "model": "block/lily_pad_2", "y": 90 },
+			{ "model": "block/lily_pad_2", "y": 180 },
+			{ "model": "block/lily_pad_2", "y": 270 },
+			{ "model": "block/lily_pad_3" },
+			{ "model": "block/lily_pad_3", "y": 90 },
+			{ "model": "block/lily_pad_3", "y": 180 },
+			{ "model": "block/lily_pad_3", "y": 270 },
+			{ "model": "block/lily_pad_4" },
+			{ "model": "block/lily_pad_4", "y": 90 },
+			{ "model": "block/lily_pad_4", "y": 180 },
+			{ "model": "block/lily_pad_4", "y": 270 },
+			{ "model": "block/lily_pad_5" },
+			{ "model": "block/lily_pad_5", "y": 90 },
+			{ "model": "block/lily_pad_5", "y": 180 },
+			{ "model": "block/lily_pad_5", "y": 270 },
+			{ "model": "block/lily_pad_6" },
+			{ "model": "block/lily_pad_6", "y": 90 },
+			{ "model": "block/lily_pad_6", "y": 180 },
+			{ "model": "block/lily_pad_6", "y": 270 },
+			{ "model": "block/lily_pad_7" },
+			{ "model": "block/lily_pad_7", "y": 90 },
+			{ "model": "block/lily_pad_7", "y": 180 },
+			{ "model": "block/lily_pad_7", "y": 270 },
+			{ "model": "block/lily_pad_8" },
+			{ "model": "block/lily_pad_8", "y": 90 },
+			{ "model": "block/lily_pad_8", "y": 180 },
+			{ "model": "block/lily_pad_8", "y": 270 },
+			{ "model": "block/lily_pad_9" },
+			{ "model": "block/lily_pad_9", "y": 90 },
+			{ "model": "block/lily_pad_9", "y": 180 },
+			{ "model": "block/lily_pad_9", "y": 270 }
+			]
+		},
+		{
+		"apply": [ 
+			{ "model": "block/air", "weight": 200 },
+			{ "model": "block/lily_flower1", "weight": 15 },
+			{ "model": "block/lily_flower2", "weight": 15 },
+			{ "model": "block/lily_flower3", "weight": 15 },
+			{ "model": "block/lily_flower4", "weight": 10 },
+			{ "model": "block/lily_flower5", "weight": 10 },
+			{ "model": "block/lily_flower6", "weight": 1 }
+			]
+		}
+    ]
+}

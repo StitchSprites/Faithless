@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross",
+	"textures": {
+		"wall": "block/blackstone_wall",
+		"particle": "block/blackstone"
+	}
+}

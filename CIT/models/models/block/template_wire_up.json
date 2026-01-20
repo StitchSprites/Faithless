@@ -1,0 +1,17 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/redstone_dust_cross"
+	},
+	"elements": [
+		{
+			"from": [0, 1, 15.9],
+			"to": [16, 17, 16],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0", "tintindex": 0, "cullface": "south"}
+			}
+		}
+	]
+}

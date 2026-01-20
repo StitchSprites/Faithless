@@ -1,0 +1,35 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "condition",
+					"property": "fishing_rod/cast",
+					"on_true": {
+						"type": "model",
+						"model": "item/fishing_rod_cast"
+					},
+					"on_false": {
+						"type": "model",
+						"model": "item/fishing_rod"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "condition",
+			"property": "fishing_rod/cast",
+			"on_true": {
+				"type": "model",
+				"model": "item/fishing_rod_cast_alt"
+			},
+			"on_false": {
+				"type": "model",
+				"model": "item/fishing_rod_alt"
+			}
+		}
+	}
+}

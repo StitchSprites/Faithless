@@ -1,0 +1,51 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"2": "block/nether_portal_fog",
+		"portal": "block/nether_portal",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [14.9, 0, 0],
+			"to": [1.1, 16, 16],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#portal"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#portal"}
+			}
+		},
+		{
+			"from": [8, 0, 0.01],
+			"to": [8.01, 16, 0.01],
+			"shade": false,
+			"faces": {
+				"south": {"uv": [16, 0, 0, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 0, 15.99],
+			"to": [8.01, 16, 15.99],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 0.01, 0],
+			"to": [8.01, 0.01, 16],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 15.99, 0],
+			"to": [8.01, 15.99, 16],
+			"shade": false,
+			"faces": {
+				"down": {"uv": [16, 0, 0, 16], "texture": "#2"}
+			}
+		}
+	]
+}

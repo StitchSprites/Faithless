@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side_tall_alt",
+	"textures": {
+		"wall": "block/cobblestone_wall",
+		"particle": "block/cobblestone"
+	}
+}

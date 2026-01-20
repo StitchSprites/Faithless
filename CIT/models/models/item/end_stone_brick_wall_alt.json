@@ -1,0 +1,6 @@
+{
+  "parent": "item/template_wall",
+  "textures": {
+    "texture": "block/end_stone_brick_wall"
+  }
+}

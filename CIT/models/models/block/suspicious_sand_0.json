@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "block/suspicious_sand_0",
+    "particle": "block/suspicious_sand_3"
+  }
+}

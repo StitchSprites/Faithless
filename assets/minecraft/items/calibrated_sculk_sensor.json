@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/calibrated_sculk_sensor"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/calibrated_sculk_sensor"
+		}
+	}
+}

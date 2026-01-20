@@ -1,0 +1,7 @@
+
+{
+    "parent": "block/cross",
+	"textures": {
+		"cross": "block/mangrove_propagule_hanging4"
+	}
+}

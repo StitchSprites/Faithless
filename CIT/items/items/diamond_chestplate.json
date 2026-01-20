@@ -1,0 +1,36 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "select",
+					"property": "trim_material",
+					"cases": [
+						{ "when": "amethyst", 	"model": { "type": "model", "model": "trim/diamond/chestplate_amethyst" } },
+						{ "when": "copper", 	"model": { "type": "model", "model": "trim/diamond/chestplate_copper" } },
+						{ "when": "diamond", 	"model": { "type": "model", "model": "trim/diamond/chestplate_diamond" } },
+						{ "when": "emerald", 	"model": { "type": "model", "model": "trim/diamond/chestplate_emerald" } },
+						{ "when": "gold", 		"model": { "type": "model", "model": "trim/diamond/chestplate_gold" } },
+						{ "when": "iron", 		"model": { "type": "model", "model": "trim/diamond/chestplate_iron" } },
+						{ "when": "lapis", 		"model": { "type": "model", "model": "trim/diamond/chestplate_lapis" } },
+						{ "when": "netherite", 	"model": { "type": "model", "model": "trim/diamond/chestplate_netherite" } },
+						{ "when": "quartz", 	"model": { "type": "model", "model": "trim/diamond/chestplate_quartz" } },
+						{ "when": "redstone", 	"model": { "type": "model", "model": "trim/diamond/chestplate_redstone" } },
+						{ "when": "resin", 		"model": { "type": "model", "model": "trim/diamond/chestplate_resin" } }
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/diamond_chestplate"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/diamond_chestplate_alt"
+		}
+	}
+}

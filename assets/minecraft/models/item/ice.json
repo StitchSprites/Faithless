@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_transparent",
+  "textures": {
+    "all": "item/alt/ice",
+    "inner": "item/alt/ice"
+  }
+}

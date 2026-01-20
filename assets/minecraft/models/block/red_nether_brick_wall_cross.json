@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross",
+	"textures": {
+		"wall": "block/red_nether_brick_wall",
+		"particle": "block/red_nether_bricks"
+	}
+}

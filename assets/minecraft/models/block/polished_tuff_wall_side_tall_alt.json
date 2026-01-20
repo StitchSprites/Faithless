@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side_tall_alt",
+	"textures": {
+		"wall": "block/polished_tuff_wall",
+		"particle": "block/polished_tuff"
+	}
+}

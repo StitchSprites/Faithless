@@ -1,0 +1,12 @@
+{
+	"model": {
+		"type": "model",
+		"model": "item/jungle_leaves",
+		"tints": [
+			{
+				"type": "constant",
+				"value": -12012264
+			}
+		]
+	}
+}

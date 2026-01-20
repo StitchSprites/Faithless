@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "eye=false,facing=south": [ 
+	{ "model": "block/end_portal_frame" }
+	],
+    "eye=false,facing=west": [
+	{ "model": "block/end_portal_frame", "y": 90 }
+	],
+    "eye=false,facing=north": [
+	{ "model": "block/end_portal_frame", "y": 180 }
+	],
+    "eye=false,facing=east": [
+	{ "model": "block/end_portal_frame", "y": 270 }
+	],
+    "eye=true,facing=south": [
+	{ "model": "block/end_portal_frame_filled", "weight": 3 },
+	{ "model": "block/end_portal_frame_filled_2", "weight": 2 },
+	{ "model": "block/end_portal_frame_filled_3", "weight": 2 },
+	{ "model": "block/end_portal_frame_filled_4", "weight": 2 },
+	{ "model": "block/end_portal_frame_filled_5", "weight": 1 },
+	{ "model": "block/end_portal_frame_filled_6", "weight": 2 }
+	],
+    "eye=true,facing=west": [
+	{ "model": "block/end_portal_frame_filled", "weight": 3, "y": 90 },
+	{ "model": "block/end_portal_frame_filled_2", "weight": 2, "y": 90 },
+	{ "model": "block/end_portal_frame_filled_3", "weight": 2, "y": 90 },
+	{ "model": "block/end_portal_frame_filled_4", "weight": 2, "y": 90 },
+	{ "model": "block/end_portal_frame_filled_5", "weight": 1, "y": 90 },
+	{ "model": "block/end_portal_frame_filled_6", "weight": 2, "y": 90 }
+	],
+    "eye=true,facing=north": [
+	{ "model": "block/end_portal_frame_filled", "weight": 3, "y": 180 },
+	{ "model": "block/end_portal_frame_filled_2", "weight": 2, "y": 180 },
+	{ "model": "block/end_portal_frame_filled_3", "weight": 2, "y": 180 },
+	{ "model": "block/end_portal_frame_filled_4", "weight": 2, "y": 180 },
+	{ "model": "block/end_portal_frame_filled_5", "weight": 1, "y": 180 },
+	{ "model": "block/end_portal_frame_filled_6", "weight": 2, "y": 180 }
+	],
+    "eye=true,facing=east": [
+	{ "model": "block/end_portal_frame_filled", "weight": 3, "y": 270 },
+	{ "model": "block/end_portal_frame_filled_2", "weight": 2, "y": 270 },
+	{ "model": "block/end_portal_frame_filled_3", "weight": 2, "y": 270 },
+	{ "model": "block/end_portal_frame_filled_4", "weight": 2, "y": 270 },
+	{ "model": "block/end_portal_frame_filled_5", "weight": 1, "y": 270 },
+	{ "model": "block/end_portal_frame_filled_6", "weight": 2, "y": 270 }
+	]
+  }
+}

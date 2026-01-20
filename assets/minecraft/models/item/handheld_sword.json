@@ -1,0 +1,10 @@
+{
+  "parent": "item/handheld_tools",
+  "display": {
+    "thirdperson_lefthand": {
+      "rotation": [67.5, 90, 90],
+      "translation": [-10.5, -6, 2.5],
+      "scale": [0.85, 0.85, 0.85]
+    }
+  }
+}

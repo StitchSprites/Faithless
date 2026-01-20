@@ -1,0 +1,12 @@
+{
+  "parent": "block/block_workstation",
+  "textures": {
+    "up": "block/pumpkin_top",
+    "north": "block/carved_pumpkin",
+    "down": "block/pumpkin_bottom",
+    "east": "block/pumpkin_side",
+    "south": "block/pumpkin_side",
+    "west": "block/pumpkin_side",
+	"particle": "block/particle/pumpkin"
+  }
+}

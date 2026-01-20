@@ -1,0 +1,7 @@
+{
+  "parent": "item/red_mushroom_block",
+	"textures": {
+		"1": "block/brown_mushroom_large_top",
+		"2": "block/brown_mushroom_block_inside_nesw"
+	}
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "item/bee_nest_1",
+	"textures": {
+		"4": "item/alt/bee_nest_3"
+	}
+}

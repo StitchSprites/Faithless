@@ -1,0 +1,11 @@
+{
+  "parent": "block/block_workstation",
+  "textures": {
+    "up": "block/bookshelf_top",
+    "down": "block/bookshelf_top",
+    "north": "block/bookshelf",
+    "east": "block/bookshelf",
+    "south": "block/bookshelf",
+    "west": "block/bookshelf"
+  }
+}

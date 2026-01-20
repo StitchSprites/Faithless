@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side",
+	"textures": {
+		"wall": "block/tuff_wall",
+		"particle": "block/tuff"
+	}
+}

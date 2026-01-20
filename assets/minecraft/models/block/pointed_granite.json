@@ -1,0 +1,10 @@
+{	
+    "parent": "block/pointed_stone",
+	"textures": {
+		"cross1": "block/pointed_granite_up",
+		"cross2": "block/pointed_granite_down",
+		"particle": "block/granite",
+		"side": "block/granite",
+		"top": "block/granite"
+	}
+}

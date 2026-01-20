@@ -1,0 +1,16 @@
+{
+  "multipart": [
+        { "when": { "age": "0" },
+		"apply": { "model": "block/beetroots_stage0" }
+        },
+        { "when": { "age": "1" },
+		"apply": { "model": "block/beetroots_stage1" }
+        },
+        { "when": { "age": "2" },
+		"apply": { "model": "block/beetroots_stage2" }
+        },
+        { "when": { "age": "3" },
+		"apply": { "model": "block/beetroots_stage3" }
+        }
+	]
+}

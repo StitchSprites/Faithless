@@ -1,0 +1,8 @@
+{
+	"parent": "block/flower_pot_cross",
+	"textures": {
+		"vines": "block/flower_pot_spruce_sapling",
+		"plant": "block/spruce_sapling",
+		"soil": "block/podzol_top"
+	}
+}

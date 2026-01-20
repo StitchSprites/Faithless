@@ -1,0 +1,7 @@
+{
+	"parent": "block/template_big_tree",
+	"textures": {
+		"0": "block/dark_oak_log_top",
+		"1": "block/dark_oak_log"
+	}
+}

@@ -1,0 +1,192 @@
+{
+    "multipart": [
+        {   "when": { "facing": "east", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_alt", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_alt", "y": 270 }
+        },
+		
+		
+        {   "when": { "facing": "east", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner_alt", "y": 270 }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner" }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner_alt", "y": 90 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 180 }
+        },
+        {   "when": { "facing": "east", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner_alt", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner_alt", "y": 270 }
+        },
+		
+		
+        {   "when": { "facing": "east", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "y": 270 }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt" }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "y": 90 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt", "y": 180 }
+        },
+        {   "when": { "facing": "east", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "y": 270 }
+        },
+		
+		
+        {   "when": { "facing": "east", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "x": 180 }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 90, "x": 180 }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 180, "x": 180 }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 270, "x": 180 }
+        },
+		
+		
+        {   "when": { "facing": "east", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 90, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 180, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs", "y": 270, "x": 180, "uvlock": true }
+        },
+		
+		
+        {   "when": { "facing": "east", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 90, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 180, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 270, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "east", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 90, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 180, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "y": 270, "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_inner", "x": 180, "uvlock": true }
+        },
+		
+		
+        {   "when": { "facing": "east", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "x": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt", "x": 180, "y": 90, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "x": 180, "y": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt", "x": 180, "y": 270, "uvlock": true }
+        },
+        {   "when": { "facing": "east", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt", "x": 180, "y": 90, "uvlock": true }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "x": 180, "y": 180, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer_alt", "x": 180, "y": 270, "uvlock": true }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_outer", "x": 180, "uvlock": true }
+        },
+		
+		
+        {   "when": { "half": "bottom" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face" }
+        },
+        {   "when": { "half": "top" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "x": 180 }
+        },
+        {   "when": { "facing": "north", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 180, "x": 90 }
+        },
+        {   "when": { "facing": "east", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 270, "x": 90 }
+        },
+        {   "when": { "facing": "south", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "x": 90 }
+        },
+        {   "when": { "facing": "west", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 90, "x": 90 }
+        },
+        {   "when": { "facing": "north", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 90, "x": 90 }
+        },
+        {   "when": { "facing": "east", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 180, "x": 90 }
+        },
+        {   "when": { "facing": "south", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 270, "x": 90 }
+        },
+        {   "when": { "facing": "west", "shape": "inner_left" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "x": 90 }
+        },
+        {   "when": { "facing": "north", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 270, "x": 90 }
+        },
+        {   "when": { "facing": "east", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "x": 90 }
+        },
+        {   "when": { "facing": "south", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 90, "x": 90 }
+        },
+        {   "when": { "facing": "west", "shape": "inner_right" },
+		"apply": { "model": "block/polished_blackstone_brick_stairs_face", "y": 180, "x": 90 }
+        }
+	]
+}

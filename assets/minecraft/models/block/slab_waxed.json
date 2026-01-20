@@ -1,0 +1,6 @@
+{
+	"parent": "block/slab_overlay",
+	"textures": {
+		"overlay": "item/alt/outline_waxed"
+	}
+}

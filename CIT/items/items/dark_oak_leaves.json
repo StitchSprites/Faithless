@@ -1,0 +1,12 @@
+{
+	"model": {
+		"type": "model",
+		"model": "item/dark_oak_leaves",
+		"tints": [
+			{
+				"type": "constant",
+				"value": -12012264
+			}
+		]
+	}
+}

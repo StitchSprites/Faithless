@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "block/chorus_flower",
+		"particle": "block/chorus_flower"
+	}
+}

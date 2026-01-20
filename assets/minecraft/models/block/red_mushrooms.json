@@ -1,0 +1,6 @@
+{
+  "parent": "block/red_mushroom_cluster",
+	"textures": {
+		"cross": "block/red_mushrooms"
+	}
+}

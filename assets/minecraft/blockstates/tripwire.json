@@ -1,0 +1,103 @@
+{
+    "multipart": [
+        {   "when": { "attached": "false", "north": "false", "east":  "false", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_dot" }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "true", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_cross" }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "true", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_t" }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "true", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_t", "y": 90 }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "false", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_t", "y": 180 }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "true", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_t", "y": 270 }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "true", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_bend" }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "true", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_bend", "y": 90 }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "false", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_bend", "y": 180 }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "false", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_bend", "y": 270 }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "false", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_line" }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "true", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_line", "y": 90 }
+        },
+        {   "when": { "attached": "false", "north": "true", "east":  "false", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_line" }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "true", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_line", "y": 90 }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "false", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_line" }
+        },
+        {   "when": { "attached": "false", "north": "false", "east":  "false", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_line", "y": 90 }
+        },
+		
+		
+		
+        {   "when": { "attached": "true", "north": "false", "east":  "false", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_dot_attached" }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "true", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_cross_attached" }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "true", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_t_attached" }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "true", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_t_attached", "y": 90 }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "false", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_t_attached", "y": 180 }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "true", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_t_attached", "y": 270 }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "true", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_bend_attached" }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "true", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_bend_attached", "y": 90 }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "false", "south": "true", "west":  "true" },
+		"apply": { "model": "block/tripwire_bend_attached", "y": 180 }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "false", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_bend_attached", "y": 270 }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "false", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_line_attached" }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "true", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_line_attached", "y": 90 }
+        },
+        {   "when": { "attached": "true", "north": "true", "east":  "false", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_line_attached" }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "true", "south": "false", "west":  "false" },
+		"apply": { "model": "block/tripwire_line_attached", "y": 90 }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "false", "south": "true", "west":  "false" },
+		"apply": { "model": "block/tripwire_line_attached" }
+        },
+        {   "when": { "attached": "true", "north": "false", "east":  "false", "south": "false", "west":  "true" },
+		"apply": { "model": "block/tripwire_line_attached", "y": 90 }
+        }
+    ]
+}

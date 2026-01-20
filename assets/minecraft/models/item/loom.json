@@ -1,0 +1,11 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"north": "block/loom_front",
+		"east": "block/loom_side",
+		"south": "block/loom_side_2",
+		"west": "block/loom_side",
+		"up": "block/loom_top",
+		"down": "block/loom_bottom"
+	}
+}

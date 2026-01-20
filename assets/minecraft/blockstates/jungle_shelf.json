@@ -1,0 +1,28 @@
+{
+	"variants":{
+		"facing=north,powered=false":{"model":"block/jungle_shelf_unpowered"},
+		"facing=east,powered=false": {"model":"block/jungle_shelf_unpowered","y":90},
+		"facing=south,powered=false":{"model":"block/jungle_shelf_unpowered","y":180},
+		"facing=west,powered=false": {"model":"block/jungle_shelf_unpowered","y":270},
+		
+		"facing=north,powered=true,side_chain=unconnected":{"model":"block/jungle_shelf_unconnected"},
+		"facing=east,powered=true,side_chain=unconnected": {"model":"block/jungle_shelf_unconnected","y":90},
+		"facing=south,powered=true,side_chain=unconnected":{"model":"block/jungle_shelf_unconnected","y":180},
+		"facing=west,powered=true,side_chain=unconnected": {"model":"block/jungle_shelf_unconnected","y":270},
+		
+		"facing=north,powered=true,side_chain=left":{"model":"block/jungle_shelf_left"},
+		"facing=east,powered=true,side_chain=left": {"model":"block/jungle_shelf_left","y":90},
+		"facing=south,powered=true,side_chain=left":{"model":"block/jungle_shelf_left","y":180},
+		"facing=west,powered=true,side_chain=left": {"model":"block/jungle_shelf_left","y":270},
+		
+		"facing=north,powered=true,side_chain=center":{"model":"block/jungle_shelf_center"},
+		"facing=east,powered=true,side_chain=center": {"model":"block/jungle_shelf_center","y":90},
+		"facing=south,powered=true,side_chain=center":{"model":"block/jungle_shelf_center","y":180},
+		"facing=west,powered=true,side_chain=center": {"model":"block/jungle_shelf_center","y":270},
+		
+		"facing=north,powered=true,side_chain=right":{"model":"block/jungle_shelf_right"},
+		"facing=east,powered=true,side_chain=right": {"model":"block/jungle_shelf_right","y":90},
+		"facing=south,powered=true,side_chain=right":{"model":"block/jungle_shelf_right","y":180},
+		"facing=west,powered=true,side_chain=right": {"model":"block/jungle_shelf_right","y":270}
+	}
+}

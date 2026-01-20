@@ -1,0 +1,7 @@
+{
+	"parent": "item/template_fishing_rod",
+	"textures": {
+		"0": "item/alt/warped_fungus_on_a_stick",
+		"particle": "item/warped_fungus"
+	}
+}

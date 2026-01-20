@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable_stairs_alt",
+  "textures": {
+    "bottom": "block/polished_blackstone_bricks",
+    "top": "block/polished_blackstone_bricks",
+    "side": "block/polished_blackstone_bricks"
+  }
+}

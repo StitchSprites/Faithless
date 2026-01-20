@@ -1,0 +1,38 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "select",
+					"property": "trim_material",
+					"cases": [
+						{ "when": "amethyst", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_amethyst" } },
+						{ "when": "copper", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_copper" } },
+						{ "when": "diamond", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_diamond" } },
+						{ "when": "emerald", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_emerald" } },
+						{ "when": "gold", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_gold" } },
+						{ "when": "iron", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_iron" } },
+						{ "when": "lapis", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_lapis" } },
+						{ "when": "netherite", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_netherite" } },
+						{ "when": "quartz", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_quartz" } },
+						{ "when": "redstone", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_redstone" } },
+						{ "when": "resin", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/chestplate_resin" } }
+					],
+					"fallback": {
+						"type": "model",
+						"tints": [ { "type": "dye", "default": -6265536 } ],
+						"model": "item/leather_chestplate"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"tints": [ { "type": "dye", "default": -6265536 } ],
+			"model": "item/leather_chestplate_alt"
+		}
+	}
+}

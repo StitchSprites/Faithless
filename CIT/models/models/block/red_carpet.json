@@ -1,0 +1,7 @@
+{
+  "parent": "block/carpet_fray",
+  "textures": {
+    "wool": "block/red_wool",
+    "carpet": "block/red_carpet"
+  }
+}

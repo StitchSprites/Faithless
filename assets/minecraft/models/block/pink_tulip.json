@@ -1,0 +1,7 @@
+{
+    "parent": "block/red_tulip",
+	"textures": {
+		"1": "block/pink_tulip_front",
+		"2": "block/pink_tulip_stem"
+	}
+}

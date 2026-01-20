@@ -1,0 +1,6 @@
+{
+  "parent": "item/waxed_icon",
+  "textures": {
+      "layer0": "item/oxidized_copper_chain"
+  }
+}

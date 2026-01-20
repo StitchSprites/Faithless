@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld_sword_left",
+  "textures": {
+    "layer0": "item/wooden_sword"
+  }
+}

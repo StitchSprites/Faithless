@@ -1,0 +1,36 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "select",
+					"property": "trim_material",
+					"cases": [
+						{ "when": "amethyst", 	"model": { "type": "model", "model": "trim/chain/boots_amethyst" } },
+						{ "when": "copper", 	"model": { "type": "model", "model": "trim/chain/boots_copper" } },
+						{ "when": "diamond", 	"model": { "type": "model", "model": "trim/chain/boots_diamond" } },
+						{ "when": "emerald", 	"model": { "type": "model", "model": "trim/chain/boots_emerald" } },
+						{ "when": "gold", 		"model": { "type": "model", "model": "trim/chain/boots_gold" } },
+						{ "when": "iron", 		"model": { "type": "model", "model": "trim/chain/boots_iron" } },
+						{ "when": "lapis", 		"model": { "type": "model", "model": "trim/chain/boots_lapis" } },
+						{ "when": "netherite", 	"model": { "type": "model", "model": "trim/chain/boots_netherite" } },
+						{ "when": "quartz", 	"model": { "type": "model", "model": "trim/chain/boots_quartz" } },
+						{ "when": "redstone", 	"model": { "type": "model", "model": "trim/chain/boots_redstone" } },
+						{ "when": "resin", 		"model": { "type": "model", "model": "trim/chain/boots_resin" } }
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/chainmail_boots"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/chainmail_boots_alt"
+		}
+	}
+}

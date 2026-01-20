@@ -1,0 +1,81 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": [
+	  { "model": "block/sculk_vein", "x": 270, "uvlock": true }
+	  ]
+    },
+    {
+      "when": { "north": "true" },
+      "apply": [
+	  { "model": "block/sculk_vein" }
+	  ]
+    },
+    {
+      "when": { "west": "true" },
+      "apply": [
+	  { "model": "block/sculk_vein", "y": 270, "uvlock": true }
+	  ]
+    },
+    {
+      "when": { "south": "true" },
+      "apply": [
+	  { "model": "block/sculk_vein", "y": 180, "uvlock": true }
+	  ]
+    },
+    {
+      "when": { "east": "true" },
+      "apply": [
+	  { "model": "block/sculk_vein", "y": 90, "uvlock": true }
+	  ]
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": [
+	  { "model": "block/sculk_vein", "x": 90, "uvlock": true }
+	  ]
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": [
+	  { "model": "block/sculk_vine" }
+	  ]
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": [
+	  { "model": "block/air", "weight": 1000, "x": 90 },
+	  { "model": "block/sculk_sprouts", "weight": 250 },
+	  { "model": "block/sculk_creeper", "weight": 3 },
+	  { "model": "block/sculk_creeper", "weight": 3, "y": 90 },
+	  { "model": "block/sculk_creeper", "weight": 3, "y": 180 },
+	  { "model": "block/sculk_creeper", "weight": 3, "y": 270 },
+	  { "model": "block/sculk_zombie", "weight": 3 },
+	  { "model": "block/sculk_zombie", "weight": 3, "y": 90 },
+	  { "model": "block/sculk_zombie", "weight": 3, "y": 180 },
+	  { "model": "block/sculk_zombie", "weight": 3, "y": 270 },
+	  { "model": "block/sculk_creeper_bones", "weight": 1 },
+	  { "model": "block/sculk_creeper_bones", "weight": 1, "y": 90 },
+	  { "model": "block/sculk_creeper_bones", "weight": 1, "y": 180 },
+	  { "model": "block/sculk_creeper_bones", "weight": 1, "y": 270 },
+	  { "model": "block/sculk_zombie_bones", "weight": 1 },
+	  { "model": "block/sculk_zombie_bones", "weight": 1, "y": 90 },
+	  { "model": "block/sculk_zombie_bones", "weight": 1, "y": 180 },
+	  { "model": "block/sculk_zombie_bones", "weight": 1, "y": 270 },
+	  { "model": "block/sculk_skull", "weight": 4 },
+	  { "model": "block/sculk_skull", "weight": 4, "y": 90 },
+	  { "model": "block/sculk_skull", "weight": 4, "y": 180 },
+	  { "model": "block/sculk_skull", "weight": 4, "y": 270 }
+	  ]
+    }
+  ]
+}

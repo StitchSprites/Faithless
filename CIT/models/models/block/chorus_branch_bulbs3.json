@@ -1,0 +1,41 @@
+{
+	"textures": {
+		"0": "block/chorus_flower_dead",
+		"particle": "block/chorus_plant"
+	},
+	"elements": [
+		{
+			"from": [9, 9, 2],
+			"to": [12, 12, 3],
+			"faces": {
+				"north": {"uv": [10.25, 2.25, 11, 3], "texture": "#0"},
+				"east": {"uv": [10, 2.25, 10.25, 3], "texture": "#0"},
+				"west": {"uv": [10, 2.25, 10.25, 3], "texture": "#0"},
+				"up": {"uv": [10, 2.25, 10.25, 3], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [10, 2.25, 10.25, 3], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 4, 2],
+			"to": [9, 6, 3],
+			"faces": {
+				"north": {"uv": [10.5, 3.25, 11, 3.75], "texture": "#0"},
+				"east": {"uv": [10.25, 3.25, 10.5, 3.75], "texture": "#0"},
+				"west": {"uv": [10.25, 3.25, 10.5, 3.75], "texture": "#0"},
+				"up": {"uv": [10.25, 3.25, 10.5, 3.75], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [10.25, 3.25, 10.5, 3.75], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 8, 2],
+			"to": [6, 10, 3],
+			"faces": {
+				"north": {"uv": [10.5, 3.25, 11, 3.75], "texture": "#0"},
+				"east": {"uv": [10.25, 3.25, 10.5, 3.75], "texture": "#0"},
+				"west": {"uv": [10.25, 3.25, 10.5, 3.75], "texture": "#0"},
+				"up": {"uv": [10.25, 3.25, 10.5, 3.75], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [10.25, 3.25, 10.5, 3.75], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

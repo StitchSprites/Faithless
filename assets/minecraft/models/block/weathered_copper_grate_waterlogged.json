@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube_transparent",
+  "textures": {
+		"all": "block/weathered_copper_grate_waterlogged_side",
+		"inner": "block/weathered_copper_grate_waterlogged_side",
+		"up": "block/weathered_copper_grate_waterlogged_top",
+		"down": "block/weathered_copper_grate_waterlogged_bottom",
+		"up_inner": "block/weathered_copper_grate_waterlogged_top",
+		"down_inner": "block/weathered_copper_grate_waterlogged_bottom"
+  }
+}

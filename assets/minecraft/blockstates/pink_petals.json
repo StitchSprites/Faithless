@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "facing=north,flower_amount=1": [
+	{ "model": "block/pink_petals_1" },
+	{ "model": "block/pink_petals_1l" },
+	{ "model": "block/pink_petals_1h" }
+    ],
+    "facing=north,flower_amount=2": [
+	{ "model": "block/pink_petals_2" },
+	{ "model": "block/pink_petals_2l" },
+	{ "model": "block/pink_petals_2h" }
+    ],
+    "facing=north,flower_amount=3": [
+	{ "model": "block/pink_petals_3" },
+	{ "model": "block/pink_petals_3l" },
+	{ "model": "block/pink_petals_3h" }
+    ],
+    "facing=north,flower_amount=4": [
+	{ "model": "block/pink_petals_4", "weight": 10 },
+	{ "model": "block/pink_petals_4l", "weight": 10 },
+	{ "model": "block/pink_petals_4h", "weight": 10 },
+	{ "model": "block/pink_petals_pile", "weight": 5 },
+	{ "model": "block/pink_petals_large_pile", "weight": 1 },
+	{ "model": "block/cherry_branch", "weight": 1 },
+	{ "model": "block/cherry_branch2", "weight": 1 }
+	],
+    "facing=east,flower_amount=1": [
+	{ "model": "block/pink_petals_1", "y": 90 },
+	{ "model": "block/pink_petals_1l", "y": 90 },
+	{ "model": "block/pink_petals_1h", "y": 90 }
+    ],
+    "facing=east,flower_amount=2": [
+	{ "model": "block/pink_petals_2", "y": 90 },
+	{ "model": "block/pink_petals_2l", "y": 90 },
+	{ "model": "block/pink_petals_2h", "y": 90 }
+    ],
+    "facing=east,flower_amount=3": [
+	{ "model": "block/pink_petals_3", "y": 90 },
+	{ "model": "block/pink_petals_3l", "y": 90 },
+	{ "model": "block/pink_petals_3h", "y": 90 }
+    ],
+    "facing=east,flower_amount=4": [
+	{ "model": "block/pink_petals_4", "y": 90, "weight": 10 },
+	{ "model": "block/pink_petals_4l", "y": 90, "weight": 10 },
+	{ "model": "block/pink_petals_4h", "y": 90, "weight": 10 },
+	{ "model": "block/pink_petals_pile", "y": 90, "weight": 5 },
+	{ "model": "block/pink_petals_large_pile", "y": 90, "weight": 1 },
+	{ "model": "block/cherry_branch", "y": 90, "weight": 1 },
+	{ "model": "block/cherry_branch2", "y": 90, "weight": 1 }
+	],
+    "facing=south,flower_amount=1": [
+	{ "model": "block/pink_petals_1", "y": 180 },
+	{ "model": "block/pink_petals_1l", "y": 180 },
+	{ "model": "block/pink_petals_1h", "y": 180 }
+	],
+    "facing=south,flower_amount=2": [
+	{ "model": "block/pink_petals_2", "y": 180 },
+	{ "model": "block/pink_petals_2l", "y": 180 },
+	{ "model": "block/pink_petals_2h", "y": 180 }
+	],
+    "facing=south,flower_amount=3": [
+	{ "model": "block/pink_petals_3", "y": 180 },
+	{ "model": "block/pink_petals_3l", "y": 180 },
+	{ "model": "block/pink_petals_3h", "y": 180 }
+	],
+    "facing=south,flower_amount=4": [
+	{ "model": "block/pink_petals_4", "y": 180, "weight": 10 },
+	{ "model": "block/pink_petals_4l", "y": 180, "weight": 10 },
+	{ "model": "block/pink_petals_4h", "y": 180, "weight": 10 },
+	{ "model": "block/pink_petals_pile", "y": 180, "weight": 5 },
+	{ "model": "block/pink_petals_large_pile", "y": 180, "weight": 1 },
+	{ "model": "block/cherry_branch", "y": 180, "weight": 1 },
+	{ "model": "block/cherry_branch2", "y": 180, "weight": 1 }
+	],
+    "facing=west,flower_amount=1": [
+	{ "model": "block/pink_petals_1", "y": 270 },
+	{ "model": "block/pink_petals_1l", "y": 270 },
+	{ "model": "block/pink_petals_1h", "y": 270 }
+	],
+    "facing=west,flower_amount=2": [
+	{ "model": "block/pink_petals_2", "y": 270 },
+	{ "model": "block/pink_petals_2l", "y": 270 },
+	{ "model": "block/pink_petals_2h", "y": 270 }
+	],
+    "facing=west,flower_amount=3": [
+	{ "model": "block/pink_petals_3", "y": 270 },
+	{ "model": "block/pink_petals_3l", "y": 270 },
+	{ "model": "block/pink_petals_3h", "y": 270 }
+	],
+    "facing=west,flower_amount=4": [
+	{ "model": "block/pink_petals_4", "y": 270, "weight": 10 },
+	{ "model": "block/pink_petals_4l", "y": 270, "weight": 10 },
+	{ "model": "block/pink_petals_4h", "y": 270, "weight": 10 },
+	{ "model": "block/pink_petals_pile", "y": 270, "weight": 5 },
+	{ "model": "block/pink_petals_large_pile", "y": 270, "weight": 1 },
+	{ "model": "block/cherry_branch", "y": 270, "weight": 1 },
+	{ "model": "block/cherry_branch2", "y": 270, "weight": 1 }
+	]
+  }
+}

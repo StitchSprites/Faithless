@@ -1,0 +1,31 @@
+{
+  "multipart": [
+        { "when": { "age": "0" },
+		"apply": { "model": "block/wheat_stage0" }
+        },
+        { "when": { "age": "1" },
+		"apply": { "model": "block/wheat_stage1" }
+        },
+        { "when": { "age": "2" },
+		"apply": { "model": "block/wheat_stage2" }
+        },
+        { "when": { "age": "3" },
+		"apply": { "model": "block/wheat_stage3" }
+        },
+        { "when": { "age": "4" },
+		"apply": { "model": "block/wheat_stage4" }
+        },
+        { "when": { "age": "5" },
+		"apply": { "model": "block/wheat_stage5" }
+        },
+        { "when": { "age": "6" },
+		"apply": { "model": "block/wheat_stage6" }
+        },
+        { "when": { "age": "7" },
+		"apply": [ 
+		{ "model": "block/wheat_stage7" }, 
+		{ "model": "block/wheat_stage7b" }, 
+		{ "model": "block/wheat_stage7c" } ]
+        }
+	]
+}

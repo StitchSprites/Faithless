@@ -1,0 +1,11 @@
+{
+	"parent": "block/cube_glow",
+	"textures": {
+		"north": "#side",
+		"east": "#side",
+		"south": "#side",
+		"west": "#side",
+		"up": "#end",
+		"down": "#end"
+	}
+}

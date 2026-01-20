@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross_tall",
+	"textures": {
+		"wall": "block/diorite_wall",
+		"particle": "block/diorite"
+	}
+}

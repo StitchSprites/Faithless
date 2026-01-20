@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/lapis_ore" },
+      { "model": "block/lapis_ore_mirrored" },
+      { "model": "block/lapis_ore", "y": 180 },
+      { "model": "block/lapis_ore_mirrored", "y": 180 }
+    ]
+  }
+}

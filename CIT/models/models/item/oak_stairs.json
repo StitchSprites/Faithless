@@ -1,0 +1,6 @@
+{
+  "parent": "block/stairs_inventory",
+  "textures": {
+    "side": "block/oak_planks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "item/polished_granite_stairs",
+	"textures": {
+		"0": "block/quartz_stairs",
+		"particle": "block/quartz_block"
+	}
+}

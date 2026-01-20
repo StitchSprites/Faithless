@@ -1,0 +1,25 @@
+{
+  "multipart": [
+    {
+      "apply": [
+      { "model": "block/chiseled_sandstone_ends" }
+	  ]
+    },
+    {
+      "apply": [
+      { "model": "block/chiseled_sandstone_sides", "uvlock": false },
+      { "model": "block/chiseled_sandstone_sides", "uvlock": false, "y": 90 },
+      { "model": "block/chiseled_sandstone_sides", "uvlock": false, "y": 180 },
+      { "model": "block/chiseled_sandstone_sides", "uvlock": false, "y": 270 },
+      { "model": "block/chiseled_sandstone_sides2", "uvlock": false },
+      { "model": "block/chiseled_sandstone_sides2", "uvlock": false, "y": 90 },
+      { "model": "block/chiseled_sandstone_sides2", "uvlock": false, "y": 180 },
+      { "model": "block/chiseled_sandstone_sides2", "uvlock": false, "y": 270 },
+      { "model": "block/chiseled_sandstone_sides3", "uvlock": false },
+      { "model": "block/chiseled_sandstone_sides3", "uvlock": false, "y": 90 },
+      { "model": "block/chiseled_sandstone_sides3", "uvlock": false, "y": 180 },
+      { "model": "block/chiseled_sandstone_sides3", "uvlock": false, "y": 270 }
+      ]
+    }
+  ]
+}

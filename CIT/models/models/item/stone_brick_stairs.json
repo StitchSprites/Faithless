@@ -1,0 +1,44 @@
+{
+	"parent": "block/stairs",
+	"textures": {
+		"1": "item/alt/stone_brick_stairs",
+		"particle": "block/stone_bricks_model",
+		"0": "block/stone_bricks_model"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [0, 12, 8, 16], "texture": "#1"},
+				"south": {"uv": [0, 4, 8, 8], "texture": "#1"},
+				"west": {"uv": [8, 12, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [8, 8, 16],
+			"faces": {
+				"up": {"uv": [8, 4, 16, 8], "rotation": 90, "texture": "#1"}
+			}
+		},
+		{
+			"from": [8, 8, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 8, 4, 12], "texture": "#1"},
+				"south": {"uv": [4, 0, 8, 4], "texture": "#1"},
+				"west": {"uv": [8, 8, 16, 12], "texture": "#1"},
+				"up": {"uv": [8, 0, 16, 4], "rotation": 90, "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"uv": [8, 8, 16, 16], "texture": "#1"},
+				"down": {"uv": [10.66667, 0, 16, 8], "rotation": 180, "texture": "#0"}
+			}
+		}
+	]
+}

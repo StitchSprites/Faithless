@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_invisible",
+	"textures": {
+		"all": "item/alt/barrier_block",
+		"item": "item/alt/barrier"
+	}
+}

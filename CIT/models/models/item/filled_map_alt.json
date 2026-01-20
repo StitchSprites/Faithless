@@ -1,0 +1,31 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"2": "item/alt/map/background",
+		"3": "item/alt/map/normal",
+		"particle": "item/alt/map/background"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 8],
+			"to": [16, 16, 8],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 5.5, 2.25],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 5.5, 2.25],
+			"scale": [0.75, 0.75, 0.75]
+		}
+	}
+}

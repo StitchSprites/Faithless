@@ -1,0 +1,41 @@
+{
+	"model": {
+		"type": "range_dispatch",
+		"property": "cooldown",
+		"scale": 1,
+		"entries": [
+			{
+				"threshold": 0.1,
+				"model": {
+					"type": "model",
+					"model": "item/chorus_fruit1"
+				}
+			},
+			{
+				"threshold": 0.2,
+				"model": {
+					"type": "model",
+					"model": "item/chorus_fruit2"
+				}
+			},
+			{
+				"threshold": 0.3,
+				"model": {
+					"type": "model",
+					"model": "item/chorus_fruit3"
+				}
+			},
+			{
+				"threshold": 0.4,
+				"model": {
+					"type": "model",
+					"model": "item/chorus_fruit4"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/chorus_fruit"
+		}
+	}
+}

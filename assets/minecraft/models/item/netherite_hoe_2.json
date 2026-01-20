@@ -1,0 +1,6 @@
+{
+  "parent": "item/netherite_hoe",
+  "textures": {
+    "layer0": "item/netherite_hoe_2"
+  }
+}

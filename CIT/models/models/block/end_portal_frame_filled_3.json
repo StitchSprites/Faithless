@@ -1,0 +1,6 @@
+{
+  "parent": "block/end_portal_frame_filled",
+	"textures": {
+		"eye": "block/end_portal_frame_eye_3"
+	}
+}

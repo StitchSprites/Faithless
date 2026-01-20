@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "block/dirt",
+    "north": "block/dirt_path_side",
+    "south": "block/dirt_path_side",
+    "east": "block/dirt_path_side",
+    "west": "block/dirt_path_side",
+    "up": "block/dirt_path_top",
+    "down": "block/dirt"
+  }
+}

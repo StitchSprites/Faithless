@@ -1,0 +1,7 @@
+{
+	"parent": "cit/blue_grab_pack_cast",
+	"textures": {
+		"0": "item/cit/green_grab_pack",
+		"particle": "item/cit/green_grab_pack"
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/deepslate_diamond_ore" },
+      { "model": "block/deepslate_diamond_ore_mirrored" },
+      { "model": "block/deepslate_diamond_ore", "y": 180 },
+      { "model": "block/deepslate_diamond_ore_mirrored", "y": 180 }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "item/bucket_alt",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "item/alt/water_bucket"
+	}
+}

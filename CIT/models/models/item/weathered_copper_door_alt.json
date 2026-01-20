@@ -1,0 +1,6 @@
+{
+	"parent": "item/template_door",
+	"textures": {
+		"0": "block/weathered_copper_door_top"
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "select",
+					"property": "trim_material",
+					"cases": [
+						{ "when": "amethyst", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_amethyst" } },
+						{ "when": "copper", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_copper" } },
+						{ "when": "diamond", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_diamond" } },
+						{ "when": "emerald", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_emerald" } },
+						{ "when": "gold", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_gold" } },
+						{ "when": "iron", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_iron" } },
+						{ "when": "lapis", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_lapis" } },
+						{ "when": "netherite", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_netherite" } },
+						{ "when": "quartz", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_quartz" } },
+						{ "when": "redstone", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_redstone" } },
+						{ "when": "resin", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/helmet_resin" } }
+					],
+					"fallback": {
+						"type": "model",
+						"tints": [ { "type": "dye", "default": -6265536 } ],
+						"model": "item/leather_helmet"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"tints": [ { "type": "dye", "default": -6265536 } ],
+			"model": "item/leather_helmet_alt"
+		}
+	}
+}

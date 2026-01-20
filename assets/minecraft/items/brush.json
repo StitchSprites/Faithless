@@ -1,0 +1,150 @@
+{
+	"model": {
+		"type": "range_dispatch",
+		"property": "damage",
+		"scale": 1,
+		"entries": [
+			{
+				"threshold": 0.25,
+				"model": {
+					"type": "range_dispatch",
+					"property": "use_cycle",
+					"period": 10,
+					"scale": 0.1,
+					"entries": [
+						{
+							"threshold": 0.25,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_1_0"
+							}
+						},
+						{
+							"threshold": 0.5,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_1_1"
+							}
+						},
+						{
+							"threshold": 0.75,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_1_2"
+							}
+						}
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/brush_brushing_1_1"
+					}
+				}
+			},
+			{
+				"threshold": 0.5,
+				"model": {
+					"type": "range_dispatch",
+					"property": "use_cycle",
+					"period": 10,
+					"scale": 0.1,
+					"entries": [
+						{
+							"threshold": 0.25,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_2_0"
+							}
+						},
+						{
+							"threshold": 0.5,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_2_1"
+							}
+						},
+						{
+							"threshold": 0.75,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_2_2"
+							}
+						}
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/brush_brushing_2_1"
+					}
+				}
+			},
+			{
+				"threshold": 0.75,
+				"model": {
+					"type": "range_dispatch",
+					"property": "use_cycle",
+					"period": 10,
+					"scale": 0.1,
+					"entries": [
+						{
+							"threshold": 0.25,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_3_0"
+							}
+						},
+						{
+							"threshold": 0.5,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_3_1"
+							}
+						},
+						{
+							"threshold": 0.75,
+							"model": {
+								"type": "model",
+								"model": "item/brush_brushing_3_2"
+							}
+						}
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/brush_brushing_3_1"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "range_dispatch",
+			"property": "use_cycle",
+			"period": 10,
+			"scale": 0.1,
+			"entries": [
+				{
+					"threshold": 0.25,
+					"model": {
+						"type": "model",
+						"model": "item/brush_brushing_0"
+					}
+				},
+				{
+					"threshold": 0.5,
+					"model": {
+						"type": "model",
+						"model": "item/brush_brushing_1"
+					}
+				},
+				{
+					"threshold": 0.75,
+					"model": {
+						"type": "model",
+						"model": "item/brush_brushing_2"
+					}
+				}
+			],
+			"fallback": {
+				"type": "model",
+				"model": "item/brush"
+			}
+		}
+	}
+}

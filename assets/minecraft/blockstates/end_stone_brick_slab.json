@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "block/end_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "block/end_stone_brick_slab_double"
+    },
+    "type=top": {
+      "model": "block/end_stone_brick_slab_top"
+    }
+  }
+}

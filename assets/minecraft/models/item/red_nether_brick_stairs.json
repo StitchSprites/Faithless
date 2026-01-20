@@ -1,0 +1,6 @@
+{
+  "parent": "block/stairs_inventory",
+  "textures": {
+    "side": "block/red_nether_bricks"
+  }
+}

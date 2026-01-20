@@ -1,0 +1,7 @@
+{
+	"parent": "block/acacia_shelf_unpowered",
+	"textures": {
+		"particle": "block/mangrove_planks",
+		"all": "block/mangrove_shelf"
+	}
+}

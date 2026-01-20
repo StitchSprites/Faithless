@@ -1,0 +1,37 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "block/entity/shulker",
+		"2": "block/entity/shulker_inner",
+		"particle": "block/entity/shulker_inner"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 12, 16],
+			"faces": {
+				"north": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"east": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"south": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"west": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [0, 0, 16],
+			"to": [16, 12, 0],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
+			"faces": {
+				"north": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"east": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"south": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"west": {"uv": [8, 8, 16, 14], "texture": "#1"},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}

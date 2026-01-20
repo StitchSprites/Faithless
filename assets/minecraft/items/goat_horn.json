@@ -1,0 +1,132 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "minecraft:instrument",
+      "cases": [
+        {
+          "when": "minecraft:ponder_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/ponder"
+          }
+        },
+        {
+          "when": "minecraft:sing_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/sing"
+          }
+        },
+        {
+          "when": "minecraft:seek_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/seek"
+          }
+        },
+        {
+          "when": "minecraft:feel_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/feel"
+          }
+        },
+        {
+          "when": "minecraft:admire_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/admire"
+          }
+        },
+        {
+          "when": "minecraft:call_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/call"
+          }
+        },
+        {
+          "when": "minecraft:yearn_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/yearn"
+          }
+        },
+        {
+          "when": "minecraft:dream_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/dream"
+          }
+        }
+      ]
+    },
+    "on_true": {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "minecraft:instrument",
+      "cases": [
+        {
+          "when": "minecraft:ponder_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/ponder"
+          }
+        },
+        {
+          "when": "minecraft:sing_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/sing"
+          }
+        },
+        {
+          "when": "minecraft:seek_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/seek"
+          }
+        },
+        {
+          "when": "minecraft:feel_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/feel"
+          }
+        },
+        {
+          "when": "minecraft:admire_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/admire"
+          }
+        },
+        {
+          "when": "minecraft:call_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/call"
+          }
+        },
+        {
+          "when": "minecraft:yearn_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/yearn"
+          }
+        },
+        {
+          "when": "minecraft:dream_goat_horn",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/goat_horn/tooting/dream"
+          }
+        }
+      ]
+    },
+    "property": "minecraft:using_item"
+  }
+}

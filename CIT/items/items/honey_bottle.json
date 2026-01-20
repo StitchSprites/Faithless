@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": "gui",
+				"model": {
+					"type": "model",
+					"model": "item/honey_bottle"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/honey_bottle_alt"
+		}
+	}
+}

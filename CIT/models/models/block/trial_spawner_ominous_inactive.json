@@ -1,0 +1,10 @@
+{   "parent": "block/spawner",
+	"textures": {
+		"top": "block/trial_spawner_top_inactive_ominous",
+		"side": "block/trial_spawner_side_inactive_ominous",
+		"bottom": "block/trial_spawner_bottom_inactive_ominous",
+		"intop": "#bottom",
+		"inside": "block/trial_spawner_inside_inactive_ominous",
+		"inbottom": "#bottom"
+	}
+}

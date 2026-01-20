@@ -1,0 +1,8 @@
+{
+  "parent": "block/cactus",
+    "display": {
+        "ground": {
+            "scale":[ 0.6, 0.6, 0.6 ]
+        }
+    }
+}

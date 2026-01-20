@@ -1,0 +1,15 @@
+{
+	"textures": {
+		"particle": "block/item_frame_small",
+		"wood": "block/item_frame_small"
+	},
+	"elements": [
+		{
+			"from": [5, 5, 15.8],
+			"to": [11, 11, 15.8],
+			"faces": {
+				"north": {"uv": [5, 5, 11, 11], "texture": "#wood"}
+			}
+		}
+	]
+}

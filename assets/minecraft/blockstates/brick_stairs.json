@@ -1,0 +1,179 @@
+{
+    "multipart": [
+		{ "apply": { "model": "block/brick_particle" } },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs_n_straight", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_n_inl", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_n_inr", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_n_outl", "y": 180 }
+        },
+        {   "when": { "facing": "north", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_n_outr", "y": 180 }
+        },
+		
+        {   "when": { "facing": "east", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs_e_straight", "y": 270 }
+        },
+        {   "when": { "facing": "east", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_e_inl", "y": 270 }
+        },
+        {   "when": { "facing": "east", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_e_inr", "y": 270 }
+        },
+        {   "when": { "facing": "east", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_e_outl", "y": 270 }
+        },
+        {   "when": { "facing": "east", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_e_outr", "y": 270 }
+        },
+		
+        {   "when": { "facing": "south", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs_s_straight" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_s_inl" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_s_inr" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_s_outl" }
+        },
+        {   "when": { "facing": "south", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_s_outr" }
+        },
+		
+        {   "when": { "facing": "west", "half": "bottom", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs_w_straight", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_w_inl", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_w_inr", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_w_outl", "y": 90 }
+        },
+        {   "when": { "facing": "west", "half": "bottom", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_w_outr", "y": 90 }
+        },
+		
+		
+		
+        {   "when": { "facing": "north", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs", "uvlock": true, "y": 270, "x": 180 }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "y": 270, "x": 180 }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "y": 270, "x": 180 }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "y": 270, "x": 180 }
+        },
+        {   "when": { "facing": "north", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "y": 270, "x": 180 }
+        },
+		
+        {   "when": { "facing": "east", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs", "uvlock": true, "x": 180 }
+        },
+        {   "when": { "facing": "east", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "x": 180 }
+        },
+        {   "when": { "facing": "east", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "x": 180 }
+        },
+        {   "when": { "facing": "east", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "x": 180 }
+        },
+        {   "when": { "facing": "east", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "x": 180 }
+        },
+		
+        {   "when": { "facing": "south", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs", "uvlock": true, "y": 90, "x": 180 }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "y": 90, "x": 180 }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "y": 90, "x": 180 }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "y": 90, "x": 180 }
+        },
+        {   "when": { "facing": "south", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "y": 90, "x": 180 }
+        },
+		
+        {   "when": { "facing": "west", "half": "top", "shape": "straight" },
+		"apply": { "model": "block/brick_stairs", "uvlock": true, "y": 180, "x": 180 }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "y": 180, "x": 180 }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_inner", "uvlock": true, "y": 180, "x": 180 }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "outer_left" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "y": 180, "x": 180 }
+        },
+        {   "when": { "facing": "west", "half": "top", "shape": "outer_right" },
+		"apply": { "model": "block/brick_stairs_outer", "uvlock": true, "y": 180, "x": 180 }
+        },
+		
+		
+		
+        {   "when": { "half": "bottom" },
+		"apply": { "model": "block/brick_stairs_face_bottom", "y": 180 }
+        },
+        {   "when": { "half": "top" },
+		"apply": { "model": "block/brick_stairs_face_top", "x": 180 }
+        },
+        {   "when": { "facing": "north", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/brick_stairs_face_n" }
+        },
+        {   "when": { "facing": "east", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/brick_stairs_face_n", "y": 90 }
+        },
+        {   "when": { "facing": "south", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/brick_stairs_face_s", "y": 180 }
+        },
+        {   "when": { "facing": "west", "shape": "straight|inner_left|inner_right" },
+		"apply": { "model": "block/brick_stairs_face_s", "y": 270 }
+        },
+        {   "when": { "facing": "north", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_face_s", "y": 270 }
+        },
+        {   "when": { "facing": "east", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_face_n" }
+        },
+        {   "when": { "facing": "south", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_face_n", "y": 90 }
+        },
+        {   "when": { "facing": "west", "shape": "inner_left" },
+		"apply": { "model": "block/brick_stairs_face_s", "y": 180 }
+        },
+        {   "when": { "facing": "north", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_face_n", "y": 90 }
+        },
+        {   "when": { "facing": "east", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_face_s", "y": 180 }
+        },
+        {   "when": { "facing": "south", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_face_s", "y": 270 }
+        },
+        {   "when": { "facing": "west", "shape": "inner_right" },
+		"apply": { "model": "block/brick_stairs_face_n" }
+        }
+	]
+}

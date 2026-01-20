@@ -1,0 +1,7 @@
+{
+	"parent": "block/flower_pot_with_model",
+	"textures": {
+		"soil": "block/moss_block",
+		"vines": "block/flower_pot_flowering_azalea_bush"
+	}
+}

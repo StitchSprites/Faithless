@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/firework_rocket_alt",
+    "textures": {
+        "1": "minecraft:item/alt/firework_rocket_small"
+    }
+}

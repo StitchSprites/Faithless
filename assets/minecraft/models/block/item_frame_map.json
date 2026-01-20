@@ -1,0 +1,19 @@
+{
+	"textures": {
+		"particle": "block/item_frame",
+		"wood": "block/item_frame"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 15.05],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#wood"},
+				"east": {"uv": [0, 0, 1, 16], "texture": "#wood", "cullface": "east"},
+				"west": {"uv": [15, 0, 16, 16], "texture": "#wood", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 1], "rotation": 180, "texture": "#wood", "cullface": "up"},
+				"down": {"uv": [0, 15, 16, 16], "rotation": 180, "texture": "#wood", "cullface": "down"}
+			}
+		}
+	]
+}

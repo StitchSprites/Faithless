@@ -1,0 +1,6 @@
+{
+	"parent": "item/template_boat",
+	"textures": {
+		"0": "block/entity/boat_pale_oak"
+	}
+}

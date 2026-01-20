@@ -1,0 +1,6 @@
+{
+	"parent": "item/stone_bricks",
+	"textures": {
+		"0": "block/cracked_polished_blackstone_bricks_model"
+	}
+}

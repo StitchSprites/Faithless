@@ -1,0 +1,40 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"2": "block/end_stone_grass",
+		"4": "block/end_stone_shroom"
+	},
+	"elements": [
+		{
+			"from": [8, 16, 0],
+			"to": [8, 16.01, 16],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 40, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "up"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "up"}
+			}
+		},
+		{
+			"from": [8, 16, 0],
+			"to": [8, 16.01, 16],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 40, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "up"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "up"}
+			}
+		},
+		{
+			"from": [-8, 4, -8],
+			"to": [24, 4, -7.99],
+			"shade": false,
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -6, -23]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4", "cullface": "down"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#4", "cullface": "down"}
+			}
+		}
+	]
+}

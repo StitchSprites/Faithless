@@ -1,0 +1,28 @@
+{
+	"textures": {
+		"texture": "block/pale_oak_fence",
+		"particle": "block/pale_oak_planks"
+	},
+	"elements": [
+		{
+			"from": [7, 11, 0],
+			"to": [9, 15, 6],
+			"faces": {
+				"east": {"uv": [0, 1, 6, 5], "texture": "#texture"},
+				"west": {"uv": [0, 1, 6, 5], "texture": "#texture"},
+				"up": {"uv": [0, 1, 6, 3], "rotation": 90, "texture": "#texture"},
+				"down": {"uv": [11, 3, 16, 5], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7, 3, 0],
+			"to": [9, 7, 6],
+			"faces": {
+				"east": {"uv": [10, 9, 16, 13], "texture": "#texture"},
+				"west": {"uv": [0, 9, 6, 13], "texture": "#texture"},
+				"up": {"uv": [10, 12, 16, 10], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 11, 16, 13], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	]
+}

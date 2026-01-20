@@ -1,0 +1,6 @@
+{
+	"parent": "block/stairs_overlay",
+	"textures": {
+		"overlay": "item/alt/outline_waxed"
+	}
+}

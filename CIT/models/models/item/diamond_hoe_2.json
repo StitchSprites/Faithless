@@ -1,0 +1,6 @@
+{
+  "parent": "item/diamond_hoe",
+  "textures": {
+    "layer0": "item/diamond_hoe_2"
+  }
+}

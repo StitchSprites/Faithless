@@ -1,0 +1,6 @@
+{
+	"parent": "block/template_single_face_rot",
+	"textures": {
+		"texture": "block/brown_mushroom_block_inside_ns"
+	}
+}

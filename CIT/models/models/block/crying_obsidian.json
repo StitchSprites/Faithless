@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_glow_outline",
+	"textures": {
+		"all": "block/crying_obsidian",
+		"outline": "block/particle/crying_obsidian"
+	}
+}

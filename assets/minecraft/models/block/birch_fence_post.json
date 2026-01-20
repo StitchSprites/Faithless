@@ -1,0 +1,7 @@
+{
+    "parent": "block/fence_post_alt",
+	"textures": {
+		"side": "block/birch_fence",
+		"end": "block/stripped_birch_log_top"
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/template_glazed_terracotta",
+  "textures": {
+    "pattern": "block/rooted_dirt"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "model",
+          "model": "item/waxed_exposed_copper_trapdoor"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/exposed_copper_trapdoor_bottom"
+    }
+  }
+}

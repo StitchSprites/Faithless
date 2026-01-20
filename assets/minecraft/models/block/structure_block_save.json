@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "block/structure_block_save_eu",
+    "east": "block/structure_block_save",
+    "south": "block/structure_block_save",
+    "west": "block/structure_block_save_su",
+    "up": "block/structure_block_save",
+    "down": "block/structure_block_save_es",
+    "particle": "block/debug"
+  }
+}

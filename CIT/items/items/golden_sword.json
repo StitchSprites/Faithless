@@ -1,0 +1,103 @@
+{
+	"model": {
+		"type": "select",
+		"property": "main_hand",
+		"cases": [
+			{
+				"when": "left",
+				"model": {
+					"type": "range_dispatch",
+					"property": "damage",
+					"scale": 1,
+					"entries": [
+						{
+							"threshold": 0.5,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_sword_1"
+							}
+						},
+						{
+							"threshold": 0.6,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_sword_2"
+							}
+						},
+						{
+							"threshold": 0.7,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_sword_3"
+							}
+						},
+						{
+							"threshold": 0.8,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_sword_4"
+							}
+						},
+						{
+							"threshold": 0.9,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_sword_5"
+							}
+						}
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/lefthanded/golden_sword"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "range_dispatch",
+			"property": "damage",
+			"scale": 1,
+			"entries": [
+				{
+					"threshold": 0.5,
+					"model": {
+						"type": "model",
+						"model": "item/golden_sword_1"
+					}
+				},
+				{
+					"threshold": 0.6,
+					"model": {
+						"type": "model",
+						"model": "item/golden_sword_2"
+					}
+				},
+				{
+					"threshold": 0.7,
+					"model": {
+						"type": "model",
+						"model": "item/golden_sword_3"
+					}
+				},
+				{
+					"threshold": 0.8,
+					"model": {
+						"type": "model",
+						"model": "item/golden_sword_4"
+					}
+				},
+				{
+					"threshold": 0.9,
+					"model": {
+						"type": "model",
+						"model": "item/golden_sword_5"
+					}
+				}
+			],
+			"fallback": {
+				"type": "model",
+				"model": "item/golden_sword"
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"1": "block/bookshelf_top",
+		"particle": "block/particle/bookshelf"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1", "cullface": "down"}
+			}
+		}
+	]
+}

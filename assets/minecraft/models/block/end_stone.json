@@ -1,0 +1,38 @@
+{
+	"parent": "block/block",
+	"ambientocclusion": true,
+	"textures": {
+		"top_overlay": "block/end_stone_grass_block_top_overlay",
+		"top": "block/end_stone_grass_block_top",
+		"all": "block/end_stone",
+		"particle": "#all"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#all", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#all", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#all", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#all", "cullface": "west"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#all", "cullface": "down"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#all", "cullface": "up"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top_overlay", "cullface": "up"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "up"}
+			}
+		}
+	]
+}

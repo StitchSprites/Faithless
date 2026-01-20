@@ -1,0 +1,68 @@
+{
+	"textureSize": [128, 64],
+	"texture": "textures/entity/cem/iron_golem_player.png",
+	"models": [
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -31, 0],
+			"boxes": [
+				{"coordinates": [-9, 21, -6, 18, 12, 11], "textureOffset": [0, 23]},
+				{"coordinates": [-4.5, 16, -3, 9, 5, 6], "textureOffset": [56, 22], "sizeAdd": 0.5}
+			]
+		},
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -31, 2],
+			"boxes": [
+				{"coordinates": [-5, 33, -7.5, 10, 10, 10], "textureOffset": [0, 0]}
+			]
+		},
+		{
+			"part": "right_arm",
+			"id": "right_arm",
+			"invertAxis": "xy",
+			"translate": [0, -31, 0],
+			"boxes": [
+				{"coordinates": [9, 24.5, -3, 4, 9, 6], "textureOffset": [87, 0]},
+				{"coordinates": [9, 16.5, -3, 4, 11, 6], "textureOffset": [87, 15]},
+				{"coordinates": [9, 8.5, -3, 4, 11, 6], "textureOffset": [87, 32]},
+				{"coordinates": [9, 3.5, -3, 4, 8, 6], "textureOffset": [87, 49]}
+			]
+		},
+		{
+			"part": "left_arm",
+			"id": "left_arm",
+			"invertAxis": "xy",
+			"translate": [0, -31, 0],
+			"boxes": [
+				{"coordinates": [-13, 24.5, -3, 4, 9, 6], "textureOffset": [108, 0]},
+				{"coordinates": [-13, 16.5, -3, 4, 11, 6], "textureOffset": [108, 15]},
+				{"coordinates": [-13, 8.5, -3, 4, 11, 6], "textureOffset": [108, 32]},
+				{"coordinates": [-13, 3.5, -3, 4, 8, 6], "textureOffset": [108, 49]}
+			]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-4, -13, 0],
+			"boxes": [
+				{"coordinates": [1.5, 0, -3, 6, 16, 5], "textureOffset": [41, 0]}
+			]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"mirrorTexture": "u",
+			"translate": [5, -13, 0],
+			"boxes": [
+				{"coordinates": [-7.5, 0, -3, 6, 16, 5], "textureOffset": [64, 0]}
+			]
+		}
+	]
+}

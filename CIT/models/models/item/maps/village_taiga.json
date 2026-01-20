@@ -1,0 +1,7 @@
+{
+  "parent": "item/filled_map",
+  "textures": {
+	"1": "item/filled_map_village_taiga",
+    "3": "item/cit/map/village_taiga"
+  }
+}

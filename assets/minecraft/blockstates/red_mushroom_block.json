@@ -1,0 +1,292 @@
+{
+	"multipart":[
+		{"apply":{"model":"shroom_r/nesw"},"when":{"north":"true","up":"false","west":"false","down":"false","east":"false"}},
+		
+		{"apply":{"model":"shroom_r/esw"},"when":{"north":"true","up":"true","west":"false","down":"false","east":"false"}},
+		{"apply":{"model":"shroom_r/nsw"},"when":{"north":"true","up":"false","west":"true","down":"false","east":"false"}},
+		{"apply":{"model":"shroom_r/new"},"when":{"north":"true","up":"false","west":"false","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/nes"},"when":{"north":"true","up":"false","west":"false","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/sw"},"when":{"north":"true","up":"true","west":"true","down":"false","east":"false"}},
+		{"apply":{"model":"shroom_r/nw"},"when":{"north":"true","up":"false","west":"true","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/ne"},"when":{"north":"true","up":"false","west":"false","down":"true","east":"true"}},
+		{"apply":{"model":"shroom_r/es"},"when":{"north":"true","up":"true","west":"false","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/ew"},"when":{"north":"true","up":"true","west":"false","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/ns"},"when":{"north":"true","up":"false","west":"true","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/w"},"when":{"north":"true","up":"true","west":"true","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/n"},"when":{"north":"true","up":"false","west":"true","down":"true","east":"true"}},
+		{"apply":{"model":"shroom_r/e"},"when":{"north":"true","up":"true","west":"false","down":"true","east":"true"}},
+		{"apply":{"model":"shroom_r/s"},"when":{"north":"true","up":"true","west":"true","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/block"},"when":{"north":"true","up":"true","west":"true","down":"true","east":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/nesw","y":90},"when":{"east":"true","up":"false","north":"false","down":"false","south":"false"}},
+		
+		{"apply":{"model":"shroom_r/esw","y":90},"when":{"east":"true","up":"true","north":"false","down":"false","south":"false"}},
+		{"apply":{"model":"shroom_r/nsw","y":90},"when":{"east":"true","up":"false","north":"true","down":"false","south":"false"}},
+		{"apply":{"model":"shroom_r/new","y":90},"when":{"east":"true","up":"false","north":"false","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/nes","y":90},"when":{"east":"true","up":"false","north":"false","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/sw","y":90},"when":{"east":"true","up":"true","north":"true","down":"false","south":"false"}},
+		{"apply":{"model":"shroom_r/nw","y":90},"when":{"east":"true","up":"false","north":"true","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/ne","y":90},"when":{"east":"true","up":"false","north":"false","down":"true","south":"true"}},
+		{"apply":{"model":"shroom_r/es","y":90},"when":{"east":"true","up":"true","north":"false","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/ew","y":90},"when":{"east":"true","up":"true","north":"false","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/ns","y":90},"when":{"east":"true","up":"false","north":"true","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/w","y":90},"when":{"east":"true","up":"true","north":"true","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/n","y":90},"when":{"east":"true","up":"false","north":"true","down":"true","south":"true"}},
+		{"apply":{"model":"shroom_r/e","y":90},"when":{"east":"true","up":"true","north":"false","down":"true","south":"true"}},
+		{"apply":{"model":"shroom_r/s","y":90},"when":{"east":"true","up":"true","north":"true","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/block","y":90},"when":{"east":"true","up":"true","north":"true","down":"true","south":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/nesw","y":180},"when":{"south":"true","up":"false","east":"false","down":"false","west":"false"}},
+		
+		{"apply":{"model":"shroom_r/esw","y":180},"when":{"south":"true","up":"true","east":"false","down":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/nsw","y":180},"when":{"south":"true","up":"false","east":"true","down":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/new","y":180},"when":{"south":"true","up":"false","east":"false","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/nes","y":180},"when":{"south":"true","up":"false","east":"false","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/sw","y":180},"when":{"south":"true","up":"true","east":"true","down":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/nw","y":180},"when":{"south":"true","up":"false","east":"true","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/ne","y":180},"when":{"south":"true","up":"false","east":"false","down":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/es","y":180},"when":{"south":"true","up":"true","east":"false","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/ew","y":180},"when":{"south":"true","up":"true","east":"false","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/ns","y":180},"when":{"south":"true","up":"false","east":"true","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/w","y":180},"when":{"south":"true","up":"true","east":"true","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/n","y":180},"when":{"south":"true","up":"false","east":"true","down":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/e","y":180},"when":{"south":"true","up":"true","east":"false","down":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/s","y":180},"when":{"south":"true","up":"true","east":"true","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/block","y":180},"when":{"south":"true","up":"true","east":"true","down":"true","west":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/nesw","y":270},"when":{"west":"true","up":"false","south":"false","down":"false","north":"false"}},
+		
+		{"apply":{"model":"shroom_r/esw","y":270},"when":{"west":"true","up":"true","south":"false","down":"false","north":"false"}},
+		{"apply":{"model":"shroom_r/nsw","y":270},"when":{"west":"true","up":"false","south":"true","down":"false","north":"false"}},
+		{"apply":{"model":"shroom_r/new","y":270},"when":{"west":"true","up":"false","south":"false","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/nes","y":270},"when":{"west":"true","up":"false","south":"false","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/sw","y":270},"when":{"west":"true","up":"true","south":"true","down":"false","north":"false"}},
+		{"apply":{"model":"shroom_r/nw","y":270},"when":{"west":"true","up":"false","south":"true","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/ne","y":270},"when":{"west":"true","up":"false","south":"false","down":"true","north":"true"}},
+		{"apply":{"model":"shroom_r/es","y":270},"when":{"west":"true","up":"true","south":"false","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/ew","y":270},"when":{"west":"true","up":"true","south":"false","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/ns","y":270},"when":{"west":"true","up":"false","south":"true","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/w","y":270},"when":{"west":"true","up":"true","south":"true","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/n","y":270},"when":{"west":"true","up":"false","south":"true","down":"true","north":"true"}},
+		{"apply":{"model":"shroom_r/e","y":270},"when":{"west":"true","up":"true","south":"false","down":"true","north":"true"}},
+		{"apply":{"model":"shroom_r/s","y":270},"when":{"west":"true","up":"true","south":"true","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/block","y":270},"when":{"west":"true","up":"true","south":"true","down":"true","north":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/top/nesw","x":270},"when":{"up":"true","north":"false","south":"false","south":"false","west":"false"}},
+		
+		{"apply":{"model":"shroom_r/top/new","x":270},"when":{"up":"true","north":"true","east":"false","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/top/nes","x":270},"when":{"up":"true","north":"false","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/top/esw","x":270},"when":{"up":"true","north":"false","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/nsw","x":270},"when":{"up":"true","north":"false","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/ne","x":270},"when":{"up":"true","north":"true","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/top/es","x":270},"when":{"up":"true","north":"false","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/sw","x":270},"when":{"up":"true","north":"false","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/top/nw","x":270},"when":{"up":"true","north":"true","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/ew","x":270},"when":{"up":"true","north":"true","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/ns","x":270},"when":{"up":"true","north":"false","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/e","x":270},"when":{"up":"true","north":"true","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/s","x":270},"when":{"up":"true","north":"false","east":"true","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/top/w","x":270},"when":{"up":"true","north":"true","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/top/n","x":270},"when":{"up":"true","north":"true","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/block","x":270},"when":{"up":"true","north":"true","east":"true","south":"true","west":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/top/nesw","x":90},"when":{"down":"true","north":"false","south":"false","south":"false","west":"false"}},
+		
+		{"apply":{"model":"shroom_r/top/new","x":90},"when":{"down":"true","north":"true","east":"false","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/top/nes","x":90},"when":{"down":"true","north":"false","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/top/esw","x":90},"when":{"down":"true","north":"false","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/nsw","x":90},"when":{"down":"true","north":"false","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/ne","x":90},"when":{"down":"true","north":"true","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/top/es","x":90},"when":{"down":"true","north":"false","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/sw","x":90},"when":{"down":"true","north":"false","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/top/nw","x":90},"when":{"down":"true","north":"true","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/ew","x":90},"when":{"down":"true","north":"true","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/ns","x":90},"when":{"down":"true","north":"false","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/e","x":90},"when":{"down":"true","north":"true","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/top/s","x":90},"when":{"down":"true","north":"false","east":"true","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/top/w","x":90},"when":{"down":"true","north":"true","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/top/n","x":90},"when":{"down":"true","north":"true","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/top/block","x":90},"when":{"down":"true","north":"true","east":"true","south":"true","west":"true"}},
+		
+		
+		
+		
+		
+		
+		{"apply":{"model":"shroom_r/inside/block"},"when":{"north":"false","up":"false","west":"false","down":"false","east":"false"}},
+		
+		{"apply":{"model":"shroom_r/inside/n"},"when":{"north":"false","up":"true","west":"false","down":"false","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/e"},"when":{"north":"false","up":"false","west":"true","down":"false","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/n","x":180,"y":180},"when":{"north":"false","up":"false","west":"false","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":180,"y":180},"when":{"north":"false","up":"false","west":"false","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ne"},"when":{"north":"false","up":"true","west":"true","down":"false","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/es"},"when":{"north":"false","up":"false","west":"true","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":180,"y":180},"when":{"north":"false","up":"false","west":"false","down":"true","east":"true"}},
+		{"apply":{"model":"shroom_r/inside/es","x":180,"y":180},"when":{"north":"false","up":"true","west":"false","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ns"},"when":{"north":"false","up":"true","west":"false","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/ew"},"when":{"north":"false","up":"false","west":"true","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nes"},"when":{"north":"false","up":"true","west":"true","down":"true","east":"false"}},
+		{"apply":{"model":"shroom_r/inside/esw"},"when":{"north":"false","up":"false","west":"true","down":"true","east":"true"}},
+		{"apply":{"model":"shroom_r/inside/nes","x":180,"y":180},"when":{"north":"false","up":"true","west":"false","down":"true","east":"true"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":180,"y":180},"when":{"north":"false","up":"true","west":"true","down":"false","east":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nesw"},"when":{"north":"false","up":"true","west":"true","down":"true","east":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/inside/block","y":90},"when":{"east":"false","up":"false","north":"false","down":"false","south":"false"}},
+		
+		{"apply":{"model":"shroom_r/inside/n","y":90},"when":{"east":"false","up":"true","north":"false","down":"false","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","y":90},"when":{"east":"false","up":"false","north":"true","down":"false","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/n","x":180,"y":270},"when":{"east":"false","up":"false","north":"false","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":180,"y":270},"when":{"east":"false","up":"false","north":"false","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ne","y":90},"when":{"east":"false","up":"true","north":"true","down":"false","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/es","y":90},"when":{"east":"false","up":"false","north":"true","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":180,"y":270},"when":{"east":"false","up":"false","north":"false","down":"true","south":"true"}},
+		{"apply":{"model":"shroom_r/inside/es","x":180,"y":270},"when":{"east":"false","up":"true","north":"false","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ns","y":90},"when":{"east":"false","up":"true","north":"false","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/ew","y":90},"when":{"east":"false","up":"false","north":"true","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nes","y":90},"when":{"east":"false","up":"true","north":"true","down":"true","south":"false"}},
+		{"apply":{"model":"shroom_r/inside/esw","y":90},"when":{"east":"false","up":"false","north":"true","down":"true","south":"true"}},
+		{"apply":{"model":"shroom_r/inside/nes","x":180,"y":270},"when":{"east":"false","up":"true","north":"false","down":"true","south":"true"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":180,"y":270},"when":{"east":"false","up":"true","north":"true","down":"false","south":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nesw","y":90},"when":{"east":"false","up":"true","north":"true","down":"true","south":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/inside/block","y":180},"when":{"south":"false","up":"false","east":"false","down":"false","west":"false"}},
+		
+		{"apply":{"model":"shroom_r/inside/n","y":180},"when":{"south":"false","up":"true","east":"false","down":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","y":180},"when":{"south":"false","up":"false","east":"true","down":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/n","x":180},"when":{"south":"false","up":"false","east":"false","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":180},"when":{"south":"false","up":"false","east":"false","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ne","y":180},"when":{"south":"false","up":"true","east":"true","down":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/es","y":180},"when":{"south":"false","up":"false","east":"true","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":180},"when":{"south":"false","up":"false","east":"false","down":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/es","x":180},"when":{"south":"false","up":"true","east":"false","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ns","y":180},"when":{"south":"false","up":"true","east":"false","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/ew","y":180},"when":{"south":"false","up":"false","east":"true","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nes","y":180},"when":{"south":"false","up":"true","east":"true","down":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/esw","y":180},"when":{"south":"false","up":"false","east":"true","down":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/nes","x":180},"when":{"south":"false","up":"true","east":"false","down":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":180},"when":{"south":"false","up":"true","east":"true","down":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nesw","y":180},"when":{"south":"false","up":"true","east":"true","down":"true","west":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/inside/block","y":270},"when":{"west":"false","up":"false","south":"false","down":"false","north":"false"}},
+		
+		{"apply":{"model":"shroom_r/inside/n","y":270},"when":{"west":"false","up":"true","south":"false","down":"false","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","y":270},"when":{"west":"false","up":"false","south":"true","down":"false","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/n","x":180,"y":90},"when":{"west":"false","up":"false","south":"false","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":180,"y":90},"when":{"west":"false","up":"false","south":"false","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ne","y":270},"when":{"west":"false","up":"true","south":"true","down":"false","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/es","y":270},"when":{"west":"false","up":"false","south":"true","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":180,"y":90},"when":{"west":"false","up":"false","south":"false","down":"true","north":"true"}},
+		{"apply":{"model":"shroom_r/inside/es","x":180,"y":90},"when":{"west":"false","up":"true","south":"false","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ns","y":270},"when":{"west":"false","up":"true","south":"false","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/ew","y":270},"when":{"west":"false","up":"false","south":"true","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nes","y":270},"when":{"west":"false","up":"true","south":"true","down":"true","north":"false"}},
+		{"apply":{"model":"shroom_r/inside/esw","y":270},"when":{"west":"false","up":"false","south":"true","down":"true","north":"true"}},
+		{"apply":{"model":"shroom_r/inside/nes","x":180,"y":90},"when":{"west":"false","up":"true","south":"false","down":"true","north":"true"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":180,"y":90},"when":{"west":"false","up":"true","south":"true","down":"false","north":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nesw","y":270},"when":{"west":"false","up":"true","south":"true","down":"true","north":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/inside/block","x":270},"when":{"up":"false","north":"false","east":"false","south":"false","west":"false"}},
+		
+		{"apply":{"model":"shroom_r/inside/n","x":270,"y":180},"when":{"up":"false","north":"true","east":"false","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":270,"y":180},"when":{"up":"false","north":"false","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/n","x":270},"when":{"up":"false","north":"false","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":270},"when":{"up":"false","north":"false","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ne","x":270,"y":180},"when":{"up":"false","north":"true","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/es","x":270,"y":180},"when":{"up":"false","north":"false","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":270},"when":{"up":"false","north":"false","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/es","x":270},"when":{"up":"false","north":"true","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ns","x":270},"when":{"up":"false","north":"true","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/ew","x":270},"when":{"up":"false","north":"false","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nes","x":270,"y":180},"when":{"up":"false","north":"true","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":270,"y":180},"when":{"up":"false","north":"false","east":"true","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/nes","x":270},"when":{"up":"false","north":"true","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":270},"when":{"up":"false","north":"true","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nesw","x":270},"when":{"up":"false","north":"true","east":"true","south":"true","west":"true"}},
+		
+		
+		
+		{"apply":{"model":"shroom_r/inside/block","x":90},"when":{"down":"false","north":"false","east":"false","south":"false","west":"false"}},
+		
+		{"apply":{"model":"shroom_r/inside/n","x":90},"when":{"down":"false","north":"true","east":"false","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":90,"y":180},"when":{"down":"false","north":"false","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/n","x":90,"y":180},"when":{"down":"false","north":"false","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/e","x":90},"when":{"down":"false","north":"false","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/es","x":90,"y":180},"when":{"down":"false","north":"true","east":"true","south":"false","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":90,"y":180},"when":{"down":"false","north":"false","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/es","x":90},"when":{"down":"false","north":"false","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/ne","x":90},"when":{"down":"false","north":"true","east":"false","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/ns","x":90},"when":{"down":"false","north":"true","east":"false","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/ew","x":90},"when":{"down":"false","north":"false","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nes","x":90,"y":180},"when":{"down":"false","north":"true","east":"true","south":"true","west":"false"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":90},"when":{"down":"false","north":"false","east":"true","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/nes","x":90},"when":{"down":"false","north":"true","east":"false","south":"true","west":"true"}},
+		{"apply":{"model":"shroom_r/inside/esw","x":90,"y":180},"when":{"down":"false","north":"true","east":"true","south":"false","west":"true"}},
+		
+		{"apply":{"model":"shroom_r/inside/nesw","x":90},"when":{"down":"false","north":"true","east":"true","south":"true","west":"true"}}
+	]
+}

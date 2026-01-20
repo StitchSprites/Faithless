@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_transparent",
+	"textures": {
+		"all": "block/light_gray_stained_glass_outer",
+		"inner": "block/light_gray_stained_glass"
+	}
+}

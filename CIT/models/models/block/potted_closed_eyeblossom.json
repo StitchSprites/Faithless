@@ -1,0 +1,7 @@
+{
+	"parent": "block/potted_open_eyeblossom",
+	"textures": {
+		"vines": "block/flower_pot_closed_eyeblossom",
+		"plant": "block/closed_eyeblossom"
+	}
+}

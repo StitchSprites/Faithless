@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/jungle_door"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/jungle_door_alt"
+		}
+	}
+}

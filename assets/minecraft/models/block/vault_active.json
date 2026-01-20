@@ -1,0 +1,11 @@
+{
+  "parent": "block/template_vault",
+  "textures": {
+    "innerbottom": "block/vault_innerbottom",
+    "bottom": "block/vault_bottom",
+    "innerbottom": "block/vault_innerbottom",
+    "front": "block/vault_front_on",
+    "side": "block/vault_side_off",
+    "top": "block/vault_top"
+  }
+}

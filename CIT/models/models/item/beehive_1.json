@@ -1,0 +1,11 @@
+{
+    "parent": "item/bee_nest_1",
+	"textures": {
+		"0": "block/beehive_end",
+		"1": "block/beehive_front_honey",
+		"2": "block/beehive_side_honey",
+		"3": "block/beehive_end",
+		"4": "item/alt/beehive_1",
+		"particle": "block/beehive_end"
+	}
+}

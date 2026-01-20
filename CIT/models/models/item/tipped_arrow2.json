@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "item/alt/tipped_arrow_head2",
+    "layer1": "item/alt/tipped_arrow_base2"
+  }
+}

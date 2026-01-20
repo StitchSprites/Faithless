@@ -1,0 +1,48 @@
+{
+  "multipart": [
+    {
+      "apply": 
+      { "model": "block/kelp" }
+	},
+	{
+      "apply": [
+		{ "model": "block/kelp_branch" },
+		{ "model": "block/kelp_branch_22" },
+		{ "model": "block/kelp_branch_-22" },
+		{ "model": "block/kelp_branch_45" },
+		{ "model": "block/kelp_branch", "y": 90 },
+		{ "model": "block/kelp_branch_22", "y": 90 },
+		{ "model": "block/kelp_branch_-22", "y": 90 },
+		{ "model": "block/kelp_branch_45", "y": 90 },
+		{ "model": "block/kelp_branch", "y": 180 },
+		{ "model": "block/kelp_branch_22", "y": 180 },
+		{ "model": "block/kelp_branch_-22", "y": 180 },
+		{ "model": "block/kelp_branch_45", "y": 180 },
+		{ "model": "block/kelp_branch", "y": 270 },
+		{ "model": "block/kelp_branch_22", "y": 270 },
+		{ "model": "block/kelp_branch_-22", "y": 270 },
+		{ "model": "block/kelp_branch_45", "y": 270 }
+      ]
+    },
+	{
+      "apply": [
+		{ "model": "block/kelp_branch_45", "y": 270 },
+		{ "model": "block/kelp_branch" },
+		{ "model": "block/kelp_branch_22" },
+		{ "model": "block/kelp_branch_-22" },
+		{ "model": "block/kelp_branch_45" },
+		{ "model": "block/kelp_branch", "y": 90 },
+		{ "model": "block/kelp_branch_22", "y": 90 },
+		{ "model": "block/kelp_branch_-22", "y": 90 },
+		{ "model": "block/kelp_branch_45", "y": 90 },
+		{ "model": "block/kelp_branch", "y": 180 },
+		{ "model": "block/kelp_branch_22", "y": 180 },
+		{ "model": "block/kelp_branch_-22", "y": 180 },
+		{ "model": "block/kelp_branch_45", "y": 180 },
+		{ "model": "block/kelp_branch", "y": 270 },
+		{ "model": "block/kelp_branch_22", "y": 270 },
+		{ "model": "block/kelp_branch_-22", "y": 270 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "model",
+          "model": "item/repeater"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/repeater_1tick_on"
+    }
+  }
+}

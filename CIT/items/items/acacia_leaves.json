@@ -1,0 +1,12 @@
+{
+	"model": {
+		"type": "model",
+		"model": "item/acacia_leaves",
+		"tints": [
+			{
+				"type": "constant",
+				"value": -12012264
+			}
+		]
+	}
+}

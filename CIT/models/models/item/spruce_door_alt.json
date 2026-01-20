@@ -1,0 +1,6 @@
+{
+	"parent": "item/template_door_solid",
+	"textures": {
+		"0": "block/spruce_door_top"
+	}
+}

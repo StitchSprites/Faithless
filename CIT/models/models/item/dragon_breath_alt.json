@@ -1,0 +1,8 @@
+{
+	"parent": "item/experience_bottle_alt",
+	"texture_size": [32, 16],
+	"textures": {
+		"0": "item/alt/dragon_breath",
+		"particle": "item/dragon_breath"
+	}
+}

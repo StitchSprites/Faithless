@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glazed_terracotta",
+  "textures": {
+    "pattern": "block/netherrack_nest",
+    "particle": "block/particle/netherrack"
+  }
+}

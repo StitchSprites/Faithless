@@ -1,0 +1,33 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+			"type": "range_dispatch",
+			"property": "time",
+			"source": "daytime",
+			"scale": 1,
+			"entries": [
+				{ "model": { "type": "model", "model": "item/daylight_detector" }, "threshold": 0.0 },
+				{ "model": { "type": "model", "model": "item/daylight_detector_inverted" }, "threshold": 0.25 },
+				{ "model": { "type": "model", "model": "item/daylight_detector" }, "threshold": 0.75 }
+			]
+				}
+			}
+		],
+		"fallback": {
+			"type": "range_dispatch",
+			"property": "time",
+			"source": "daytime",
+			"scale": 1,
+			"entries": [
+				{ "model": { "type": "model", "model": "block/daylight_detector" }, "threshold": 0.0 },
+				{ "model": { "type": "model", "model": "block/daylight_detector_inverted" }, "threshold": 0.25 },
+				{ "model": { "type": "model", "model": "block/daylight_detector" }, "threshold": 0.75 }
+		]
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_overlay",
+	"textures": {
+		"overlay": "item/alt/outline_infested"
+	}
+}

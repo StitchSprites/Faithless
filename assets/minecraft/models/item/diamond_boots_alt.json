@@ -1,0 +1,7 @@
+{
+  "parent": "item/template_boots",
+  "textures": {
+    "2": "block/entity/armor_diamond",
+    "particle": "item/diamond_boots"
+  }
+}

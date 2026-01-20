@@ -1,0 +1,10 @@
+{
+	"parent": "block/template_moss",
+	"textures": {
+		"north": "block/moss_carpet_north",
+		"east": "block/moss_carpet_east",
+		"side": "block/moss_carpet",
+		"down": "block/moss_block",
+		"top": "block/moss_carpet_top"
+	}
+}

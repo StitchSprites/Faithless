@@ -1,0 +1,8 @@
+{
+	"parent": "block/scaffolding_unstable",
+	"textures": {
+		"1": "block/scaffolding_top_danger",
+		"3": "block/scaffolding_danger",
+		"particle": "block/air"
+	}
+}

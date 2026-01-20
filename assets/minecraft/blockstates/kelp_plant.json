@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/kelp_plant", "weight": 10 },
+      { "model": "block/kelp_plant", "weight": 10, "y": 90 },
+      { "model": "block/kelp_plant", "weight": 10, "y": 180 },
+      { "model": "block/kelp_plant", "weight": 10, "y": 270 },
+      { "model": "block/kelp_plant_22", "weight": 10 },
+      { "model": "block/kelp_plant_22", "weight": 10, "y": 90 },
+      { "model": "block/kelp_plant_22", "weight": 10, "y": 180 },
+      { "model": "block/kelp_plant_22", "weight": 10, "y": 270 },
+      { "model": "block/kelp_plant_-22", "weight": 10 },
+      { "model": "block/kelp_plant_-22", "weight": 10, "y": 90 },
+      { "model": "block/kelp_plant_-22", "weight": 10, "y": 180 },
+      { "model": "block/kelp_plant_-22", "weight": 10, "y": 270 },
+      { "model": "block/kelp_plant_45", "weight": 10 },
+      { "model": "block/kelp_plant_45", "weight": 10, "y": 90 },
+      { "model": "block/kelp_plant_45", "weight": 10, "y": 180 },
+      { "model": "block/kelp_plant_45", "weight": 10, "y": 270 },
+      { "model": "block/kelp_fruit", "weight": 1 },
+      { "model": "block/kelp_fruit", "weight": 1, "y": 90 },
+      { "model": "block/kelp_fruit", "weight": 1, "y": 180 },
+      { "model": "block/kelp_fruit", "weight": 1, "y": 270 }
+    ]
+  }
+}

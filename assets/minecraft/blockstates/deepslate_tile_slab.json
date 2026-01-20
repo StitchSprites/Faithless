@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "block/deepslate_tile_slab"
+    },
+    "type=double": {
+      "model": "block/deepslate_tile_slab_double"
+    },
+    "type=top": {
+      "model": "block/deepslate_tile_slab_top"
+    }
+  }
+}

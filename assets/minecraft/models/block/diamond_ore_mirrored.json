@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_ore_mirrored",
+  "textures": {
+    "side": "block/diamond_ore"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/dead_bush",           "weight": 30 },
+      { "model": "block/desert_bush",         "weight": 12 },
+      { "model": "block/desert_dead_grass",   "weight": 13 },
+      { "model": "block/desert_grass",        "weight": 12 },
+      { "model": "block/desert_tumbleweed",   "weight": 14 },
+      { "model": "block/desert_cactus_bulb",  "weight": 5 },
+      { "model": "block/desert_pear_cactus",  "weight": 3 },	  
+      { "model": "block/dead_bush2",          "weight": 26 },	  
+      { "model": "block/dead_bush_skull",     "weight": 1 }
+    ]
+  }
+}

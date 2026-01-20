@@ -1,0 +1,6 @@
+{
+  "parent": "block/orientable_stairs_face",
+  "textures": {
+    "side": "block/acacia_planks"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_directional",
+  "textures": {
+    "down": "block/jigsaw_side",
+    "east": "block/jigsaw_side",
+    "north": "block/jigsaw_top",
+    "south": "block/jigsaw_bottom",
+    "up": "block/jigsaw_lock",
+    "west": "block/jigsaw_side",
+    "particle": "block/debug"
+  }
+}

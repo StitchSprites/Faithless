@@ -1,0 +1,6 @@
+{
+	"parent": "shroom_b/top/w",
+	"textures": {
+		"0": "block/red_mushroom_large"
+	}
+}

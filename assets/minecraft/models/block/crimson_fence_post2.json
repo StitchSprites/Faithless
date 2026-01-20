@@ -1,0 +1,7 @@
+{
+    "parent": "block/fence_post_alt",
+	"textures": {
+		"side": "block/crimson_fence2",
+		"end": "block/stripped_crimson_stem_top"
+	}
+}

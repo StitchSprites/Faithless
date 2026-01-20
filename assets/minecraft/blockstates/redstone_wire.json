@@ -1,0 +1,38 @@
+{
+	"multipart":[
+		{"when":{"power":"0","north":"none","east":"none","south":"none","west":"none"},"apply":{"model":"block/redstone_dust_off_dot"}},
+		{"when":{"power":"0","north":"side|up","east":"side|up","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_off_cross"}},
+		{"when":{"power":"0","north":"side|up","east":"side|up","south":"side|up","west":"none"},"apply":{"model":"block/redstone_dust_off_t"}},
+		{"when":{"power":"0","north":"none","east":"side|up","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_off_t","y":90}},
+		{"when":{"power":"0","north":"side|up","east":"none","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_off_t","y":180}},
+		{"when":{"power":"0","north":"side|up","east":"side|up","south":"none","west":"side|up"},"apply":{"model":"block/redstone_dust_off_t","y":270}},
+		{"when":{"power":"0","north":"side|up","east":"side|up","south":"none","west":"none"},"apply":{"model":"block/redstone_dust_off_bend"}},
+		{"when":{"power":"0","north":"none","east":"side|up","south":"side|up","west":"none"},"apply":{"model":"block/redstone_dust_off_bend","y":90}},
+		{"when":{"power":"0","north":"none","east":"none","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_off_bend","y":180}},
+		{"when":{"power":"0","north":"side|up","east":"none","south":"none","west":"side|up"},"apply":{"model":"block/redstone_dust_off_bend","y":270}},
+		{"when":{"power":"0","north":"side|up","east":"none","south":"side|up","west":"none"},"apply":{"model":"block/redstone_dust_off_line"}},
+		{"when":{"power":"0","north":"none","east":"side|up","south":"none","west":"side|up"},"apply":{"model":"block/redstone_dust_off_line","y":90}},
+		{"when":{"power":"0","north":"up"},"apply":{"model":"block/redstone_dust_off_up","y":180}},
+		{"when":{"power":"0","east":"up"},"apply":{"model":"block/redstone_dust_off_up","y":270}},
+		{"when":{"power":"0","south":"up"},"apply":{"model":"block/redstone_dust_off_up"}},
+		{"when":{"power":"0","west":"up"},"apply":{"model":"block/redstone_dust_off_up","y":90}},
+		
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"none","east":"none","south":"none","west":"none"},"apply":{"model":"block/redstone_dust_dot"}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"side|up","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_cross"}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"side|up","south":"side|up","west":"none"},"apply":{"model":"block/redstone_dust_t"}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"none","east":"side|up","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_t","y":90}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"none","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_t","y":180}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"side|up","south":"none","west":"side|up"},"apply":{"model":"block/redstone_dust_t","y":270}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"side|up","south":"none","west":"none"},"apply":{"model":"block/redstone_dust_bend"}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"none","east":"side|up","south":"side|up","west":"none"},"apply":{"model":"block/redstone_dust_bend","y":90}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"none","east":"none","south":"side|up","west":"side|up"},"apply":{"model":"block/redstone_dust_bend","y":180}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"none","south":"none","west":"side|up"},"apply":{"model":"block/redstone_dust_bend","y":270}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"side|up","east":"none","south":"side|up","west":"none"},"apply":{"model":"block/redstone_dust_line"}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"none","east":"side|up","south":"none","west":"side|up"},"apply":{"model":"block/redstone_dust_line","y":90}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","north":"up"},"apply":{"model":"block/redstone_dust_up","y":180}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","east":"up"},"apply":{"model":"block/redstone_dust_up","y":270}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","south":"up"},"apply":{"model":"block/redstone_dust_up"}},
+		{"when":{"power":"1|2|3|4|5|6|7|8|9|10|11|12|13|14|15","west":"up"},"apply":{"model":"block/redstone_dust_up","y":90}}
+	]
+}
+	

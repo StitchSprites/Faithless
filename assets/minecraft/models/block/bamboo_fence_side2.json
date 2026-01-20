@@ -1,0 +1,30 @@
+{
+	"textures": {
+		"texture": "block/bamboo_fence",
+		"particle": "block/bamboo_planks"
+	},
+	"elements": [
+		{
+			"from": [7, 7, 14],
+			"to": [9, 12, 2],
+			"faces": {
+				"north": {"uv": [0, 4, 2, 9], "texture": "#texture"},
+				"south": {"uv": [0, 4, 2, 9], "texture": "#texture"},
+				"up": {"uv": [2, 2, 14, 4], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [2, 9, 14, 11], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7, 4, 0],
+			"to": [9, 15, 16],
+			"faces": {
+				"north": {"uv": [14, 1, 16, 12], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [0, 1, 16, 12], "texture": "#texture"},
+				"south": {"uv": [0, 1, 2, 12], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [0, 1, 16, 12], "texture": "#texture"},
+				"up": {"uv": [0, 1, 16, 3], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [0, 10, 16, 12], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	]
+}

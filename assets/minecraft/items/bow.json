@@ -1,0 +1,98 @@
+{
+	"model": {
+		"type": "condition",
+		"property": "using_item",
+		"on_true": {
+			"type": "range_dispatch",
+			"property": "use_duration",
+			"scale": 0.05,
+			"entries": [
+				{
+					"threshold": 0.05,
+					"model": {
+						"type": "model",
+						"model": "item/bow1"
+					}
+				},
+				{
+					"threshold": 0.1,
+					"model": {
+						"type": "model",
+						"model": "item/bow2"
+					}
+				},
+				{
+					"threshold": 0.15,
+					"model": {
+						"type": "model",
+						"model": "item/bow3"
+					}
+				},
+				{
+					"threshold": 0.2,
+					"model": {
+						"type": "model",
+						"model": "item/bow4"
+					}
+				},
+				{
+					"threshold": 0.26,
+					"model": {
+						"type": "model",
+						"model": "item/bow5"
+					}
+				},
+				{
+					"threshold": 0.32,
+					"model": {
+						"type": "model",
+						"model": "item/bow6"
+					}
+				},
+				{
+					"threshold": 0.4,
+					"model": {
+						"type": "model",
+						"model": "item/bow7"
+					}
+				},
+				{
+					"threshold": 0.55,
+					"model": {
+						"type": "model",
+						"model": "item/bow8"
+					}
+				},
+				{
+					"threshold": 0.7,
+					"model": {
+						"type": "model",
+						"model": "item/bow9"
+					}
+				},
+				{
+					"threshold": 0.85,
+					"model": {
+						"type": "model",
+						"model": "item/bow10"
+					}
+				},
+				{
+					"threshold": 1,
+					"model": {
+						"type": "model",
+						"model": "item/bow11"
+					}
+				}
+			],
+			"fallback": {
+				"type": "model",
+				"model": "item/bow0"
+			}
+		},
+		"on_false": {
+			"type": "model",
+			"model": "item/bow"
+		}
+	}
+}

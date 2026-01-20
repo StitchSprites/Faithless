@@ -1,0 +1,7 @@
+{
+  "parent": "item/template_boots",
+  "textures": {
+    "2": "block/entity/armor_netherite",
+    "particle": "item/netherite_boots"
+  }
+}

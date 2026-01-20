@@ -1,0 +1,6 @@
+{
+  "parent": "item/golden_shovel",
+  "textures": {
+    "layer0": "item/golden_shovel_2"
+  }
+}

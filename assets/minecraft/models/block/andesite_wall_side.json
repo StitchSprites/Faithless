@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side",
+	"textures": {
+		"wall": "block/andesite_wall",
+		"particle": "block/andesite"
+	}
+}

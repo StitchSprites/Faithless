@@ -1,0 +1,7 @@
+{
+    "parent": "block/vine",
+    "textures": {
+        "vine": "block/sculk_vein",
+        "particle": "block/particle/sculk"
+    }
+}

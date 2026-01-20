@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_glow",
+  "textures": {
+    "all": "block/redstone_lamp_on",
+    "particle": "block/redstone_lamp"
+  }
+}

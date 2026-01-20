@@ -1,0 +1,17 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/short_grass_clovers",
+		"cross": "block/short_grass_clovers"
+	},
+	"elements": [
+		{
+			"from": [0, 4, 0],
+			"to": [16, 4, 16],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#cross", "tintindex": 0}
+			}
+		}
+	]
+}

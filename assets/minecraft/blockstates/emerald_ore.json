@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/emerald_ore" },
+      { "model": "block/emerald_ore_mirrored" },
+      { "model": "block/emerald_ore", "y": 180 },
+      { "model": "block/emerald_ore_mirrored", "y": 180 }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "select",
+					"property": "trim_material",
+					"cases": [
+						{ "when": "amethyst", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_amethyst" } },
+						{ "when": "copper", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_copper" } },
+						{ "when": "diamond", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_diamond" } },
+						{ "when": "emerald", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_emerald" } },
+						{ "when": "gold", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_gold" } },
+						{ "when": "iron", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_iron" } },
+						{ "when": "lapis", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_lapis" } },
+						{ "when": "netherite", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_netherite" } },
+						{ "when": "quartz", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_quartz" } },
+						{ "when": "redstone", 	"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_redstone" } },
+						{ "when": "resin", 		"model": { "type": "model", "tints": [ { "type": "dye", "default": -6265536 } ], "model": "trim/leather/boots_resin" } }
+					],
+					"fallback": {
+						"type": "model",
+						"tints": [ { "type": "dye", "default": -6265536 } ],
+						"model": "item/leather_boots"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"tints": [ { "type": "dye", "default": -6265536 } ],
+			"model": "item/leather_boots_alt"
+		}
+	}
+}

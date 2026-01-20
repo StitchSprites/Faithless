@@ -1,0 +1,61 @@
+{
+  "model": {
+    "type": "select",
+    "property": "main_hand",
+    "cases": [
+      {
+        "when": "left",
+        "model": {
+          "type": "range_dispatch",
+          "property": "damage",
+          "scale": 1,
+          "entries": [
+            {
+              "threshold": 0.5,
+              "model": {
+                "type": "model",
+                "model": "item/lefthanded/stone_axe_1"
+              }
+            },
+            {
+              "threshold": 0.75,
+              "model": {
+                "type": "model",
+                "model": "item/lefthanded/stone_axe_2"
+              }
+            }
+          ],
+          "fallback": {
+            "type": "model",
+            "model": "item/lefthanded/stone_axe"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "range_dispatch",
+      "property": "damage",
+      "scale": 1,
+      "entries": [
+        {
+          "threshold": 0.5,
+          "model": {
+            "type": "model",
+            "model": "item/stone_axe_1"
+          }
+        },
+        {
+          "threshold": 0.75,
+          "model": {
+            "type": "model",
+            "model": "item/stone_axe_2"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "model",
+        "model": "item/stone_axe"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "block/acacia_shelf_unconnected",
+	"textures": {
+		"particle": "block/spruce_planks",
+		"all": "block/spruce_shelf"
+	}
+}

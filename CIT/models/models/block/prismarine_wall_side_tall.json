@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side_tall",
+	"textures": {
+		"wall": "block/prismarine_wall",
+		"particle": "block/prismarine"
+	}
+}

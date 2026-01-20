@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "model",
+          "model": "item/yellow_carpet"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/yellow_carpet"
+    }
+  }
+}

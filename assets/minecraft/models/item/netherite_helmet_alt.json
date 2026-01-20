@@ -1,0 +1,7 @@
+{
+  "parent": "item/template_helmet",
+  "textures": {
+    "2": "block/entity/armor_netherite",
+    "particle": "item/netherite_helmet"
+  }
+}

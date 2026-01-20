@@ -1,0 +1,6 @@
+{
+  "parent": "item/shears",
+  "textures": {
+    "layer0": "item/shears_3"
+  }
+}

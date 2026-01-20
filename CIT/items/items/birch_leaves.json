@@ -1,0 +1,12 @@
+{
+	"model": {
+		"type": "model",
+		"model": "item/birch_leaves",
+		"tints": [
+			{
+				"type": "constant",
+				"value": -8345771
+			}
+		]
+	}
+}

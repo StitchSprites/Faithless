@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop_cross_large",
+  "textures": {
+    "crop": "block/wheat_stage7"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "item/handheld_tools",
+  "textures": {
+    "layer0": "item/golden_hoe"
+  },
+    "overrides": [
+        { "predicate": { "lefthanded": 1 }, "model": "item/lefthanded/golden_hoe" },
+        { "predicate": { "damage": 0.5 }, "model": "item/golden_hoe_1" },
+        { "predicate": { "damage": 0.75 }, "model": "item/golden_hoe_2" }
+    ]
+}

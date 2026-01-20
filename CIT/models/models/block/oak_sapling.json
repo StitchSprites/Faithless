@@ -1,0 +1,35 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#sapling",
+		"sapling": "block/oak_sapling"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 6],
+			"to": [9, 10, 9],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [7, 6, 10, 9], "texture": "#sapling"}
+			}
+		},
+		{
+			"from": [6, 0, 0],
+			"to": [9, 16, 15],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [1, 0, 16, 16], "texture": "#sapling"},
+				"west": {"uv": [1, 0, 16, 16], "texture": "#sapling"}
+			}
+		},
+		{
+			"from": [0, 0, 6],
+			"to": [15, 16, 9],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [1, 0, 16, 16], "texture": "#sapling"},
+				"south": {"uv": [1, 0, 16, 16], "texture": "#sapling"}
+			}
+		}
+	]
+}

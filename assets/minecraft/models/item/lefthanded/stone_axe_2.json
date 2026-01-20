@@ -1,0 +1,6 @@
+{
+  "parent": "item/lefthanded/stone_axe",
+  "textures": {
+    "layer0": "item/stone_axe_2"
+  }
+}

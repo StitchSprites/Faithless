@@ -1,0 +1,174 @@
+{
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "base",
+			"id": "base",
+			"invertAxis": "xy",
+			"translate": [-8, 0, -8],
+			"rotate": [-180, 0, 0],
+			"submodels": [
+				{
+					"id": "base2",
+					"invertAxis": "xy",
+					"translate": [0, 0, 23],
+					"boxes": [
+						{
+							"coordinates": [-2, -7, 0.03, 2, 2, 0],
+							"uvSouth": [2, 6, 3, 7]
+						},
+						{
+							"coordinates": [-3, -9, 0.01, 6, 8, 0],
+							"uvSouth": [4, 6, 10, 14]
+						},
+						{
+							"coordinates": [-7, -9, -14, 14, 9, 14],
+							"uvNorth": [14, 33, 28, 42],
+							"uvEast": [0, 33, 14, 42],
+							"uvSouth": [42, 33, 56, 42],
+							"uvWest": [28, 33, 42, 42],
+							"uvUp": [28, 33, 14, 19],
+							"uvDown": [56, 19, 42, 33]
+						},
+						{
+							"coordinates": [5, -9, -12, -10, 1, 10],
+							"uvNorth": [30, 58, 40, 57],
+							"uvEast": [10, 58, 0, 57],
+							"uvSouth": [20, 58, 10, 57],
+							"uvWest": [30, 58, 20, 57],
+							"uvUp": [40, 31, 30, 21],
+							"uvDown": [0, 0, 0, 0]
+						}
+					],
+					"submodels": [
+						{
+							"id": "anti_base",
+							"invertAxis": "xy",
+							"translate": [8, 0, -15],
+							"rotate": [-180, 0, 0],
+							"submodels": [
+								{
+									"id": "lid2",
+									"invertAxis": "xy",
+									"translate": [0, 10, -2],
+									"rotate": [-180, 0, 0],
+									"boxes": [
+										{
+											"coordinates": [-3, -3, 1, -10, 4, 10],
+											"uvNorth": [30, 57, 40, 53],
+											"uvEast": [10, 57, 0, 53],
+											"uvSouth": [20, 57, 10, 53],
+											"uvWest": [30, 57, 20, 53],
+											"uvUp": [0, 0, 0, 0],
+											"uvDown": [20, 53, 10, 43]
+										},
+										{
+											"coordinates": [-15, -4, -1, 14, 5, 14],
+											"uvNorth": [14, 14, 28, 19],
+											"uvEast": [0, 14, 14, 19],
+											"uvSouth": [42, 14, 56, 19],
+											"uvWest": [28, 14, 42, 19],
+											"uvUp": [56, 14, 42, 0],
+											"uvDown": [42, 0, 28, 14]
+										}
+									],
+									"submodels": [
+										{
+											"id": "knob2",
+											"invertAxis": "xy",
+											"translate": [0, 0, 29],
+											"rotate": [-180, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-9, -3, 15, 2, 4, 1],
+													"uvNorth": [1, 1, 3, 5],
+													"uvEast": [0, 1, 1, 5],
+													"uvSouth": [4, 1, 6, 5],
+													"uvWest": [3, 1, 4, 5],
+													"uvUp": [3, 1, 1, 0],
+													"uvDown": [5, 0, 3, 1]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "rand",
+							"invertAxis": "xy",
+							"translate": [8, 0, -15]
+						},
+						{
+							"id": "close",
+							"invertAxis": "xy",
+							"translate": [8, 0, -15]
+						},
+						{
+							"id": "eye",
+							"invertAxis": "xy",
+							"translate": [0, -5, 3],
+							"submodels": [
+								{
+									"id": "negey",
+									"invertAxis": "xy",
+									"translate": [-1, 5, -27],
+									"boxes": [
+										{
+											"coordinates": [0, -7, 24.02, 2, 4, 0],
+											"uvSouth": [1, 8, 3, 12]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"animations": [
+				{
+					"this.rx": 0,
+					"this.ry": 0
+				},
+				{
+					"rand.rx": "if(sin(time/8)>0.999,(random(time)*4)-2,rand.rx)",
+					"rand.ry": "if(sin(time/8)>0.999,(random(time+1)*6)+2,rand.ry)",
+					"eye.ty": "if( (pow(pos_x-player_pos_x, 2) + pow(pos_y-player_pos_y, 2) + pow(pos_z-player_pos_z, 2) < 25)  , lerp(0.1,eye.ty, clamp( -(pos_y+0.3-player_pos_y+1)+7,3,7) ) , lerp(0.1,eye.ty,rand.ry))",
+					"eye.tx": "if(pow(pos_x-player_pos_x, 2) + pow(pos_y-player_pos_y, 2) + pow(pos_z-player_pos_z, 2) < 25 , lerp(0.1,eye.tx, if(rule_index==3 && player_pos_z < pos_z+0.5,-2*pi,0) + if(rule_index==1,torad(-90),rule_index==2,torad(90),rule_index==3,torad(180),0) -torad(atan2(player_pos_z - (pos_z+0.5), player_pos_x - (pos_x+0.5)) * 180 / pi) ), lerp(0.1,eye.tx,rand.rx))",
+					"eye.sy": "(lid.rx/(pi*2))+1",
+					"eye.sx": "(lid.rx/(pi))+1"
+				},
+				{
+					"lid2.rx": "if(close.visible, if(lid.rx > -pi/2.5 ,sin(lid.rx*2.5)/3,(lid.rx*2)+(pi/2)) , lid.rx) +pi",
+					"base.rx": "if(close.visible,0, if(lid.rx > -pi/2.5 ,sin(lid.rx*2.5)/6,0))",
+					"base2.rx": "if(close.visible,if(lid.rx > -pi/2.5 ,-sin(lid.rx*2.5)/2,0  )/7,0)",
+					"close.visible": "if(lid.rx == 0,0,lid.rx < -1.5, 1,if(close.visible,1,0)) > 0"
+				}
+			]
+		},
+		{
+			"part": "lid",
+			"id": "lid",
+			"invertAxis": "xy",
+			"translate": [-8, -9, -7],
+			"rotate": [-180, 0, 0],
+			"animations": [
+				{
+					"this.rx": 0
+				}
+			]
+		},
+		{
+			"part": "knob",
+			"id": "knob",
+			"invertAxis": "xy",
+			"translate": [-8, -8, -8],
+			"rotate": [-180, 0, 0],
+			"animations": [
+				{
+					"this.rx": 0
+				}
+			]
+		}
+	]
+}

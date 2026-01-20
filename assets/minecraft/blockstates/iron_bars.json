@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "north=false,east=false,south=false,west=false": { "model": "block/iron_bars_post" },
+    "north=true,east=false,south=false,west=false": { "model": "block/iron_bars_end" },
+    "north=false,east=true,south=false,west=false": { "model": "block/iron_bars_end", "y": 90 },
+    "north=false,east=false,south=true,west=false": { "model": "block/iron_bars_end", "y": 180 },
+    "north=false,east=false,south=false,west=true": { "model": "block/iron_bars_end", "y": 270 },
+    "north=true,east=false,south=true,west=false": { "model": "block/iron_bars_line" },
+    "north=false,east=true,south=false,west=true": { "model": "block/iron_bars_line", "y": 90 },
+    "north=true,east=true,south=false,west=false": { "model": "block/iron_bars_corner" },
+    "north=false,east=true,south=true,west=false": { "model": "block/iron_bars_corner", "y": 90 },
+    "north=false,east=false,south=true,west=true": { "model": "block/iron_bars_corner", "y": 180 },
+    "north=true,east=false,south=false,west=true": { "model": "block/iron_bars_corner", "y": 270 },
+    "north=true,east=true,south=true,west=false": { "model": "block/iron_bars_t" },
+    "north=false,east=true,south=true,west=true": { "model": "block/iron_bars_t", "y": 90 },
+    "north=true,east=false,south=true,west=true": { "model": "block/iron_bars_t", "y": 180 },
+    "north=true,east=true,south=false,west=true": { "model": "block/iron_bars_t", "y": 270 },
+    "north=true,east=true,south=true,west=true": { "model": "block/iron_bars_cross" }
+  }
+}

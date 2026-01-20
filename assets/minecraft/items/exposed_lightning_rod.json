@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/exposed_lightning_rod"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/exposed_lightning_rod"
+		}
+	}
+}

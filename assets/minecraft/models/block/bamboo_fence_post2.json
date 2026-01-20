@@ -1,0 +1,42 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/terrain",
+		"side": "block/bamboo_fence2",
+		"particle": "block/bamboo_fence"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 6],
+			"to": [10, 16, 10],
+			"faces": {
+				"north": {"uv": [6, 0, 10, 16], "texture": "#side"},
+				"east": {"uv": [6, 0, 10, 16], "texture": "#side"},
+				"south": {"uv": [6, 0, 10, 16], "texture": "#side"},
+				"west": {"uv": [6, 0, 10, 16], "texture": "#side"},
+				"up": {"uv": [11, 0, 15, 4], "texture": "#side", "cullface": "up"},
+				"down": {"uv": [11, 12, 15, 16], "texture": "#side", "cullface": "down"}
+			}
+		},
+		{
+			"from": [6, 16, 6],
+			"to": [10, 16.01, 10],
+			"faces": {
+				"north": {"uv": [6, 0, 10, 8], "texture": "#0", "cullface": "up"},
+				"east": {"uv": [6, 0, 10, 8], "texture": "#0", "cullface": "up"},
+				"south": {"uv": [6, 0, 10, 8], "texture": "#0", "cullface": "up"},
+				"west": {"uv": [6, 0, 10, 8], "texture": "#0", "cullface": "up"}
+			}
+		},
+		{
+			"from": [6, -8, 6],
+			"to": [10, -7.99, 10],
+			"faces": {
+				"north": {"uv": [6, 8, 10, 16], "texture": "#0", "cullface": "down"},
+				"east": {"uv": [6, 8, 10, 16], "texture": "#0", "cullface": "down"},
+				"south": {"uv": [6, 8, 10, 16], "texture": "#0", "cullface": "down"},
+				"west": {"uv": [6, 8, 10, 16], "texture": "#0", "cullface": "down"}
+			}
+		}
+	]
+}

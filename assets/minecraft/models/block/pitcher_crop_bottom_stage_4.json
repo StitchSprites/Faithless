@@ -1,0 +1,7 @@
+{
+    "parent": "block/pitcher_crop_bottom_stage_3",
+	"textures": {
+		"pod": "block/pitcher_crop_top_3",
+		"crop": "block/pitcher_crop_bottom_stage_4"
+	}
+}

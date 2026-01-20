@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross_tall",
+	"textures": {
+		"wall": "block/deepslate_tile_wall",
+		"particle": "block/deepslate_tiles"
+	}
+}

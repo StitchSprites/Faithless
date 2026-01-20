@@ -1,0 +1,7 @@
+{
+	"parent": "item/template_clock",
+	"textures": {
+		"front": "item/clock_00",
+		"back": "item/clock_01"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "block/slab_brick",
+	"textures": {
+		"all": "block/end_stone_bricks_model",
+		"particle": "block/end_stone_bricks"
+	}
+}

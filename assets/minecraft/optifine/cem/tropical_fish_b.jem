@@ -1,0 +1,149 @@
+{
+	"textureSize": [32, 32],
+	"models": [
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -3, -3],
+			"submodels": [
+				{
+					"id": "right_fin",
+					"invertAxis": "xy",
+					"translate": [1, 0, 3],
+					"rotate": [0, -45, 0]
+				},
+				{
+					"id": "left_fin",
+					"invertAxis": "xy",
+					"translate": [-1, 0, 3],
+					"rotate": [0, 45, 0]
+				},
+				{
+					"id": "fish",
+					"invertAxis": "xy",
+					"translate": [0, 3, 2],
+					"submodels": [
+						{
+							"id": "tail2",
+							"invertAxis": "xy",
+							"translate": [0, 0, 4],
+							"boxes": [
+								{"coordinates": [0, -3, 0, 0, 6, 5], "textureOffset": [21, 16]}
+							]
+						},
+						{
+							"id": "fin_bottom2",
+							"invertAxis": "xy",
+							"translate": [0, -3, -2],
+							"boxes": [
+								{"coordinates": [0, -4, 0, 0, 4, 6], "textureOffset": [20, 21]}
+							]
+						},
+						{
+							"id": "fin_top2",
+							"invertAxis": "xy",
+							"translate": [0, 3, -2],
+							"boxes": [
+								{"coordinates": [0, 0, 0, 0, 4, 6], "textureOffset": [20, 11]}
+							]
+						},
+						{
+							"id": "body2",
+							"invertAxis": "xy",
+							"translate": [0, 0, 1],
+							"boxes": [
+								{"coordinates": [-1, -3, -3, 2, 6, 6], "textureOffset": [0, 20]}
+							],
+							"submodels": [
+								{
+									"id": "right_fin2",
+									"invertAxis": "xy",
+									"translate": [1, -3, 0],
+									"rotate": [0, -45, 0],
+									"boxes": [
+										{"coordinates": [0, 0, 0, 2, 2, 0], "textureOffset": [2, 16]}
+									]
+								},
+								{
+									"id": "left_fin2",
+									"invertAxis": "xy",
+									"translate": [-1, -3, 0],
+									"rotate": [0, 45, 0],
+									"boxes": [
+										{"coordinates": [-2, 0, 0, 2, 2, 0], "textureOffset": [2, 12]}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"animations": [
+				{
+					"fish.rx": "-body.rx",
+					"fish.ry": "-body.ry",
+					"fish.rz": "-body.rz"
+				},
+				{
+					"body2.rx": "body.rx",
+					"body2.ry": "body.ry",
+					"body2.rz": "body.rz",
+					"tail2.rx": "tail.rx",
+					"tail2.ry": "tail.ry",
+					"tail2.rz": "tail.rz",
+					"fin_top2.rx": "fin_top.rx * limb_speed*2",
+					"fin_top2.ry": "fin_top.ry* limb_speed*2",
+					"fin_top2.rz": "fin_top.rz* limb_speed*2",
+					"fin_bottom2.rx": "fin_bottom.rx * limb_speed*2",
+					"fin_bottom2.ry": "fin_bottom.ry* limb_speed*2",
+					"fin_bottom2.rz": "fin_bottom.rz* limb_speed*2",
+					"right_fin2.rx": "right_fin.rx",
+					"right_fin2.ry": "right_fin.ry",
+					"right_fin2.rz": "right_fin.rz",
+					"left_fin2.rx": "left_fin.rx",
+					"left_fin2.ry": "left_fin.ry",
+					"left_fin2.rz": "left_fin.rz"
+				},
+				{
+					"var.counter": "if(var.counter > 0.1, 0 ,var.counter + 1 * frame_time)",
+					"var.old_pos_y": "if(var.counter > 0.09,pos_y,var.old_pos_y)",
+					"var.test": "print(1,5,var.old_pos_y-pos_y)",
+					"var.turn_speed": "0.03 * 1 + abs(pos_y - var.old_pos_y)/5",
+					"var.pitch": "clamp(if(pos_y - var.old_pos_y == 0, if(equals(var.pitch,0,0.05), 0 ,if(var.pitch < 0,var.pitch + var.turn_speed,var.pitch - var.turn_speed )),if(pos_y < var.old_pos_y,var.pitch + var.turn_speed,var.pitch - var.turn_speed ) ),-torad(80),torad(80))",
+					"fish.rx": "var.pitch"
+				}
+			]
+		},
+		{
+			"part": "fin_top",
+			"id": "fin_top",
+			"invertAxis": "xy",
+			"translate": [0, -6, 0]
+		},
+		{
+			"part": "fin_bottom",
+			"id": "fin_bottom",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -3, -6]
+		},
+		{
+			"part": "fin_left",
+			"id": "fin_left",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "fin_right",
+			"id": "fin_right",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		}
+	]
+}

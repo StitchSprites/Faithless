@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_glow",
+	"textures": {
+		"all": "item/alt/redstone_lamp"
+	}
+}

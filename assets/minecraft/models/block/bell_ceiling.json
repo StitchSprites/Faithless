@@ -1,0 +1,19 @@
+{
+	"textures": {
+		"bar": "block/bell",
+		"particle": "block/particle/bell"
+	},
+	"elements": [
+		{
+			"from": [7, 13, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"north": {"uv": [6, 13, 8, 16], "texture": "#bar"},
+				"east": {"uv": [8, 13, 10, 16], "texture": "#bar"},
+				"south": {"uv": [6, 13, 8, 16], "texture": "#bar"},
+				"west": {"uv": [8, 13, 10, 16], "texture": "#bar"},
+				"up": {"uv": [6, 11, 8, 13], "texture": "#bar", "cullface": "up"}
+			}
+		}
+	]
+}

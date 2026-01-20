@@ -1,0 +1,6 @@
+{
+    "parent": "item/totem_of_undying",
+	"textures": {
+		"0": "item/cit/tou/tou_ssundee"
+	}
+}

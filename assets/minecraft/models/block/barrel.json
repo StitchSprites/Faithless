@@ -1,0 +1,12 @@
+{
+  "parent": "block/block_workstation",
+  "textures": {
+    "down": "block/barrel_bottom",
+    "north": "block/barrel_side",
+    "east": "block/barrel_side",
+    "south": "block/barrel_side",
+    "west": "block/barrel_side",
+    "up": "block/barrel_top",
+    "particle": "block/air"
+  }
+}

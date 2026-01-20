@@ -1,0 +1,38 @@
+{
+    "parent": "item/chest",
+    "textures": {
+        "particle": "block/oak_planks"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, -4.65, 0],
+            "scale":[ 0.602, 0.602, 0.602 ]
+        },
+        "ground": {
+            "rotation": [ 15, 180, 0 ],
+            "translation": [ 0, 4, 0],
+            "scale":[ 0.6, 0.6, 0.6 ]
+        },
+        "fixed": {
+            "rotation": [ -1.15, 180, 0 ],
+            "translation": [ 0, -9.55, 4.5],
+            "scale":[ 2.4, 1.2, 3 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, -45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.40, 0.40, 0.40 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 0, -45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.40, 0.40, 0.40 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 17, 7],
+            "scale":[ 2, 2, 2 ]
+        }
+    }
+}

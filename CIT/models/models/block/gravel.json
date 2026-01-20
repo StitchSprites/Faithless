@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_unstable",
+	"textures": {
+		"all": "block/gravel",
+		"break": "block/gravel_unstable"
+	}
+}

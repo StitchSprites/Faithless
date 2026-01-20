@@ -1,0 +1,9 @@
+{
+    "parent": "block/attached_pumpkin_stem",
+	"textures": {
+		"2": "block/melon_stem",
+		"3": "block/melon_side",
+		"4": "block/melon_top",
+		"particle": "block/particle/melon_stem"
+	}
+}

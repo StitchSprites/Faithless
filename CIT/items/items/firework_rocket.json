@@ -1,0 +1,136 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+        "when": [
+          "firstperson_righthand",
+          "firstperson_lefthand",
+          "thirdperson_righthand",
+          "thirdperson_lefthand",
+          "ground"
+        ],
+		"model": {
+				"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "small_ball"}]}},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_alt_small"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "large_ball"}]}},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_alt"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "creeper"}]}},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_alt_creeper"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "star"}]}},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_alt_star"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "burst"}]}},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_alt_burst"},
+
+				"on_false": {
+				"type": "minecraft:model",
+				"model": "minecraft:item/firework_rocket_alt_plain"
+			}}}}}
+		}
+      }
+		],
+		"fallback": {
+				"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "small_ball"}]},"flight_duration": 1},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_small_1"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "small_ball"}]},"flight_duration": 2},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_small_2"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "small_ball"}]},"flight_duration": 3},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_small_3"},
+
+
+
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "large_ball"}]},"flight_duration": 1},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_large_1"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "large_ball"}]},"flight_duration": 2},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_large_2"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "large_ball"}]},"flight_duration": 3},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket"},
+
+
+
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "creeper"}]},"flight_duration": 1},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_creeper_1"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "creeper"}]},"flight_duration": 2},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_creeper_2"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "creeper"}]},"flight_duration": 3},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_creeper_3"},
+
+
+
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "star"}]},"flight_duration": 1},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_star_1"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "star"}]},"flight_duration": 2},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_star_2"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "star"}]},"flight_duration": 3},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_star_3"},
+
+
+
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "burst"}]},"flight_duration": 1},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_burst_1"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "burst"}]},"flight_duration": 2},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_burst_2"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"explosions": {"contains": [{"shape": "burst"}]},"flight_duration": 3},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_burst_3"},
+
+
+
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"flight_duration": 1},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_plain_1"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"flight_duration": 2},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_plain_2"},
+
+				"on_false": {"type": "minecraft:condition","property": "minecraft:component","predicate": "minecraft:fireworks",
+				"value": {"flight_duration": 3},
+				"on_true": {"type": "minecraft:model","model": "minecraft:item/firework_rocket_plain_3"},
+
+				"on_false": {
+				"type": "minecraft:model",
+				"model": "minecraft:item/firework_rocket"
+			}}}}}}}}}}}}}}}}}}
+		}
+	}
+}

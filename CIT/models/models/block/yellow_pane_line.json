@@ -1,0 +1,37 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/yellow_stained_glass_pane_top",
+		"1": "block/terrain",
+		"particle": "block/yellow_stained_glass"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 0],
+			"to": [9, 16, 16],
+			"faces": {
+				"east": {"uv": [2.66667, 12, 4, 14.66666], "texture": "#1"},
+				"west": {"uv": [2.66667, 12, 4, 14.66666], "texture": "#1"},
+				"up": {"uv": [7, 0, 9, 16], "texture": "#0", "cullface": "up"},
+				"down": {"uv": [7, 0, 9, 16], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [7, 15.999, 0],
+			"to": [9, 16, 16],
+			"faces": {
+				"east": {"uv": [2.66667, 10.66666, 4, 12], "texture": "#1", "cullface": "up"},
+				"west": {"uv": [2.66667, 10.66666, 4, 12], "texture": "#1", "cullface": "up"}
+			}
+		},
+		{
+			"from": [7, 0, 0],
+			"to": [9, 0.001, 16],
+			"faces": {
+				"east": {"uv": [2.66667, 14.66666, 4, 16], "texture": "#1", "cullface": "down"},
+				"west": {"uv": [2.66667, 14.66666, 4, 16], "texture": "#1", "cullface": "down"}
+			}
+		}
+	]
+}

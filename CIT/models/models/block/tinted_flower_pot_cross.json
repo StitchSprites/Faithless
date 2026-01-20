@@ -1,0 +1,26 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "block/flower_pot",
+        "flowerpot": "block/flower_pot",
+        "dirt": "block/dirt"
+    },
+    "elements": [
+        {   "from": [ 2.6, 4, 8 ],
+            "to": [ 13.4, 16, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant", "tintindex": 0 },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant", "tintindex": 0 }
+            }
+        },
+        {   "from": [ 8, 4, 2.6 ],
+            "to": [ 8, 16, 13.4 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant", "tintindex": 0 },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant", "tintindex": 0 }
+            }
+        }
+    ]
+}

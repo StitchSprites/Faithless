@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop_cross2",
+  "textures": {
+    "crop": "block/torchflower_crop_stage1"
+  }
+}

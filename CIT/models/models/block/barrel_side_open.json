@@ -1,0 +1,36 @@
+{
+	"textures": {
+		"0": "block/barrel_bottom",
+		"1": "block/barrel_side",
+		"2": "block/barrel_top",
+		"3": "block/barrel_top_open",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#3", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#1", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#1", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#1", "cullface": "down"}
+			}
+		},
+		{
+			"from": [17.6, 1, 1.6],
+			"to": [31.6, 15, 3.6],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 17, 8]},
+			"faces": {
+				"north": {"uv": [1, 1, 15, 15], "rotation": 90, "texture": "#0", "cullface": "north"},
+				"east": {"uv": [14, 1, 16, 15], "rotation": 180, "texture": "#2", "cullface": "north"},
+				"south": {"uv": [1, 1, 15, 15], "rotation": 180, "texture": "#2", "cullface": "north"},
+				"west": {"uv": [14, 1, 16, 15], "texture": "#2", "cullface": "north"},
+				"up": {"uv": [0, 1, 2, 15], "rotation": 270, "texture": "#2", "cullface": "north"},
+				"down": {"uv": [0, 1, 2, 15], "rotation": 270, "texture": "#2", "cullface": "north"}
+			}
+		}
+	]
+}

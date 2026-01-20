@@ -1,0 +1,6 @@
+{
+  "parent": "item/template_compass",
+  "textures": {
+    "model": "item/alt/compass"
+  }
+}

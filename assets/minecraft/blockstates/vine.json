@@ -1,0 +1,25 @@
+{
+    "multipart": [
+        { "when": { "OR": [ { "north": "true", "east": "true" }, { "south": "true", "west": "true" }, { "north": "true", "south": "true" }, { "east": "true", "west": "true" } ] },
+		"apply": { "model": "block/vine_angle" }
+        },
+        { "when": { "OR": [ { "east": "true", "south": "true" }, { "west": "true", "north": "true" }, { "north": "true", "south": "true" }, { "east": "true", "west": "true" } ] },
+		"apply": { "model": "block/vine_angle", "y": 90 }
+        },
+        {   "when": { "north": "true", "east": "false", "south": "false", "west": "false" },
+		"apply": { "model": "block/vine" }
+        },
+        {   "when": { "north": "false", "east": "true", "south": "false", "west": "false" },
+		"apply": { "model": "block/vine", "y": 90 }
+        },
+        {   "when": { "north": "false", "east": "false", "south": "true", "west": "false" },
+		"apply": { "model": "block/vine", "y": 180 }
+        },
+        {   "when": { "north": "false", "east": "false", "south": "false", "west": "true" },
+		"apply": { "model": "block/vine", "y": 270 }
+        },
+        {   "when": { "up": "true" },
+		"apply": { "model": "block/vine", "x": 270 }
+        }
+    ]
+}

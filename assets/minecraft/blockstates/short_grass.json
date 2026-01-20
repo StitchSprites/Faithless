@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "": [
+		{ "model": "block/grass", "weight": 1250 },
+		{ "model": "block/grass2", "weight": 450 },
+		{ "model": "block/grass3", "weight": 450 },
+		{ "model": "block/grass_clovers", "weight": 200 },
+		{ "model": "block/grass_stones1", "weight": 1 },
+		{ "model": "block/grass_stones2", "weight": 5 },
+		{ "model": "block/grass_stones3", "weight": 10 },
+		{ "model": "block/grass_dirt1", "weight": 5 },
+		{ "model": "block/grass_dirt2", "weight": 10 },
+		{ "model": "block/grass_dirt3", "weight": 15 }
+      ]
+   }
+}

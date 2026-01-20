@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "block/dripstone_block",
+    "side": "block/dripstone_block_side"
+  }
+}

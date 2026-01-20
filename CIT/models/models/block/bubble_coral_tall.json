@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross_tall_up",
+  "textures": {
+    "cross": "block/bubble_coral_tall"
+  }
+}

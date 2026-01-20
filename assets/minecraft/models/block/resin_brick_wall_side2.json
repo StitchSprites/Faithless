@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_side2",
+	"textures": {
+		"wall": "block/resin_brick_wall",
+		"particle": "block/resin_bricks"
+	}
+}

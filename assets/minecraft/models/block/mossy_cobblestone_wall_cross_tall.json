@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross_tall",
+	"textures": {
+		"wall": "block/mossy_cobblestone_wall",
+		"particle": "block/mossy_cobblestone"
+	}
+}

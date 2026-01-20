@@ -1,0 +1,20 @@
+{
+	"textures": {
+		"2": "block/bell",
+		"particle": "block/particle/bell"
+	},
+	"elements": [
+		{
+			"from": [0, 13, 7],
+			"to": [16, 15, 9],
+			"faces": {
+				"north": {"uv": [12, 0, 14, 16], "rotation": 270, "texture": "#2"},
+				"east": {"uv": [12, 0, 14, 1], "texture": "#2", "cullface": "east"},
+				"south": {"uv": [12, 0, 14, 16], "rotation": 270, "texture": "#2"},
+				"west": {"uv": [12, 15, 14, 16], "texture": "#2", "cullface": "west"},
+				"up": {"uv": [14, 0, 16, 16], "rotation": 270, "texture": "#2"},
+				"down": {"uv": [10, 0, 12, 16], "rotation": 270, "texture": "#2"}
+			}
+		}
+	]
+}

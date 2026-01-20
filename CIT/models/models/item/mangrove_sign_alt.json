@@ -1,0 +1,6 @@
+{
+	"parent": "item/template_sign",
+	"textures": {
+		"1": "block/entity/sign_mangrove"
+	}
+}

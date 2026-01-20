@@ -1,0 +1,6 @@
+{
+	"variants": {
+		"waterlogged=false": {"model":"block/oxidized_copper_grate"},
+		"waterlogged=true": {"model":"block/oxidized_copper_grate_waterlogged"}
+	}
+}

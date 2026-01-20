@@ -1,0 +1,29 @@
+{
+	"textures": {
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 16, 16, 0], "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 16], "rotation": 180, "texture": "#texture", "cullface": "east"},
+				"south": {"uv": [16, 16, 0, 0], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [13, 0, 16, 16], "rotation": 180, "texture": "#texture", "cullface": "west"},
+				"up": {"uv": [0, 13, 16, 16], "rotation": 180, "texture": "#texture", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 3], "rotation": 180, "texture": "#texture", "cullface": "down"}
+			}
+		},
+		{
+			"from": [2.9, 2.9, 16],
+			"to": [13.1, 13.1, 13],
+			"faces": {
+				"east": {"uv": [3, 3, 0, 13], "rotation": 180, "texture": "#texture"},
+				"west": {"uv": [16, 3, 13, 13], "rotation": 180, "texture": "#texture"},
+				"up": {"uv": [3, 16, 13, 13], "rotation": 180, "texture": "#texture"},
+				"down": {"uv": [3, 3, 13, 0], "rotation": 180, "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "false",
+        "west": "false",
+        "east": "false",
+        "south": "false",
+        "north": "false"
+      },
+      "apply": [ { "model": "block/fire_floor0" } ]
+    },
+    {
+      "when": { "OR": [ { "north": "true" } ] },
+      "apply": [ 
+	    { "model": "block/fire_side0" },
+	    { "model": "block/fire_side1" }, 
+	    { "model": "block/fire_side2" }, 
+	    { "model": "block/fire_side3" } 
+	  ]
+    },
+    {
+      "when": { "OR": [ { "east": "true" } ] },
+      "apply": [ 
+	    { "model": "block/fire_side0", "y": 90 }, 
+	    { "model": "block/fire_side1", "y": 90 }, 
+	    { "model": "block/fire_side2", "y": 90 }, 
+	    { "model": "block/fire_side3", "y": 90 } 
+	  ]
+    },
+    {
+      "when": { "OR": [ { "south": "true" } ] },
+      "apply": [ 
+	    { "model": "block/fire_side0", "y": 180 }, 
+	    { "model": "block/fire_side1", "y": 180 }, 
+	    { "model": "block/fire_side2", "y": 180 }, 
+	    { "model": "block/fire_side3", "y": 180 } 
+	  ]
+    },
+    {
+      "when": { "OR": [ { "west": "true" } ] },
+      "apply": [ 
+	    { "model": "block/fire_side0", "y": 270 }, 
+	    { "model": "block/fire_side1", "y": 270 }, 
+	    { "model": "block/fire_side2", "y": 270 }, 
+	    { "model": "block/fire_side3", "y": 270 } 
+	  ]
+    },
+    {
+      "when": { "up": "true" },
+      "apply": [
+        { "model": "block/fire_up0" },
+        { "model": "block/fire_up0", "y": 90 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "block/block_workstation",
+  "textures": {
+    "north": "block/respawn_anchor_side4",
+    "east": "block/respawn_anchor_side4",
+    "south": "block/respawn_anchor_side4",
+    "west": "block/respawn_anchor_side4",
+    "up": "block/respawn_anchor_side4",
+    "down": "block/respawn_anchor_side4"
+  }
+}

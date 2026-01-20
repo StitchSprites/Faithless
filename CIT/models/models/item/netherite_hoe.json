@@ -1,0 +1,11 @@
+{
+  "parent": "item/handheld_tools",
+  "textures": {
+    "layer0": "item/netherite_hoe"
+  },
+    "overrides": [
+        { "predicate": { "lefthanded": 1 }, "model": "item/lefthanded/netherite_hoe" },
+        { "predicate": { "damage": 0.5 }, "model": "item/netherite_hoe_1" },
+        { "predicate": { "damage": 0.75 }, "model": "item/netherite_hoe_2" }
+    ]
+}

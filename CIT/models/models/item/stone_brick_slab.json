@@ -1,0 +1,20 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"0": "block/stone_bricks_model"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [10.66667, 12.00001, 16, 16], "texture": "#0"},
+				"east": {"uv": [4.66667, 12, 10, 16], "texture": "#0"},
+				"south": {"uv": [10.33333, 12, 15.66667, 16], "texture": "#0"},
+				"west": {"uv": [5, 12, 10.33333, 16], "texture": "#0"},
+				"up": {"uv": [10.66667, 0, 16, 8.00001], "texture": "#0"},
+				"down": {"uv": [10.66667, 0, 16, 8.00001], "rotation": 180, "texture": "#0"}
+			}
+		}
+	]
+}

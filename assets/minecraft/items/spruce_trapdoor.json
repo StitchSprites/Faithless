@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "model",
+          "model": "item/spruce_trapdoor"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/spruce_trapdoor_bottom"
+    }
+  }
+}

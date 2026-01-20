@@ -1,0 +1,33 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"2": "block/bamboo_stalk",
+		"particle": "block/bamboo_stalk_leaves",
+		"all": "block/bamboo_stalk_leaves"
+	},
+	"elements": [
+		{
+			"from": [6.5, 0, 0.5],
+			"to": [9.5, 16, 15.5],
+			"faces": {
+				"east": {"uv": [0, 0, 15, 16], "texture": "#all"},
+				"west": {"uv": [0, 0, 15, 16], "texture": "#all"}
+			}
+		},
+		{
+			"from": [0.5, 0, 6.5],
+			"to": [15.5, 16, 9.5],
+			"faces": {
+				"north": {"uv": [0, 0, 15, 16], "texture": "#all"},
+				"south": {"uv": [0, 0, 15, 16], "texture": "#all"}
+			}
+		},
+		{
+			"from": [6.5, 15, 6.5],
+			"to": [9.5, 16, 9.5],
+			"faces": {
+				"up": {"uv": [13, 0, 16, 3], "texture": "#2", "cullface": "up"}
+			}
+		}
+	]
+}

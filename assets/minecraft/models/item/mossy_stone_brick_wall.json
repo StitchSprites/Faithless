@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/mossy_stone_brick_wall"
+  }
+}

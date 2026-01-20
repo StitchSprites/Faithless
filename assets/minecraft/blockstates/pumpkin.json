@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/pumpkin", "weight": 120 },
+      { "model": "block/pumpkin", "weight": 120, "y": 90 },
+      { "model": "block/pumpkin", "weight": 120, "y": 180 },
+      { "model": "block/pumpkin", "weight": 120, "y": 270 }
+    ]
+  }
+}

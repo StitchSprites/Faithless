@@ -1,0 +1,22 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "fixed"
+        ],
+        "model": {
+          "type": "model",
+          "model": "item/sniffer_egg"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/sniffer_egg_not_cracked"
+    }
+  }
+}

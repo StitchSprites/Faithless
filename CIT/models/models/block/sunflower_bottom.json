@@ -1,0 +1,7 @@
+{
+  "parent": "block/air",
+  "textures": {
+    "air": "block/air",
+    "particle": "block/air"
+  }
+}

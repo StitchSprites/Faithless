@@ -1,0 +1,20 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"2": "block/statue_zombie_bones",
+		"particle": "block/particle/sculk"
+	},
+	"elements": [
+		{
+			"from": [3.9, -5.5, 4],
+			"to": [12.1, 2.5, 12],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 4, 2, 8], "rotation": 270, "texture": "#2", "cullface": "up"},
+				"south": {"uv": [2, 0, 4, 4], "texture": "#2", "cullface": "up"},
+				"west": {"uv": [4, 4, 6, 8], "rotation": 90, "texture": "#2", "cullface": "up"},
+				"up": {"uv": [2, 4, 4, 8], "rotation": 180, "texture": "#2", "cullface": "up"}
+			}
+		}
+	]
+}

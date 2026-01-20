@@ -1,0 +1,8 @@
+{
+	"parent": "item/book_alt",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "item/alt/knowledge_book",
+		"2": "item/knowledge_book"
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/rail_alt",
+  "textures": {
+		"1": "block/detector_rail"
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "model",
+          "model": "item/milk_bucket"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/milk_bucket_alt"
+    }
+  }
+}

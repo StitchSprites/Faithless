@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross_tall",
+	"textures": {
+		"wall": "block/polished_blackstone_wall",
+		"particle": "block/polished_blackstone"
+	}
+}

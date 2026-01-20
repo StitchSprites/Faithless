@@ -1,0 +1,41 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"5": "block/potted_flowering_azalea_bush_plant",
+		"6": "block/potted_flowering_azalea_bush_side",
+		"7": "block/potted_flowering_azalea_bush_top"
+	},
+	"elements": [
+		{
+			"from": [4, 8, 4],
+			"to": [12, 16, 12],
+			"faces": {
+				"north": {"uv": [4, 5, 12, 13], "texture": "#6"},
+				"east": {"uv": [4, 5, 12, 13], "texture": "#6"},
+				"south": {"uv": [4, 5, 12, 13], "texture": "#6"},
+				"west": {"uv": [4, 5, 12, 13], "texture": "#6"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#7", "cullface": "up"}
+			}
+		},
+		{
+			"from": [2.6, 4, 8],
+			"to": [13.4, 16, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 4, 16, 16], "texture": "#5"},
+				"south": {"uv": [0, 4, 16, 16], "texture": "#5"}
+			}
+		},
+		{
+			"from": [8, 4, 2.6],
+			"to": [8, 16, 13.4],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 4, 16, 16], "texture": "#5"},
+				"west": {"uv": [0, 4, 16, 16], "texture": "#5"}
+			}
+		}
+	]
+}

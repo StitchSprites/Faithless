@@ -1,0 +1,6 @@
+{
+  "parent": "item/lefthanded/iron_sword",
+  "textures": {
+    "layer0": "item/iron_sword_5"
+  }
+}

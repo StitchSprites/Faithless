@@ -1,0 +1,6 @@
+{
+	"parent": "block/chiseled_sandstone_sides",
+	"textures": {
+		"1": "block/chiseled_sandstone2"
+	}
+}

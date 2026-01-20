@@ -1,0 +1,7 @@
+{
+	"parent": "item/stone_brick_stairs",
+	"textures": {
+		"0": "block/tuff_bricks_model",
+		"1": "item/alt/tuff_brick_stairs"
+	}
+}

@@ -1,0 +1,166 @@
+{
+	"textureSize": [32, 32],
+	"models": [
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -2, 0],
+			"submodels": [
+				{
+					"id": "fish",
+					"invertAxis": "xy",
+					"translate": [0, 2, 2],
+					"submodels": [
+						{
+							"id": "body2",
+							"invertAxis": "xy",
+							"translate": [0, 0, -2],
+							"boxes": [
+								{"coordinates": [-1, -2, 0, 2, 4, 7], "textureOffset": [0, 0]}
+							],
+							"submodels": [
+								{
+									"id": "right_fin2",
+									"invertAxis": "xy",
+									"translate": [1, -1, 0],
+									"rotate": [0, 0, -45],
+									"boxes": [
+										{"coordinates": [0, 0, -1, 2, 0, 2], "textureOffset": [24, 1]}
+									]
+								},
+								{
+									"id": "left_fin2",
+									"invertAxis": "xy",
+									"translate": [-1, -1, 0],
+									"rotate": [0, 0, 45],
+									"boxes": [
+										{"coordinates": [-2, 0, -1, 2, 0, 2], "textureOffset": [24, 4]}
+									]
+								}
+							]
+						},
+						{
+							"id": "head2",
+							"invertAxis": "xy",
+							"translate": [0, 0, -2],
+							"boxes": [
+								{"coordinates": [-1, -2, -3, 2, 4, 3], "textureOffset": [11, 0]}
+							]
+						},
+						{
+							"id": "nose2",
+							"invertAxis": "xy",
+							"translate": [0, 0, -5],
+							"boxes": [
+								{"coordinates": [-1, -1, -1, 2, 3, 1], "textureOffset": [0, 0]}
+							]
+						},
+						{
+							"id": "tail2",
+							"invertAxis": "xy",
+							"translate": [0, 0, 5],
+							"boxes": [
+								{"coordinates": [0, -2, 0, 0, 4, 4], "textureOffset": [22, 3]}
+							]
+						},
+						{
+							"id": "fin_back2",
+							"invertAxis": "xy",
+							"translate": [0, 2, -2],
+							"boxes": [
+								{"coordinates": [0, 0, -1, 0, 1, 6], "textureOffset": [20, -6]}
+							]
+						}
+					]
+				},
+				{
+					"id": "right_fin",
+					"invertAxis": "xy",
+					"translate": [1, 1, 0],
+					"rotate": [0, 0, -45]
+				},
+				{
+					"id": "left_fin",
+					"invertAxis": "xy",
+					"translate": [-1, 1, 0],
+					"rotate": [0, 0, 45]
+				}
+			],
+			"animations": [
+				{
+					"fish.rx": "-body.rx",
+					"fish.ry": "-body.ry",
+					"fish.rz": "-body.rz"
+				},
+				{
+					"body2.rx": "body.rx",
+					"body2.ry": "body.ry",
+					"body2.rz": "body.rz",
+					"head2.rx": "head.rx",
+					"head2.ry": "head.ry",
+					"head2.rz": "head.rz",
+					"nose2.rx": "nose.rx",
+					"nose2.ry": "nose.ry",
+					"nose2.rz": "nose.rz",
+					"tail2.rx": "tail.rx",
+					"tail2.ry": "tail.ry",
+					"tail2.rz": "tail.rz",
+					"fin_back2.rx": "fin_back.rx * limb_speed*2",
+					"fin_back2.ry": "fin_back.ry* limb_speed*2",
+					"fin_back2.rz": "fin_back.rz* limb_speed*2",
+					"right_fin2.rx": "right_fin.rx",
+					"right_fin2.ry": "right_fin.ry",
+					"right_fin2.rz": "right_fin.rz",
+					"left_fin2.rx": "left_fin.rx",
+					"left_fin2.ry": "left_fin.ry",
+					"left_fin2.rz": "left_fin.rz"
+				},
+				{
+					"var.counter": "if(var.counter > 0.1, 0 ,var.counter + 1 * frame_time)",
+					"var.old_pos_y": "if(var.counter > 0.09,pos_y,var.old_pos_y)",
+					"var.test": "print(1,5,var.old_pos_y-pos_y)",
+					"var.turn_speed": "0.03 * 1 + abs(pos_y - var.old_pos_y)/5",
+					"var.pitch": "clamp(if(pos_y - var.old_pos_y == 0, if(equals(var.pitch,0,0.05), 0 ,if(var.pitch < 0,var.pitch + var.turn_speed,var.pitch - var.turn_speed )),if(pos_y < var.old_pos_y,var.pitch + var.turn_speed,var.pitch - var.turn_speed ) ),-torad(80),torad(80))",
+					"fish.rx": "var.pitch"
+				}
+			]
+		},
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -2, 0]
+		},
+		{
+			"part": "nose",
+			"id": "nose",
+			"invertAxis": "xy",
+			"translate": [0, -2, 3]
+		},
+		{
+			"part": "fin_left",
+			"id": "fin_left",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "fin_right",
+			"id": "fin_right",
+			"invertAxis": "xy",
+			"translate": [0, 0, 0]
+		},
+		{
+			"part": "fin_back",
+			"id": "fin_back",
+			"invertAxis": "xy",
+			"translate": [0, -4, 0]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2, -7]
+		}
+	]
+}

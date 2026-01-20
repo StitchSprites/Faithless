@@ -1,0 +1,52 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"all": "block/acacia_shelf",
+		"particle": "block/acacia_planks"
+	},
+	"elements": [
+		{
+			"from": [0, 4, 13],
+			"to": [16, 12, 13],
+			"faces": {
+				"north": {"uv": [8, 2, 12, 6], "texture": "#all"}
+			}
+		},
+		{
+			"name": "shelf_body",
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"uv": [8, 8, 8.75, 16], "texture": "#all", "cullface": "east"},
+				"south": {"uv": [4, 8, 8, 16], "texture": "#all", "cullface": "south"},
+				"west": {"uv": [11.25, 8, 12, 16], "texture": "#all", "cullface": "west"}
+			}
+		},
+		{
+			"name": "shelf_bottom",
+			"from": [0, 0, 11],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [8, 6, 12, 8], "texture": "#all"},
+				"east": {"uv": [8, 14, 9.25, 16], "texture": "#all", "cullface": "east"},
+				"west": {"uv": [10.75, 14, 12, 16], "texture": "#all", "cullface": "west"},
+				"up": {"uv": [12, 12, 16, 14.5], "rotation": 180, "texture": "#all"},
+				"down": {"uv": [16, 16, 12, 13.5], "texture": "#all", "cullface": "down"}
+			}
+		},
+		{
+			"name": "shelf_top",
+			"from": [0, 12, 11],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [8, 0, 12, 2], "texture": "#all"},
+				"east": {"uv": [8, 8, 9.25, 10], "texture": "#all", "cullface": "east"},
+				"west": {"uv": [10.75, 8, 12, 10], "texture": "#all", "cullface": "west"},
+				"up": {"uv": [16, 10.5, 12, 8], "texture": "#all", "cullface": "up"},
+				"down": {"uv": [12, 12, 16, 9.5], "rotation": 180, "texture": "#all"}
+			}
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/stone_pickaxe",
+  "textures": {
+    "layer0": "item/stone_pickaxe_2"
+  }
+}

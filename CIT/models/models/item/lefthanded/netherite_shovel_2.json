@@ -1,0 +1,6 @@
+{
+  "parent": "item/lefthanded/netherite_shovel",
+  "textures": {
+    "layer0": "item/netherite_shovel_2"
+  }
+}

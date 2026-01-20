@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_post",
+	"textures": {
+		"wall": "block/granite_wall",
+		"particle": "block/granite"
+	}
+}

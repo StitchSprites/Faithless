@@ -1,0 +1,17 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "block/kelp_plant",
+        "top": "block/kelp"
+    },
+    "elements": [
+        {   "from": [ -16, 13, -16 ],
+            "to": [ 32, 13, 32 ],
+			"shade": false,
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16,  16 ], "texture": "#top" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
+            }
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+	"ambientocclusion": false,
+	"texture_size": [16, 32],
+	"textures": {
+		"particle": "block/seagrass",
+		"cross": "block/seagrass"
+	},
+	"elements": [
+		{
+			"from": [0.8, 0, 8],
+			"to": [15.2, 32, 8],
+			"shade": false,
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#cross"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#cross"}
+			}
+		}
+	]
+}

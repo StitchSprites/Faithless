@@ -1,0 +1,41 @@
+{
+  "model": {
+    "type": "range_dispatch",
+    "property": "count",
+    "scale": 64,
+    "entries": [
+      {
+        "threshold": 0,
+        "model": {
+          "type": "model",
+          "model": "item/turtle_egg"
+        }
+      },
+      {
+        "threshold": 2,
+        "model": {
+          "type": "model",
+          "model": "item/turtle_egg2"
+        }
+      },
+      {
+        "threshold": 3,
+        "model": {
+          "type": "model",
+          "model": "item/turtle_egg3"
+        }
+      },
+      {
+        "threshold": 4,
+        "model": {
+          "type": "model",
+          "model": "item/turtle_egg4"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/turtle_egg"
+    }
+  }
+}

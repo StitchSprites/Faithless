@@ -1,0 +1,7 @@
+{
+	"parent": "block/wall_cross_tall",
+	"textures": {
+		"wall": "block/andesite_wall",
+		"particle": "block/andesite"
+	}
+}

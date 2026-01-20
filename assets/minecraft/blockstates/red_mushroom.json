@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": [
+		{ "model": "block/red_mushrooms_large", "y": 180 },
+		{ "model": "block/red_mushroom2", "y": 90 },
+		{ "model": "block/red_mushrooms", "y": 180 },
+		{ "model": "block/red_mushroom_small", "y": 270 },
+		{ "model": "block/red_mushroom_cluster" },
+		{ "model": "block/red_mushroom_cordyceps", "y": 90 },
+		{ "model": "block/red_mushrooms_large2", "y": 270 },
+		{ "model": "block/red_mushroom" },
+		{ "model": "block/red_mushroom" }
+      ]
+   }
+}

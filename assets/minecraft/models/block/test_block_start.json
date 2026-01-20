@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "block/test_block_start_top",
+    "bottom": "block/test_block_start_bottom",
+    "side": "block/test_block_start",
+    "particle": "block/debug"
+  }
+}

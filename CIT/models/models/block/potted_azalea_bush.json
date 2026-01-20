@@ -1,0 +1,9 @@
+{
+  "parent": "block/potted_flowering_azalea_bush",
+  "textures": {
+		"5": "block/potted_azalea_bush_plant",
+		"6": "block/potted_azalea_bush_side",
+		"7": "block/potted_azalea_bush_top",
+		"vines": "block/flower_pot_azalea_bush"
+  }
+}

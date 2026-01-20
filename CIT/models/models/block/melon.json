@@ -1,0 +1,10 @@
+{
+  "parent": "block/pumpkin",
+  "textures": {
+		"bottom": "block/melon_bottom",
+		"side": "block/melon_side",
+		"top": "block/melon_top",
+		"break": "block/melon_break",
+		"particle": "block/particle/melon"
+  }
+}

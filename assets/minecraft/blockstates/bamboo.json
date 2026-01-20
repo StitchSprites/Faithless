@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "age=0,leaves=none": [ 
+		{ "model": "block/bamboo1_age0" },
+		{ "model": "block/bamboo2_age0" },
+		{ "model": "block/bamboo3_age0" },
+		{ "model": "block/bamboo4_age0" } 
+	],
+    "age=1,leaves=none": [ 
+		{ "model": "block/bamboo1_age1" },
+		{ "model": "block/bamboo2_age1" },
+		{ "model": "block/bamboo3_age1" },
+		{ "model": "block/bamboo4_age1" } 
+	],
+    "age=0,leaves=small": [ 
+		{ "model": "block/bamboo1_age0" },
+		{ "model": "block/bamboo2_age0" },
+		{ "model": "block/bamboo3_age0" },
+		{ "model": "block/bamboo4_age0" } 
+	],
+    "age=1,leaves=small": [ 
+		{ "model": "block/bamboo1_age1" },
+		{ "model": "block/bamboo2_age1" },
+		{ "model": "block/bamboo3_age1" },
+		{ "model": "block/bamboo4_age1" } 
+	],
+    "leaves=large": { "model": "block/bamboo_large_leaves" }
+  }
+}

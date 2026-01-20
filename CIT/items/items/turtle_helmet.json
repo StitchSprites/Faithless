@@ -1,0 +1,36 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [ "gui", "fixed" ],
+        "model": {
+          "type": "select",
+          "property": "trim_material",
+          "cases": [
+            { "when": "amethyst", 	"model": { "type": "model", "model": "trim/turtle/helmet_amethyst" } },
+            { "when": "copper", 	"model": { "type": "model", "model": "trim/turtle/helmet_copper" } },
+            { "when": "diamond", 	"model": { "type": "model", "model": "trim/turtle/helmet_diamond" } },
+            { "when": "emerald", 	"model": { "type": "model", "model": "trim/turtle/helmet_emerald" } },
+            { "when": "gold", 		"model": { "type": "model", "model": "trim/turtle/helmet_gold" } },
+            { "when": "iron", 		"model": { "type": "model", "model": "trim/turtle/helmet_iron" } },
+            { "when": "lapis", 		"model": { "type": "model", "model": "trim/turtle/helmet_lapis" } },
+            { "when": "netherite", 	"model": { "type": "model", "model": "trim/turtle/helmet_netherite" } },
+            { "when": "quartz", 	"model": { "type": "model", "model": "trim/turtle/helmet_quartz" } },
+            { "when": "redstone", 	"model": { "type": "model", "model": "trim/turtle/helmet_redstone" } },
+            { "when": "resin", 		"model": { "type": "model", "model": "trim/turtle/helmet_resin" } }
+          ],
+          "fallback": {
+            "type": "model",
+            "model": "item/turtle_helmet"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/turtle_helmet_alt"
+    }
+  }
+}

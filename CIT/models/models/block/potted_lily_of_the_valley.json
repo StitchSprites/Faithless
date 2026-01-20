@@ -1,0 +1,7 @@
+{
+	"parent": "block/flower_pot_cross",
+	"textures": {
+		"vines": "block/flower_pot_lily_of_the_valley",
+		"plant": "block/lily_of_the_valley"
+	}
+}

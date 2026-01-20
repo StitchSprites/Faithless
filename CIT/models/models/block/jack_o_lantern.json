@@ -1,0 +1,57 @@
+{
+	"parent": "block/block_workstation",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "block/pumpkin_bottom",
+		"2": "block/pumpkin_side",
+		"3": "block/pumpkin_top",
+		"4": "block/pumpkin_inner",
+		"5": "block/pumpkin_torch",
+		"6": "block/jack_o_lantern",
+		"particle": "block/particle/pumpkin"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#6", "cullface": "north"}
+			}
+		},
+		{
+			"from": [1, 15, 0],
+			"to": [15, 1, 15],
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 1, 15, 15], "texture": "#4", "cullface": "north"},
+				"south": {"uv": [1, 1, 15, 15], "texture": "#4", "cullface": "north"},
+				"west": {"uv": [0, 1, 15, 15], "texture": "#4", "cullface": "north"},
+				"up": {"uv": [1, 1, 15, 16], "texture": "#4", "cullface": "north"},
+				"down": {"uv": [1, 1, 15, 16], "texture": "#4", "cullface": "north"}
+			}
+		},
+		{
+			"from": [7, 1, 7],
+			"to": [9, 9, 9],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [7, 6, 9, 14], "texture": "#5", "cullface": "north"},
+				"east": {"uv": [7, 6, 9, 14], "texture": "#5", "cullface": "north"},
+				"west": {"uv": [7, 6, 9, 14], "texture": "#5", "cullface": "north"},
+				"up": {"uv": [7, 6, 9, 8], "texture": "#5", "cullface": "north"}
+			}
+		}
+	]
+}

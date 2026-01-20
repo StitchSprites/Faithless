@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "block/nether_quartz_ore"
+      },
+      {
+        "model": "block/nether_quartz_ore",
+        "y": 90
+      },
+      {
+        "model": "block/nether_quartz_ore",
+        "y": 180
+      },
+      {
+        "model": "block/nether_quartz_ore",
+        "y": 270
+      }
+    ]
+  }
+}

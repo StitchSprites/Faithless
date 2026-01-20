@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/acacia_trapdoor"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/acacia_trapdoor_bottom"
+		}
+	}
+}

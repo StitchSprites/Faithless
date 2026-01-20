@@ -1,0 +1,40 @@
+{
+	"textures": {
+		"texture": "block/bamboo_fence",
+		"particle": "block/bamboo_planks"
+	},
+	"elements": [
+		{
+			"from": [7, 7, 0],
+			"to": [9, 12, 2],
+			"faces": {
+				"north": {"uv": [14, 4, 16, 9], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [14, 4, 16, 9], "texture": "#texture"},
+				"south": {"uv": [8, 4, 10, 9], "texture": "#texture"},
+				"west": {"uv": [0, 4, 2, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7, 4, 0],
+			"to": [9, 7, 6],
+			"faces": {
+				"north": {"uv": [14, 9, 16, 12], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [10, 9, 16, 12], "texture": "#texture"},
+				"west": {"uv": [0, 9, 6, 12], "texture": "#texture"},
+				"up": {"uv": [10, 9, 16, 11], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 9, 16, 11], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7, 12, 0],
+			"to": [9, 15, 6],
+			"faces": {
+				"north": {"uv": [14, 1, 16, 4], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [10, 1, 16, 4], "texture": "#texture"},
+				"west": {"uv": [0, 1, 6, 4], "texture": "#texture"},
+				"up": {"uv": [10, 1, 16, 3], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 1, 16, 3], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+        "particle": "block/air",
+        "pod": "block/pitcher_crop_bottom"
+	},
+	"elements": [
+		{
+			"from": [5, -1, 5],
+			"to": [11, 3, 11],
+			"faces": {
+				"north": {"uv": [5, 12, 11, 16], "texture": "#pod"},
+				"east": {"uv": [5, 12, 11, 16], "texture": "#pod"},
+				"south": {"uv": [5, 12, 11, 16], "texture": "#pod"},
+				"west": {"uv": [5, 12, 11, 16], "texture": "#pod"},
+				"up": {"uv": [5, 5, 11, 11], "texture": "#pod"}
+			}
+		}
+	]
+}

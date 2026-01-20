@@ -1,0 +1,11 @@
+{
+	"parent": "block/block_workstation",
+	"textures": {
+		"north": "block/cartography_table_side1",
+		"east": "block/cartography_table_side2",
+		"south": "block/cartography_table_side3",
+		"west": "block/cartography_table_side4",
+		"up": "item/alt/cartography_table_top",
+		"down": "block/cartography_table_bottom"
+	}
+}

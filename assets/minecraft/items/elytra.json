@@ -1,0 +1,27 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "condition",
+					"property": "broken",
+					"on_true": {
+						"type": "model",
+						"model": "item/elytra_broken"
+					},
+					"on_false": {
+						"type": "model",
+						"model": "item/elytra"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/elytra_alt"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"textures": {
+		"0": "block/brown_mushroom_large",
+		"2": "block/brown_mushroom_large_top",
+		"particle": "block/mushroom_block_inside"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 0],
+			"faces": {
+				"north": {"uv": [8, 0, 12, 3.2], "texture": "#0", "cullface": "north"}
+			}
+		},
+		{
+			"from": [0, 0, -0.2],
+			"to": [16, 16, -0.2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -0.2]},
+			"faces": {
+				"north": {"uv": [8, 12.8, 12, 16], "texture": "#2", "cullface": "down"}
+			}
+		}
+	]
+}

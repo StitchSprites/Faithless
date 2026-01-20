@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "model",
+    "model": "item/mangrove_leaves",
+    "tints": [
+      {
+        "type": "constant",
+        "value": -7158200
+      }
+    ]
+  }
+}

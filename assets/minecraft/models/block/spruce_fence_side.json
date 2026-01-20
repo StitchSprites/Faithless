@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"texture": "block/spruce_fence",
+		"particle": "block/spruce_planks"
+	},
+	"elements": [
+		{
+			"from": [6.75, 6.3, 0.05],
+			"to": [8.75, 9.3, 10],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 8, 0]},
+			"faces": {
+				"east": {"uv": [13, 0, 16, 10], "rotation": 270, "texture": "#texture"},
+				"west": {"uv": [13, 0, 16, 10], "rotation": 270, "texture": "#texture"},
+				"up": {"uv": [0, 0, 2, 10], "texture": "#texture"},
+				"down": {"uv": [0, 0, 2, 10], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [7.25, 6.35, -0.05],
+			"to": [9.25, 9.35, 10],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 8, 0]},
+			"faces": {
+				"east": {"uv": [13, 6, 16, 16], "rotation": 270, "texture": "#texture"},
+				"west": {"uv": [13, 6, 16, 16], "rotation": 270, "texture": "#texture"},
+				"up": {"uv": [0, 6, 2, 16], "texture": "#texture"},
+				"down": {"uv": [0, 6, 2, 16], "texture": "#texture"}
+			}
+		}
+	]
+}

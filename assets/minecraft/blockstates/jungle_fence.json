@@ -1,0 +1,136 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "OR": [
+          {
+            "north": "false",
+            "east": "false",
+            "south": "false",
+            "west": "false"
+          },
+          {
+            "north": "true",
+            "east": "false",
+            "south": "false",
+            "west": "false"
+          },
+          {
+            "north": "false",
+            "east": "true",
+            "south": "false",
+            "west": "false"
+          },
+          {
+            "north": "false",
+            "east": "false",
+            "south": "true",
+            "west": "false"
+          },
+          {
+            "north": "false",
+            "east": "false",
+            "south": "false",
+            "west": "true"
+          }
+        ]
+	  },
+      "apply": {
+        "model": "block/jungle_fence_post2",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          {
+            "north": "true",
+            "east": "true"
+          },
+          {
+            "east": "true",
+            "south": "true"
+          },
+          {
+            "south": "true",
+            "west": "true"
+          },
+          {
+            "north": "true",
+            "west": "true"
+          },
+          {
+            "north": "true",
+            "south": "true"
+          },
+          {
+            "east": "true",
+            "west": "true"
+          }
+        ]
+	  },
+      "apply": {
+        "model": "block/jungle_fence_post",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+	    "north": "true", "south": "true"  
+	  },
+      "apply": {
+        "model": "block/jungle_fence_side2",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "east": "true", "west": "true"  
+      },
+      "apply": {
+        "model": "block/jungle_fence_side2",
+        "y": 90,
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+	    "north": "true", "south": "false"  
+	  },
+      "apply": {
+        "model": "block/jungle_fence_side",
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "east": "true", "west": "false"  
+      },
+      "apply": {
+        "model": "block/jungle_fence_side",
+        "y": 90,
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "south": "true", "north": "false"  
+      },
+      "apply": {
+        "model": "block/jungle_fence_side",
+        "y": 180,
+        "uvlock": false
+      }
+    },
+    {
+      "when": {
+        "west": "true", "east": "false"  
+      },
+      "apply": {
+        "model": "block/jungle_fence_side",
+        "y": 270,
+        "uvlock": false
+      }
+    }
+  ]
+}

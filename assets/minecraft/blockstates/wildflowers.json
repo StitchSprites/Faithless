@@ -1,0 +1,84 @@
+{
+  "variants": {
+    "facing=north,flower_amount=1": [
+	{ "model": "block/wildflowers_1" },
+	{ "model": "block/wildflowers_1l" },
+	{ "model": "block/wildflowers_1h" }
+    ],
+    "facing=north,flower_amount=2": [
+	{ "model": "block/wildflowers_2" },
+	{ "model": "block/wildflowers_2l" },
+	{ "model": "block/wildflowers_2h" }
+    ],
+    "facing=north,flower_amount=3": [
+	{ "model": "block/wildflowers_3" },
+	{ "model": "block/wildflowers_3l" },
+	{ "model": "block/wildflowers_3h" }
+    ],
+    "facing=north,flower_amount=4": [
+	{ "model": "block/wildflowers_4" },
+	{ "model": "block/wildflowers_4l" },
+	{ "model": "block/wildflowers_4h" }
+	],
+    "facing=east,flower_amount=1": [
+	{ "model": "block/wildflowers_1", "y": 90 },
+	{ "model": "block/wildflowers_1l", "y": 90 },
+	{ "model": "block/wildflowers_1h", "y": 90 }
+    ],
+    "facing=east,flower_amount=2": [
+	{ "model": "block/wildflowers_2", "y": 90 },
+	{ "model": "block/wildflowers_2l", "y": 90 },
+	{ "model": "block/wildflowers_2h", "y": 90 }
+    ],
+    "facing=east,flower_amount=3": [
+	{ "model": "block/wildflowers_3", "y": 90 },
+	{ "model": "block/wildflowers_3l", "y": 90 },
+	{ "model": "block/wildflowers_3h", "y": 90 }
+    ],
+    "facing=east,flower_amount=4": [
+	{ "model": "block/wildflowers_4", "y": 90 },
+	{ "model": "block/wildflowers_4l", "y": 90 },
+	{ "model": "block/wildflowers_4h", "y": 90 }
+	],
+    "facing=south,flower_amount=1": [
+	{ "model": "block/wildflowers_1", "y": 180 },
+	{ "model": "block/wildflowers_1l", "y": 180 },
+	{ "model": "block/wildflowers_1h", "y": 180 }
+	],
+    "facing=south,flower_amount=2": [
+	{ "model": "block/wildflowers_2", "y": 180 },
+	{ "model": "block/wildflowers_2l", "y": 180 },
+	{ "model": "block/wildflowers_2h", "y": 180 }
+	],
+    "facing=south,flower_amount=3": [
+	{ "model": "block/wildflowers_3", "y": 180 },
+	{ "model": "block/wildflowers_3l", "y": 180 },
+	{ "model": "block/wildflowers_3h", "y": 180 }
+	],
+    "facing=south,flower_amount=4": [
+	{ "model": "block/wildflowers_4", "y": 180 },
+	{ "model": "block/wildflowers_4l", "y": 180 },
+	{ "model": "block/wildflowers_4h", "y": 180 }
+	],
+    "facing=west,flower_amount=1": [
+	{ "model": "block/wildflowers_1", "y": 270 },
+	{ "model": "block/wildflowers_1l", "y": 270 },
+	{ "model": "block/wildflowers_1h", "y": 270 }
+	],
+    "facing=west,flower_amount=2": [
+	{ "model": "block/wildflowers_2", "y": 270 },
+	{ "model": "block/wildflowers_2l", "y": 270 },
+	{ "model": "block/wildflowers_2h", "y": 270 }
+	],
+    "facing=west,flower_amount=3": [
+	{ "model": "block/wildflowers_3", "y": 270 },
+	{ "model": "block/wildflowers_3l", "y": 270 },
+	{ "model": "block/wildflowers_3h", "y": 270 }
+	],
+    "facing=west,flower_amount=4": [
+	{ "model": "block/wildflowers_4", "y": 270 },
+	{ "model": "block/wildflowers_4l", "y": 270 },
+	{ "model": "block/wildflowers_4h", "y": 270 }
+	]
+  }
+}

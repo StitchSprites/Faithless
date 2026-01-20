@@ -1,0 +1,6 @@
+{
+	"parent": "block/sculk_shrieker",
+	"textures": {
+		"inner_top": "block/sculk_shrieker_inner_top_safe"
+	}
+}

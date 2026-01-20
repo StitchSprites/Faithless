@@ -1,0 +1,50 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "minecraft:custom_name",
+    "on_true": {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "minecraft:custom_name",
+      "cases": [
+        {
+          "when": ["Dinnerbone","Grumm"],
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/name_tags/dinnerbone"
+          }
+        },
+        {
+          "when": "jeb_",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/name_tags/jeb_"
+          }
+        },
+        {
+          "when": "Toast",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/name_tags/toast"
+          }
+        },
+        {
+          "when": "Johnny",
+          "model": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/name_tags/johnny"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/name_tags/written"
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/name_tag"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/heart_of_the_sea"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/heart_of_the_sea_alt"
+		}
+	}
+}

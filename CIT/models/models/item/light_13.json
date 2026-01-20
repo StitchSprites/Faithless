@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_invisible",
+  "textures": {
+	"all": "item/alt/light_block_13",
+    "item": "item/light_13"
+  }
+}

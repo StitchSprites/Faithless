@@ -1,0 +1,11 @@
+{
+	"parent": "block/block_workstation",
+	"textures": {
+		"up": "item/alt/jukebox_top",
+		"down": "block/note_block",
+		"north": "block/jukebox_side",
+		"east": "block/jukebox_side",
+		"south": "block/jukebox_side",
+		"west": "block/jukebox_side"
+	}
+}

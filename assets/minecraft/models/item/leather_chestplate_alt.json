@@ -1,0 +1,8 @@
+{
+  "parent": "item/template_chestplate",
+  "textures": {
+    "1": "block/entity/armor_leather_overlay",
+    "2": "block/entity/armor_leather",
+    "particle": "item/leather_chestplate_particle"
+  }
+}

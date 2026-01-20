@@ -1,0 +1,10 @@
+{
+	"parent": "block/flower_pot_cross",
+	"textures": {
+		"vines": "block/flower_pot_open_eyeblossom",
+		"soil": "block/pale_moss_block",
+		"plant": "block/open_eyeblossom",
+		"flowerpot": "block/flower_pot_resin",
+		"bottom": "block/flower_pot_bottom_resin"
+	}
+}

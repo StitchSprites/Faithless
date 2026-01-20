@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "block/crafting_table"
+      },
+      {
+        "model": "block/crafting_table",
+        "y": 90
+      },
+      {
+        "model": "block/crafting_table",
+        "y": 180
+      },
+      {
+        "model": "block/crafting_table",
+        "y": 270
+      }
+    ]
+  }
+}

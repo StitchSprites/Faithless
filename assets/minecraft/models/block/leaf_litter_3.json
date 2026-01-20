@@ -1,0 +1,7 @@
+{
+    "parent": "block/leaf_litter_4",
+	"textures": {
+		"1": "block/leaf_litter_3",
+		"particle": "block/leaf_litter"
+	}
+}

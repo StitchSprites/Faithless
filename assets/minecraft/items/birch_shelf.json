@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/birch_shelf"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/birch_shelf_unpowered"
+		}
+	}
+}

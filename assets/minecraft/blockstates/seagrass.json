@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+	{ "model": "block/seagrass_22" },
+	{ "model": "block/seagrass_22", "y": 90 },
+	{ "model": "block/seagrass_-22" },
+	{ "model": "block/seagrass_-22", "y": 90 },
+	{ "model": "block/seagrass_45" },
+	{ "model": "block/seagrass_45", "y": 90 }
+	]
+  }
+}

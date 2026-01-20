@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "block/mangrove_slab_top",
+    "side": "block/mangrove_slab_side"
+  }
+}

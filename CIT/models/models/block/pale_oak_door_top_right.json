@@ -1,0 +1,106 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"top": "block/pale_oak_door_top",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [12.66667, 0, 7.33333, 8], "texture": "#top"},
+				"east": {"uv": [1, 0, 0, 8], "texture": "#top", "cullface": "east"},
+				"south": {"uv": [6.33333, 0, 1, 8], "texture": "#top", "cullface": "south"},
+				"west": {"uv": [7.33333, 0, 6.33333, 8], "texture": "#top", "cullface": "west"},
+				"up": {"uv": [13.66667, 8, 12.66667, 0], "rotation": 90, "texture": "#top", "cullface": "up"}
+			}
+		},
+		{
+			"from": [14, 0, 16],
+			"to": [16, 2, 16.5],
+			"faces": {
+				"east": {"uv": [1.33333, 7, 1, 8], "texture": "#top", "cullface": "south"},
+				"south": {"uv": [1.66667, 7, 1, 8], "texture": "#top", "cullface": "south"},
+				"west": {"uv": [1.66667, 7, 1.33334, 8], "texture": "#top", "cullface": "south"},
+				"up": {"uv": [1.66667, 7, 1, 7.5], "texture": "#top", "cullface": "south"}
+			}
+		},
+		{
+			"from": [3, 10, 16],
+			"to": [16, 12, 16.5],
+			"faces": {
+				"east": {"uv": [1, 2, 1.33334, 3], "texture": "#top", "cullface": "south"},
+				"south": {"uv": [5.33333, 2, 1, 3], "texture": "#top", "cullface": "south"},
+				"west": {"uv": [5.33333, 2, 5, 3], "texture": "#top", "cullface": "south"},
+				"up": {"uv": [5.33333, 2, 1, 2.5], "texture": "#top", "cullface": "south"},
+				"down": {"uv": [5.33333, 2.5, 1, 3], "texture": "#top", "cullface": "south"}
+			}
+		},
+		{
+			"from": [5, 9, 16],
+			"to": [7, 13, 16.5],
+			"faces": {
+				"east": {"uv": [4.33333, 1.5, 4, 3.5], "texture": "#top", "cullface": "south"},
+				"south": {"uv": [4.66667, 1.5, 4, 3.5], "texture": "#top", "cullface": "south"},
+				"west": {"uv": [4.66667, 1.5, 4.33334, 3.5], "texture": "#top", "cullface": "south"},
+				"up": {"uv": [4.66667, 1.5, 4, 2], "texture": "#top", "cullface": "south"},
+				"down": {"uv": [4.66667, 3, 4, 3.5], "texture": "#top", "cullface": "south"}
+			}
+		},
+		{
+			"from": [14, 0, 12.5],
+			"to": [16, 2, 13],
+			"faces": {
+				"north": {"uv": [12.66667, 7, 12, 8], "texture": "#top"},
+				"east": {"uv": [12.33333, 7, 12.66667, 8], "texture": "#top"},
+				"west": {"uv": [12, 7, 12.33333, 8], "texture": "#top"},
+				"up": {"uv": [12, 7.5, 12.66667, 7], "texture": "#top"}
+			}
+		},
+		{
+			"from": [5, 9, 12.5],
+			"to": [7, 13, 13],
+			"faces": {
+				"north": {"uv": [9.66667, 1.5, 9, 3.5], "texture": "#top"},
+				"east": {"uv": [9.33333, 1.5, 9.66667, 3.5], "texture": "#top"},
+				"west": {"uv": [9, 1.5, 9.33333, 3.5], "texture": "#top"},
+				"up": {"uv": [9, 2, 9.66667, 1.5], "texture": "#top"},
+				"down": {"uv": [9, 3.5, 9.66667, 3], "texture": "#top"}
+			}
+		},
+		{
+			"from": [3, 10, 12.5],
+			"to": [16, 12, 13],
+			"faces": {
+				"north": {"uv": [12.66667, 2, 8.33333, 3], "texture": "#top"},
+				"east": {"uv": [12.33333, 2, 12.66667, 3], "texture": "#top"},
+				"west": {"uv": [8.33333, 2, 8.66667, 3], "texture": "#top"},
+				"up": {"uv": [8.33333, 2.5, 12.66667, 2], "texture": "#top"},
+				"down": {"uv": [8.33333, 3, 12.66667, 2.5], "texture": "#top"}
+			}
+		},
+		{
+			"from": [2, 0, 16],
+			"to": [6, 1, 17],
+			"faces": {
+				"east": {"uv": [4.66666, 7.5, 4.33333, 8], "texture": "#top", "cullface": "south"},
+				"south": {"uv": [5.66667, 7.5, 4.33333, 8], "texture": "#top", "cullface": "south"},
+				"west": {"uv": [5.66667, 7.5, 5.33333, 8], "texture": "#top", "cullface": "south"},
+				"up": {"uv": [5.66667, 7.5, 4.33333, 8], "texture": "#top", "cullface": "south"},
+				"down": {"uv": [5.66667, 7.5, 4.33333, 8], "texture": "#top", "cullface": "south"}
+			}
+		},
+		{
+			"from": [2, 0, 12],
+			"to": [6, 1, 13],
+			"faces": {
+				"north": {"uv": [9.33334, 7.5, 8, 8], "texture": "#top"},
+				"east": {"uv": [9, 7.5, 9.33334, 8], "texture": "#top"},
+				"west": {"uv": [8, 7.5, 8.33333, 8], "texture": "#top"},
+				"up": {"uv": [8, 8, 9.33334, 7.5], "texture": "#top"},
+				"down": {"uv": [8, 8, 9.33334, 7.5], "texture": "#top"}
+			}
+		}
+	]
+}

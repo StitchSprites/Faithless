@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "model",
+    "model": "item/spruce_leaves",
+    "tints": [
+      {
+        "type": "constant",
+        "value": -10380959
+      }
+    ]
+  }
+}

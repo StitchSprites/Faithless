@@ -1,0 +1,6 @@
+{
+    "parent": "block/pink_petals_4h",
+	"textures": {
+		"1": "block/pink_petals_3"
+	}
+}

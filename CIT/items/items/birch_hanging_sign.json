@@ -1,0 +1,19 @@
+{
+	"model": {
+		"type": "select",
+		"property": "display_context",
+		"cases": [
+			{
+				"when": [ "gui", "fixed" ],
+				"model": {
+					"type": "model",
+					"model": "item/birch_hanging_sign"
+				}
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "item/birch_hanging_sign_alt"
+		}
+	}
+}

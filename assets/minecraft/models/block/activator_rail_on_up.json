@@ -1,0 +1,6 @@
+{
+	"parent": "block/rail_up",
+	"textures": {
+		"0": "block/activator_rail_on"
+	}
+}

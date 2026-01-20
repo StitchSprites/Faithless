@@ -1,0 +1,48 @@
+{
+	"model": {
+		"type": "select",
+		"block_state_property": "honey_level",
+		"cases": [
+			{
+				"model": {
+					"type": "model",
+					"model": "block/bee_nest_level_1"
+				},
+				"when": "1"
+			},
+			{
+				"model": {
+					"type": "model",
+					"model": "block/bee_nest_level_2"
+				},
+				"when": "2"
+			},
+			{
+				"model": {
+					"type": "model",
+					"model": "block/bee_nest_level_3"
+				},
+				"when": "3"
+			},
+			{
+				"model": {
+					"type": "model",
+					"model": "block/bee_nest_level_4"
+				},
+				"when": "4"
+			},
+			{
+				"model": {
+					"type": "model",
+					"model": "block/bee_nest_honey"
+				},
+				"when": "5"
+			}
+		],
+		"fallback": {
+			"type": "model",
+			"model": "block/bee_nest_empty"
+		},
+		"property": "block_state"
+	}
+}

@@ -1,0 +1,54 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"1": "block/allium_front",
+		"2": "block/allium_stem",
+		"particle": "block/air"
+	},
+	"elements": [
+		{
+			"from": [0.8, 0, 8],
+			"to": [15.2, 16, 8],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [8, 0, 0.8],
+			"to": [8, 16, 15.2],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [4.5, 7, 4.5],
+			"to": [11.5, 12, 11.5],
+			"faces": {
+				"up": {"uv": [4, 4, 11, 11], "texture": "#1"},
+				"down": {"uv": [4, 4, 11, 11], "texture": "#1"}
+			}
+		},
+		{
+			"from": [4.5, 6, 5.5],
+			"to": [11.5, 13, 10.5],
+			"faces": {
+				"north": {"uv": [4, 4, 11, 11], "texture": "#1"},
+				"south": {"uv": [4, 4, 11, 11], "texture": "#1"}
+			}
+		},
+		{
+			"from": [5.5, 6, 4.5],
+			"to": [10.5, 13, 11.5],
+			"faces": {
+				"east": {"uv": [4, 4, 11, 11], "texture": "#1"},
+				"west": {"uv": [4, 4, 11, 11], "texture": "#1"}
+			}
+		}
+	]
+}

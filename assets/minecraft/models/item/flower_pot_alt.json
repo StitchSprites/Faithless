@@ -1,0 +1,34 @@
+{
+    "parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/flower_pot",
+		"flowerpot": "block/flower_pot",
+		"dirt": "block/farmland_moist"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 6, 11],
+			"faces": {
+				"north": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"east": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"south": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"west": {"uv": [5, 10, 11, 16], "texture": "#flowerpot"},
+				"up": {"uv": [5, 5, 11, 11], "texture": "#flowerpot"},
+				"down": {"uv": [5, 0, 11, 6], "texture": "#flowerpot", "cullface": "down"}
+			}
+		},
+		{
+			"from": [6, 6, 6],
+			"to": [10, 5, 10],
+			"faces": {
+				"north": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"east": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"south": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"west": {"uv": [6, 12, 10, 11], "texture": "#flowerpot"},
+				"up": {"uv": [0, 0, 4, 4], "texture": "#dirt"}
+			}
+		}
+	]
+}

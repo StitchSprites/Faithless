@@ -1,0 +1,6 @@
+{
+    "parent": "block/comparator",
+	"textures": {
+		"0": "block/comparator_subtract"
+	}
+}

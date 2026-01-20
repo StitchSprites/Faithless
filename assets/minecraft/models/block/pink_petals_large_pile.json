@@ -1,0 +1,47 @@
+{
+	"textures": {
+		"0": "block/pink_petals",
+		"1": "block/pink_petals_med",
+		"2": "block/pink_petals_large",
+		"3": "block/pink_petals_even_larger",
+		"particle": "block/pink_petals"
+	},
+	"elements": [
+		{
+			"from": [-3, 7.5, 2],
+			"to": [13, 7.5, 18],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [-6, 5.5, -6],
+			"to": [26, 5.5, 26],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [-12, 3.5, -11],
+			"to": [20, 3.5, 21],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "down"}
+			}
+		},
+		{
+			"from": [-16, 1.5, -16],
+			"to": [32, 1.5, 32],
+			"shade": false,
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#3", "cullface": "down"}
+			}
+		}
+	]
+}

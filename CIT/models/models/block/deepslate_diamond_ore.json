@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_ore",
+  "textures": {
+    "side": "block/deepslate_diamond_ore",
+    "ends": "block/deepslate_diamond_ore_top"
+  }
+}

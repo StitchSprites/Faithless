@@ -1,0 +1,6 @@
+{
+  "parent": "block/moss_carpet",
+  "textures": {
+	"texture": "block/moss_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "item/template_disc",
+	"textures": {
+		"0": "item/alt/disc_5"
+	}
+}

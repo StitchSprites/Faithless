@@ -1,0 +1,19 @@
+{
+	"pack": {
+		"description": "An alternate look and feel of Minecraft §6(By §bStitch§6)",
+		"pack_format": 16,
+		"supported_formats": {
+			"min_inclusive": 16, 
+			"max_inclusive": 256
+		}
+	},
+	"sodium": {
+		"ignored_shaders": [
+			"rendertype_clouds.fsh",
+			"rendertype_clouds.vsh",
+			"terrain.vsh",
+			"terrain.fsh",
+			"fog.glsl"
+		]
+	}
+}

@@ -1,0 +1,61 @@
+{
+	"model": {
+		"type": "select",
+		"property": "main_hand",
+		"cases": [
+			{
+				"when": "left",
+				"model": {
+					"type": "range_dispatch",
+					"property": "damage",
+					"scale": 1,
+					"entries": [
+						{
+							"threshold": 0.5,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_hoe_1"
+							}
+						},
+						{
+							"threshold": 0.75,
+							"model": {
+								"type": "model",
+								"model": "item/lefthanded/golden_hoe_2"
+							}
+						}
+					],
+					"fallback": {
+						"type": "model",
+						"model": "item/lefthanded/golden_hoe"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "range_dispatch",
+			"property": "damage",
+			"scale": 1,
+			"entries": [
+				{
+					"threshold": 0.5,
+					"model": {
+						"type": "model",
+						"model": "item/golden_hoe_1"
+					}
+				},
+				{
+					"threshold": 0.75,
+					"model": {
+						"type": "model",
+						"model": "item/golden_hoe_2"
+					}
+				}
+			],
+			"fallback": {
+				"type": "model",
+				"model": "item/golden_hoe"
+			}
+		}
+	}
+}

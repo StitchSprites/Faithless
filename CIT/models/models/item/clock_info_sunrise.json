@@ -1,0 +1,6 @@
+{
+	"parent": "item/clock_info",
+	"textures": {
+		"info": "item/clock_sunrise"
+	}
+}

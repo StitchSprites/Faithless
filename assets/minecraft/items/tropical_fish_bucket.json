@@ -1,0 +1,405 @@
+{
+	"model":{
+		"type":"composite",
+		"models":[
+			{
+				"type":"model",
+				"model":"item/fish_bucket"
+			},
+			{
+				"type":"select",
+				"property":"component",
+				"component":"tropical_fish/pattern",
+				"cases":[
+					{
+						"when":["kob","sunstreak","snooper","dasher","brinely","spotty"],
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/base_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":["flopper","stripey","glitter","blockfish","betty","clayfish"],
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/base_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b","tints":[{"type":"constant","value":11141290}]}
+						}
+					}
+				],
+				"fallback":{"type":"model","model":"item/tropical_fish_bucket"}
+			},
+			{
+				"type":"select",
+				"property":"component",
+				"component":"tropical_fish/pattern",
+				"cases":[
+					{
+						"when":"kob",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a1","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"sunstreak",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a2","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"snooper",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a3","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"dasher",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a4","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"brinely",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a5","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"spotty",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_a6","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"flopper",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b1","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"stripey",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b2","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"glitter",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b3","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"blockfish",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b4","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"betty",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b5","tints":[{"type":"constant","value":11141290}]}
+						}
+					},
+					{
+						"when":"clayfish",
+						"model":{
+							"type":"select",
+							"property":"component",
+							"component":"tropical_fish/pattern_color",
+							"cases":[
+								{"when":"white",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":16120826}]}},
+								{"when":"light_gray",	"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":10197909}]}},
+								{"when":"gray",			"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":4607569}]}},
+								{"when":"black",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":1908000}]}},
+								{"when":"brown",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":8475441}]}},
+								{"when":"red",			"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":11349285}]}},
+								{"when":"orange",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":16088605}]}},
+								{"when":"yellow",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":16438588}]}},
+								{"when":"lime",			"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":8307743}]}},
+								{"when":"green",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":6126102}]}},
+								{"when":"cyan",			"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":1481370}]}},
+								{"when":"light_blue",	"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":3780823}]}},
+								{"when":"blue",			"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":3883943}]}},
+								{"when":"purple",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":8860085}]}},
+								{"when":"magenta",		"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":12864954}]}},
+								{"when":"pink",			"model":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":15698343}]}}
+							],
+							"fallback":{"type":"model","model":"item/fish_b6","tints":[{"type":"constant","value":11141290}]}
+						}
+					}
+				],
+				"fallback":{"type":"empty"}
+			}
+		]
+	}
+}

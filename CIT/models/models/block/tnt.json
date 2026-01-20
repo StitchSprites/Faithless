@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "block/tnt_bottom",
+    "side": "block/tnt_side",
+    "top": "block/tnt_top",
+	"particle": "block/particle/tnt"
+  }
+}

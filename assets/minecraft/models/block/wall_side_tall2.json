@@ -1,0 +1,27 @@
+{
+	"textures": {
+		"1": "block/terrain"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 0],
+			"to": [11, 16, 16],
+			"faces": {
+				"north": {"uv": [11, 10.66667, 13, 16], "texture": "#wall", "cullface": "south"},
+				"east": {"uv": [5.33334, 10.66667, 10.66667, 16], "texture": "#wall"},
+				"south": {"uv": [13, 10.66667, 11, 16], "texture": "#wall", "cullface": "north"},
+				"west": {"uv": [5.66666, 10.66667, 11, 16], "texture": "#wall"},
+				"up": {"uv": [14, 10.66667, 16, 16], "texture": "#wall", "cullface": "up"},
+				"down": {"uv": [0, 0, 5.33333, 2], "rotation": 270, "texture": "#wall", "cullface": "down"}
+			}
+		},
+		{
+			"from": [5, 0, 0],
+			"to": [11, 0.001, 16],
+			"faces": {
+				"east": {"uv": [0, 8, 16, 16], "texture": "#1", "cullface": "down"},
+				"west": {"uv": [0, 8, 16, 16], "texture": "#1", "cullface": "down"}
+			}
+		}
+	]
+}

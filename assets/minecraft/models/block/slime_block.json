@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_slime",
+	"textures": {
+		"all": "block/slime_block",
+		"inner": "block/slime_block_bottom"
+	}
+}

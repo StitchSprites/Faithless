@@ -1,0 +1,7 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "block/sculk_sprouts",
+		"particle": "block/particle/sculk"
+	}
+}

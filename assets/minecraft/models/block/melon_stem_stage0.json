@@ -1,0 +1,7 @@
+{
+	"parent": "block/pumpkin_stem_stage0",
+	"textures": {
+		"4": "block/melon_stem",
+		"particle": "block/particle/melon_stem"
+	}
+}
