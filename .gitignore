@@ -12,6 +12,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+*faithless_unused
 
 # Mono auto generated files
 mono_crash.*
