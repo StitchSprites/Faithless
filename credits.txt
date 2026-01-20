@@ -56,3 +56,6 @@ Snipr#6180
 
 Shaders used in Panorama
 Complementary Shaders
+
+People who helped on Github:
+* @alexzander700
