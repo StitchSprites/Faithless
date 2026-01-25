@@ -1,8 +1,8 @@
 {
 	"pack": {
 		"description": "An alternate look and feel of Minecraft §6(By §bStitch§6)",
-		"min_format": [68],
-		"max_format": [74, 0]
+		"min_format": [75, 0],
+		"max_format": [76, 0]
 	},
 	"sodium": {
 		"ignored_shaders": [
