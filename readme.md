@@ -1,6 +1,6 @@
 # Faithless 
 
-Current supported version: `1.21.10`
+Current goal version: `1.21.11`
 
 ## Stitch put whatever you want here for a description
 
