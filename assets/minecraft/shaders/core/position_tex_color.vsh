@@ -41,10 +41,10 @@ void main() {
 	mat4 MVM = ModelViewMat;
 
      // ── End Skybox detection ──────────────────────────────────────────────────
-     // When the End Sky texture is 1x1 and set to solid magenta (255, 0, 255, 255)
+     // When the End Sky texture is 1x1 and set to solid magenta (10, 0, 10, 255)
      // we know this draw call is for the End Sky.
      vec4 ctrl1x1 = texture(Sampler0, vec2(0.5));
-     // Detection pixel: RGB (10, 0, 9) / 255 ≈ (0.0392, 0.0, 0.0353), A = 255
+     // Detection pixel: RGB (10, 0, 10) / 255 ≈ (0.0392, 0.0, 0.0353), A = 255
 	float endSkyFlag = (textureSize(Sampler0, 0) == ivec2(1) &&
                          ctrl1x1.r > 0.02 && ctrl1x1.r < 0.08 &&
                          ctrl1x1.g < 0.02 &&
