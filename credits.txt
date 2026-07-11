@@ -59,3 +59,4 @@ Complementary Shaders
 
 People who helped on Github:
 * @alexzander700
+* @vesmaybevesper

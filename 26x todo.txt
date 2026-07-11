@@ -1,0 +1,11 @@
+Things that are broken (growing list):
+Invetory player model
+Shulker boxes in hand
+Incorrect lantern translucency
+chests are invisible in the inventory
+ominious banners invis in the inventory
+bubles can be seen through blocks
+water drops during rain can be seen through blocks
+All inventory GUIs broken
+all mob heads invis in inventory
+running, breaking particles are broken (but only sometimes)
