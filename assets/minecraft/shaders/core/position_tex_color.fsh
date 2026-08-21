@@ -98,15 +98,15 @@ void cubeFaceUV(vec3 d, out int face, out vec2 uv) {
     if (a.x >= a.y && a.x >= a.z) {
         face = (d.x > 0.0) ? 0 : 1;
         uv = (d.x > 0.0) ? vec2(-d.z, -d.y) / a.x
-                          : vec2( d.z, -d.y) / a.x;
+        : vec2( d.z, -d.y) / a.x;
     } else if (a.y >= a.x && a.y >= a.z) {
         face = (d.y > 0.0) ? 2 : 3;
         uv = (d.y > 0.0) ? vec2( d.x, d.z) / a.y
-                          : vec2( d.x, -d.z) / a.y;
+        : vec2( d.x, -d.z) / a.y;
     } else {
         face = (d.z > 0.0) ? 4 : 5;
         uv = (d.z > 0.0) ? vec2( d.x, -d.y) / a.z
-                          : vec2(-d.x, -d.y) / a.z;
+        : vec2(-d.x, -d.y) / a.z;
     }
     uv = uv * 0.5 + 0.5;
 }
@@ -152,21 +152,21 @@ float tearSDF(vec2 uv, float t) {
 vec3 auroraColor(vec2 uv, float t, float strength) {
     // Drift the aurora bands slowly
     float wave = sin(uv.x * 6.0 + t * 0.0005) * 0.5
-               + sin(uv.x * 3.2 - t * 0.0003) * 0.5;
+    + sin(uv.x * 3.2 - t * 0.0003) * 0.5;
     wave = wave * 0.5 + 0.5;
 
     float bands = noise(vec2(uv.x * 4.0, t * 0.0002)) * 0.6
-                + noise(vec2(uv.x * 8.0 + 1.3, t * 0.00035)) * 0.4;
+    + noise(vec2(uv.x * 8.0 + 1.3, t * 0.00035)) * 0.4;
 
     float intensity = wave * bands * strength;
 
     // Hue: magenta → violet → pink → back to magenta
     float hShift = sin(uv.x * 3.0 + t * 0.0004) * 0.5 + 0.5;
     vec3 auroraHue = mix(vec3(1.0, 0.0, 1.0),   // magenta
-                         vec3(0.6, 0.0, 1.0),    // violet
-                         hShift);
+            vec3(0.6, 0.0, 1.0),    // violet
+            hShift);
     auroraHue = mix(auroraHue, vec3(1.0, 0.2, 0.8), // pink
-                    noise(vec2(uv.x * 5.0, t * 0.0006)));
+            noise(vec2(uv.x * 5.0, t * 0.0006)));
 
     return auroraHue * intensity * 1.4;
 }
@@ -191,8 +191,8 @@ vec4 endSkyColor(vec3 dir) {
     // A very dark purple / indigo gradient, slightly lighter toward the horizon.
     float horizonFactor = 1.0 - abs(nd.y);        // 0 at poles, 1 at equator
     vec3 baseSky = mix(vec3(0.01, 0.0, 0.04),      // zenith / nadir – near black
-                       vec3(0.04, 0.01, 0.08),      // horizon – slightly purple
-                       pow(horizonFactor, 2.0));
+            vec3(0.04, 0.01, 0.08),      // horizon – slightly purple
+            pow(horizonFactor, 2.0));
 
     // Subtle noise grain in the base
     baseSky += fbm(faceUV * 12.0 + vec2(t * 0.00005), 3) * 0.015;
@@ -214,7 +214,7 @@ vec4 endSkyColor(vec3 dir) {
         // Edge glow band (magenta)
         float edgeWidth = 0.06 + 0.03 * sin(t * 0.0007);   // breathes slightly
         tearEdge = smoothstep(edgeWidth, 0.0, sdf)
-                 * smoothstep(-0.02,  0.0, sdf);
+        * smoothstep(-0.02,  0.0, sdf);
 
         // Aurora starts at the edge and fans down from the top face.
         // Strength is largest right at the crack.
@@ -242,9 +242,9 @@ vec4 endSkyColor(vec3 dir) {
     vec3 magenta = vec3(1.0, 0.0, 1.0);
     // Add an inner blooming bright core to the edge
     float edgeCore = (face == 2)
-        ? smoothstep(0.01, -0.005, tearSDF(faceUV, t))
-          * (1.0 - smoothstep(-0.005, -0.02, tearSDF(faceUV, t)))
-        : 0.0;
+    ? smoothstep(0.01, -0.005, tearSDF(faceUV, t))
+    * (1.0 - smoothstep(-0.005, -0.02, tearSDF(faceUV, t)))
+    : 0.0;
 
     sky = mix(sky, magenta * 2.0, tearEdge * 0.85);
     sky += magenta * edgeCore * 0.6;
@@ -272,7 +272,7 @@ vec4 endSkyColor(vec3 dir) {
         // Tiny four-pointed diffraction spike
         vec2 sp = faceUV - 0.5;
         float spike = smoothstep(0.002, 0.0, abs(sp.x)) * smoothstep(0.06, 0.0, abs(sp.y))
-                    + smoothstep(0.002, 0.0, abs(sp.y)) * smoothstep(0.06, 0.0, abs(sp.x));
+        + smoothstep(0.002, 0.0, abs(sp.y)) * smoothstep(0.06, 0.0, abs(sp.x));
         sky += vec3(0.9, 0.95, 1.0) * spike * 0.5 * twinkle;
     }
 

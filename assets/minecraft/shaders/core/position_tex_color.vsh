@@ -5,6 +5,7 @@
 #moj_import <vertex_utils.glsl>
 #moj_import <globals.glsl>
 #moj_import <config.glsl>
+#extension GL_ARB_shader_draw_parameters : enable
 
 in vec3 Position;
 in vec2 UV0;
@@ -42,9 +43,9 @@ void main() {
 
      // ── End Skybox detection ──────────────────────────────────────────────────
      // When the End Sky texture is 1x1 and set to solid magenta (10, 0, 10, 255)
-     // we know this draw call is for the End Sky.
+     // we know this is the End Sky.
      vec4 ctrl1x1 = texture(Sampler0, vec2(0.5));
-     // Detection pixel: RGB (10, 0, 10) / 255 ≈ (0.0392, 0.0, 0.0353), A = 255
+     // Detection pixel: RGB (10, 0, 10) / 255 ~= (0.0392, 0.0, 0.0353), A = 255
 	float endSkyFlag = (textureSize(Sampler0, 0) == ivec2(1) &&
                          ctrl1x1.r > 0.02 && ctrl1x1.r < 0.08 &&
                          ctrl1x1.g < 0.02 &&
@@ -60,13 +61,10 @@ void main() {
 		break;
 	}
 
-     // Pass the model-space vertex position as the sky direction.
-     // The skybox geometry is a unit cube centred at the camera so Position
-     // already IS the directional vector we need.
-     skyDir = Position;
-     // ─────────────────────────────────────────────────────────────────────────
 
-    int vertID = gl_VertexID % 4;
+     skyDir = Position;
+
+	int vertID = (gl_VertexID - gl_BaseVertexARB) % 4;
 	ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
 	
     switch (ctrlL.a) {
@@ -93,7 +91,7 @@ void main() {
 			case 2: frameIndex = Villager[frameIndex]; break;
 		}
 		
-		texCoord0.y = (frameIndex + texCoord0.y) / animParams[1];		
+		texCoord0.y = (frameIndex + texCoord0.y) / animParams[1];
 		break;
 
     default: //case 1: SPRITES
