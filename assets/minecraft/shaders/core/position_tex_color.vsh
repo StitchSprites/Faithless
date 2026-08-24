@@ -1,11 +1,12 @@
 #version 150
 
+#extension GL_ARB_shader_draw_parameters : enable
+
 #moj_import <dynamictransforms.glsl>
 #moj_import <projection.glsl>
 #moj_import <vertex_utils.glsl>
 #moj_import <globals.glsl>
 #moj_import <config.glsl>
-#extension GL_ARB_shader_draw_parameters : enable
 
 in vec3 Position;
 in vec2 UV0;
