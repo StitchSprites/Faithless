@@ -138,10 +138,14 @@ void main() {
 		color = mix(FogColor * vec4(1, 1, 1, color.a), color, ChunkVisibility);
 		break;
 	}
+	if (ctrlF.a == 180 || ctrlF.a == 181) {
+		color.a = 1.0;
+	}
 	#ifdef ALPHA_CUTOUT
 	if (color.a < ALPHA_CUTOUT) {
 		discard;
 	}
+	color.a = 1.0;
 	#endif
 	fragColor = color; //apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 	fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);

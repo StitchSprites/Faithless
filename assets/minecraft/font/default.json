@@ -1,6 +1,8 @@
 {
 "providers":[
 
+{"type":"space","advances":{"\uEFFF":-8}},
+
 {"type":"bitmap","ascent":20,"height":32,"chars":["\uE000"],"file":"gui/title/game_menu.png"},
 {"type":"bitmap","ascent":0,"height":32,"chars":["\uE001"],"file":"gui/title/paused.png"},
 {"type":"bitmap","ascent":15,"height":16,"chars":["\uE002"],"file":"gui/title/you_died.png"},
