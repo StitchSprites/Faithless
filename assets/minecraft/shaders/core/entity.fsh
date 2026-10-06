@@ -32,11 +32,22 @@ in vec4 overlayColor;
 in vec2 texCoord0;
 in vec4 rawVertexColor;
 in vec3 screenPos;
+flat in int isCrystalBeam;
 
 out vec4 fragColor;
 
 void main() {
     vec4 color = texture(Sampler0, texCoord0);
+    // End Crystal beam: its texture is a single (0, 0, 0, 12) pixel
+    // Writes a marker for post/transparency.fsh instead of a visible color
+    if (isCrystalBeam != 0) {
+        if (!Fabulous_End_Crystals) {
+            discard;
+        }
+        fragColor = vec4(fract(texCoord0), 0.0, 12.0 / 255.0);
+        return;
+    }
+
 #ifdef ALPHA_CUTOUT
     if (color.a < ALPHA_CUTOUT) {
         discard;

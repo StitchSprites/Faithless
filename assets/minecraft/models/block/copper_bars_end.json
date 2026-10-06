@@ -1,6 +1,6 @@
 {
 "parent": "block/bars_end",
   "textures": {
-    "material": "block/iron_bars"
+    "material": "block/copper_bars"
   }
 }

@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_transparent",
 	"textures": {
-		"all": "block/azalea_leaves"
+		"all": "block/azalea_leaves",
+		"inner": "block/azalea_leaves"
 	}
 }

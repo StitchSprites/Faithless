@@ -40,10 +40,10 @@ void main() {
     vec3 pos = Position;
 	mat4 MVM = ModelViewMat;
 
-     // ── End Skybox detection ──────────────────────────────────────────────────
-     // The End Sky texture is a 1x1 control pixel (10, 0, 10, 255),
+    // ── End Skybox detection ──────────────────────────────────────────────────
+	// The End Sky texture is a 1x1 control pixel (10, 0, 10, 255),
 	// we know this is the End Sky.
-     vec4 ctrl1x1 = texture(Sampler0, vec2(0.5));
+    vec4 ctrl1x1 = texture(Sampler0, vec2(0.5));
 	float endSkyFlag = (textureSize(Sampler0, 0) == ivec2(1) &&
                          ctrl1x1.r > 0.02 && ctrl1x1.r < 0.08 &&
                          ctrl1x1.g < 0.02 &&
@@ -54,7 +54,10 @@ void main() {
      // End_Skybox value other than 1 or 2. 1 = procedural sky, anything else = off.
      isEndSky = (End_Skybox == 1) ? endSkyFlag : 0.0;
 
+     // The sky is a cube centred on the camera, so Position already IS the view
+     // direction in world axes (+Y = up).
      skyDir = Position;
+     // ─────────────────────────────────────────────────────────────────────────
 
     int vertID = gl_VertexID % 4;
 	ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
@@ -83,7 +86,7 @@ void main() {
 			case 2: frameIndex = Villager[frameIndex]; break;
 		}
 		
-		texCoord0.y = (frameIndex + texCoord0.y) / animParams[1];
+		texCoord0.y = (frameIndex + texCoord0.y) / animParams[1];		
 		break;
 
     default: //case 1: SPRITES

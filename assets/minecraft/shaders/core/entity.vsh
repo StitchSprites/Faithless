@@ -45,11 +45,15 @@ out vec4 overlayColor;
 out vec2 texCoord0;
 out vec4 rawVertexColor;
 out vec3 screenPos;
+flat out int isCrystalBeam;
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
     screenPos = gl_Position.xyw;
     rawVertexColor = Color;
+
+    // End Crystal beam: control pixel (0, 0, 0, 12) at texel (0, 0)
+    isCrystalBeam = (ivec4(texelFetch(Sampler0, ivec2(0, 0), 0) * 255.0 + 0.5) == ivec4(0, 0, 0, 12)) ? 1 : 0;
 
     bool useCardinalLighting = true;
     if (Fresh_Animations) {
