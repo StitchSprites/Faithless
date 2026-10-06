@@ -1,7 +1,5 @@
 #version 150
 
-#extension GL_ARB_shader_draw_parameters : enable
-
 #moj_import <dynamictransforms.glsl>
 #moj_import <projection.glsl>
 #moj_import <vertex_utils.glsl>
@@ -43,29 +41,22 @@ void main() {
 	mat4 MVM = ModelViewMat;
 
      // ── End Skybox detection ──────────────────────────────────────────────────
-     // When the End Sky texture is 1x1 and set to solid magenta (10, 0, 10, 255)
-     // we know this is the End Sky.
+     // The End Sky texture is a 1x1 control pixel (10, 0, 10, 255),
+	// we know this is the End Sky.
      vec4 ctrl1x1 = texture(Sampler0, vec2(0.5));
-     // Detection pixel: RGB (10, 0, 10) / 255 ~= (0.0392, 0.0, 0.0353), A = 255
 	float endSkyFlag = (textureSize(Sampler0, 0) == ivec2(1) &&
                          ctrl1x1.r > 0.02 && ctrl1x1.r < 0.08 &&
                          ctrl1x1.g < 0.02 &&
                          ctrl1x1.b > 0.02 && ctrl1x1.b < 0.08 &&
                          ctrl1x1.a > 0.9) ? 1.0 : 0.0;
 
-	switch (End_Skybox) {
-		case 1:
-		isEndSky = endSkyFlag;
-		break;
-		case 2:
-		isEndSky = 0.0;
-		break;
-	}
-
+     // Always initialised: the old switch left isEndSky undefined for any
+     // End_Skybox value other than 1 or 2. 1 = procedural sky, anything else = off.
+     isEndSky = (End_Skybox == 1) ? endSkyFlag : 0.0;
 
      skyDir = Position;
 
-	int vertID = (gl_VertexID - gl_BaseVertexARB) % 4;
+    int vertID = gl_VertexID % 4;
 	ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
 	
     switch (ctrlL.a) {

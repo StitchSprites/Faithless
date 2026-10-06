@@ -4,7 +4,6 @@
 #moj_import <frag_utils.glsl>
 #moj_import <config.glsl>
 #moj_import <globals.glsl>
-#moj_import <config.glsl>
 
 uniform sampler2D Sampler0;
 
@@ -16,280 +15,351 @@ in float isEndSky;
 out vec4 fragColor;
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  UTILITY
+//  END SKYBOX – "THE RIFT"
+//
+//  Everything below is a pure function of the view DIRECTION (never of a cube
+//  face's UV), so there are no face seams. All animation is built from integer
+//  numbers of cycles per GameTime wrap (GameTime loops every 24000 ticks), so
+//  there is no pop when the clock wraps either.
+//
+//  Layout of the sky:
+//    +Y (top)   : the rift, dead centre of the face
+//    side faces : aurora curtains hanging DOWN from the sky, fading out
+//    -Y (bottom): black, with one square star
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// Simple value hash
-float hash(vec2 p) {
-    p = fract(p * vec2(127.1, 311.7));
-    p += dot(p, p + 19.19);
-    return fract(p.x * p.y);
+// ───────────────────────────── TUNABLES ───────────────────────────────────────
+// Rift size is in "top-face units": 1.0 = distance from face centre to face edge.
+const float RIFT_MIN_RADIUS   = 0.30;   // rift when fully squeezed shut
+const float RIFT_MAX_RADIUS   = 0.47;   // rift when fully pushed open
+const float RIFT_LUMPINESS    = 1.45;   // how blobby / how many islands pinch off
+const float RIFT_CORE_SIZE    = 0.50;   // keystone blob at the zenith, as a fraction of the rift radius
+const float AURORA_STRENGTH   = 1.0;
+const float STAR_CHANCE       = 0.17;   // chance a sky cell holds a star
+
+const vec3  RIM_COLOR     = vec3(0.60, 0.03, 0.56);   // dark magenta rim
+const vec3  RIM_HOT       = vec3(0.95, 0.30, 0.95);   // thin bright line on the very edge
+const vec3  BLEED_COLOR   = vec3(0.55, 0.04, 0.90);   // aurora bleeding off the rift
+const vec3  AURORA_RED    = vec3(0.70, 0.00, 0.62);
+const vec3  AURORA_VIOLET = vec3(0.50, 0.00, 1.05);
+const vec3  RIFT_VOID     = vec3(0.027, 0.012, 0.150); // rift interior
+
+// Rift animation rates, in cycles per GameTime wrap (24000 ticks = 20 min).
+// MUST stay whole numbers or the animation pops when the clock wraps.
+// Pulse: 38/58/94 cycles  ->  ~32 s / ~21 s / ~13 s per swell.
+const int RIFT_PULSE_A     = 38;
+const int RIFT_PULSE_B     = 58;
+const int RIFT_PULSE_C     = 94;
+// Outline morphing (lattice steps per wrap): warp / big lumps / edge fizz.
+const int RIFT_MORPH_WARP  = 22;
+const int RIFT_MORPH_LUMPS = 40;
+const int RIFT_MORPH_FIZZ  = 120;
+
+// End-portal style star layers inside the rift
+const int   RIFT_STAR_LAYERS = 7;
+const float RIFT_STAR_SPEED_FAR  = 0.015;  // drift speed of the finest layer (face units / second)
+const float RIFT_STAR_SPEED_NEAR = 0.060;  // drift speed of the coarsest layer
+// Drift heading of each layer in degrees. Deliberately scattered (neighbouring
+// layers are 95-190 degrees apart, none are in order) so the layers read as
+// moving in unrelated directions. Independent of the layer's rotation angle.
+const float RIFT_STAR_HEADING[7] = float[](15.0, 190.0, 95.0, 285.0, 50.0, 235.0, 140.0);
+// Each layer also meanders: a slow looping wobble (RIFT_STAR_WOBBLE cells wide)
+// bends its path so the headings keep shifting instead of being dead straight.
+const float RIFT_STAR_WOBBLE = 2.0;
+// Star cells repeat every RIFT_STAR_PERIOD cells (far larger than the rift), and
+// each layer scrolls a whole multiple of that per wrap, so the field loops exactly.
+const int   RIFT_STAR_PERIOD = 64;
+
+const float TAU = 6.28318530718;
+
+// ═══════════════════════════════════════════════════════════════════════════════
+//  HASH / NOISE   (integer hash, same result on every GPU)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+uint pcg(uint v) {
+    uint s = v * 747796405u + 2891336453u;
+    uint w = ((s >> ((s >> 28u) + 4u)) ^ s) * 277803737u;
+    return (w >> 22u) ^ w;
 }
 
-float hash3(vec3 p) {
-    p = fract(p * vec3(127.1, 311.7, 74.7));
-    p += dot(p, p + 19.19);
-    return fract(p.x * p.y + p.z);
+uint hashI(ivec3 c) {
+    c += ivec3(65536);
+    return pcg(uint(c.x) + pcg(uint(c.y) + pcg(uint(c.z))));
 }
 
-// Smooth noise
-float noise(vec2 p) {
-    vec2 i = floor(p);
-    vec2 f = fract(p);
-    vec2 u = f * f * (3.0 - 2.0 * f);
-    return mix(
-        mix(hash(i + vec2(0,0)), hash(i + vec2(1,0)), u.x),
-        mix(hash(i + vec2(0,1)), hash(i + vec2(1,1)), u.x),
-        u.y
-    );
+float h01(uint h) { return float(h & 0xFFFFFFu) * (1.0 / 16777216.0); }
+
+// 3D value noise. If zPeriod > 0 the lattice repeats every zPeriod cells along
+// z, which lets z be driven by GameTime and loop perfectly.
+float vnoise(vec3 p, int zPeriod) {
+    vec3 ip = floor(p);
+    vec3 f  = p - ip;
+    vec3 u  = f * f * (3.0 - 2.0 * f);
+    ivec3 c = ivec3(ip);
+    int z0 = c.z;
+    int z1 = c.z + 1;
+    if (zPeriod > 0) {
+        z0 = ((z0 % zPeriod) + zPeriod) % zPeriod;
+        z1 = ((z1 % zPeriod) + zPeriod) % zPeriod;
+    }
+    float n000 = h01(hashI(ivec3(c.x,     c.y,     z0)));
+    float n100 = h01(hashI(ivec3(c.x + 1, c.y,     z0)));
+    float n010 = h01(hashI(ivec3(c.x,     c.y + 1, z0)));
+    float n110 = h01(hashI(ivec3(c.x + 1, c.y + 1, z0)));
+    float n001 = h01(hashI(ivec3(c.x,     c.y,     z1)));
+    float n101 = h01(hashI(ivec3(c.x + 1, c.y,     z1)));
+    float n011 = h01(hashI(ivec3(c.x,     c.y + 1, z1)));
+    float n111 = h01(hashI(ivec3(c.x + 1, c.y + 1, z1)));
+    return mix(mix(mix(n000, n100, u.x), mix(n010, n110, u.x), u.y),
+               mix(mix(n001, n101, u.x), mix(n011, n111, u.x), u.y), u.z);
 }
 
-// Layered FBM
-float fbm(vec2 p, int octaves) {
-    float v = 0.0, a = 0.5;
+// 2D fbm that evolves in time and loops with GameTime.
+// timeCells = lattice steps in time per GameTime wrap (bigger = faster).
+// Octave i runs (i+1)x faster, still looping.
+float fbmT(vec2 p, int octaves, int timeCells) {
+    float v = 0.0, a = 0.5, norm = 0.0;
     for (int i = 0; i < octaves; i++) {
-        v += a * noise(p);
-        p *= 2.1;
+        int period = timeCells * (i + 1);
+        v += a * vnoise(vec3(p, GameTime * float(period)), period);
+        norm += a;
+        p = p * 2.03 + vec2(17.3, 9.1);
         a *= 0.5;
     }
-    return v;
+    return v / norm;
+}
+
+vec2 rot(vec2 v, float a) {
+    float c = cos(a), s = sin(a);
+    return vec2(c * v.x - s * v.y, s * v.x + c * v.y);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  END PORTAL  (the classic layered coloured-noise look)
+//  THE RIFT
+//  Works in the gnomonic plane above the zenith:  p = dir.xz / dir.y
+//  (identical to the top face's UV, but continuous onto the sides).
 // ═══════════════════════════════════════════════════════════════════════════════
 
-vec3 endPortalColor(vec2 uv, float t) {
-    // Five layered noise passes, each a different hue – mirrors vanilla portal
-    vec3 col = vec3(0.0);
+// 0..1 – how far open the rift is right now. A few unrelated pulse rates are
+// stacked so it never settles into a clean sine: it looks like it's struggling.
+float riftPulse() {
+    float T = GameTime;
+    float a = 0.50 * sin(TAU * T * float(RIFT_PULSE_A))
+            + 0.30 * sin(TAU * T * float(RIFT_PULSE_B) + 1.7)
+            + 0.20 * sin(TAU * T * float(RIFT_PULSE_C) + 4.1);
+    float s = a * 0.5 + 0.5;
+    // ease the extremes a little so it lingers wide open / pinched shut
+    return smoothstep(0.0, 1.0, s);
+}
 
-    // Layer 1 – dark violet base
-    float n1 = fbm(uv * 3.0 + vec2(t * 0.11, t * 0.07), 4);
-    col += vec3(0.05, 0.0, 0.15) * n1;
+float smax(float a, float b, float k) {
+    float h = max(k - abs(a - b), 0.0) / k;
+    return max(a, b) + h * h * k * 0.25;
+}
 
-    // Layer 2 – teal / cyan streaks
-    float n2 = fbm(uv * 5.5 - vec2(t * 0.13, t * 0.09), 4);
-    col += vec3(0.0, 0.4, 0.5) * pow(n2, 1.5);
+// > 0 inside the rift, < 0 outside. Roughly distance in top-face units.
+float riftField(vec2 p, float R) {
+    // domain warp -> torn, organic outline
+    vec2 w = vec2(fbmT(p * 1.4 + vec2(3.7, 1.9), 3, RIFT_MORPH_WARP),
+                  fbmT(p * 1.4 + vec2(8.3, 2.8), 3, RIFT_MORPH_WARP)) - 0.5;
+    vec2 q = p + w * 0.55;
 
-    // Layer 3 – bright green-white sparkle
-    float n3 = fbm(uv * 9.0 + vec2(t * 0.17, -t * 0.15), 3);
-    col += vec3(0.1, 0.8, 0.4) * pow(n3, 3.0);
+    float lumps  = fbmT(q * 2.9, 4, RIFT_MORPH_LUMPS);          // big blobs / islands
+    float bubble = fbmT(q * 5.0 + 11.0, 2, RIFT_MORPH_FIZZ);    // fizzing on the edge
 
-    // Layer 4 – deep purple globs
-    float n4 = fbm(uv * 2.0 + vec2(-t * 0.08, t * 0.12), 5);
-    col += vec3(0.3, 0.0, 0.5) * n4 * 0.7;
+    float d = R - length(q)
+            + (lumps  - 0.5) * RIFT_LUMPINESS * 1.05
+            + (bubble - 0.5) * 0.06;
 
-    // Layer 5 – white-hot stars
-    float n5 = fbm(uv * 14.0 - vec2(t * 0.2, t * 0.2), 2);
-    col += vec3(1.0) * pow(n5, 6.0) * 0.8;
+    // Keystone: a small ragged blob pinned to the zenith. The aurora rays all
+    // converge on that exact point, so it must never be exposed, however far
+    // the rest of the rift pinches shut. Its noise is at most +-0.11, and its
+    // base radius is R * RIFT_CORE_SIZE (>= 0.15), so p = 0 is always inside.
+    float coreN = fbmT(p * 5.5 + 31.0, 3, RIFT_MORPH_FIZZ);
+    float core  = R * RIFT_CORE_SIZE - length(p) + (coreN - 0.5) * 0.22;
+    d = smax(d, core, 0.08);
 
-    return clamp(col, 0.0, 1.0);
+    // always fully closed well away from the zenith
+    d -= smoothstep(0.9, 1.35, length(p)) * 3.0;
+    return d;
+}
+
+// One layer of stars inside the rift, modelled on vanilla's end_portal_layer():
+//   * every layer is rotated by its own angle  radians((L*L*4321 + L*9) * 2)
+//     (so its sparkles are tilted differently too),
+//   * every layer has its own scale: finer/dimmer = far, coarser/brighter = near,
+//   * every layer scrolls, faster for the nearer ones, along its OWN rotated
+//     axis, so the layers slide past each other in different directions.
+// Each layer's drift heading is its own scattered angle, plus a looping wobble.
+// The scroll is a whole multiple of RIFT_STAR_PERIOD cells per GameTime wrap and
+// the cell hash repeats with that period, so the star field is identical at
+// GameTime 0 and 1 and never pops (speeds are rounded to that grid, ~+-8%).
+vec3 riftStarLayer(vec2 p, int layer) {
+    float L = float(layer);
+    float t = (L - 1.0) / float(RIFT_STAR_LAYERS - 1);      // 0 = far, 1 = near
+
+    float ang = radians(mod((L * L * 4321.0 + L * 9.0) * 2.0, 360.0));
+    float sc  = mix(32.0, 11.0, t);                         // cells per face unit
+    float spd = mix(RIFT_STAR_SPEED_FAR, RIFT_STAR_SPEED_NEAR, t);
+
+    float hd = radians(RIFT_STAR_HEADING[layer - 1]);
+    // heading is wanted in face space, but the grid is rotated by `ang` and a
+    // scrolling grid moves its stars the opposite way, so convert:
+    vec2 dir = -rot(vec2(cos(hd), sin(hd)), ang);
+    float P  = float(RIFT_STAR_PERIOD);
+    vec2 k   = P * floor(dir * (spd * 1200.0 * sc / P) + 0.5);  // cells per wrap
+
+    // wobble: whole cycles per wrap (26..44 and +7), phases differ per layer
+    float wm = float(26 + (layer * 5) % 19);
+    vec2 wob = RIFT_STAR_WOBBLE * vec2(sin(TAU * GameTime * wm + L * 2.399),
+                                       sin(TAU * GameTime * (wm + 7.0) + L * 4.113));
+
+    vec2 g  = rot(p, ang) * sc + vec2(17.0 / L, 0.0) + k * GameTime + wob;
+    vec2 id = floor(g);
+    vec2 f  = g - id - 0.5;
+
+    ivec2 ic = ivec2(mod(id, P));                           // fold into the repeat period
+    uint h = hashI(ivec3(ic, 97 * layer));
+    if (h01(h) > mix(0.05, 0.21, t)) return vec3(0.0);
+
+    vec2 pt = vec2(h01(pcg(h + 1u)), h01(pcg(h + 2u))) * 0.5 - 0.25;
+    vec2 v  = f - pt;
+    if (h01(pcg(h + 3u)) > 0.5) v = rot(v, 0.785398);       // x-shaped instead of +
+
+    float core = smoothstep(0.10, 0.0, length(v));
+    float arms = smoothstep(0.06, 0.0, abs(v.x)) * smoothstep(0.22, 0.0, abs(v.y))
+               + smoothstep(0.06, 0.0, abs(v.y)) * smoothstep(0.22, 0.0, abs(v.x));
+    float s = core + arms * smoothstep(0.1, 0.7, t);        // far layers = plain dots
+
+    float kt = float(40 + int(h01(pcg(h + 4u)) * 160.0));
+    float tw = 0.65 + 0.35 * sin(TAU * GameTime * kt + h01(pcg(h + 5u)) * TAU);
+
+    float c = h01(pcg(h + 6u));
+    vec3 col = c < 0.45 ? vec3(0.20, 0.85, 0.95)       // cyan
+             : c < 0.70 ? vec3(0.90, 0.35, 0.95)       // pink
+             : c < 0.90 ? vec3(0.30, 0.45, 1.00)       // blue
+                        : vec3(0.75, 0.85, 1.00);      // white
+    return col * s * tw * mix(0.50, 1.10, t) * (0.55 + 0.45 * h01(pcg(h + 7u)));
+}
+
+vec3 riftInterior(vec2 p, float d) {
+    float n = fbmT(p * 2.2, 3, 60);
+    vec3 col = mix(RIFT_VOID * 0.55, RIFT_VOID * 1.35 + vec3(0.02, 0.0, 0.05), n);
+
+    for (int i = 1; i <= RIFT_STAR_LAYERS; i++) col += riftStarLayer(p, i);
+
+    // faint luminous lip just inside the edge
+    col += RIM_COLOR * 0.18 * exp(-max(d, 0.0) * 22.0);
+    return col;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  SKYBOX FACE → UV  (cubic projection)
-//  skyDir is the unnormalised world-space direction from the vertex shader.
+//  STARS (seamless: 3D lattice on the view direction)
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// Returns the dominant axis face index and a [0,1]² UV on that face.
-// Face indices: 0=+X, 1=-X, 2=+Y, 3=-Y, 4=+Z, 5=-Z
-void cubeFaceUV(vec3 d, out int face, out vec2 uv) {
-    vec3 a = abs(d);
-    if (a.x >= a.y && a.x >= a.z) {
-        face = (d.x > 0.0) ? 0 : 1;
-        uv = (d.x > 0.0) ? vec2(-d.z, -d.y) / a.x
-        : vec2( d.z, -d.y) / a.x;
-    } else if (a.y >= a.x && a.y >= a.z) {
-        face = (d.y > 0.0) ? 2 : 3;
-        uv = (d.y > 0.0) ? vec2( d.x, d.z) / a.y
-        : vec2( d.x, -d.z) / a.y;
-    } else {
-        face = (d.z > 0.0) ? 4 : 5;
-        uv = (d.z > 0.0) ? vec2( d.x, -d.y) / a.z
-        : vec2(-d.x, -d.y) / a.z;
-    }
-    uv = uv * 0.5 + 0.5;
+vec3 skyStars(vec3 nd) {
+    const float S = 46.0;
+    vec3 g  = nd * S;
+    vec3 id = floor(g);
+    vec3 f  = g - id;
+    uint h  = hashI(ivec3(id));
+    if (h01(h) > STAR_CHANCE) return vec3(0.0);
+
+    vec3 pt = vec3(h01(pcg(h + 1u)), h01(pcg(h + 2u)), h01(pcg(h + 3u))) * 0.56 + 0.22;
+    float size = mix(0.09, 0.17, h01(pcg(h + 4u)));
+    float s = smoothstep(size, 0.0, length(f - pt));
+    s *= s;
+
+    float k  = float(60 + int(h01(pcg(h + 5u)) * 180.0));
+    float tw = 0.6 + 0.4 * sin(TAU * GameTime * k + h01(pcg(h + 6u)) * TAU);
+
+    float c = h01(pcg(h + 7u));
+    vec3 col = c < 0.55 ? vec3(0.40, 0.45, 0.95)
+             : c < 0.80 ? vec3(0.35, 0.75, 0.90)
+                        : vec3(0.80, 0.55, 1.00);
+    return col * s * tw * mix(0.45, 1.10, h01(pcg(h + 8u)));
+}
+
+// Single square star + soft blue glow straight down.
+vec3 nadirStar(vec3 nd) {
+    if (nd.y > -0.5) return vec3(0.0);
+    vec2 p = nd.xz / (-nd.y);
+    float cheb = max(abs(p.x), abs(p.y));
+    float core = smoothstep(0.0345, 0.0305, cheb);
+    float glow = 0.36 * smoothstep(0.14, 0.03, length(p));
+    float tw   = 0.93 + 0.07 * sin(TAU * GameTime * 200.0);
+    return (vec3(core) + vec3(0.20, 0.44, 1.00) * glow) * tw;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-//  TEAR  SHAPE
-//  We define the tear in a 2D space on the +Y (top / up) face.
-//  It bleeds onto the side faces via a smooth vertical gradient.
-// ═══════════════════════════════════════════════════════════════════════════════
-
-// Signed-distance to the tear "crack" shape on the top face.
-// Returns negative INSIDE the tear, positive outside.
-float tearSDF(vec2 uv, float t) {
-    // Centre the UV
-    vec2 p = uv - 0.5;
-
-    // Base tear is a tapered ellipse leaning diagonally
-    float angle = 0.38;          // ~22° tilt
-    float c = cos(angle), s = sin(angle);
-    vec2 rp = vec2(c * p.x - s * p.y, s * p.x + c * p.y);
-
-    float lenA = 0.30, lenB = 0.055;   // half-extents
-    float sdf = length(rp / vec2(lenA, lenB)) - 1.0;
-
-    // Jagged, breathing distortion along the perimeter
-    float breathe = 0.5 + 0.5 * sin(t * 0.0008);          // slow in/out
-    float jagged = fbm(uv * 6.0 + vec2(t * 0.0003), 5);
-
-    // Irregular spike teeth
-    float spikes = sin(atan(p.y, p.x) * 9.0 + t * 0.001) * 0.04;
-
-    sdf -= jagged * 0.06 * breathe;
-    sdf -= spikes * breathe;
-
-    return sdf;
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-//  AURORA  effect
-// ═══════════════════════════════════════════════════════════════════════════════
-
-// t is game time (GameTime * 24000 gives a convenient integer counter of ticks)
-vec3 auroraColor(vec2 uv, float t, float strength) {
-    // Drift the aurora bands slowly
-    float wave = sin(uv.x * 6.0 + t * 0.0005) * 0.5
-    + sin(uv.x * 3.2 - t * 0.0003) * 0.5;
-    wave = wave * 0.5 + 0.5;
-
-    float bands = noise(vec2(uv.x * 4.0, t * 0.0002)) * 0.6
-    + noise(vec2(uv.x * 8.0 + 1.3, t * 0.00035)) * 0.4;
-
-    float intensity = wave * bands * strength;
-
-    // Hue: magenta → violet → pink → back to magenta
-    float hShift = sin(uv.x * 3.0 + t * 0.0004) * 0.5 + 0.5;
-    vec3 auroraHue = mix(vec3(1.0, 0.0, 1.0),   // magenta
-            vec3(0.6, 0.0, 1.0),    // violet
-            hShift);
-    auroraHue = mix(auroraHue, vec3(1.0, 0.2, 0.8), // pink
-            noise(vec2(uv.x * 5.0, t * 0.0006)));
-
-    return auroraHue * intensity * 1.4;
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-//  PROCEDURAL END SKY  – main entry point
+//  MAIN SKY
 // ═══════════════════════════════════════════════════════════════════════════════
 
 vec4 endSkyColor(vec3 dir) {
-    // GameTime advances 1/24000 per tick; scale to get a steadily growing counter
-    float t = GameTime * 24000.0;
+    float T  = GameTime;
+    vec3  nd = normalize(dir);
+    float ny = nd.y;
 
-    // Identify which cube face we're on and get the face-local UV
-    int face;
-    vec2 faceUV;
-    cubeFaceUV(dir, face, faceUV);
+    // Gnomonic coordinates around the zenith. Derivatives are taken here, outside
+    // any branch, and used for anti-aliasing the rift edge.
+    vec2  p  = nd.xz / max(ny, 0.25);
+    float pw = length(fwidth(p));
 
-    // Normalise direction for later use
-    vec3 nd = normalize(dir);
+    // ── Rift ────────────────────────────────────────────────────────────────
+    float R = mix(RIFT_MIN_RADIUS, RIFT_MAX_RADIUS, riftPulse());
+    float d = -4.0;
+    if (ny > 0.35 && length(p) < 1.45) d = riftField(p, R);
 
-    // ── 1. Base void sky ──────────────────────────────────────────────────────
-    // A very dark purple / indigo gradient, slightly lighter toward the horizon.
-    float horizonFactor = 1.0 - abs(nd.y);        // 0 at poles, 1 at equator
-    vec3 baseSky = mix(vec3(0.01, 0.0, 0.04),      // zenith / nadir – near black
-            vec3(0.04, 0.01, 0.08),      // horizon – slightly purple
-            pow(horizonFactor, 2.0));
+    float aa     = pw * 2.0 + 0.0015;
+    float inside = smoothstep(-aa, aa, d);
+    float outD   = max(-d, 0.0);
 
-    // Subtle noise grain in the base
-    baseSky += fbm(faceUV * 12.0 + vec2(t * 0.00005), 3) * 0.015;
+    // ── Aurora rays ─────────────────────────────────────────────────────────
+    // Rays are lines of constant AZIMUTH around the vertical axis: straight
+    // down the side faces, and fanning out from the rift on the top face.
+    // Sampling noise on the azimuth circle (cos, sin) makes it wrap seamlessly.
+    vec2  hz = nd.xz;
+    float hl = length(hz);
+    vec2  c  = hz / max(hl, 1e-4);
+    vec2  cf = rot(c,  TAU * T * 3.0);     // fine rays drift slowly one way...
+    vec2  cb = rot(c, -TAU * T * 2.0);     // ...broad colour bands the other
+    float zs = 0.35 * sin(TAU * T * 120.0);
 
-    vec3 sky = baseSky;
+    float fine = vnoise(vec3(cf * 7.5,        ny * 1.3 + zs),        0) * 0.6
+               + vnoise(vec3(cf * 15.0 + 3.1, ny * 2.2 - zs * 0.7),  0) * 0.4;
+    float rays = clamp((fine - 0.22) * 1.7, 0.0, 1.0);
+    rays = mix(0.5, rays, smoothstep(0.04, 0.30, hl));   // calm near the pole
 
-    // ── 2. Tear (only visible on the +Y top face) ─────────────────────────────
-    float tearMask    = 0.0;   // 1 inside the tear
-    float tearEdge    = 0.0;   // 0‥1 — distance to the tear edge (for glow)
-    float auroraStrength = 0.0;
+    float band = vnoise(vec3(cb * 1.6, ny * 0.8), 0);
+    vec3  hue  = mix(AURORA_RED, AURORA_VIOLET, smoothstep(0.15, 0.65, band));
 
-    if (face == 2) {
-        // We're on the top (+Y) face
-        float sdf = tearSDF(faceUV, t);
+    // Curtain: brightest up top, falling off exponentially DOWNWARD, gone by
+    // the nadir. (ny = +1 is straight up.)
+    float elev = exp(2.8 * (ny - 1.0)) * smoothstep(-0.8, -0.3, ny);
+    float curt = elev * (0.55 + 0.75 * rays);
+    curt *= 0.88 + 0.12 * sin(TAU * T * 240.0 - ny * 9.0 + fine * 6.0);
 
-        // Interior portal colour
-        tearMask = smoothstep(0.005, -0.02, sdf);
+    vec3 col = hue * curt * AURORA_STRENGTH;
 
-        // Edge glow band (magenta)
-        float edgeWidth = 0.06 + 0.03 * sin(t * 0.0007);   // breathes slightly
-        tearEdge = smoothstep(edgeWidth, 0.0, sdf)
-        * smoothstep(-0.02,  0.0, sdf);
+    // ── Aurora bleeding off the rift edge ───────────────────────────────────
+    col += BLEED_COLOR * exp(-outD * 2.6) * (0.50 + 0.90 * rays) * 0.22;
 
-        // Aurora starts at the edge and fans down from the top face.
-        // Strength is largest right at the crack.
-        auroraStrength = smoothstep(0.25, 0.0, sdf) * 0.9;
-    }
+    // ── Stars + nadir star ──────────────────────────────────────────────────
+    col += skyStars(nd) * smoothstep(-0.75, -0.50, ny);
+    col += nadirStar(nd);
 
-    // On side faces, aurora bleeds in from above – stronger the closer to the
-    // top of the face (faceUV.y → 1 is "up" on side faces after our mapping).
-    bool isSideFace = (face == 0 || face == 1 || face == 4 || face == 5);
-    if (isSideFace) {
-        // How far up the side face are we? (0 = bottom, 1 = top)
-        float upness = faceUV.y;
-        auroraStrength = pow(upness, 2.5) * 0.55;
-    }
+    // ── Rift rim: dark magenta, ragged, brightest right at the edge ─────────
+    float edgeN = 0.55 + 0.90 * vnoise(vec3(p * 8.0, T * 200.0), 200);
+    float tight = exp(-outD * 16.0);
+    float wide  = exp(-outD *  4.0);
+    vec3 rim = RIM_COLOR * (tight * 0.95 * edgeN + wide * 0.12)
+             + RIM_HOT   * pow(tight, 4.0) * 0.22 * edgeN;
+    col += rim * (1.0 - inside);
 
-    // ── 3. Portal fill ────────────────────────────────────────────────────────
-    if (tearMask > 0.0) {
-        // UV for the portal – swirling over time
-        vec2 portalUV = faceUV * 2.5 + vec2(t * 0.00008, t * 0.00006);
-        vec3 portal = endPortalColor(portalUV, t);
-        sky = mix(sky, portal, tearMask);
-    }
+    // ── Rift interior ───────────────────────────────────────────────────────
+    if (inside > 0.001) col = mix(col, riftInterior(p, d), inside);
 
-    // ── 4. Tear edge magenta glow ─────────────────────────────────────────────
-    vec3 magenta = vec3(1.0, 0.0, 1.0);
-    // Add an inner blooming bright core to the edge
-    float edgeCore = (face == 2)
-    ? smoothstep(0.01, -0.005, tearSDF(faceUV, t))
-    * (1.0 - smoothstep(-0.005, -0.02, tearSDF(faceUV, t)))
-    : 0.0;
-
-    sky = mix(sky, magenta * 2.0, tearEdge * 0.85);
-    sky += magenta * edgeCore * 0.6;
-
-    // ── 5. Aurora on all faces ────────────────────────────────────────────────
-    if (auroraStrength > 0.001) {
-        // Use spherical longitude/latitude to keep the aurora consistent across
-        // faces rather than per-face UV, so there are no seams.
-        float lon = atan(nd.x, nd.z);          // -π .. π
-        float lat = asin(clamp(nd.y, -1.0, 1.0));  // -π/2 .. π/2
-        vec2 auroraUV = vec2(lon / 6.2832, lat / 3.1416) + 0.5;
-
-        vec3 aurora = auroraColor(auroraUV, t, auroraStrength);
-        sky += aurora;
-    }
-
-    // ── 6. Bottom face – single white star point ──────────────────────────────
-    if (face == 3) {
-        // Centred point, very small & sharp
-        float dist = length(faceUV - 0.5);
-        float star = smoothstep(0.018, 0.0, dist);
-        // Soft twinkling
-        float twinkle = 0.85 + 0.15 * sin(t * 0.0013 + 1.57);
-        sky += vec3(1.0) * star * twinkle;
-        // Tiny four-pointed diffraction spike
-        vec2 sp = faceUV - 0.5;
-        float spike = smoothstep(0.002, 0.0, abs(sp.x)) * smoothstep(0.06, 0.0, abs(sp.y))
-        + smoothstep(0.002, 0.0, abs(sp.y)) * smoothstep(0.06, 0.0, abs(sp.x));
-        sky += vec3(0.9, 0.95, 1.0) * spike * 0.5 * twinkle;
-    }
-
-    // ── 7. Scatter a handful of dim stars on side/top faces ──────────────────
-    if (face != 3) {
-        // Cheap star field: hash-based puncturing
-        vec2 stCell = floor(faceUV * 40.0);
-        float stH = hash(stCell + float(face) * 17.3);
-        if (stH > 0.97) {
-            vec2 stPos = fract(faceUV * 40.0) - vec2(hash(stCell), hash(stCell + 7.7));
-            float stBright = smoothstep(0.08, 0.0, length(stPos));
-            float stTwinkle = 0.7 + 0.3 * sin(t * 0.001 * stH * 6.0);
-            sky += vec3(0.8, 0.85, 1.0) * stBright * stTwinkle * 0.6;
-        }
-    }
-
-    return vec4(clamp(sky, 0.0, 1.0), 1.0);
+    return vec4(clamp(col, 0.0, 1.0), 1.0);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -298,12 +368,11 @@ vec4 endSkyColor(vec3 dir) {
 
 void main() {
     if (isEndSky > 0.5) {
-        // ── Procedural End Skybox path ────────────────────────────────────────
         fragColor = endSkyColor(skyDir);
-        // Still apply ColorModulator alpha (Minecraft may fade the sky in/out)
+        // tiny dither so the very dark aurora gradients don't band in 8-bit
+        fragColor.rgb += (fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715)))) - 0.5) / 255.0;
         fragColor.a *= ColorModulator.a;
     } else {
-        // ── Normal path (all other position_tex_color draw calls) ─────────────
         vec4 color = texture(Sampler0, texCoord0) * vertexColor;
         if (color.a == 0.0) discard;
         fragColor = color * ColorModulator;
