@@ -81,10 +81,10 @@ vec4 sampleRGSS(sampler2D source, vec2 uv, vec2 pixelSize) {
 	float mipBlend = fract(mipLevelExact);
 
 	const vec2 offsets[4] = vec2[](
-			vec2(0.125, 0.375),
-			vec2(-0.125, -0.375),
-			vec2(0.375, -0.125),
-			vec2(-0.375, 0.125)
+	vec2(0.125, 0.375),
+	vec2(-0.125, -0.375),
+	vec2(0.375, -0.125),
+	vec2(-0.375, 0.125)
 	);
 
 	// Accumulate in premultiplied-alpha space so transparent samples
@@ -133,8 +133,10 @@ void main() {
 		case 249: if (Emissives) color = vec4(emissiveColor.rgb, 1.0); break;
 		case 25: case 3: case 2: case 1: discard;
 		default:
-			color = mix(FogColor * vec4(1, 1, 1, color.a), color, ChunkVisibility);
-			break;
+		// Apply ChunkVisibility fog only for non-emissive blocks so that the End's
+		// void fog doesn't replace distant block colours with solid black.
+		color = mix(FogColor * vec4(1, 1, 1, color.a), color, ChunkVisibility);
+		break;
 	}
 	if (ctrlF.a == 180 || ctrlF.a == 181) {
 		color.a = 1.0;

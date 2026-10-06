@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_transparent",
 	"textures": {
-		"all": "block/jungle_leaves"
+		"all": "block/jungle_leaves",
+		"inner": "block/jungle_leaves"
 	}
 }

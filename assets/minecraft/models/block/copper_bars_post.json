@@ -1,0 +1,7 @@
+{
+"parent": "block/bars_post",
+  "textures": {
+    "material": "block/copper_bars",
+	"topMaterial": "block/copper_bars"
+  }
+}

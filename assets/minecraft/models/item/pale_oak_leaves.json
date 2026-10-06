@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_transparent",
 	"textures": {
-		"all": "block/pale_oak_leaves"
+		"all": "block/pale_oak_leaves",
+		"inner": "block/pale_oak_leaves"
 	}
 }
