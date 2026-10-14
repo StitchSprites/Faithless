@@ -1,5 +1,13 @@
 #version 150
 
+// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
+#extension GL_ARB_shader_draw_parameters : enable
+#ifdef GL_ARB_shader_draw_parameters
+    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
+#else
+    #define VERT_ID gl_VertexID
+#endif
+
 #moj_import <dynamictransforms.glsl>
 #moj_import <projection.glsl>
 #moj_import <vertex_utils.glsl>
@@ -59,7 +67,7 @@ void main() {
      skyDir = Position;
      // ─────────────────────────────────────────────────────────────────────────
 
-    int vertID = gl_VertexID % 4;
+    int vertID = VERT_ID % 4;
 	ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
 	
     switch (ctrlL.a) {

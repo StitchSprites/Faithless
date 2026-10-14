@@ -1,5 +1,13 @@
 #version 150
 
+// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
+#extension GL_ARB_shader_draw_parameters : enable
+#ifdef GL_ARB_shader_draw_parameters
+    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
+#else
+    #define VERT_ID gl_VertexID
+#endif
+
 #moj_import <dynamictransforms.glsl>
 #moj_import <projection.glsl>
 #moj_import <config.glsl>
@@ -17,7 +25,7 @@ void main() {
 	vec4 tint = Color;
 	vec3 pos = (ProjMat * vec4(Position, 1.0)).xyz;
 	
-    int vertID = remap_BR_TR_TL_BL[gl_VertexID % 4];
+    int vertID = remap_BR_TR_TL_BL[VERT_ID % 4];
 	ivec4 ctrlV = ivec4(Color * 255 + 0.5);
 	
 	switch (int(Position.z)) {
@@ -27,7 +35,7 @@ void main() {
 		} else if (ctrlV.rgb == vec3(16) && // --- CONTAINER BACKGROUND --- 
 			(Color.a == 0.81568626 && (vertID == 0 || vertID == 1)) || 
 			(Color.a == 0.75294122 && (vertID == 2 || vertID == 3))) {
-			vertID = remap_TL_BL_BR_TR[gl_VertexID % 4];
+			vertID = remap_TL_BL_BR_TR[VERT_ID % 4];
 			tint = Inventory[vertID];
 		} break;
 	case 1800: 

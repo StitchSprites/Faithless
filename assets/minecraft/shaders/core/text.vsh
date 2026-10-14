@@ -1,5 +1,13 @@
 #version 150
 
+// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
+#extension GL_ARB_shader_draw_parameters : enable
+#ifdef GL_ARB_shader_draw_parameters
+    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
+#else
+    #define VERT_ID gl_VertexID
+#endif
+
 #moj_import <fog.glsl>
 #moj_import <dynamictransforms.glsl>
 #moj_import <projection.glsl>
@@ -43,7 +51,7 @@ void main() {
 	vec3 pos = Position;
 	Debug = 0;
 
-    int vertID = gl_VertexID % 4;
+    int vertID = VERT_ID % 4;
 	ivec3 ctrlT = ivec3(color.rgb * 255 + 0.5);
     ivec4 ctrlV = ivec4(texture(Sampler0, UV0 - 0.00001 * corners[vertID]) * 255.0 + 0.5);
 	bool isGRAYSCALE = (ctrlT.r == ctrlT.g) && (ctrlT.g == ctrlT.b);
