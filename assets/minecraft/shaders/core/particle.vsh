@@ -1,5 +1,12 @@
 #version 330
 
+#extension GL_ARB_shader_draw_parameters : enable
+#ifdef GL_ARB_shader_draw_parameters
+    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
+#else
+    #define VERT_ID gl_VertexID
+#endif
+
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:projection.glsl>
 #moj_import <minecraft:fog.glsl>
@@ -38,7 +45,7 @@ void main() {
     vec4 tint = Color;
     vec4 shade = sample_lightmap(Sampler2, UV2);
 
-    int vertID = gl_VertexID % 4;
+    int vertID = VERT_ID % 4;
     vec3 pos = Position;
     cubePos = vec3(0.0);
     vec2 quadSize = vec2(0.0);

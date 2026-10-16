@@ -59,9 +59,10 @@ Complementary Shaders
 
 People who helped on Github:
 * @alexzander700
+* @val92
 
 ---------------------------------------------------------------------------------------------------
 
 - Placeholder Assets Contributors -
 
-Alexzander700 - golden_dandelion
+Alexzander700 - golden_dandelion, Netherite Spear, Golden Spear

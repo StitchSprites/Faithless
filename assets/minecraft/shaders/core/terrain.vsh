@@ -12,7 +12,6 @@ in vec3 Position;
 in vec4 Color;
 in vec2 UV0;
 in ivec2 UV2;
-in vec3 Normal;
 
 uniform sampler2D Sampler2;
 uniform sampler2D Sampler0;
@@ -22,6 +21,10 @@ out float cylindricalVertexDistance;
 out vec4 vertexLight;
 out vec4 vertexColor;
 out vec2 texCoord0;
+#if Chunk_Loading == 2
+out vec3 facePos;
+out vec3 relPos;
+#endif
 
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
 	return texture(lightMap, clamp((uv / 256.0) + 0.5 / 16.0, vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
@@ -46,10 +49,11 @@ void main() {
 		case 1:
 		pos.y += chunk_translate(ModelOffset, FogRenderDistanceEnd);
 		break;
-		case 2:
-		pos += chunk_quad_fade(ModelOffset, Normal, Position, FogRenderDistanceEnd, vertID);
-		break;
 	}
+#if Chunk_Loading == 2
+	facePos = Position;
+	relPos = pos;
+#endif
 
 	vertexLight = shade;
 	vertexColor = tint;
