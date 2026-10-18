@@ -14,6 +14,10 @@ in float vertexDistance;
 in vec4 vertexLight;
 in vec4 vertexColor;
 in vec2 texCoord0;
+#if Chunk_Loading == 2
+in vec3 facePos;
+in vec3 relPos;
+#endif
 
 out vec4 fragColor;
 
@@ -32,7 +36,7 @@ vec4 samplePremul(sampler2D s, vec2 uv, vec2 du, vec2 dv, float lod) {
 	return c;
 }
 
-vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
+vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
 	// Convert our UV back up to texel coordinates and find out how far over we are from the center of each pixel
 	vec2 uvTexelCoords = uv / pixelSize;
 	vec2 texelCenter = round(uvTexelCoords) - 0.5f;
@@ -44,7 +48,7 @@ vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv,
 
 	uv = (texelCenter + texelOffset) * pixelSize;
 	// Sample in premultiplied space then unpack — transparent texels carry no color.
-	return unpremultiply(samplePremul(sampler, uv, du, dv, -1.0));
+	return unpremultiply(samplePremul(source, uv, du, dv, -1.0));
 }
 
 vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize) {
@@ -107,7 +111,46 @@ vec4 sampleRGSS(sampler2D source, vec2 uv, vec2 pixelSize) {
 }
 
 void main() {
-	vec4 color = (UseRgss == 1 ? sampleRGSS(Sampler0, texCoord0, 1.0f / TextureSize) : sampleNearest(Sampler0, texCoord0, 1.0f / TextureSize)) * vertexColor;
+	vec2 uvm = texCoord0; // texture coordinate actually used for sampling
+#if Chunk_Loading == 2
+	bool fadeDiscard = false;
+	{
+		vec3 fn = abs(cross(dFdx(facePos), dFdy(facePos)));
+		if (max(fn.x, max(fn.y, fn.z)) > 0.0) {
+			// the two axis the face lies on (the dominant normal axis is skipped)
+			int ax = (fn.x >= fn.y && fn.x >= fn.z) ? 0 : ((fn.y >= fn.z) ? 1 : 2);
+			int a1 = (ax == 0) ? 1 : 0;
+			int a2 = (ax == 2) ? 1 : 2;
+
+			// offset from the block's center along those axes, in blocks (-0.5 .. 0.5)
+			vec2 delta = vec2(fract(facePos[a1]), fract(facePos[a2])) - 0.5;
+
+			// same curve the old vertex version used
+			float fadeAmount = pow(max(0.0, length(relPos.xz) - (FogRenderDistanceEnd - 16.0)), 2.0);
+			float shrink = clamp(fadeAmount * 0.075 / 16.0, 0.0, 1.0);
+			float s = 1.0 - shrink; // size of the face relative to normal
+
+			if (shrink > 0.0) {
+				float edge = max(abs(delta.x), abs(delta.y));
+				fadeDiscard = s < 0.03 || edge > 0.5 * s;
+
+				// A pixel at offset 'delta' on the shrunken face shows what sat at
+				// 'delta / s' on the full-size face. Work out how the texture
+				// coordinate changes per block along the face (J) and move the lookup.
+				mat2 M  = mat2(vec2(dFdx(facePos[a1]), dFdx(facePos[a2])),
+				               vec2(dFdy(facePos[a1]), dFdy(facePos[a2])));
+				mat2 dT = mat2(dFdx(texCoord0), dFdy(texCoord0));
+				float det = M[0][0] * M[1][1] - M[0][1] * M[1][0];
+				if (abs(det) > 1e-12 && s >= 0.03) {
+					mat2 J = dT * inverse(M);
+					vec2 target = clamp(delta / s, -0.5, 0.5);
+					uvm = texCoord0 + J * (target - delta);
+				}
+			}
+		}
+	}
+#endif
+	vec4 color = (UseRgss == 1 ? sampleRGSS(Sampler0, uvm, 1.0f / TextureSize) : sampleNearest(Sampler0, uvm, 1.0f / TextureSize)) * vertexColor;
 	if (color.a == 0.0) discard;
 
 	// Snap to the nearest texel centre before reading the control alpha so that
@@ -115,7 +158,7 @@ void main() {
 	// a blended alpha value that accidentally hits one of the discard cases
 	// (1, 2, 3, 25) and carves dark outline holes into alpha-cutout geometry.
 	vec2 ctrlPixelSize = 1.0f / TextureSize;
-	vec2 ctrlTexelCoords = texCoord0 / ctrlPixelSize;
+	vec2 ctrlTexelCoords = uvm / ctrlPixelSize;
 	vec2 ctrlTexelCenter = (round(ctrlTexelCoords - 0.5) + 0.5) * ctrlPixelSize;
 	ivec4 ctrlF = ivec4(textureLod(Sampler0, ctrlTexelCenter, 0) * 255.0 + 0.5);
 
@@ -146,6 +189,9 @@ void main() {
 		discard;
 	}
 	#endif
-	fragColor = color; //apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+#if Chunk_Loading == 2
+	if (fadeDiscard) discard;
+#endif
+	fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
 	fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);
 }
