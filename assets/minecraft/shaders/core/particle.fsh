@@ -3,6 +3,7 @@
 #moj_import <minecraft:fog.glsl>
 #moj_import <minecraft:dynamictransforms.glsl>
 #moj_import <minecraft:projection.glsl>
+#moj_import <depth_utils.glsl>
 #moj_import <config.glsl>
 
 uniform sampler2D Sampler0;
@@ -21,8 +22,6 @@ in float size;
 flat in vec2 face;
 
 out vec4 fragColor;
-
-const bool DEPTH_ZERO_TO_ONE = true;
 
 vec3 cone_filter(int colorblindness, vec3 color) {
     switch (colorblindness) {
@@ -77,9 +76,9 @@ void main() {
         }
         color.rgb *= dot(norm, vec3(0.2, -1.0, 0.4)) * 0.5 + 1.0;
 
+        // 26.2: depth is reversed and its range depends on the backend, so let the projection say how to write it
         vec4 depthPos = ProjMat * ModelViewMat * vec4(-glp * tex.z, 1.0);
-        float ndcZ = depthPos.z / depthPos.w;
-        gl_FragDepth = clamp(DEPTH_ZERO_TO_ONE ? ndcZ : ndcZ * 0.5 + 0.5, 0.0, 1.0);
+        gl_FragDepth = projection_window_depth(ProjMat, depthPos);
     } else {
         color = texture(Sampler0, texCoord0);
         if (color.a < 0.1) {

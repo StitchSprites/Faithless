@@ -1,5 +1,7 @@
 #version 150
 
+#moj_import <depth_utils.glsl>
+
 const vec2 corners[4] = vec2[4](vec2(0), vec2(0, 1), vec2(1), vec2(1, 0));
 
 bool Between(float v, float min, float max) { return (min < v) && (v < max); }
@@ -74,11 +76,22 @@ float chunk_translate(vec3 ModelOffset, float fogEnd) {
 
 // -- Orthographic View --------------------------------------------------------------------------------------
 
+// 26.2: the depth range comes from the active projection (reversed Z, [-1,1] or [0,1]) instead of assuming the
+// classic OpenGL one, so depth testing keeps working with the orthographic view.
 mat4 getOrthoMat(mat4 ProjMat, float Zoom) {
-    vec4 distProbe = inverse(ProjMat) * vec4(0.0, 0.0, 1.0, 1.0);
-    float far = length(distProbe.xyz / distProbe.w);
-    
-    float near = -1000.0; 
+    bool reversed = projection_is_reversed(ProjMat);
+    bool zeroToOne = projection_is_zero_to_one(ProjMat);
+
+    // NDC depth of the near / far planes in the active convention
+    float ndcNear = reversed ? 1.0 : (zeroToOne ? 0.0 : -1.0);
+    float ndcFar  = reversed ? (zeroToOne ? 0.0 : -1.0) : 1.0;
+
+    // Distance of the far plane, recovered from ProjMat (an infinite far plane falls back to a fixed distance)
+    float farDenom = ndcFar + ProjMat[2][2];
+    float far = abs(farDenom) > 1.0e-5 ? abs(ProjMat[3][2] / farDenom) : 2048.0;
+    far = clamp(far, 16.0, 8192.0);
+
+    float nearDist = 1000.0;     // the view volume starts this far behind the camera
     float fixed_near = 0.05; 
     
     float left = -(0.5 / (ProjMat[0][0] / (2.0 * fixed_near))) / Zoom;
@@ -86,10 +99,14 @@ mat4 getOrthoMat(mat4 ProjMat, float Zoom) {
     float top = (0.5 / (ProjMat[1][1] / (2.0 * fixed_near))) / Zoom;
     float bottom = -top;
 
+    // linear depth map: eye z = +nearDist -> ndcNear, eye z = -far -> ndcFar
+    float zScale = (ndcFar - ndcNear) / (-far - nearDist);
+    float zBias = ndcNear - zScale * nearDist;
+
     return mat4(2.0 / (right - left),               0.0,                                0.0,                            0.0,
                 0.0,                                2.0 / (top - bottom),               0.0,                            0.0,
-                0.0,                                0.0,                                -2.0 / (far - near),            0.0,
-                -(right + left) / (right - left),   -(top + bottom) / (top - bottom),   -(far + near) / (far - near),   1.0);
+                0.0,                                0.0,                                zScale,                         0.0,
+                -(right + left) / (right - left),   -(top + bottom) / (top - bottom),   zBias,                          1.0);
 }
 
 float getPlayerYaw(mat4 modelViewMat) {
@@ -131,4 +148,3 @@ mat4 getIsometricViewMat(mat4 modelViewMat) {
     isometricViewMat[3] = modelViewMat[3];
     return isometricViewMat;
 }
-

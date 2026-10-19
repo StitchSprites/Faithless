@@ -99,9 +99,11 @@ void main() {
 
     vec3 pos = (faceVertex * CellSize) + (vec3(cellX, 0, cellZ) * CellSize) + CloudOffset;
 
+    // Fade distance is measured like vanilla (spherical, before the curvature below is applied)
+    vertexDistance = fog_spherical_distance(pos);
+
     float dist = length(pos.xz);
     pos.y -= (dist * dist) / 20000.0;
 
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
-    vertexDistance = fog_cylindrical_distance(pos);
 }

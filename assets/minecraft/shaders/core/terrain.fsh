@@ -10,10 +10,11 @@ uniform sampler2D Sampler0;
 
 in float sphericalVertexDistance;
 in float cylindricalVertexDistance;
-in float vertexDistance;
 in vec4 vertexLight;
 in vec4 vertexColor;
 in vec2 texCoord0;
+in float slopeUV;
+in vec3 fragPos;
 #if Chunk_Loading == 2
 in vec3 facePos;
 in vec3 relPos;
@@ -36,7 +37,7 @@ vec4 samplePremul(sampler2D s, vec2 uv, vec2 du, vec2 dv, float lod) {
 	return c;
 }
 
-vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
+vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
 	// Convert our UV back up to texel coordinates and find out how far over we are from the center of each pixel
 	vec2 uvTexelCoords = uv / pixelSize;
 	vec2 texelCenter = round(uvTexelCoords) - 0.5f;
@@ -48,7 +49,7 @@ vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, 
 
 	uv = (texelCenter + texelOffset) * pixelSize;
 	// Sample in premultiplied space then unpack — transparent texels carry no color.
-	return unpremultiply(samplePremul(source, uv, du, dv, -1.0));
+	return unpremultiply(samplePremul(sampler, uv, du, dv, -1.0));
 }
 
 vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize) {
@@ -111,7 +112,14 @@ vec4 sampleRGSS(sampler2D source, vec2 uv, vec2 pixelSize) {
 }
 
 void main() {
-	vec2 uvm = texCoord0; // texture coordinate actually used for sampling
+	// All this just for snow and moss... Lord help us all
+	vec3 dpx = dFdx(fragPos), dpy = dFdy(fragPos);
+	vec3 faceN = cross(dpx, dpy);
+	if (dot(faceN, fragPos) > 0.0) faceN = -faceN;
+	bool facesUp = length(faceN) <= 0.02 * length(dpx) * length(dpy) || faceN.y > 0.35 * length(faceN);
+	vec2 uv = texCoord0;
+	if (slopeUV != 0.0 && facesUp) uv.y -= slopeUV;
+
 #if Chunk_Loading == 2
 	bool fadeDiscard = false;
 	{
@@ -134,9 +142,6 @@ void main() {
 				float edge = max(abs(delta.x), abs(delta.y));
 				fadeDiscard = s < 0.03 || edge > 0.5 * s;
 
-				// A pixel at offset 'delta' on the shrunken face shows what sat at
-				// 'delta / s' on the full-size face. Work out how the texture
-				// coordinate changes per block along the face (J) and move the lookup.
 				mat2 M  = mat2(vec2(dFdx(facePos[a1]), dFdx(facePos[a2])),
 				               vec2(dFdy(facePos[a1]), dFdy(facePos[a2])));
 				mat2 dT = mat2(dFdx(texCoord0), dFdy(texCoord0));
@@ -144,40 +149,29 @@ void main() {
 				if (abs(det) > 1e-12 && s >= 0.03) {
 					mat2 J = dT * inverse(M);
 					vec2 target = clamp(delta / s, -0.5, 0.5);
-					uvm = texCoord0 + J * (target - delta);
+					uv += J * (target - delta);
 				}
 			}
 		}
 	}
 #endif
-	vec4 color = (UseRgss == 1 ? sampleRGSS(Sampler0, uvm, 1.0f / TextureSize) : sampleNearest(Sampler0, uvm, 1.0f / TextureSize)) * vertexColor;
+
+	vec4 color = (UseRgss == 1 ? sampleRGSS(Sampler0, uv, 1.0f / TextureSize) : sampleNearest(Sampler0, uv, 1.0f / TextureSize)) * vertexColor;
 	if (color.a == 0.0) discard;
 
-	// Snap to the nearest texel centre before reading the control alpha so that
-	// bilinear interpolation across an opaque/transparent border cannot produce
-	// a blended alpha value that accidentally hits one of the discard cases
-	// (1, 2, 3, 25) and carves dark outline holes into alpha-cutout geometry.
 	vec2 ctrlPixelSize = 1.0f / TextureSize;
-	vec2 ctrlTexelCoords = uvm / ctrlPixelSize;
+	vec2 ctrlTexelCoords = uv / ctrlPixelSize;
 	vec2 ctrlTexelCenter = (round(ctrlTexelCoords - 0.5) + 0.5) * ctrlPixelSize;
 	ivec4 ctrlF = ivec4(textureLod(Sampler0, ctrlTexelCenter, 0) * 255.0 + 0.5);
 
-	// Recover the texture color before the lightmap was applied, so emissive
-	// blocks can be shown at full brightness regardless of ambient light level.
-	// vertexColor = Color * lightmap, vertexLight = lightmap, so dividing out
-	// vertexLight gives us Color * rawTexture without the lightmap darkening.
 	vec4 emissiveColor = vec4(all(greaterThan(vertexLight.rgb, vec3(0.0))) ? color.rgb / vertexLight.rgb : color.rgb, color.a);
 
 	switch (ctrlF.a) {
-		// Emissive cases: restore full-brightness colour before fog so the
-		// lightmap darkening and ChunkVisibility don't suppress the glow.
 		case 251: if (Emissives) color = vec4(emissiveColor.rgb, 1.0); break;
 		case 250: if (Emissives) color = vec4(emissiveColor.rgb * vertexColor.rgb, 1.0); break;
 		case 249: if (Emissives) color = vec4(emissiveColor.rgb, 1.0); break;
 		case 25: case 3: case 2: case 1: discard;
 		default:
-		// Apply ChunkVisibility fog only for non-emissive blocks so that the End's
-		// void fog doesn't replace distant block colours with solid black.
 		color = mix(FogColor * vec4(1, 1, 1, color.a), color, ChunkVisibility);
 		break;
 	}
