@@ -1,6 +1,7 @@
-#version 150
+#ifndef FAITHLESS_VERTEX_UTILS_GLSL
+#define FAITHLESS_VERTEX_UTILS_GLSL
 
-#moj_import <depth_utils.glsl>
+#include <minecraft:depth_utils.glsl>
 
 const vec2 corners[4] = vec2[4](vec2(0), vec2(0, 1), vec2(1), vec2(1, 0));
 
@@ -76,7 +77,7 @@ float chunk_translate(vec3 ModelOffset, float fogEnd) {
 
 // -- Orthographic View --------------------------------------------------------------------------------------
 
-// 26.2: the depth range comes from the active projection (reversed Z, [-1,1] or [0,1]) instead of assuming the
+// The depth range comes from the active projection (reversed Z, [-1,1] or [0,1]) instead of assuming the
 // classic OpenGL one, so depth testing keeps working with the orthographic view.
 mat4 getOrthoMat(mat4 ProjMat, float Zoom) {
     bool reversed = projection_is_reversed(ProjMat);
@@ -148,3 +149,5 @@ mat4 getIsometricViewMat(mat4 modelViewMat) {
     isometricViewMat[3] = modelViewMat[3];
     return isometricViewMat;
 }
+
+#endif

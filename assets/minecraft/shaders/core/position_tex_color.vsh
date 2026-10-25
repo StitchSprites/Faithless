@@ -1,29 +1,22 @@
-#version 150
+#version 330
+#extension GL_ARB_separate_shader_objects : require
 
-// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
-#extension GL_ARB_shader_draw_parameters : enable
-#ifdef GL_ARB_shader_draw_parameters
-    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
-#else
-    #define VERT_ID gl_VertexID
-#endif
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:vertex_utils.glsl>
+#include <minecraft:globals.glsl>
+#include <minecraft:config.glsl>
 
-#moj_import <dynamictransforms.glsl>
-#moj_import <projection.glsl>
-#moj_import <vertex_utils.glsl>
-#moj_import <globals.glsl>
-#moj_import <config.glsl>
-
-in vec3 Position;
-in vec2 UV0;
-in vec4 Color;
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec2 UV0;
+layout(location = 2) in vec4 Color;
 
 uniform sampler2D Sampler0;
 
-out vec2 texCoord0;
-out vec4 vertexColor;
-out vec3 skyDir;       // world-space direction for End Skybox cubic projection
-out float isEndSky;    // 1.0 when drawing the End Sky
+layout(location = 0) out vec2 texCoord0;
+layout(location = 1) out vec4 vertexColor;
+layout(location = 2) out vec3 skyDir;       // world-space direction for End Skybox cubic projection
+layout(location = 3) out float isEndSky;    // 1.0 when drawing the End Sky
 
 //[CONTAINER ANIMATIONS]: SPEED, SHEET_FRAMES, TOTAL_FRAMES
 
@@ -58,8 +51,7 @@ void main() {
                          ctrl1x1.b > 0.02 && ctrl1x1.b < 0.08 &&
                          ctrl1x1.a > 0.9) ? 1.0 : 0.0;
 
-     // Always initialised: the old switch left isEndSky undefined for any
-     // End_Skybox value other than 1 or 2. 1 = procedural sky, anything else = off.
+     // Always initialised. 1 = procedural sky, anything else = off.
      isEndSky = (End_Skybox == 1) ? endSkyFlag : 0.0;
 
      // The sky is a cube centred on the camera, so Position already IS the view
@@ -67,7 +59,7 @@ void main() {
      skyDir = Position;
      // ─────────────────────────────────────────────────────────────────────────
 
-    int vertID = VERT_ID % 4;
+    int vertID = gl_VertexIndex % 4;
 	ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
 	
     switch (ctrlL.a) {

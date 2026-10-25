@@ -1,39 +1,42 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
-#extension GL_ARB_shader_draw_parameters : enable
-#ifdef GL_ARB_shader_draw_parameters
-    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
-#else
-    #define VERT_ID gl_VertexID
+#include <minecraft:fog.glsl>
+#include <minecraft:globals.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:sample_lightmap.glsl>
+#include <minecraft:terrainglobals.glsl>
+#ifndef MULTIDRAW_TERRAIN
+    #include <minecraft:chunksection.glsl>
+#endif
+#include <minecraft:vertex_utils.glsl>
+#include <minecraft:config.glsl>
+
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec4 Color;
+layout(location = 2) in vec2 UV0;
+layout(location = 3) in ivec2 UV2;
+#ifdef MULTIDRAW_TERRAIN
+layout(location = 4) in ivec3 ChunkPosition;
+layout(location = 5) in float ChunkVisibility;
 #endif
 
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:globals.glsl>
-#moj_import <minecraft:chunksection.glsl>
-#moj_import <minecraft:projection.glsl>
-#moj_import <minecraft:sample_lightmap.glsl>
-#moj_import <minecraft:vertex_utils.glsl>
-#moj_import <config.glsl>
-
-in vec3 Position;
-in vec4 Color;
-in vec2 UV0;
-in ivec2 UV2;
-
-uniform sampler2D Sampler2;
 uniform sampler2D Sampler0;
+#ifndef OIT_ALPHA_ONLY
+uniform sampler2D Sampler2;
+#endif
 
-out float sphericalVertexDistance;
-out float cylindricalVertexDistance;
-out vec4 vertexLight;
-out vec4 vertexColor;
-out vec2 texCoord0;
-out float slopeUV;
-out vec3 fragPos;
+layout(location = 0) out float sphericalVertexDistance;
+layout(location = 1) out float cylindricalVertexDistance;
+layout(location = 2) out vec4 vertexColor;
+layout(location = 3) out vec2 texCoord0;
+layout(location = 4) out float chunkVisibility;
+layout(location = 5) out vec4 vertexLight;
+layout(location = 6) out float slopeUV;
+layout(location = 7) out vec3 fragPos;
 #if Chunk_Loading == 2
-out vec3 facePos;
-out vec3 relPos;
+layout(location = 8) out vec3 facePos;
+layout(location = 9) out vec3 relPos;
 #endif
 
 vec3 rendWave(vec3 chunkPos, float value) {
@@ -148,7 +151,11 @@ void main() {
     texCoord0 = UV0;
 	slopeUV = 0.0;
 	vec4 tint = Color;
+#ifndef OIT_ALPHA_ONLY
 	vec4 shade = sample_lightmap(Sampler2, UV2);
+#else
+	vec4 shade = vec4(1.0);
+#endif
 	
 	mat4 ViewMat = Orthographic ? getOrthoMat(ProjMat, 0.007) : ProjMat;
 	mat4 Camera = Orthographic ? getIsometricViewMat(ModelViewMat) : ModelViewMat;
@@ -158,11 +165,15 @@ void main() {
 	vec3 blockPos = fract(Position) - 0.5;
 	vec3 absPos = vec3(abs(blockPos.x), (blockPos.y + 0.5), abs(blockPos.z)) * 16;
 	vec3 chunkPos = mod(round(Position), 16) + 1;
-    int vertID = VERT_ID % 4;
+    int vertID = gl_VertexIndex % 4;
 
 	sphericalVertexDistance = fog_spherical_distance(pos);
 	cylindricalVertexDistance = fog_cylindrical_distance(pos);
 	fragPos = pos;
+
+	// Distance-based chunk fade-in, same as vanilla 26.3
+	const float chunkFullyVisibleRange = 16.0;
+	chunkVisibility = mix(1.0, ChunkVisibility, clamp((length(pos) - chunkFullyVisibleRange) / chunkFullyVisibleRange, 0.0, 1.0));
 
     switch (Chunk_Loading) {
     case 1: pos.y += chunk_translate(ModelOffset, FogRenderDistanceEnd); break;

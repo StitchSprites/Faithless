@@ -1,44 +1,10 @@
-//#version 150
-//
-//#moj_import <fog.glsl>
-//#moj_import <dynamictransforms.glsl>
-//#moj_import <projection.glsl>
-//#moj_import <config.glsl>
-//
-//in vec3 Position;
-//in vec4 Color;
-//
-//out float vertexDistance;
-//out vec4 vertexColor;
-//
-//void main() {
-//    vec3 pos = Position + ModelOffset;
-//	vec4 tint = Color;
-//	ivec4 CtrlV = ivec4(Color * 255 + 0.5);
-//	
-//	if (!Layered_Clouds) { CtrlV.a = 255; tint.a = 0.5; }
-//    if (Sunken_Clouds) pos.y += CtrlV.a * ColorModulator.r - 130;
-//
-//	if (Puffy_Clouds) {
-//		tint = vec4(vec3(1.0), Color.r);
-//		int vertID = gl_VertexID % 4;	
-//		if (CtrlV.r == 255 || (CtrlV.r == 204 || CtrlV.r == 229) && (vertID == 1 || vertID == 2)) { 
-//			pos.y += 8; 
-//			tint.a = 0.0;
-//		}	
-//	}
-//
-//    vertexColor = tint * ColorModulator;
-//    vertexDistance = fog_distance(pos, 1);
-//    gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
-//}
+#version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#version 150
-
-#moj_import <fog.glsl>
-#moj_import <dynamictransforms.glsl>
-#moj_import <projection.glsl>
-#moj_import <config.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:config.glsl>
 
 const int FLAG_MASK_DIR = 7;
 const int FLAG_INSIDE_FACE = 1 << 4;
@@ -54,8 +20,8 @@ layout(std140) uniform CloudInfo {
 
 uniform isamplerBuffer CloudFaces;
 
-out float vertexDistance;
-out vec4 vertexColor;
+layout(location = 0) out float vertexDistance;
+layout(location = 1) out vec4 vertexColor;
 	
 	//Bottom Top North South West East
 const vec3[] vertices = vec3[](
@@ -77,8 +43,8 @@ const vec4[] faceColors = vec4[](
 );
 
 void main() {
-    int quadVertex = gl_VertexID % 4;
-    int index = (gl_VertexID / 4) * 3;
+    int quadVertex = gl_VertexIndex % 4;
+    int index = (gl_VertexIndex / 4) * 3;
 
     int cellX = texelFetch(CloudFaces, index).r;
     int cellZ = texelFetch(CloudFaces, index + 1).r;

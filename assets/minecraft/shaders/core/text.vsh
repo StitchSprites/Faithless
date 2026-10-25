@@ -1,41 +1,34 @@
 #version 330
-
-// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
-#extension GL_ARB_shader_draw_parameters : enable
-#ifdef GL_ARB_shader_draw_parameters
-    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
-#else
-    #define VERT_ID gl_VertexID
-#endif
+#extension GL_ARB_separate_shader_objects : require
 
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:sample_lightmap.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:sample_lightmap.glsl>
 #endif
 
-#moj_import <dynamictransforms.glsl>
-#moj_import <projection.glsl>
-#moj_import <vertex_utils.glsl>
-#moj_import <config.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:vertex_utils.glsl>
+#include <minecraft:config.glsl>
 
-in vec3 Position;
-in vec4 Color;
-in vec2 UV0;
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec4 Color;
+layout(location = 2) in vec2 UV0;
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-in ivec2 UV2;
+layout(location = 3) in ivec2 UV2;
 #endif
 
 uniform sampler2D Sampler0;
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
 uniform sampler2D Sampler2;
-out float sphericalVertexDistance;
-out float cylindricalVertexDistance;
+layout(location = 0) out float sphericalVertexDistance;
+layout(location = 1) out float cylindricalVertexDistance;
 #endif
 
-out vec4 vertexColor;
-out vec4 tint;
-out vec2 texCoord0;
-flat out int Debug;
+layout(location = 2) out vec4 vertexColor;
+layout(location = 3) out vec2 texCoord0;
+layout(location = 4) out vec4 tint;
+layout(location = 5) flat out int Debug;
 
 const ivec2 debug_lines[26] = ivec2[](
 	ivec2(8, 0), ivec2(9, 9), ivec2(1, 9), ivec2(1, 9), ivec2(1, 9),
@@ -60,11 +53,11 @@ void main() {
 	vec3 pos = Position;
 	Debug = 0;
 
-    int vertID = VERT_ID % 4;
+    int vertID = gl_VertexIndex % 4;
 	ivec3 ctrlT = ivec3(color.rgb * 255 + 0.5);
 #ifdef IS_GRAYSCALE
-	// 26.2 merged the single-channel "intensity" font program into this one (IS_GRAYSCALE). Its atlas is R8, so
-	// sampling it always returns alpha = 1, which would read as a control pixel and wipe the glyph out.
+	// The single-channel "intensity" font atlas is R8, so sampling it always returns alpha = 1, which would read
+	// as a control pixel and wipe the glyph out.
 	ivec4 ctrlV = ivec4(0);
 #else
     ivec4 ctrlV = ivec4(texture(Sampler0, UV0 - 0.00001 * corners[vertID]) * 255.0 + 0.5);

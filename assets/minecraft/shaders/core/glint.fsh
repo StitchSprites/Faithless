@@ -1,19 +1,26 @@
-#version 150
+#version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <fog.glsl>
-#moj_import <frag_utils.glsl>
-#moj_import <config.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:globals.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:frag_utils.glsl>
+#include <minecraft:config.glsl>
 
 uniform sampler2D Sampler0;
 
-in vec2 texCoord0;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
+layout(location = 2) in vec2 texCoord0;
 
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 void main() {
-    vec4 color = texture(Sampler0, texCoord0);
-    if (color.a == 0.0) discard;
-		
-    fragColor = color;
-	fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);
+    vec4 color = texture(Sampler0, texCoord0) * ColorModulator;
+    if (color.a < 0.1) {
+        discard;
+    }
+    float fade = (1.0f - total_fog_value(sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd)) * GlintAlpha;
+    fragColor = vec4(color.rgb * fade, color.a);
+    fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);
 }

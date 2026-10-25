@@ -1,38 +1,31 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#extension GL_ARB_shader_draw_parameters : enable
-#ifdef GL_ARB_shader_draw_parameters
-    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
-#else
-    #define VERT_ID gl_VertexID
-#endif
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:sample_lightmap.glsl>
+#include <minecraft:config.glsl>
 
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:projection.glsl>
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:sample_lightmap.glsl>
-#moj_import <config.glsl>
-
-in vec3 Position;
-in vec2 UV0;
-in vec4 Color;
-in ivec2 UV2;
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec2 UV0;
+layout(location = 2) in vec4 Color;
+layout(location = 3) in ivec2 UV2;
 
 uniform sampler2D Sampler0;
 uniform sampler2D Sampler2;
 
-out float sphericalVertexDistance;
-out float cylindricalVertexDistance;
-out vec2 texCoord0;
-out vec4 vertexColor;
-out vec4 lightMapColor;
-
-out vec3 cubePos;
-out vec4 UV;
-out vec3 glPos;
-out vec2 inUV;
-out float size;
-flat out vec2 face;
+layout(location = 0) out float sphericalVertexDistance;
+layout(location = 1) out float cylindricalVertexDistance;
+layout(location = 2) out vec2 texCoord0;
+layout(location = 3) out vec4 vertexColor;
+layout(location = 4) out vec4 lightMapColor;
+layout(location = 5) out vec3 cubePos;
+layout(location = 6) out vec4 UV;
+layout(location = 7) out vec3 glPos;
+layout(location = 8) out vec2 inUV;
+layout(location = 9) out float size;
+layout(location = 10) flat out vec2 face;
 
 const vec2 corners[4] = vec2[4](vec2(0.0), vec2(0.0, 1.0), vec2(1.0), vec2(1.0, 0.0));
 
@@ -45,7 +38,7 @@ void main() {
     vec4 tint = Color;
     vec4 shade = sample_lightmap(Sampler2, UV2);
 
-    int vertID = VERT_ID % 4;
+    int vertID = gl_VertexIndex % 4;
     vec3 pos = Position;
     cubePos = vec3(0.0);
     vec2 quadSize = vec2(0.0);
@@ -140,6 +133,11 @@ void main() {
             glPos = pos - (vec4(quadSize * scale, 0.0, 0.0) * ModelViewMat).xyz;
             UV = vec4((vertID == 0) ? texUV : vec2(0.0), (vertID == 2) ? texUV : vec2(0.0));
             face = inUV = corners[vertID];
+        } else {
+            UV = vec4(0.0);
+            glPos = vec3(0.0);
+            inUV = vec2(0.0);
+            face = vec2(0.0);
         }
     } else {
         size = 0.0;

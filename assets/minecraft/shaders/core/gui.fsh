@@ -1,11 +1,12 @@
-#version 150
+#version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <frag_utils.glsl>
-#moj_import <config.glsl>
+#include <minecraft:frag_utils.glsl>
+#include <minecraft:config.glsl>
 
-in vec4 vertexColor;
+layout(location = 0) in vec4 vertexColor;
 
-out vec4 fragColor;
+layout(location = 0) out vec4 fragColor;
 
 void main() {
 	fragColor = vertexColor;

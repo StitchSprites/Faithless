@@ -1,26 +1,34 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <fog.glsl>
-#moj_import <frag_utils.glsl>
-#moj_import <globals.glsl>
-#moj_import <chunksection.glsl>
-#moj_import <config.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:frag_utils.glsl>
+#include <minecraft:globals.glsl>
+#include <minecraft:terrainglobals.glsl>
+#include <minecraft:oit.glsl>
+#include <minecraft:config.glsl>
 
 uniform sampler2D Sampler0;
 
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
-in vec4 vertexLight;
-in vec4 vertexColor;
-in vec2 texCoord0;
-in float slopeUV;
-in vec3 fragPos;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
+layout(location = 2) in vec4 vertexColor;
+layout(location = 3) in vec2 texCoord0;
+layout(location = 4) in float chunkVisibility;
+layout(location = 5) in vec4 vertexLight;
+layout(location = 6) in float slopeUV;
+layout(location = 7) in vec3 fragPos;
 #if Chunk_Loading == 2
-in vec3 facePos;
-in vec3 relPos;
+layout(location = 8) in vec3 facePos;
+layout(location = 9) in vec3 relPos;
 #endif
 
-out vec4 fragColor;
+#ifndef OIT_ALPHA_ONLY
+layout(location = 0) out vec4 fragColor;
+#endif
+
+// NOTE: the pack keeps its own texture sampling (premultiplied alpha, no fringe) instead of
+// including minecraft:texture_sampling.glsl, so the function names below must not clash with it.
 
 // Unpack a premultiplied-alpha sample back to straight alpha.
 // Transparent texels (alpha == 0) contribute zero color weight, so they
@@ -37,7 +45,7 @@ vec4 samplePremul(sampler2D s, vec2 uv, vec2 du, vec2 dv, float lod) {
 	return c;
 }
 
-vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
+vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv, vec2 texelScreenSize) {
 	// Convert our UV back up to texel coordinates and find out how far over we are from the center of each pixel
 	vec2 uvTexelCoords = uv / pixelSize;
 	vec2 texelCenter = round(uvTexelCoords) - 0.5f;
@@ -49,7 +57,7 @@ vec4 sampleNearest(sampler2D sampler, vec2 uv, vec2 pixelSize, vec2 du, vec2 dv,
 
 	uv = (texelCenter + texelOffset) * pixelSize;
 	// Sample in premultiplied space then unpack — transparent texels carry no color.
-	return unpremultiply(samplePremul(sampler, uv, du, dv, -1.0));
+	return unpremultiply(samplePremul(source, uv, du, dv, -1.0));
 }
 
 vec4 sampleNearest(sampler2D source, vec2 uv, vec2 pixelSize) {
@@ -111,6 +119,20 @@ vec4 sampleRGSS(sampler2D source, vec2 uv, vec2 pixelSize) {
 	return mix(nearestColor, rgssColor, blendFactor);
 }
 
+#ifndef OIT_ALPHA_ONLY
+vec4 calculateFinalColor(vec4 color) {
+	#ifdef OIT_ACCUMULATE
+	color = sampleColorForAccumulation(color);
+	vec4 fogColor = vec4(FogColor.rgb * color.a, FogColor.a);
+	#else
+	vec4 fogColor = FogColor;
+	#endif
+	color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, fogColor);
+	color.rgb = cone_filter(Colorblindness, color.rgb);
+	return color;
+}
+#endif
+
 void main() {
 	// All this just for snow and moss... Lord help us all
 	vec3 dpx = dFdx(fragPos), dpy = dFdy(fragPos);
@@ -133,7 +155,6 @@ void main() {
 			// offset from the block's center along those axes, in blocks (-0.5 .. 0.5)
 			vec2 delta = vec2(fract(facePos[a1]), fract(facePos[a2])) - 0.5;
 
-			// same curve the old vertex version used
 			float fadeAmount = pow(max(0.0, length(relPos.xz) - (FogRenderDistanceEnd - 16.0)), 2.0);
 			float shrink = clamp(fadeAmount * 0.075 / 16.0, 0.0, 1.0);
 			float s = 1.0 - shrink; // size of the face relative to normal
@@ -172,7 +193,9 @@ void main() {
 		case 249: if (Emissives) color = vec4(emissiveColor.rgb, 1.0); break;
 		case 25: case 3: case 2: case 1: discard;
 		default:
-		color = mix(FogColor * vec4(1, 1, 1, color.a), color, ChunkVisibility);
+		#ifndef OIT_ALPHA_ONLY
+		color = mix(FogColor * vec4(1, 1, 1, color.a), color, chunkVisibility);
+		#endif
 		break;
 	}
 	if (ctrlF.a == 180 || ctrlF.a == 181) {
@@ -186,6 +209,10 @@ void main() {
 #if Chunk_Loading == 2
 	if (fadeDiscard) discard;
 #endif
-	fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
-	fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);
+
+	#ifdef OIT_ALPHA_ONLY
+	executeAlphaOnlyPhase(gl_FragCoord.z, color.a);
+	#else
+	fragColor = calculateFinalColor(color);
+	#endif
 }

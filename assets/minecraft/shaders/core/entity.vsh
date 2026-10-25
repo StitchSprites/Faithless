@@ -1,53 +1,57 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
 #if defined(PER_FACE_LIGHTING) || !defined(NO_CARDINAL_LIGHTING)
-#moj_import <minecraft:light.glsl>
+#include <minecraft:light.glsl>
 #endif
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:projection.glsl>
-#moj_import <minecraft:sample_lightmap.glsl>
-#moj_import <config.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:sample_lightmap.glsl>
+#include <minecraft:config.glsl>
 
-in vec3 Position;
-in vec4 Color;
-in vec2 UV0;
-in ivec2 UV1;
-in ivec2 UV2;
-in vec3 Normal;
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec4 Color;
+layout(location = 2) in vec2 UV0;
+layout(location = 3) in ivec2 UV1;
+layout(location = 4) in ivec2 UV2;
+layout(location = 5) in vec3 Normal;
 
 uniform sampler2D Sampler0;
 
-#ifndef NO_OVERLAY
+#if !defined(NO_OVERLAY) && !defined(OIT_ALPHA_ONLY)
 uniform sampler2D Sampler1;
 #endif
 
-#ifndef EMISSIVE
+#if !defined(EMISSIVE) && !defined(OIT_ALPHA_ONLY)
 uniform sampler2D Sampler2;
 #endif
 
-out float sphericalVertexDistance;
-out float cylindricalVertexDistance;
+layout(location = 0) out float sphericalVertexDistance;
+layout(location = 1) out float cylindricalVertexDistance;
 
 #ifdef PER_FACE_LIGHTING
-out vec4 vertexPerFaceColorBack;
-out vec4 vertexPerFaceColorFront;
+layout(location = 2) out vec4 vertexPerFaceColorBack;
+layout(location = 3) out vec4 vertexPerFaceColorFront;
 #else
-out vec4 vertexColor;
+layout(location = 2) out vec4 vertexColor;
 #endif
 
 #ifndef EMISSIVE
-out vec4 lightMapColor;
+layout(location = 4) out vec4 lightMapColor;
 #endif
 
 #ifndef NO_OVERLAY
-out vec4 overlayColor;
+layout(location = 5) out vec4 overlayColor;
 #endif
 
-out vec2 texCoord0;
-out vec4 rawVertexColor;
-out vec3 screenPos;
-flat out int isCrystalBeam;
+layout(location = 6) out vec2 texCoord0;
+#ifdef GLINT
+layout(location = 7) out vec2 texCoordGlint;
+#endif
+layout(location = 8) out vec4 rawVertexColor;
+layout(location = 9) out vec3 screenPos;
+layout(location = 10) flat out int isCrystalBeam;
 
 void main() {
     gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
@@ -90,11 +94,11 @@ void main() {
     }
 #endif
 
-#ifndef EMISSIVE
+#if !defined(EMISSIVE) && !defined(OIT_ALPHA_ONLY)
     lightMapColor = sample_lightmap(Sampler2, UV2);
 #endif
 
-#ifndef NO_OVERLAY
+#if !defined(NO_OVERLAY) && !defined(OIT_ALPHA_ONLY)
     overlayColor = texelFetch(Sampler1, UV1, 0);
 #endif
 
@@ -102,5 +106,9 @@ void main() {
 
 #ifdef APPLY_TEXTURE_MATRIX
     texCoord0 = (TextureMat * vec4(UV0, 0.0, 1.0)).xy;
+#endif
+
+#ifdef GLINT
+    texCoordGlint = (TextureMat * vec4(UV0, 0.0, 1.0)).xy;
 #endif
 }

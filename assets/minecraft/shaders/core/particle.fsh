@@ -1,56 +1,47 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
-#moj_import <minecraft:projection.glsl>
-#moj_import <depth_utils.glsl>
-#moj_import <config.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
+#include <minecraft:depth_utils.glsl>
+#include <minecraft:oit.glsl>
+#include <minecraft:frag_utils.glsl>
+#include <minecraft:config.glsl>
 
 uniform sampler2D Sampler0;
 
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
-in vec4 vertexColor;
-in vec4 lightMapColor;
-in vec2 texCoord0;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
+layout(location = 2) in vec2 texCoord0;
+layout(location = 3) in vec4 vertexColor;
+layout(location = 4) in vec4 lightMapColor;
+layout(location = 5) in vec3 cubePos;
+layout(location = 6) in vec4 UV;
+layout(location = 7) in vec3 glPos;
+layout(location = 8) in vec2 inUV;
+layout(location = 9) in float size;
+layout(location = 10) flat in vec2 face;
 
-in vec3 cubePos;
-in vec4 UV;
-in vec3 glPos;
-in vec2 inUV;
-in float size;
-flat in vec2 face;
+#ifndef OIT_ALPHA_ONLY
+layout(location = 0) out vec4 fragColor;
+#endif
 
-out vec4 fragColor;
-
-vec3 cone_filter(int colorblindness, vec3 color) {
-    switch (colorblindness) {
-    case 1: color = mat3(
-        0.170556992, 0.170556991,-0.004517144,
-        0.829443014, 0.829443008, 0.004517144,
-        0.0        , 0.0        , 1.0
-    ) * color; break;
-    case 2: color = mat3(
-        0.33066007 , 0.33066007 ,-0.02785538,
-        0.66933993 , 0.66933993 , 0.02785538,
-        0.0        , 0.0        , 1.0
-    ) * color; break;
-    case 3: color = mat3(
-        1.0       , 0.0      , 0.0,
-        0.1273989 , 0.8739093, 0.8739093,
-       -0.1273989 , 0.1260907, 0.1260907
-    ) * color; break;
-    case 4: color = color * mat3(
-        0.2126, 0.7152, 0.0722,
-        0.2126, 0.7152, 0.0722,
-        0.2126, 0.7152, 0.0722
-    ); break;
-    }
+vec4 calculateFinalColor(vec4 color) {
+    #ifdef OIT_ACCUMULATE
+    color = sampleColorForAccumulation(color);
+    vec4 fogColor = vec4(FogColor.rgb * color.a, FogColor.a);
+    #else
+    vec4 fogColor = FogColor;
+    #endif
+    color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, fogColor);
+    color.rgb = cone_filter(Colorblindness, color.rgb);
     return color;
 }
 
 void main() {
     vec4 color;
+    float depth;
 
     if (Cubic_Particles && cubePos.z != 0.0) {
         vec3 glp = normalize(-glPos);
@@ -76,15 +67,15 @@ void main() {
         }
         color.rgb *= dot(norm, vec3(0.2, -1.0, 0.4)) * 0.5 + 1.0;
 
-        // 26.2: depth is reversed and its range depends on the backend, so let the projection say how to write it
+        // depth is reversed and its range depends on the backend, so let the projection say how to write it
         vec4 depthPos = ProjMat * ModelViewMat * vec4(-glp * tex.z, 1.0);
-        gl_FragDepth = projection_window_depth(ProjMat, depthPos);
+        depth = projection_window_depth(ProjMat, depthPos);
     } else {
         color = texture(Sampler0, texCoord0);
         if (color.a < 0.1) {
             discard;
         }
-        gl_FragDepth = gl_FragCoord.z;
+        depth = gl_FragCoord.z;
     }
 
     ivec4 ctrlF = ivec4(textureLod(Sampler0, texCoord0, 0.0) * 255.0);
@@ -99,15 +90,12 @@ void main() {
         break;
     }
 
-    fragColor = apply_fog(
-        color,
-        sphericalVertexDistance,
-        cylindricalVertexDistance,
-        FogEnvironmentalStart,
-        FogEnvironmentalEnd,
-        FogRenderDistanceStart,
-        FogRenderDistanceEnd,
-        FogColor
-    );
-    fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);
+    #ifdef OIT_ALPHA_ONLY
+    executeAlphaOnlyPhase(depth, color.a);
+    #else
+    fragColor = calculateFinalColor(color);
+    #endif
+
+    // Written last so it overrides any implicit-depth write the OIT helpers make.
+    gl_FragDepth = depth;
 }

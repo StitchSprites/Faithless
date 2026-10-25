@@ -1,4 +1,5 @@
-#version 150
+#ifndef FAITHLESS_FRAG_UTILS_GLSL
+#define FAITHLESS_FRAG_UTILS_GLSL
 
 // -- Colorblindness --------------------------------------------------------------------------------------
 
@@ -26,7 +27,7 @@ vec3 cone_filter(int Colorblindness, vec3 color) {
 
 // -- End Portal --------------------------------------------------------------------------------------
 
-#moj_import <matrix.glsl>
+#include <minecraft:matrix.glsl>
 #define Portal_Layers 16
 
 float hash12(vec2 p) {
@@ -64,3 +65,5 @@ vec3 render_endParallax(vec3 baseColor, vec2 fragCoord, vec2 screenSize, float G
     }
     return color;
 }
+
+#endif
