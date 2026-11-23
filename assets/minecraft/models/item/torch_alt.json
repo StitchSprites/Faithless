@@ -8,69 +8,69 @@
 		{
 			"from": [10, -4, 4],
 			"to": [32, 0, 12],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, -12, 9]},
 			"faces": {
 				"up": {"uv": [6, 5, 10, 16], "rotation": 90, "texture": "#2"},
 				"down": {"uv": [6, 5, 10, 16], "rotation": 90, "texture": "#2"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [30, -4, 6],
 			"to": [30, 0, 10],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, -12, 9]},
 			"faces": {
 				"east": {"uv": [7, 6, 9, 8], "texture": "#2"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [10, -4, 6],
 			"to": [10, 0, 10],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, -12, 9]},
 			"faces": {
 				"west": {"uv": [7, 14, 9, 16], "texture": "#2"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [10, 0, 4],
 			"to": [32, -4, 12],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, -12, 9]},
 			"faces": {
 				"up": {"uv": [6, 5, 10, 16], "rotation": 90, "texture": "#2"},
 				"down": {"uv": [6, 5, 10, 16], "rotation": 90, "texture": "#2"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [10, -6, 6],
 			"to": [32, 2, 10],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, -12, 9]},
 			"faces": {
 				"north": {"uv": [6, 5, 10, 16], "rotation": 270, "texture": "#2"},
 				"south": {"uv": [6, 5, 10, 16], "rotation": 90, "texture": "#2"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [10, -6, 10],
 			"to": [32, 2, 6],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "z", "origin": [5, -12, 9]},
 			"faces": {
 				"north": {"uv": [6, 5, 10, 16], "rotation": 270, "texture": "#2"},
 				"south": {"uv": [6, 5, 10, 16], "rotation": 90, "texture": "#2"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [6.22843, 9.2, 8],
 			"to": [22.22843, 25.2, 8],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#torch_flame_e"},
 				"south": {"uv": [16, 0, 0, 16], "texture": "#torch_flame_e"}
-			}
+			},
+			"shade_direction_override": "up"
 		}
 	],
 	"gui_light": "front",

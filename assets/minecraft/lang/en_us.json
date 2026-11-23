@@ -703,6 +703,9 @@
 "item.minecraft.music_disc_ward":"Music Disc - Ward §f\uE02B4:11",
 "item.minecraft.music_disc_creator":"Music Disc - Creator §f\uE02B2:57",
 "item.minecraft.music_disc_creator_music_box":"Music Disc - Creator Music Box §f\uE02B1:14",
+"item.minecraft.music_disc_tears":"Music Disc - Tears §f2:55",
+"item.minecraft.music_disc_lava_chicken":"Music Disc - Lava Chicken §f2:14",
+"item.minecraft.music_disc_bounce":"Music Disc - Bounce §f3:54",
 "item.minecraft.music_disc_precipice":"Music Disc - Precipice §f\uE02B4:59",
 
 "item.minecraft.angler_pottery_sherd":"\uE88AAngler Shard",
@@ -2261,5 +2264,18 @@
 "subtitles.ui.cartography_table.take_result":"§7Map drawn",
 "subtitles.ui.loom.take_result":"§7Loom used",
 "subtitles.ui.stonecutter.take_result":"§7Stonecutter used",
-"subtitles.weather.rain":""
+"subtitles.weather.rain":"",
+"entity.minecraft.bamboo_chest_raft":"§r ",
+"entity.minecraft.poplar_chest_boat":"§r ",
+"item.minecraft.bamboo_chest_raft":"§r ",
+"item.minecraft.poplar_chest_boat":"§r ",
+"container.poplar_chest_boat":"",
+"container.poplar_boat_with_chest":"",
+"container.poplar_boat.chest":"",
+"enchantment.minecraft.lunge":"§f§dLunge",
+"enchantment.minecraft.wind_burst":"§f§dWind Burst",
+"enchantment.minecraft.density":"§f§dDensity",
+"enchantment.minecraft.breach":"§f§dBreach",
+"block.minecraft.golden_dandelion":"Sundrop",
+"item.minecraft.golden_dandelion":"Sundrop"
 }

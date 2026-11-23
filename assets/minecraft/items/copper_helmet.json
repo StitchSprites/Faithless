@@ -1,0 +1,105 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "fixed"
+        ],
+        "model": {
+          "type": "select",
+          "property": "trim_material",
+          "cases": [
+            {
+              "when": "amethyst",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_amethyst"
+              }
+            },
+            {
+              "when": "copper",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_copper"
+              }
+            },
+            {
+              "when": "diamond",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_diamond"
+              }
+            },
+            {
+              "when": "emerald",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_emerald"
+              }
+            },
+            {
+              "when": "gold",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_gold"
+              }
+            },
+            {
+              "when": "iron",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_iron"
+              }
+            },
+            {
+              "when": "lapis",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_lapis"
+              }
+            },
+            {
+              "when": "netherite",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_netherite"
+              }
+            },
+            {
+              "when": "quartz",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_quartz"
+              }
+            },
+            {
+              "when": "redstone",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_redstone"
+              }
+            },
+            {
+              "when": "resin",
+              "model": {
+                "type": "model",
+                "model": "trim/copper/helmet_resin"
+              }
+            }
+          ],
+          "fallback": {
+            "type": "model",
+            "model": "item/copper_helmet"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "item/copper_helmet"
+    }
+  }
+}

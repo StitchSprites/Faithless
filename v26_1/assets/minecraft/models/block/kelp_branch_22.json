@@ -1,0 +1,51 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "block/kelp_plant",
+    "cross": "block/kelp_branch"
+  },
+  "elements": [
+    {
+      "from": [
+        -16,
+        -16,
+        8
+      ],
+      "to": [
+        32,
+        16,
+        8
+      ],
+      "rotation": {
+        "angle": 22.5,
+        "axis": "y",
+        "origin": [
+          8,
+          0,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#cross"
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            0,
+            16
+          ],
+          "texture": "#cross"
+        }
+      },
+      "shade": false
+    }
+  ]
+}

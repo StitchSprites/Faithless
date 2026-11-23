@@ -8,22 +8,22 @@
 		{
 			"from": [0.8, -16, 8],
 			"to": [15.2, 32, 8],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#cross"},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#cross"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [8, -16, 0.8],
 			"to": [8, 32, 15.2],
-			"shade": false,
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#cross"},
 				"west": {"uv": [0, 0, 16, 16], "texture": "#cross"}
-			}
+			},
+			"shade_direction_override": "up"
 		}
 	]
 }

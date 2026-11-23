@@ -1,29 +1,39 @@
-#version 150
+#version 330
+#extension GL_ARB_separate_shader_objects : require
 
-// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
-#extension GL_ARB_shader_draw_parameters : enable
-#ifdef GL_ARB_shader_draw_parameters
-    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
-#else
-    #define VERT_ID gl_VertexID
-#endif
+layout(std140) uniform DynamicTransforms {
+    mat4 ModelViewMat;
+    mat4 TextureMat;
+    vec4 ColorModulator;
+    vec3 ModelOffset;
+};
+layout(std140) uniform Projection {
+    mat4 ProjMat;
+};
+// Minecraft 26.3 ShaderC/SPIR-V uses Vulkan-style vertex built-in names.
+// For quad-based GUI drawing, indices of each quad are consecutive groups of four.
+#define VERT_ID gl_VertexIndex
+layout(std140) uniform Globals {
+    ivec3 CameraBlockPos;
+    float GlintAlpha;
+    vec3 CameraOffset;
+    float GameTime;
+    vec2 ScreenSize;
+    int MenuBlurRadius;
+    int UseRgss;
+};
 
-#moj_import <dynamictransforms.glsl>
-#moj_import <projection.glsl>
-#moj_import <vertex_utils.glsl>
-#moj_import <globals.glsl>
-#moj_import <config.glsl>
-
-in vec3 Position;
-in vec2 UV0;
-in vec4 Color;
-
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec2 UV0;
+layout(location = 2) in vec4 Color;
 uniform sampler2D Sampler0;
+layout(location = 0) out vec2 texCoord0;
+layout(location = 1) out vec4 vertexColor;
+layout(location = 2) out vec3 skyDir;
+layout(location = 3) out float isEndSky;
+const vec2 corners[4] = vec2[4](vec2(0.0), vec2(0.0, 1.0), vec2(1.0), vec2(1.0, 0.0));
 
-out vec2 texCoord0;
-out vec4 vertexColor;
-out vec3 skyDir;       // world-space direction for End Skybox cubic projection
-out float isEndSky;    // 1.0 when drawing the End Sky
+const int End_Skybox = 1;
 
 //[CONTAINER ANIMATIONS]: SPEED, SHEET_FRAMES, TOTAL_FRAMES
 
@@ -67,10 +77,42 @@ void main() {
      skyDir = Position;
      // ─────────────────────────────────────────────────────────────────────────
 
+    ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
+    ivec2 sourceSize = textureSize(Sampler0, 0);
+    bool faithlessContainerControl = (ctrlL.a == 2 && (
+        (ctrlL.rgb == ivec3(0, 0, 0) && (
+            sourceSize == ivec2(176, 166) || sourceSize == ivec2(192, 192) ||
+            sourceSize == ivec2(230, 219) || sourceSize == ivec2(195, 136) ||
+            sourceSize == ivec2(125, 75)  || sourceSize == ivec2(1056, 221) ||
+            sourceSize == ivec2(176, 133) || sourceSize == ivec2(248, 166)
+        )) ||
+        (ctrlL.rgb == ivec3(76, 0, 0)  && sourceSize == ivec2(328, 166)) ||
+        (ctrlL.rgb == ivec3(40, 45, 0) && sourceSize == ivec2(256, 256)) ||
+        (ctrlL.rgb == ivec3(54, 45, 0) && sourceSize == ivec2(384, 256)) ||
+        (ctrlL.rgb == ivec3(0, 0, 1)  && sourceSize == ivec2(176, 332))
+    ));
     int vertID = VERT_ID % 4;
-	ivec4 ctrlL = ivec4(texture(Sampler0, vec2(0)) * 255 + 0.5);
-	
-    switch (ctrlL.a) {
+
+    // Faithless GUI containers are drawn by Minecraft with atlas UVs that
+    // indicate their corner.  Minecraft 26.3 can batch GUI draws with base
+    // vertex offsets, so gl_VertexIndex % 4 is NOT a local quad-corner ID.
+    // Derive the rectangle corner from the actual UVs for control-alpha 2.
+    if (faithlessContainerControl) {
+        bool right = UV0.x > 0.001;
+        bool bottom = UV0.y > 0.001;
+
+        // The chest GUI is split into top and bottom source strips.  Both
+        // edges of a strip may have nonzero V; recognize their atlas UVs.
+        if (abs(UV0.y - 0.27734375) < 0.00001 ||
+            abs(UV0.y - 0.49218750) < 0.00001) bottom = false;
+        if (abs(UV0.y - 0.48828125) < 0.00001 ||
+            abs(UV0.y - 0.86718750) < 0.00001) bottom = true;
+
+        // corners[] has TL, BL, BR, TR winding.
+        vertID = right ? (bottom ? 2 : 3) : (bottom ? 1 : 0);
+    }
+
+    switch (faithlessContainerControl ? 2 : 0) {
     case 2: //CONTAINERS
 		texCoord0 = corners[vertID];
 		pos.xy += (corners[vertID] - 0.5) * ctrlL.rg * 2;
@@ -99,8 +141,54 @@ void main() {
 
     default: //case 1: SPRITES
 		ivec4 ctrlV = ivec4(texture(Sampler0, UV0 - 0.00001 * corners[vertID]) * 255.0 + 0.5);
+        // The three smelter fuel indicators encode (128,128,1,1) at their
+        // left border; furnace/lit_progress also encodes it at the far right
+        // of its 182x14 strip.  With 26.3 GUI batching, gl_VertexIndex % 4
+        // is not reliably tied to a sprite's UV corner.  Probe the border
+        // texels instead of using the draw's vertex ordering for this meter.
+        vec2 fuelTexel = 1.0 / vec2(textureSize(Sampler0, 0));
+        bool fuelMeterCorner = false;
+        bool wideFuelRightCorner = false;
+        for (int dx = -1; dx <= 1; dx += 2) {
+            for (int dy = -1; dy <= 1; dy += 2) {
+                vec2 inside = UV0 + vec2(float(dx), float(dy)) * fuelTexel * 0.25;
+                ivec4 nearCode = ivec4(texture(Sampler0, inside) * 255.0 + 0.5);
+                if (nearCode == ivec4(128, 128, 1, 1)) {
+                    fuelMeterCorner = true;
+                }
+            }
+        }
+        if (fuelMeterCorner) {
+            // On the wide furnace strip's right edge, exactly 182 pixels to
+            // the left is the identical marker at its left edge.  On 14x14
+            // smoker/blast-furnace flames there is no such matching marker.
+            // Crop the *UV* span to one 14px-wide frame; keep all 13 frames
+            // in the original PNG and retain Minecraft's normal burn clipping.
+            for (int dy = -1; dy <= 1; dy += 2) {
+                vec2 otherEdge = UV0 + vec2(-181.75, float(dy) * 0.25) * fuelTexel;
+                ivec4 otherCode = ivec4(texture(Sampler0, otherEdge) * 255.0 + 0.5);
+                if (otherCode == ivec4(128, 128, 1, 1)) {
+                    wideFuelRightCorner = true;
+                }
+            }
+        }
+        if (wideFuelRightCorner) {
+            texCoord0.x = UV0.x - 168.0 * fuelTexel.x;
+        }
+        // Restrict alpha-1 animation/meter controls to Faithless's actual
+        // encoded marker colors. HUD sprites from other mods must pass through.
+        bool faithlessSpriteControl = (ctrlV.a == 1 && (
+            (ctrlV.b == 0 && ((ctrlV.g == 128 &&
+                (ctrlV.r == 70 || ctrlV.r == 97 || ctrlV.r == 115 || ctrlV.r == 130)) ||
+                (ctrlV.g == 100 && (ctrlV.r == 115 || ctrlV.r == 130)))) ||
+            (ctrlV.b == 1 && ctrlV.r == 128 && ctrlV.g == 128) ||
+            (ctrlV.b == 2 && ctrlV.r == 128 && (ctrlV.g == 127 || ctrlV.g == 129))
+        ));
+
 		
-        if (ctrlV.a == 1) {
+        // The fuel meter above is now independent of vertex IDs; do not
+        // apply the old index-dependent cropping to those same vertices.
+        if (faithlessSpriteControl && !fuelMeterCorner) {
             pos.xy += vec2(ctrlV.r - 128, 128 - ctrlV.g);
 			
 			vec2 meterParams = METER_params[ctrlV.b];

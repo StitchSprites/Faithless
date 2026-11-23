@@ -2,7 +2,7 @@
 	"pack": {
 		"description": "An alternate look and feel of Minecraft §6(By §bStitch§6)",
 		"min_format": [84, 0],
-		"max_format": [84, 0]
+		"max_format": [97, 1]
 	},
 	"sodium": {
 		"ignored_shaders": [
@@ -11,6 +11,20 @@
 			"terrain.vsh",
 			"terrain.fsh",
 			"fog.glsl"
+		]
+	},
+	"overlays": {
+		"entries": [
+			{
+				"directory": "v26_1",
+				"min_format": [84, 0],
+				"max_format": [84, 0]
+			},
+			{
+				"directory": "v26_2",
+				"min_format": [88, 0],
+				"max_format": [88, 0]
+			}
 		]
 	}
 }

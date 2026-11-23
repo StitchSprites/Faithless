@@ -11,10 +11,10 @@
 		{
 			"from": [6, 21, 6],
 			"to": [10, 21, 10],
-			"shade": false,
 			"faces": {
 				"down": {"uv": [8, 8, 16, 16], "texture": "#1"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [5.5, 0, 5.5],

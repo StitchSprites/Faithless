@@ -1,6 +1,6 @@
 {
 	"textureSize": [64, 64],
-	"texture": "textures/entity/armorstand/wood.png",
+	"texture": "textures/entity/armorstand/armorstand.png",
 	"models": [
 		{
 			"part": "head",

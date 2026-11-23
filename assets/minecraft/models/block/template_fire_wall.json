@@ -9,11 +9,11 @@
 		{
 			"from": [0, 1, 0.5],
 			"to": [16, 23, 0.5],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 5, 16, 16], "texture": "#fire"},
 				"south": {"uv": [0, 5, 16, 16], "texture": "#fire"}
-			}
+			},
+			"shade_direction_override": "up"
 		}
 	]
 }

@@ -13,7 +13,6 @@
 		{
 			"from": [0, 0, 0],
 			"to": [16, 16, 16],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "north"},
 				"east": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "east"},
@@ -21,12 +20,12 @@
 				"west": {"uv": [0, 0, 16, 16], "texture": "#3", "cullface": "west"},
 				"up": {"uv": [0, 0, 16, 16], "texture": "#4", "cullface": "up"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "down"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [16, 16, 16],
 			"to": [0, 0, 0],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 16, 16, 0], "texture": "#3", "cullface": "south"},
 				"east": {"uv": [0, 16, 16, 0], "texture": "#3", "cullface": "west"},
@@ -34,20 +33,20 @@
 				"west": {"uv": [0, 16, 16, 0], "texture": "#3", "cullface": "east"},
 				"up": {"uv": [0, 0, 16, 16], "texture": "#2", "cullface": "down"},
 				"down": {"uv": [0, 0, 16, 16], "texture": "#4", "cullface": "up"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [0, 0, 0],
 			"to": [16, 3, 16],
-			"shade": false,
 			"faces": {
 				"up": {"uv": [0, 0, 16, 16], "texture": "#1"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [4.5, 4.5, 4.5],
 			"to": [11.5, 11.5, 11.5],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [4, 4, 12, 12], "texture": "#0"},
 				"east": {"uv": [4, 4, 12, 12], "texture": "#0"},
@@ -55,12 +54,12 @@
 				"west": {"uv": [4, 4, 12, 12], "texture": "#0"},
 				"up": {"uv": [4, 4, 12, 12], "rotation": 270, "texture": "#0"},
 				"down": {"uv": [4, 4, 12, 12], "rotation": 90, "texture": "#0"}
-			}
+			},
+			"shade_direction_override": "up"
 		},
 		{
 			"from": [12, 12, 12],
 			"to": [4, 4, 4],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [3, 3, 4, 4], "texture": "#0"},
 				"east": {"uv": [3, 3, 4, 4], "texture": "#0"},
@@ -68,7 +67,8 @@
 				"west": {"uv": [3, 3, 4, 4], "texture": "#0"},
 				"up": {"uv": [3, 3, 4, 4], "rotation": 270, "texture": "#0"},
 				"down": {"uv": [3, 3, 4, 4], "rotation": 90, "texture": "#0"}
-			}
+			},
+			"shade_direction_override": "up"
 		}
 	]
 }

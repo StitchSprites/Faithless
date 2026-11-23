@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "block/poplar_pressure_plate"
+    },
+    "powered=true": {
+      "model": "block/poplar_pressure_plate_down"
+    }
+  }
+}
