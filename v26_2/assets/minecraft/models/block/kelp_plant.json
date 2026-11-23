@@ -1,0 +1,42 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "block/kelp_plant",
+    "cross": "block/kelp_plant"
+  },
+  "elements": [
+    {
+      "from": [
+        -8,
+        -16,
+        8
+      ],
+      "to": [
+        24,
+        16,
+        8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#cross"
+        },
+        "south": {
+          "uv": [
+            16,
+            0,
+            0,
+            16
+          ],
+          "texture": "#cross"
+        }
+      },
+      "shade": false
+    }
+  ]
+}

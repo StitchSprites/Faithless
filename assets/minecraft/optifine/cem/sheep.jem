@@ -1,6 +1,5 @@
 {
 	"textureSize": [64, 32],
-	"texture": "textures/entity/sheep/sheep.png",
 	"models": [
 		{
 			"part": "body",

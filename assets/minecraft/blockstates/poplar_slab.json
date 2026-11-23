@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "block/poplar_slab"
+    },
+    "type=double": {
+      "model": "block/poplar_slab_double"
+    },
+    "type=top": {
+      "model": "block/poplar_slab_top"
+    }
+  }
+}

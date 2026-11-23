@@ -23,8 +23,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -42,8 +42,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -61,8 +61,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -80,8 +80,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -99,8 +99,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -118,8 +118,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -137,8 +137,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -156,8 +156,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -175,8 +175,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -194,8 +194,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -213,8 +213,8 @@
 							"value": -1
 							},
 							{
-							"type": "minecraft:map_color",
-							"default": 4603950
+							"type": "minecraft:constant",
+							"value": 4603950
 							}
 						]
 						}
@@ -229,8 +229,8 @@
 						"value": -1
 						},
 						{
-						"type": "minecraft:map_color",
-						"default": 4603950
+						"type": "minecraft:constant",
+						"value": 4603950
 						}
 					]
 					}

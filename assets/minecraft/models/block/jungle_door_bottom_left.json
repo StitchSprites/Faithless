@@ -3,7 +3,8 @@
 	"ambientocclusion": false,
 	"textures": {
 		"top": "block/jungle_door_top",
-		"particle": "block/air"
+		"particle": "block/air",
+		"recess": "block/jungle_door_recess"
 	},
 	"elements": [
 		{
@@ -44,6 +45,27 @@
 				"east": {"uv": [6.25, 8, 6.5, 8.5], "texture": "#top"},
 				"west": {"uv": [6.25, 8, 6.5, 8.5], "texture": "#top"},
 				"down": {"uv": [6.25, 8, 6.5, 8.5], "texture": "#top"}
+			}
+		},
+		{
+			"from": [6, 7, 13],
+			"to": [6, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 3, 9], "texture": "#recess"}
+			}
+		},
+		{
+			"from": [10, 7, 13],
+			"to": [10, 16, 16],
+			"faces": {
+				"west": {"uv": [0, 0, 3, 9], "texture": "#recess"}
+			}
+		},
+		{
+			"from": [6, 7, 13],
+			"to": [10, 7, 16],
+			"faces": {
+				"up": {"uv": [6, 0, 10, 3], "texture": "#recess"}
 			}
 		}
 	]

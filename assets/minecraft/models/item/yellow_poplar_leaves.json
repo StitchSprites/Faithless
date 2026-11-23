@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_transparent",
+  "textures": {
+    "all": "block/yellow_poplar_leaves",
+    "inner": "block/yellow_poplar_leaves"
+  }
+}

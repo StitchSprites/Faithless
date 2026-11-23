@@ -21,13 +21,13 @@
 		{
 			"from": [1, 24, 1],
 			"to": [15, 32, 15],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [1, 4, 15, 12], "texture": "#2", "cullface": "up"},
 				"east": {"uv": [1, 4, 15, 12], "texture": "#2", "cullface": "up"},
 				"south": {"uv": [1, 4, 15, 12], "texture": "#2", "cullface": "up"},
 				"west": {"uv": [1, 4, 15, 12], "texture": "#2", "cullface": "up"}
-			}
+			},
+			"shade_direction_override": "up"
 		}
 	]
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/faithless_bed_foot",
+  "textures": {
+    "1": "minecraft:block/entity/bed_yellow",
+    "2": "minecraft:block/entity/bed",
+    "particle": "minecraft:block/entity/bed_yellow"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "parent": "block/lodestone",
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        5,
+        180,
+        0
+      ],
+      "translation": [
+        -9,
+        2,
+        -1
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        13.19,
+        0.39,
+        5.79
+      ],
+      "translation": [
+        4.25,
+        3.75,
+        0
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        56.5,
+        0,
+        0
+      ],
+      "translation": [
+        -6,
+        3.5,
+        3.5
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        56.5,
+        0,
+        0
+      ],
+      "translation": [
+        -6,
+        3.5,
+        3.5
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    }
+  }
+}

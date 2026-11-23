@@ -1,66 +1,53 @@
 #version 330
-
+#extension GL_ARB_separate_shader_objects : require
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-#moj_import <minecraft:fog.glsl>
+#include <minecraft:fog.glsl>
 #endif
-
-#moj_import <dynamictransforms.glsl>
-#moj_import <frag_utils.glsl>
-#moj_import <config.glsl>
-
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:oit.glsl>
+#include <minecraft:config.glsl>
 uniform sampler2D Sampler0;
-
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
 #endif
-
-in vec4 vertexColor;
-in vec4 tint;
-in vec2 texCoord0;
-flat in int Debug;
-
-out vec4 fragColor;
-
+layout(location = 2) in vec4 vertexColor;
+layout(location = 3) in vec2 texCoord0;
+layout(location = 4) in vec4 tint;
+layout(location = 5) flat in int Debug;
+#ifndef OIT_ALPHA_ONLY
+layout(location = 0) out vec4 fragColor;
+#endif
 void main() {
-#ifdef IS_GRAYSCALE
+    #ifdef IS_GRAYSCALE
     vec4 texColor = texture(Sampler0, texCoord0).rrrr;
-#else
+    #else
     vec4 texColor = texture(Sampler0, texCoord0);
-#endif
-
-#ifdef IS_SEE_THROUGH
-    vec4 color = texColor * vertexColor * tint;
-#else
+    #endif
     vec4 color = texColor * vertexColor * ColorModulator * tint;
-#endif
     if (color.a < 0.1) discard;
-	
-#ifndef IS_GRAYSCALE
-	if (Debug != 0) {
-		
-		ivec4 ctrlF = ivec4(color * 255.0 + 0.5);
-		
-		switch (ctrlF.a) {
-			case 255: if (tint == debugMenu[5] || tint == debugMenu[6] || tint == debugMenu[7]) color = debugMenu[1]; break;
-			case 254: if (tint == debugMenu[1] || tint == debugMenu[8] || tint == debugMenu[0]) color = debugMenu[2]; 
-					  if (tint == debugMenu[10]) color = debugMenu[12]; break;
-			case 253: if (tint == debugMenu[1] || tint == debugMenu[8] || tint == debugMenu[0]) color = debugMenu[3]; 
-					  if (tint == debugMenu[10]) color = debugMenu[11]; break;
-			case 252: if (tint == debugMenu[5] || tint == debugMenu[6] || tint == debugMenu[7]) color = debugMenu[3]; 
-					  if (tint == debugMenu[10]) color = debugMenu[12]; break;
-		}
-		
-		 if (tint == debugMenu[10] && Debug == 1) color += 0.1;
-	}
+#if defined(IS_GUI)
+    if (Debug != 0) {
+        ivec4 ctrlF = ivec4(color * 255.0 + 0.5);
+        if (ctrlF.a == 255 && (tint == debugMenu[5] || tint == debugMenu[6] || tint == debugMenu[7])) color = debugMenu[1];
+        if (ctrlF.a == 254 && (tint == debugMenu[1] || tint == debugMenu[8] || tint == debugMenu[0])) color = debugMenu[2];
+        if (ctrlF.a == 253 && (tint == debugMenu[1] || tint == debugMenu[8] || tint == debugMenu[0])) color = debugMenu[3];
+    }
 #endif
-	
-#ifdef IS_SEE_THROUGH
-	fragColor = color * ColorModulator;
-#elif defined(IS_GUI)
-	fragColor = color;
+#ifdef OIT_ACCUMULATE
+    color = sampleColorForAccumulation(color);
+#endif
+#if !defined(IS_SEE_THROUGH) && !defined(IS_GUI)
+    #ifdef OIT_ACCUMULATE
+    vec4 fogColor = vec4(FogColor.rgb * color.a, FogColor.a);
+    #else
+    vec4 fogColor = FogColor;
+    #endif
+    color = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, fogColor);
+#endif
+#ifdef OIT_ALPHA_ONLY
+    executeAlphaOnlyPhase(gl_FragCoord.z, color.a);
 #else
-	fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+    fragColor = color;
 #endif
-	fragColor.rgb = cone_filter(Colorblindness, fragColor.rgb);
 }

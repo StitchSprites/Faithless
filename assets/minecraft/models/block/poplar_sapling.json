@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "ambientocclusion": false,
+  "textures": {
+    "cross": "block/poplar_sapling",
+    "particle": "block/poplar_sapling"
+  }
+}

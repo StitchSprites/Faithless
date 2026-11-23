@@ -1,6 +1,34 @@
 {
 "providers":[
 
+{
+      "type":"bitmap",
+      "ascent":8,
+      "height":10,
+      "chars":[""],
+      "file":"gui/enchant/breach.png"
+    },
+{
+      "type":"bitmap",
+      "ascent":8,
+      "height":10,
+      "chars":[""],
+      "file":"gui/enchant/density.png"
+    },
+{
+      "type":"bitmap",
+      "ascent":8,
+      "height":10,
+      "chars":[""],
+      "file":"gui/enchant/wind_burst.png"
+    },
+{
+      "type":"bitmap",
+      "ascent":8,
+      "height":10,
+      "chars":[""],
+      "file":"gui/enchant/lunge.png"
+    },
 {"type":"space","advances":{"\uEFFF":-8}},
 
 {"type":"bitmap","ascent":20,"height":32,"chars":["\uE000"],"file":"gui/title/game_menu.png"},

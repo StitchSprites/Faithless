@@ -1,0 +1,22 @@
+{
+  "model": {
+    "type": "select",
+    "property": "display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "fixed"
+        ],
+        "model": {
+          "type": "model",
+          "model": "item/poplar_fence_gate"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "model",
+      "model": "block/poplar_fence_gate"
+    }
+  }
+}

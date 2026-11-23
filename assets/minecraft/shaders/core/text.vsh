@@ -1,41 +1,31 @@
 #version 330
-
-// 26.2 batched rendering: gl_VertexID now includes the draw's base vertex offset.
-#extension GL_ARB_shader_draw_parameters : enable
-#ifdef GL_ARB_shader_draw_parameters
-    #define VERT_ID (gl_VertexID - gl_BaseVertexARB)
-#else
-    #define VERT_ID gl_VertexID
-#endif
-
+#extension GL_ARB_separate_shader_objects : require
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:projection.glsl>
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:sample_lightmap.glsl>
+#include <minecraft:fog.glsl>
+#include <minecraft:sample_lightmap.glsl>
 #endif
+#include <minecraft:config.glsl>
+// Minecraft 26.3 ShaderC/SPIR-V uses Vulkan-style vertex built-in names.
+// For quad-based GUI drawing, indices of each quad are consecutive groups of four.
+#define VERT_ID gl_VertexIndex
 
-#moj_import <dynamictransforms.glsl>
-#moj_import <projection.glsl>
-#moj_import <vertex_utils.glsl>
-#moj_import <config.glsl>
-
-in vec3 Position;
-in vec4 Color;
-in vec2 UV0;
+layout(location = 0) in vec3 Position;
+layout(location = 1) in vec4 Color;
+layout(location = 2) in vec2 UV0;
 #if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-in ivec2 UV2;
-#endif
-
-uniform sampler2D Sampler0;
-#if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
+layout(location = 3) in ivec2 UV2;
 uniform sampler2D Sampler2;
-out float sphericalVertexDistance;
-out float cylindricalVertexDistance;
+layout(location = 0) out float sphericalVertexDistance;
+layout(location = 1) out float cylindricalVertexDistance;
 #endif
-
-out vec4 vertexColor;
-out vec4 tint;
-out vec2 texCoord0;
-flat out int Debug;
+uniform sampler2D Sampler0;
+layout(location = 2) out vec4 vertexColor;
+layout(location = 3) out vec2 texCoord0;
+layout(location = 4) out vec4 tint;
+layout(location = 5) flat out int Debug;
+const vec2 corners[4] = vec2[4](vec2(0.0), vec2(0.0, 1.0), vec2(1.0), vec2(1.0, 0.0));
 
 const ivec2 debug_lines[26] = ivec2[](
 	ivec2(8, 0), ivec2(9, 9), ivec2(1, 9), ivec2(1, 9), ivec2(1, 9),
@@ -53,7 +43,7 @@ const int debug_padding[26] = int[](
 	429, 235, 337, 337, 337, 90
 );
 
-void main() {
+void faithless_gui_text_main() {
     texCoord0 = UV0;
     tint = vec4(1.0);
     vec4 color = Color;
@@ -62,17 +52,17 @@ void main() {
 
     int vertID = VERT_ID % 4;
 	ivec3 ctrlT = ivec3(color.rgb * 255 + 0.5);
-#ifdef IS_GRAYSCALE
-	// 26.2 merged the single-channel "intensity" font program into this one (IS_GRAYSCALE). Its atlas is R8, so
-	// sampling it always returns alpha = 1, which would read as a control pixel and wipe the glyph out.
-	ivec4 ctrlV = ivec4(0);
-#else
     ivec4 ctrlV = ivec4(texture(Sampler0, UV0 - 0.00001 * corners[vertID]) * 255.0 + 0.5);
-#endif
-	bool isGrayColor = (ctrlT.r == ctrlT.g) && (ctrlT.g == ctrlT.b);
+	bool isGRAYSCALE = (ctrlT.r == ctrlT.g) && (ctrlT.g == ctrlT.b);
+    // Only Faithless's intentionally encoded container-font control pixels
+    // may reposition/collapse glyph vertices. A generic 1/255-alpha pixel
+    // is NOT a control pixel: Lunar Client and other UI mods can contain them.
+    bool faithlessFontControl = (ctrlV.a == 1 && ctrlV.g == 128 && ctrlV.b == 0 &&
+                                (ctrlV.r == 52 || ctrlV.r == 56 || ctrlV.r == 58 || ctrlV.r == 70 || ctrlV.r == 74 || ctrlV.r == 92 || ctrlV.r == 95 || ctrlV.r == 97 || ctrlV.r == 103 || ctrlV.r == 128));
+
 	
-	if (ctrlV.a == 1) {
-		if (isGrayColor && int(Position.z) == 0 && ctrlT.r == 64) {
+	if (faithlessFontControl) {
+		if (isGRAYSCALE && int(Position.z) == 0 && ctrlT.r == 64) {
 			pos.xy += vec2(ctrlV.r - 128, 128 - ctrlV.g);
 			color = vec4(1.0);
 		} else { pos = vec3(0); }
@@ -80,7 +70,7 @@ void main() {
 	
 		switch (int(Position.z)) {
 		case 0: 
-			if (isGrayColor) { switch (ctrlT.r) {
+			if (isGRAYSCALE) { switch (ctrlT.r) {
 				case 255:	tint = buttons[0]; break;
 				case 224:	tint = beacon[0]; break;
 				case 170:	tint = cmd_n_packInfo[0]; break;
@@ -106,7 +96,7 @@ void main() {
 				else if (ctrlT == ivec3(32, 63, 8))     tint = anvilExp[1];
 			} break;
 		case 200: 
-			if (isGrayColor) { switch (ctrlT.r) {
+			if (isGRAYSCALE) { switch (ctrlT.r) {
 				case 170:	tint = cmdFill[0]; break;
 				case 42:	tint = cmdFill[1]; break;
 			}} else {
@@ -114,18 +104,18 @@ void main() {
 				if (ctrlT == vec3(63, 63, 0))	tint = cmdSelect[1];
 			} break;
 		case 400: 
-			if (isGrayColor) { switch (ctrlT.r) {
+			if (isGRAYSCALE) { switch (ctrlT.r) {
 				case 255:	tint = tooltip[0]; break;
 				case 63:	tint = tooltip[1]; break;
 			}} break;
 		case 600: 
-			if (isGrayColor) {
+			if (isGRAYSCALE) {
 				if (ctrlT.r == 0)	tint = experience[1];
 			} else {
 				if (ctrlT == ivec3(128, 255, 32))	tint = experience[0];
 			} break;
 		case 1800: 
-			if (isGrayColor) {
+			if (isGRAYSCALE) {
 				if (ctrlT.r == 224)	{
 					
 					int offsetY = (vertID == 0 || vertID == 3) ? 2 : 10;
@@ -170,19 +160,32 @@ void main() {
 				}
 			} break;
 		case 2650: 
-			if (isGrayColor) { switch (ctrlT.r) {
+			if (isGRAYSCALE) { switch (ctrlT.r) {
 				case 255:	tint = vec4(messages[0].rgb, messages[0].a * color.a); break;
 				case 63:	tint = vec4(messages[1].rgb, messages[1].a * color.a); break; 
 			}} break;
 		}
 	}
 	
-#if !defined(IS_GUI) && !defined(IS_SEE_THROUGH)
-	vertexColor = color * sample_lightmap(Sampler2, UV2);
-	sphericalVertexDistance = fog_spherical_distance(Position);
-	cylindricalVertexDistance = fog_cylindrical_distance(Position);
-#else
 	vertexColor = color;
-#endif
+
     gl_Position = ProjMat * ModelViewMat * vec4(pos, 1.0);
+}
+
+void main() {
+#if defined(IS_GUI)
+    faithless_gui_text_main();
+#else
+    texCoord0 = UV0;
+    tint = vec4(1.0);
+    Debug = 0;
+    gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+    #if !defined(IS_SEE_THROUGH)
+    sphericalVertexDistance = fog_spherical_distance(Position);
+    cylindricalVertexDistance = fog_cylindrical_distance(Position);
+    vertexColor = Color * sample_lightmap(Sampler2, UV2);
+    #else
+    vertexColor = Color;
+    #endif
+#endif
 }

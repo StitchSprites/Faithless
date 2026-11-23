@@ -10,11 +10,11 @@
 		{
 			"from": [0, -16, 12],
 			"to": [16, 16, 12],
-			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#stem", "cullface": "down"},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#stem", "cullface": "down"}
-			}
+			},
+			"shade_direction_override": "up"
 		}
 	]
 }
